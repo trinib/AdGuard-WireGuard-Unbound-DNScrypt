@@ -1,0 +1,1 @@
+CLOUDFLARED_OPTS=--port 5053 --upstream https://1.1.1.1/dns-query
