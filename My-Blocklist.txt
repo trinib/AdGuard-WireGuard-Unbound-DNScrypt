@@ -45,7 +45,6 @@ https://perflyst.github.io/PiHoleBlocklist/AmazonFireTV.txt
 https://perflyst.github.io/PiHoleBlocklist/android-tracking.txt
 https://perflyst.github.io/PiHoleBlocklist/regex.list
 https://perflyst.github.io/PiHoleBlocklist/SessionReplay.txt
-https://raw.githubusercontent.com/im-sm/Pi-hole-Torrent-Blocklist/main/all-torrent-websites.txt
 https://blocklistproject.github.io/Lists/phishing.txt
 https://blocklistproject.github.io/Lists/tracking.txt
 https://raw.githubusercontent.com/ftpmorph/ftprivacy/master/blocklists/windows10-spying-erm-i-mean-telemetry-lol.txt
