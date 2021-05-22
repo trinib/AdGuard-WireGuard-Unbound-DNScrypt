@@ -238,6 +238,15 @@ And copy and paste all the text from <a href="https://raw.githubusercontent.com/
 <p align="center">
  <img src="https://i.imgur.com/2S3IH5H.jpg" width=650px height=370px>
 
+#### Other sites to check security
+https://surfshark.com/dns-leak-test - should show connected to "Cloudflare"
+
+https://www.cloudflare.com/ssl/encrypted-sni/ - "Secure DNS / DNSSEC / TLS 1.3" should all be a green tick
+
+https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNSSEC signatures"
+ 
+**If you do not see things correct check your browser `dns` and `proxy` settings**
+ 
 #
 <p align="center">
  <b>✹ STEP 5 ✹</b>
@@ -331,21 +340,22 @@ Now you can import the config file to wireguard or tunsafe windows app(import fr
 * Under Dns servers enter `pi's ip` and save
 
 <p align="center">
- <img src="https://i.imgur.com/3GDQ7g1.jpg">
+ <img src="https://i.imgur.com/UC0vWfE.jpg" width=450px height=500px>                                                                                                  
  
- ### Limit traffic for more speed 
+ ### Limit traffic for more speed *only when connected to wifi*
  
 * `IMPORTANT`: Delete in allowed IPs "0.0.0.0/0, ::/0" option because it routes all traffic to your home network which will be slow. You need send traffic through your addresses only. 
  
-   * First you need to replace it with your network gateway but setting the last number to a zero and <a href="https://www.google.com/search?q=prefix+length+explained&client=firefox-b-d&sxsrf=ALeKk036Jc9vJl73zVXf0yyZs5UlKRlNRQ%3A1621083125589&ei=9cOfYI66I5-qwbkPkdWxkAk&oq=prefix+length+explained&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEAcQHjoHCCMQsAMQJzoHCAAQRxCwA1CUJ1iUJ2CiKmgBcAJ4AIABsAGIAdQCkgEDMC4ymAEAoAEBqgEHZ3dzLXdpesgBCcABAQ&sclient=gws-wiz&ved=0ahUKEwjOiOie3cvwAhUfVTABHZFqDJIQ4dUDCA0&uact=5"><b>prefix lenght</b></a> to 24. For example: `192.168.1.1/24` to `192.168.1.0/24` 
- 
-   * Then in command line enter `sudo wg show` and look in allowed ips line to enter the pi's lan address but setting the last number to a zero and prefix lenght to 24. For example: `10.7.0.2/24` to `10.7.0.0/24`
+   * First you need to replace it with your network gateway but setting the last number to a zero and <a href="https://www.google.com/search?q=prefix+length+explained&client=firefox-b-d&sxsrf=ALeKk036Jc9vJl73zVXf0yyZs5UlKRlNRQ%3A1621083125589&ei=9cOfYI66I5-qwbkPkdWxkAk&oq=prefix+length+explained&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEAcQHjoHCCMQsAMQJzoHCAAQRxCwA1CUJ1iUJ2CiKmgBcAJ4AIABsAGIAdQCkgEDMC4ymAEAoAEBqgEHZ3dzLXdpesgBCcABAQ&sclient=gws-wiz&ved=0ahUKEwjOiOie3cvwAhUfVTABHZFqDJIQ4dUDCA0&uact=5"><b>prefix lenght</b></a> to 24. For example: `192.168.1.1/24` to `192.168.1.0/24` or like my isp router `192.168.100.1/24` to `192.168.100.0/24`
 
 <p align="center">
- <img src="https://i.imgur.com/EWPbki1.jpg">
+ <img src="https://i.imgur.com/x4m6Pbl.jpg" width=450px height=500px>
  
 ### IMPORTANT 
-#### If your network has ip addresses that ends with a number more than 24 for example: 192.168.1.`999` you will not be able to route properly from outsdie network because applying 24 only allows numbers 1 through 24. You need to instead put `0` to route out of the 24 range, for example : `192.168.0/0`. Or you can change ip range on your router (in my experience you might get better speeds cause it will not route unnecessary allowed ips over the 24 range).
+#### If your network has ip addresses that ends with a number more than 24 for example: 192.168.100.`999` you will not be able to route properly from outsdie network because applying 24 only allows numbers 1 through 24. You need to instead put `0` to route out of the 24 range, for example : `192.168.0/0`. Or you can change ip range on your router (in my experience you might get better speeds cause it will not route unnecessary allowed ips over the 24 range).
+ 
+ <p align="center">
+ <img src="https://i.imgur.com/ZZ4aMUI.jpg" width=850px height=650px>
 
 #
 <h1 align="center"><b><i>☷ Auto Update Pi ☷</b></i> </h1>
