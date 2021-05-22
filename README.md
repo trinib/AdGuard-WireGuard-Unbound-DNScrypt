@@ -8,12 +8,22 @@
 <p align="center">
  <img src="https://stars.medv.io/Naereen/badges.svg">
 
-<h1 align="center"><b>A Setup 📜 Guide For These Network 📡 Security Projects To All Run Flawless Simultaneously 💯 On Your 𝓡 𝓐 𝓢 𝓟 𝓑 𝓔 𝓡 𝓡 𝓨 ℙ 𝕀 🥧</b> </h1>
+<h1 align="center"><b>A Setup 📜 Guide For These Network 📡 Security Projects To All Run Simultaneously On Your 𝓡 𝓐 𝓢 𝓟 𝓑 𝓔 𝓡 𝓡 𝓨 ℙ 𝕀 🥧</b> </h1>
 
 #### _<a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>Adguard</b></a>_ ⫸ Adblocker for your devices at home ( <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md#how-does-adguard-home-compare-to-pi-hole">AdGuard compared to Pi-Hole</a> )
 #### _<a href="https://www.wireguard.com/"><b>Wireguard</b></a>_ ⫸ Your own Vpn Server at home accessable from anywhere while being protected
 #### _<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a>_ ⫸ A validating, Recursive, Caching DNS Resolver
 #### _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_ ⫸ Better Performance & Security when browsing websites(DoT & DoH)
+#
+<p align="center">
+ <img src="https://i.imgur.com/Z9bTcCu.png">
+ 
+<p align="center">
+ <img src="https://i.imgur.com/FfgQ7ee.jpg">
+ 
+<p align="center">
+ <img src="https://i.imgur.com/3EOB7yt.jpg">
+
 #
 # Contents
 - <a href="https://git.io/About">About</a>
@@ -36,11 +46,6 @@
 - [Auto update your Pi](#-auto-update-pi--)
 - [Improving your SD Card’s potential lifespan](#-log2ram-install--)
 - [Securing your Raspberry Pi](#-secure-your-raspberry-pi--)
-
-
-#
-<p align="center">
- <img src="https://i.imgur.com/Z9bTcCu.png">
 
 #
 # Requirements
@@ -357,10 +362,10 @@ Now you can import the config file to wireguard or tunsafe windows app(import fr
  <p align="center">
  <img src="https://i.imgur.com/ZZ4aMUI.jpg" width=750px height=550px>
 
-### How do you know if wireguard vpn is working ?
+### How do you know if wireguard vpn is really working ?
 Download <a href="https://www.wireshark.org/#download."><b>Wireshark</b></a>
 
-Once downloaded you can use the application to inspect your data packets where the protocol is set to the one used by Wireguard VPN. When a packet is encrypted, it can be read  like this for example:
+Once downloaded you can use the application to inspect your data packets where the protocol is set to the one used by Wireguard VPN. When a packet traffic is `encrypted`, it can be read  like this for example:
 <p align="center">
  <img src="https://i.imgur.com/CbNVkfs.jpg">
 
