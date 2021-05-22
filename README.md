@@ -355,7 +355,15 @@ Now you can import the config file to wireguard or tunsafe windows app(import fr
 #### If your network has ip addresses that ends with a number more than 24 for example: 192.168.100.`999` you will not be able to route properly from outsdie network because applying 24 only allows numbers 1 through 24. You need to instead put `0` to route out of the 24 range, for example : `192.168.0/0`. Or you can change ip range on your router (in my experience you might get better speeds cause it will not route unnecessary allowed ips over the 24 range).
  
  <p align="center">
- <img src="https://i.imgur.com/ZZ4aMUI.jpg" width=850px height=650px>
+ <img src="https://i.imgur.com/ZZ4aMUI.jpg" width=750px height=550px>
+#
+  
+### How do you know if wireguard vpn is working ?
+Download <a href="https://www.wireshark.org/#download."><b>Wireshark</b></a>
+
+Once downloaded you can use the application to inspect your data packets where the protocol is set to the one used by Wireguard VPN. When a packet is encrypted, it can be read  like this for example:
+<p align="center">
+ <img src="https://i.imgur.com/CbNVkfs.jpg">
 
 #
 <h1 align="center"><b><i>☷ Auto Update Pi ☷</b></i> </h1>
