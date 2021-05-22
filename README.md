@@ -356,8 +356,7 @@ Now you can import the config file to wireguard or tunsafe windows app(import fr
  
  <p align="center">
  <img src="https://i.imgur.com/ZZ4aMUI.jpg" width=750px height=550px>
-#
-  
+
 ### How do you know if wireguard vpn is working ?
 Download <a href="https://www.wireshark.org/#download."><b>Wireshark</b></a>
 
