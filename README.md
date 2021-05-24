@@ -8,7 +8,7 @@
 <p align="center">
  <img src="https://stars.medv.io/Naereen/badges.svg">
 
-<h1 align="center"><b>A Setup 📜 Guide For These Network 📡 Security Projects To All Run Simultaneously On Your 𝓡 𝓐 𝓢 𝓟 𝓑 𝓔 𝓡 𝓡 𝓨 ℙ 𝕀 🥧</b> </h1>
+<h1 align="center"><b>A step by step 📜 guide for these 🅵🆁🅴🅴 network 📡 security projects to work together on a 𝓡 𝓐 𝓢 𝓟 𝓑 𝓔 𝓡 𝓡 𝓨 ℙ 𝕀 🥧</b> </h1>
 
 #### _<a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>Adguard</b></a>_ ⫸ Adblocker for your devices at home ( <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md#how-does-adguard-home-compare-to-pi-hole">AdGuard compared to Pi-Hole</a> )
 #### _<a href="https://www.wireguard.com/"><b>Wireguard</b></a>_ ⫸ Your own Vpn Server at home accessable from anywhere while being protected
@@ -52,9 +52,9 @@
    
    * A Raspberry Pi 3 or 4 version 
    * A router that supports Port forwarding(Most Can)
+   * MicroSD USB card reader
    * MicroSD card (8GB or bigger, at least Class 4)
    * Ethernet cable
-   * MicroSD USB card reader
    * (Optional if using monitor) MicroHDMI-(RPi 4) or HDMI-(RPi 3)
 
 #
