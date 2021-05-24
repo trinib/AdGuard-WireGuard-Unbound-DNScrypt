@@ -244,7 +244,7 @@ And copy and paste all the text from <a href="https://raw.githubusercontent.com/
  <img src="https://i.imgur.com/2S3IH5H.jpg" width=650px height=370px>
 
 #### Other sites to check security
-https://surfshark.com/dns-leak-test - should show connected to "Cloudflare"
+https://whoer.net/dns-leak-test - should show all connected to "Cloudflare"
 
 https://www.cloudflare.com/ssl/encrypted-sni/ - "Secure DNS / DNSSEC / TLS 1.3" should all be a green tick
 
