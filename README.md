@@ -8,10 +8,12 @@
 <p align="center">
  <img src="https://stars.medv.io/Naereen/badges.svg">
 
-<h1 align="center"><b>A step by step 📜 guide for these 🅵🆁🅴🅴 network 📡 security projects to work together on a 𝓡 𝓐 𝓢 𝓟 𝓑 𝓔 𝓡 𝓡 𝓨 ℙ 𝕀 🥧</b> </h1>
+<h1 align="center"><b>A step by step 📜 guide for these</b> </h1>
+<h1 align="center"><b> 🅵🆁🅴🅴 network 📡 security projects to work together on a</b> </h1>
+<h1 align="center"><b>🍓 𝓡 𝓐 𝓢 𝓟 𝓑 𝓔 𝓡 𝓡 𝓨 ℙ 𝕀 🥧</b> </h1>
 
 #### _<a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>Adguard</b></a>_ ⫸ Adblocker for your devices at home ( <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md#how-does-adguard-home-compare-to-pi-hole">AdGuard compared to Pi-Hole</a> )
-#### _<a href="https://www.wireguard.com/"><b>Wireguard</b></a>_ ⫸ Your own Vpn Server at home accessable from anywhere while being protected
+#### _<a href="https://www.wireguard.com/"><b>Wireguard</b></a>_ ⫸ A Vpn Server at home accessable from any outside network
 #### _<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a>_ ⫸ A validating, Recursive, Caching DNS Resolver
 #### _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_ ⫸ Better Performance & Security when browsing websites(DoT & DoH)
 #
