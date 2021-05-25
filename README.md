@@ -10,7 +10,7 @@
 
 <h1 align="center"><b>A step by step 📜 guide for these</b> </h1>
 <h1 align="center"><b> 🅵🆁🅴🅴 network 📡 security projects to work together on a</b> </h1>
-<h1 align="center"><b>🍓 𝓡 𝓐 𝓢 𝓟 𝓑 𝓔 𝓡 𝓡 𝓨 ℙ 𝕀 🥧</b> </h1>
+<h1 align="center"><b>𝓡 𝓐 𝓢 𝓟 𝓑 𝓔 𝓡 𝓡 𝓨 ℙ 𝕀 🥧</b> </h1>
 
 #### _<a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>Adguard</b></a>_ ⫸ Adblocker for your devices at home ( <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md#how-does-adguard-home-compare-to-pi-hole">AdGuard compared to Pi-Hole</a> )
 #### _<a href="https://www.wireguard.com/"><b>Wireguard</b></a>_ ⫸ A Vpn Server at home accessable from any outside network
