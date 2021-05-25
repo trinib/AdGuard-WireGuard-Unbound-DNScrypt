@@ -342,7 +342,7 @@ Now you can import the config file to wireguard or tunsafe windows app(import fr
 
 ## ╸ Configure Wireguard With `Adguard/Unbound/Cloudflare` ╸
 
-### Remember this is for when you are connected to wireguard vpn only 24/7 or an outside network cause you already have Adguard/Unbound/Cloudflare set up and running on your devices manually when on home network.
+_Remember this is for when you are connected to wireguard vpn only 24/7 or an outside network cause you already have Adguard/Unbound/Cloudflare set up and running on your devices manually when on home network._
 
 * In wireguard app, select your tunnel and select edit(pencil on top right) 
 
@@ -361,7 +361,7 @@ Now you can import the config file to wireguard or tunsafe windows app(import fr
  <img src="https://i.imgur.com/x4m6Pbl.jpg" width=450px height=500px>
  
 ### BE AWARE !! 
-#### If your network has ip addresses that ends with a number more than 24 for example: 192.168.100.`999` you will not be able to route properly from outsdie network because applying 24 only allows numbers 1 through 24. You need to instead put `0` to route out of the 24 range, for example : `192.168.0/0`. Or you can change ip range on your router (in my experience you might get better speeds cause it will not route unnecessary allowed ips over the 24 range).
+_If your network has ip addresses that ends with a number more than 24 for example: 192.168.100.`999` you will not be able to route properly from outside network because applying 24 only allows numbers 1 through 24. You need to instead put `0` to route out of the 24 range, for example : `192.168.0/0`. Or you can change ip range on your router (in my experience you might get better speeds cause it will not route unnecessary allowed ips over the 24 range)_.
  
  <p align="center">
  <img src="https://i.imgur.com/ZZ4aMUI.jpg" width=750px height=550px>
@@ -388,7 +388,7 @@ Once downloaded you can use the application to inspect your data packets where t
 
       0 3 * * 3 ./update.sh > ./UpdateLogs/Log_`date +\%m\%d\%y`.log 2>&1  
       
-Pi will now update ] every Wednesday at 3am.
+Pi will now update every Wednesday at 3am.
 
 #
 <h1 align="center"><b><i>☷ Log2Ram Install ☷</b></i> </h1>
