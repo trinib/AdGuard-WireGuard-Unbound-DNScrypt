@@ -14,7 +14,7 @@
 
 #
 
-#### _<a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>Adguard</b></a>_ ⫸ Adblocker for your devices at home ( <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md#how-does-adguard-home-compare-to-pi-hole">AdGuard compared to Pi-Hole</a> )
+#### _<a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>Adguard</b></a>_ ⫸ Adblocker for your devices at home ( <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md#how-does-adguard-home-compare-to-pi-hole"><b>_AdGuard compared to Pi-Hole_</b></a> )
 #### _<a href="https://www.wireguard.com/"><b>Wireguard</b></a>_ ⫸ A Vpn Server at home accessable from any outside network
 #### _<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a>_ ⫸ A validating, Recursive, Caching DNS Resolver
 #### _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_ ⫸ Better Performance & Security when browsing websites(DoT & DoH)
@@ -388,7 +388,7 @@ Once downloaded you can use the application to inspect your data packets where t
 
       0 3 * * 3 ./update.sh > ./UpdateLogs/Log_`date +\%m\%d\%y`.log 2>&1  
       
-Pi will now update every Wednesday at 3am.
+Pi will now update ] every Wednesday at 3am.
 
 #
 <h1 align="center"><b><i>☷ Log2Ram Install ☷</b></i> </h1>
@@ -405,6 +405,8 @@ Copy and paste this line in terminal:
 <h1 align="center"><b><i>☷ Secure Your Raspberry Pi ☷</b></i> </h1>
 <p align="center">
 <a href="https://www.raspberrypi.org/documentation/configuration/security.md"><img src="https://i.imgur.com/a9JQVls.png" width=80px height=90px></a>
+<p align="center">
+<a href="https://www.raspberrypi.org/documentation/configuration/security.md"><b>LINK</b></a>
 
 #
 #
