@@ -23,7 +23,7 @@
  <img src="https://i.imgur.com/Z9bTcCu.png">
  
 <p align="center">
- <img src="https://i.imgur.com/FfgQ7ee.jpg">
+ <img src="https://i.imgur.com/aNDEzLd.jpg">
  
 <p align="center">
  <img src="https://i.imgur.com/7mk08hI.jpg">
@@ -371,7 +371,7 @@ Download <a href="https://www.wireshark.org/#download."><b>Wireshark</b></a>
 
 Once downloaded you can use the application to inspect your data packets where the protocol is set to the one used by Wireguard VPN. When a packet traffic is `encrypted`, it can be read  like this for example:
 <p align="center">
- <img src="https://i.imgur.com/CbNVkfs.jpg">
+ <img src="https://i.imgur.com/rvAfwbj.jpg">
 
 #
 <h1 align="center"><b><i>☷ Auto Update Pi ☷</b></i> </h1>
@@ -386,7 +386,7 @@ Once downloaded you can use the application to inspect your data packets where t
       
 * Open cron file by entering in command line `sudo crontab -e`, copy&paste job command line below at the bottom of cron file and save.
 
-      0 3 * * 3 ./update.sh > ./UpdateLogs/Log_`date +\%m\%d\%y`.log 2>&1  
+      0 3 * * 3 sudo ./update.sh > /home/pi/Log_`date +\%m\%d\%y`.log 2>&1  
       
 Pi will now update every Wednesday at 3am.
 
