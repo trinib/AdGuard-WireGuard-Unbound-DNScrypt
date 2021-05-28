@@ -23,7 +23,7 @@
  <img src="https://i.imgur.com/Z9bTcCu.png">
  
 <p align="center">
- <img src="https://i.imgur.com/aNDEzLd.jpg">
+ <img src="https://i.imgur.com/owaA8kD.jpg">
  
 <p align="center">
  <img src="https://i.imgur.com/7mk08hI.jpg">
@@ -371,7 +371,7 @@ Download <a href="https://www.wireshark.org/#download."><b>Wireshark</b></a>
 
 Once downloaded you can use the application to inspect your data packets where the protocol is set to the one used by Wireguard VPN. When a packet traffic is `encrypted`, it can be read  like this for example:
 <p align="center">
- <img src="https://i.imgur.com/rvAfwbj.jpg">
+ <img src="https://i.imgur.com/Tn4M47R.jpg">
 
 #
 <h1 align="center"><b><i>☷ Auto Update Pi ☷</b></i> </h1>
