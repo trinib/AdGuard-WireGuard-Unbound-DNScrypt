@@ -41,4 +41,4 @@ Check Version:
     sudo systemctl status cloudflared
 
 <p align="center">
- <img src="https://i.imgur.com/VNGjqIu.jpg">
+ <img src="https://i.imgur.com/AAOKv4L.jpg">
