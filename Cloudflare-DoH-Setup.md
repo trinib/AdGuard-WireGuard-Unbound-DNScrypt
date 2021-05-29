@@ -41,4 +41,19 @@ Check Version:
     sudo systemctl status cloudflared
 
 <p align="center">
- <img src="https://i.imgur.com/AAOKv4L.jpg">
+ <img src="https://i.imgur.com/DTEPmy1.jpg">
+ 
+ `ctrl + c` to exit status window
+ 
+### IMPORTANT
+The cloudflared tool will not receive updates through the package manager. However, you should keep the program update to date. You can either do this manually, or automatically with cron script.
+
+Open cron file:
+ 
+    sudo crontab -e
+ 
+Paste command at end of file:
+  
+    0 3 * * 5 sudo cloudflared update && sudo systemctl restart cloudflared
+    
+ 
