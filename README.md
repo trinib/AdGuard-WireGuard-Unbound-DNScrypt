@@ -242,7 +242,7 @@ And copy and paste all the text from <a href="https://raw.githubusercontent.com/
   
       sudo service unbound restart
 
-#### Thats it. Now go to https://1.1.1.1/help in browser and you should see `Connected to 1.1.1.1`/`DNS over HTTPS(DoH)`/`Using DNS over TLS(DoT)` saying **Yes**.
+#### Thats it. Now go to https://1.1.1.1/help in browser and you should see _`Connected to 1.1.1.1`/`DNS over HTTPS(DoH)`/`Using DNS over TLS(DoT)`_ saying "Yes".
 
 <p align="center">
  <img src="https://i.imgur.com/2S3IH5H.jpg" width=650px height=370px>
@@ -363,9 +363,15 @@ _Remember this is for when you are connected to wireguard vpn only 24/7 or an ou
 ### BE AWARE !! 
 _If your network has ip addresses that ends with a number more than 24 for example: 192.168.100.`999` you will not be able to route properly from outside network because applying 24 only allows numbers 1 through 24. You need to instead put `0` to route out of the 24 range, for example : `192.168.0/0`. Or you can change ip range on your router (in my experience you might get better speeds cause it will not route unnecessary allowed ips over the 24 range)_.
  
- <p align="center">
+<p align="center">
  <img src="https://i.imgur.com/ZZ4aMUI.jpg" width=750px height=550px>
+ 
+## IPV6
+If you are using ipv6 you need to enter in allowed IPs `fe80::1/0`. For example `192.168.100.0/0, fe80::1/0` (wifi only)
 
+On pc using ethernet cable you need to enter pi's ipv6 address in 'internet protocol version 6'. To get pi ipv6 address, enter in terminal `ifconfig` under eth0:inet6. If you see two inet6(public&local), enter local not public. Go to https://ipv6leak.com/ and you should see "_Your IPv6 is not leaking_".
+
+#
 ### How do you know if wireguard vpn is really working ??
 Download <a href="https://www.wireshark.org/#download."><b>Wireshark</b></a>
 
