@@ -150,7 +150,7 @@ Run the following command in your terminal:
 <p align="center">
  <a href="https://www.raspberrypi.org/documentation/configuration/security.md"><img src="https://i.imgur.com/nxpiqDw.jpg" width=450px height=580px></a>
 
-* For PC go to network settings / change adpater options and right click in properties then select `internet protocol version 4`. Enter pi's ip address in preferred DNS server and `Alternitive DNS` to 1.1.1.1
+* For PC go to network settings / change adpater options and right click in properties then select "Internet Protocol Version 4(TCP/IPv4)". Enter pi's ip address in preferred DNS server and `Alternitive DNS` to 1.1.1.1
 
 <p align="center">
  <img src="https://i.imgur.com/8gsDk3z.jpg">
@@ -248,7 +248,7 @@ And copy and paste all the text from <a href="https://raw.githubusercontent.com/
  <img src="https://i.imgur.com/2S3IH5H.jpg" width=650px height=370px>
 
 #### Other sites to check security
-https://whoer.net/dns-leak-test - should show all connected to "Cloudflare"
+https://browserleaks.com/dns - should show all connected to "Cloudflare"
 
 https://www.cloudflare.com/ssl/encrypted-sni/ - "Secure DNS / DNSSEC / TLS 1.3" should all be a green tick
 
@@ -353,7 +353,7 @@ _Remember this is for when you are connected to wireguard vpn only 24/7 or an ou
  
  ### Limit traffic for more speed *only when connected to wifi*
  
-* `IMPORTANT`: Delete in allowed IPs "0.0.0.0/0, ::/0" option because it routes all traffic to your home network which will be slow. You need send traffic through your addresses only. 
+* `IMPORTANT`: Delete in allowed IPs "0.0.0.0/0, ::/0" option because it routes all traffic to your home network which will be slow. You need send traffic through your addresses only. (Only when connected directly with ethernet cable leave in allowed ip `0.0.0.0/0, ::/0` cause i don't seem to lose any speed)
  
    * First you need to replace it with your network gateway but setting the last number to a zero and <a href="https://www.google.com/search?q=prefix+length+explained&client=firefox-b-d&sxsrf=ALeKk036Jc9vJl73zVXf0yyZs5UlKRlNRQ%3A1621083125589&ei=9cOfYI66I5-qwbkPkdWxkAk&oq=prefix+length+explained&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEAcQHjoHCCMQsAMQJzoHCAAQRxCwA1CUJ1iUJ2CiKmgBcAJ4AIABsAGIAdQCkgEDMC4ymAEAoAEBqgEHZ3dzLXdpesgBCcABAQ&sclient=gws-wiz&ved=0ahUKEwjOiOie3cvwAhUfVTABHZFqDJIQ4dUDCA0&uact=5"><b>prefix lenght</b></a> to 24. For example: `192.168.1.1/24` to `192.168.1.0/24` or like my isp router `192.168.100.1/24` to `192.168.100.0/24`
 
@@ -367,9 +367,9 @@ _If your network has ip addresses that ends with a number more than 24 for examp
  <img src="https://i.imgur.com/ZZ4aMUI.jpg" width=750px height=550px>
  
 ## IPV6
-If you are using ipv6 you need to enter in allowed IPs `fe80::1/0`. For example `192.168.100.0/0, fe80::1/0` (wifi only)
+If you are using ipv6, when connected to wifi you need to enter in allowed IPs `fe80::1/0` as well. For example `192.168.100.0/0, fe80::1/0`
 
-On pc using ethernet cable you need to enter pi's ipv6 address in 'internet protocol version 6'. To get pi ipv6 address, enter in terminal `ifconfig` under eth0:inet6. If you see two inet6(public&local), enter local not public. Go to https://ipv6leak.com/ and you should see "_Your IPv6 is not leaking_".
+When connected to ethernet cable on pc, you need to enter pi's ipv6 address in "Internet Protocol Version 6(TCP/IPv6)" preferred DNS server. To get pi ipv6 address, enter in terminal `ifconfig` under eth0:inet6. If you see two inet6(public&local), enter local not public. Go to https://ipv6leak.com/ and you should see "_Your IPv6 is not leaking_".
 
 #
 ### How do you know if wireguard vpn is really working ??
