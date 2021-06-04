@@ -15,7 +15,7 @@ Outgoing port | 1194
 Permit Internet acces(if have) | yes   
   
 #
-Install Openvpn type in terminal:
+Install OpenVPN type in terminal:
  
     wget https://git.io/vpn -O openvpn-install.sh && sudo bash openvpn-install.sh
   
@@ -33,20 +33,21 @@ Install Openvpn type in terminal:
   
       sudo cat /root/yourclientname.ovpn
   
-* Highlight all the text and paste it in the txt file on pc and save. Then rename the extention from `txt` to `ovpn`. Now you have config file for that openvpn client.
+* Highlight all the text and paste it in the txt file on pc and save. Then rename the extention from `txt` to `ovpn`. Now you have config file for that OpenVPN client.
   
 ### ╸ Connecting To The VPN From A PC (Windows) ╸
 
 Wireguard for windows: https://openvpn.net/downloads/openvpn-connect-v3-windows.msi
   
-Import the ovpn client file in Openvpn to connect
+Import the ovpn client file in OpenVPN to connect
   
 ### ╸ Connecting To The VPN To Android/IOS Phone ╸
 
-Wireguard (Google Play): https://play.google.com/store/apps/details?id=de.blinkt.openvpn&hl=en&gl=US
+OpenVPN (Google Play): https://play.google.com/store/apps/details?id=de.blinkt.openvpn&hl=en&gl=US
 
-Wireguard (App Store): https://apps.apple.com/us/app/openvpn-connect/id590379981
+OpenVPN (App Store): https://apps.apple.com/us/app/openvpn-connect/id590379981
   
-* Copy over the opvn client file you created on pc to your phone and import file in Openvpn app to connect
+* Copy over the opvn client file you created on pc to your phone and import file in OpenVPN app to connect
+#
   
   
