@@ -47,6 +47,9 @@
   - [Connecting to the VPN to Android/IOS Phone](#-connecting-to-the-vpn-to-androidios-phone-)
   - [Connecting to the VPN from a PC (Windows)](#-connecting-to-the-vpn-from-a-pc-windows-)
   - [Configure Wireguard with Adguard/Unbound/Cloudflare](#-configure-wireguard-with-adguardunboundcloudflare-)
+    - [Limit Traffic for faster connection](#limit-traffic-for-faster-speed-only-when-connected-to-wifi)
+    - [IPv6 Setup](#ipv6)
+    - [Backup DNS](#-add-a-backup-dns-server--instructions-here)
 - [Auto update your Pi](#-auto-update-pi--)
 - [Improving your SD Card’s potential lifespan](#-log2ram-install--)
 - [Securing your Raspberry Pi](#-secure-your-raspberry-pi--)
@@ -302,7 +305,9 @@ My 👇router👇 port setting. Yours maybe different but you'll get it. Remembe
 
 `IMPORTANT:` You will need to add a new user/client for each device you use with the VPN. To add a new user, simply re-run the script and create user with different client name.
                                                                                                    
- #### If you want to use _OpenVPN_ <img src="https://i.imgur.com/Y0uqyeA.png" width=30px height=30px>.. instructions are <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/OpenVPN-Setup.md"><b>👉here👈</b></a>                                                                                                  
+## If you want to use _OpenVPN_ instructions are <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/OpenVPN-Setup.md"><b>👉here👈</b></a>      #
+
+#
 ### ╸ Connecting To The VPN To Android/IOS Phone ╸
 
 Install the Wireguard app from Google Play or App Store
@@ -318,7 +323,7 @@ You need to scan the QR code shown in the terminal with Wireguard app, select th
 Wireguard for windows: https://download.wireguard.com/windows-client/wireguard-installer.exe
 
 Tunsafe (getting far faster speed with *Tunsafe beta* than wireguard on windows): https://tunsafe.com/downloads/TunSafe-1.5-rc2.exe
-#
+
 1. First you need to get the configuration file from pi home directory to pc. In terminal type:
 
        sudo su
@@ -352,7 +357,7 @@ _Remember this is for when you are connected to wireguard vpn only 24/7 or an ou
 <p align="center">
  <img src="https://i.imgur.com/UC0vWfE.jpg" width=450px height=500px>                                                                                                  
  
- ### Limit traffic for more speed *only when connected to wifi*
+ ### Limit traffic for faster speed *only when connected to wifi*
  
 * `IMPORTANT`: Delete in allowed IPs "0.0.0.0/0, ::/0" option because it routes all traffic to your home network which will be slow. You need send traffic through your addresses only. (Only when connected directly with ethernet cable leave in allowed ip `0.0.0.0/0, ::/0` cause i don't seem to lose any speed)
  
@@ -380,6 +385,9 @@ Once downloaded you can use the application to inspect your data packets where t
 <p align="center">
  <img src="https://i.imgur.com/Tn4M47R.jpg">
 
+#
+<h2 align="center"> Add a backup DNS server. instructions <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Add-Backup-Dns.md"><b>here</b></a></h2>
+ 
 #
 <h1 align="center"><b><i>☷ Auto Update Pi ☷</b></i> </h1>
 
@@ -411,9 +419,9 @@ Copy and paste this line in terminal:
 #
 <h1 align="center"><b><i>☷ Secure Your Raspberry Pi ☷</b></i> </h1>
 <p align="center">
-<a href="https://www.raspberrypi.org/documentation/configuration/security.md"><img src="https://i.imgur.com/a9JQVls.png" width=80px height=90px></a>
+<a href="https://gist.github.com/boseji/c9e91ff3bd0b3cfb62a5e260fe505374"><img src="https://i.imgur.com/a9JQVls.png" width=80px height=90px></a>
 <p align="center">
-<a href="https://www.raspberrypi.org/documentation/configuration/security.md"><b>LINK</b></a>
+<a href="https://gist.github.com/boseji/c9e91ff3bd0b3cfb62a5e260fe505374"><b>LINK</b></a>
 
 #
 #
