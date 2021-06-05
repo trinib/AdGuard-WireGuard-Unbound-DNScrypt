@@ -25,7 +25,7 @@ Install OpenVPN type in terminal:
   
 * For port option `press enter` for default 1194. For client name, just put any name you want, and for DNS use option 3 (`1.1.1.1`).  
 <p align="center">
- <img src="https://i.imgur.com/dNuZR35.jpg">
+ <img src="https://i.imgur.com/yj9rInn.jpg">
   
 * Wait until the installation is finished, you will see "The client configuration is available in: /root/yourclientname.ovpn"
   
