@@ -294,14 +294,15 @@ My 👇router👇 port setting. Yours maybe different but you'll get it. Remembe
 * For port option `press enter` for default 51820. For client name, just put any name you want, and for DNS use option 3 (`1.1.1.1`) for now. We will configure `adguard/unbound/cloudflare` with vpn after its finished installed
 
 <p align="center">
- <img src="https://i.imgur.com/Y7HummJ.jpg">
+ <img src="https://i.imgur.com/WUNZIK4.jpg">
 
-* Follow the instuctions on the screen and wait until the installation is finished and QR code is showing, don't close. But if you need to `regenerate qrcode`, enter in terminal but replacing just the name `yourclientname.conf` file to yours: 
+* Wait until the installation is finished and QR code to show, don't close. But if you do, to `regenerate qrcode`, enter in terminal but replacing just the name `yourclientname.conf` file to yours: 
 
       sudo cp /root/yourclientname.conf /home/pi && sudo qrencode -t ansiutf8 < yourclientname.conf
 
-`IMPORTANT:` You will need to add a new user for each device you use with the VPN. To add a new user, simply re-run the script and create user with different client name.
-
+`IMPORTANT:` You will need to add a new user/client for each device you use with the VPN. To add a new user, simply re-run the script and create user with different client name.
+                                                                                                   
+ #### If you want to use _OpenVPN_ <img src="https://i.imgur.com/Y0uqyeA.png" width=30px height=30px> instructions are <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Dns-Service-Guide.md"><b>👉here👈</b></a>                                                                                                  
 ### ╸ Connecting To The VPN To Android/IOS Phone ╸
 
 Install the Wireguard app from Google Play or App Store
