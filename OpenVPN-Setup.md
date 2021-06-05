@@ -1,8 +1,8 @@
 <p align="center">
- <img src="https://i.imgur.com/NHnVeTB.gif" width=300px height=100px>
+ <img src="https://i.imgur.com/k9THE4a.png" width=300px height=100px>
 
 #
-**Before installing Openvpn**, if you do not have a static ip you need to get a free `Dynamic DNS Subdomain` or else your external IP address most likely changes dynamically from your ISP ever so often and for that reason you'll need to set up a dynamic DNS service. 👉👉 **_▓▒░Use this <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Dns-Service-Guide.md"><b>INSTRUCTION HERE</b></a>░▒▓_** 👈👈. Or else skip the step.
+**Before installing OpenVPN**, if you do not have a static ip you need to get a free `Dynamic DNS Subdomain` or else your external IP address most likely changes dynamically from your ISP ever so often and for that reason you'll need to set up a dynamic DNS service. 👉👉 **_▓▒░Use this <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Dns-Service-Guide.md"><b>INSTRUCTION HERE</b></a>░▒▓_** 👈👈. Or else skip the step.
 
 
 We also need to set up port fowarding on your router so we can access openvpn outside of our network like in a coffee shop hotspot or your mobile data
@@ -37,7 +37,7 @@ Install OpenVPN type in terminal:
   
 ### ╸ Connecting To The VPN From A PC (Windows) ╸
 
-Wireguard for windows: https://openvpn.net/downloads/openvpn-connect-v3-windows.msi
+OpenVPN for windows: https://openvpn.net/downloads/openvpn-connect-v3-windows.msi
   
 Import the ovpn client file in OpenVPN to connect
   
@@ -52,12 +52,14 @@ OpenVPN (App Store): https://apps.apple.com/us/app/openvpn-connect/id590379981
  
 ## ╸ Configure OpenVPN With `Adguard/Unbound/Cloudflare` ╸
 
-_Remember this is for when you are connected to wireguard vpn only 24/7 or an outside network cause you already have Adguard/Unbound/Cloudflare set up and running on your devices manually when on home network._
+_Remember this is for when you are connected to OpenVPN vpn only 24/7 or an outside network cause you already have Adguard/Unbound/Cloudflare set up and running on your devices manually when on home network._
  
 Open the client.ovpn config file with a text editor like <a href="https://notepad-plus-plus.org/downloads/"><b>notepad++</b></a> and add `dhcp-option DNS pi's_ip` under the line "verb 3"
  
 <p align="center">
  <img src="https://i.imgur.com/qmAxJDq.jpg">
+
+#
  
 
 
