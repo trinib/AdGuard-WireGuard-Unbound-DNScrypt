@@ -49,5 +49,16 @@ OpenVPN (App Store): https://apps.apple.com/us/app/openvpn-connect/id590379981
   
 * Copy over the opvn client file you created on pc to your phone and import file in OpenVPN app to connect
 #
-  
+ 
+## ╸ Configure OpenVPN With `Adguard/Unbound/Cloudflare` ╸
+
+_Remember this is for when you are connected to wireguard vpn only 24/7 or an outside network cause you already have Adguard/Unbound/Cloudflare set up and running on your devices manually when on home network._
+ 
+Open the client.ovpn config file with a text editor like <a href="https://notepad-plus-plus.org/downloads/"><b>notepad++</b></a> and add `dhcp-option DNS pi's_ip` under the line "verb 3"
+ 
+<p align="center">
+ <img src="https://i.imgur.com/qmAxJDq.jpg">
+ 
+
+
   
