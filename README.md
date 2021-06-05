@@ -302,7 +302,7 @@ My 👇router👇 port setting. Yours maybe different but you'll get it. Remembe
 
 `IMPORTANT:` You will need to add a new user/client for each device you use with the VPN. To add a new user, simply re-run the script and create user with different client name.
                                                                                                    
- #### If you want to use _OpenVPN_ <img src="https://i.imgur.com/Y0uqyeA.png" width=30px height=30px> instructions are <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Dns-Service-Guide.md"><b>👉here👈</b></a>                                                                                                  
+ #### If you want to use _OpenVPN_ <img src="https://i.imgur.com/Y0uqyeA.png" width=30px height=30px>.. instructions are <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/OpenVPN-Setup.md"><b>👉here👈</b></a>                                                                                                  
 ### ╸ Connecting To The VPN To Android/IOS Phone ╸
 
 Install the Wireguard app from Google Play or App Store
