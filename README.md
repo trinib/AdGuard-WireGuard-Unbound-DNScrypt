@@ -49,7 +49,7 @@
   - [Configure Wireguard with Adguard/Unbound/Cloudflare](#-configure-wireguard-with-adguardunboundcloudflare-)
     - [Limit Traffic for faster connection](#limit-traffic-for-faster-speed-only-when-connected-to-wifi)
     - [IPv6 Setup](#ipv6)
-    - [Backup DNS](#-add-a-backup-dns-server--instructions-here)
+    - [Backup DNS](#-add-a-backup-dns-server-instructions-here)
 - [Auto update your Pi](#-auto-update-pi--)
 - [Improving your SD Card’s potential lifespan](#-log2ram-install--)
 - [Securing your Raspberry Pi](#-secure-your-raspberry-pi--)
