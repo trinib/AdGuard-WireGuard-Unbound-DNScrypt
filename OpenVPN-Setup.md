@@ -1,6 +1,9 @@
 <p align="center">
  <img src="https://i.imgur.com/k9THE4a.png" width=300px height=100px>
-
+ 
+- <a href="https://openvpn.net/about/"><b>About OpenVPN</b></a>
+- <a href="https://www.vpnranks.com/blog/wireguard-vs-openvpn/"><b>OpenVPN vs WireguardVPN</b></a>
+ 
 #
 **Before installing OpenVPN**, if you do not have a static ip you need to get a free `Dynamic DNS Subdomain` or else your external IP address most likely changes dynamically from your ISP ever so often and for that reason you'll need to set up a dynamic DNS service. 👉👉 **_▓▒░Use this <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Dns-Service-Guide.md"><b>INSTRUCTION HERE</b></a>░▒▓_** 👈👈. Or else skip the step.
 
