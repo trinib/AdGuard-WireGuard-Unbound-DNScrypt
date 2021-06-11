@@ -44,12 +44,13 @@
   - [Configure Adguard with Cloudflare (DoH&DoT)](#-configure-adguard-with-cloudflaredohdot-)
 - [Setting up dynamic DNS service](#-dynamic-dns-service-install--)
 - [Installing Wireguard](#-wireguard-install--)
+  or <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/OpenVPN-Setup.md">OpenVPN(slower)</a>
   - [Connecting to the VPN to Android/IOS Phone](#-connecting-to-the-vpn-to-androidios-phone-)
   - [Connecting to the VPN from a PC (Windows)](#-connecting-to-the-vpn-from-a-pc-windows-)
   - [Configure Wireguard with Adguard/Unbound/Cloudflare](#-configure-wireguard-with-adguardunboundcloudflare-)
-    - [Limit Traffic for faster connection](#limit-traffic-for-faster-speed-only-when-connected-to-wifi)
-    - [IPv6 Setup](#ipv6)
-    - <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Add-Backup-Dns.md">Add A Backup DNS</a>
+    - [Limit traffic for faster connection](#limit-traffic-for-faster-speed-only-when-connected-to-wifi)
+    - [IPv6 setup](#ipv6)
+    - <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Add-Backup-Dns.md">Add a backup DNS</a>
 - [Auto update your Pi](#-auto-update-pi--)
 - [Improving your SD Card’s potential lifespan](#-log2ram-install--)
 - [Securing your Raspberry Pi](#-secure-your-raspberry-pi--)
