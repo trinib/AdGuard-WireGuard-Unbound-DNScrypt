@@ -71,7 +71,7 @@
 
 <h1 align="center"><b><i>☷ Installing OS Image To SDcard ☷</b></i> </h1>
 
-This tutorial is based on Raspberry Pi OS 32bit, but you can use any 32bit linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a> you prefer if you know what you are doing.
+This tutorial is based on Raspberry Pi OS (32bit or 64bit), but you can use any linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a> you prefer if you know what you are doing.
 
 Raspberry Pi OS comes in Desktop and Lite versions(I use lite). You can set Raspberry Pi up with a monitor/keyboard/mouse, or set it up “headlessly” from a terminal.
 
@@ -166,7 +166,7 @@ In AdGuard homepage under filters select blocklist section for adding and updati
 <p align="center">
   <img src="https://i.imgur.com/shrtJLD.png">
 
-You can search Google for different blocklist.Here is my custom <a href="https://github.com/trinib/AdGuard-WireGuard-UnBound-Cloudflare/blob/main/My-Blocklist.txt"><b>blocklist</b></a> with my urls.
+You can search Google for different blocklist.Here is my custom <a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/My-Blocklist.txt"><b>blocklist</b></a> with my urls.
  
 `IMPORTANT:` Some blocklist can block some important contents. If you cross that issue it can be viewed in "Blocked by filters" under general statistics(click the amount) and can be simply unblocked, putting it in "Custom filtering rules". Just look for client ip & time.  
  
