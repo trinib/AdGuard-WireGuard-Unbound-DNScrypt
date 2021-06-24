@@ -1,13 +1,25 @@
 <p align="center">
  <img src="https://i.imgur.com/rbdy7w7.png" width=220px height=100px>
 
-### Download cloudflare and extract it:
+For 32bit OS
+### Download cloudflare ARM 32bit and extract it:
 
     wget https://bin.equinox.io/c/VdrWdbjqyF/cloudflared-stable-linux-arm.tgz && tar -xvzf cloudflared-stable-linux-arm.tgz
-
-### Copy the cloudflare folder to /usr/local/bin/ and update permissions:
+ 
+### Copy the cloudflared file to /usr/local/bin/ and update permissions:
   
     sudo cp cloudflared /usr/local/bin/ && sudo chmod +x /usr/local/bin/cloudflared
+ 
+For 64bit OS
+### Download cloudflare ARM 64bit :
+ 
+ Go to https://github.com/cloudflare/cloudflared/releases , right click on `cloudflared-linux-arm64` and copy link. In terminal type **"wget copiedlink"** . For example :
+ 
+    wget https://github.com/cloudflare/cloudflared/releases/download/2021.3.0/cloudflared-linux-arm64
+ 
+### Rename and copy the cloudflared file to /usr/local/bin/ and update permissions:
+  
+    sudo cp cloudflared-linux-arm64 /usr/local/bin/ && sudo chmod +x /usr/local/bin/cloudflared
 
 Check Version:
     
