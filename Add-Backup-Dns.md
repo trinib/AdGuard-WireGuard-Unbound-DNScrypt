@@ -6,13 +6,8 @@ In Adguard homepage go to setting / DNS settings
 
 In Upstream DNS servers add :
 
-    9.9.9.9
-    149.112.112.112
-    2620:fe::fe
-    2620:fe::fe:9
     https://dns.quad9.net/dns-query
     tls://dns.quad9.net
-
 
 In Bootstrap DNS servers add :
 
