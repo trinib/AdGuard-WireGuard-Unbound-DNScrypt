@@ -179,7 +179,7 @@ Open new py file and call it bulkurls.py:
 
     nano /home/pi/bulkurls.py
     
-Then copy and past text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>bulkurls.py</b></a> file and save (control+x then y then enter) DON'T FORGET TO READ INSTRUCTIONS FROM TEXT IN IT.
+Then copy and past text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>bulkurls.py</b></a> file and save (control+x then y then enter) **DON'T FORGET TO READ INSTRUCTIONS FROM TEXT IN IT**.
 
 #
 <p align="center">
@@ -221,7 +221,7 @@ Create unbound configuration file by entering in command prompt:
       
     sudo nano /etc/unbound/unbound.conf.d/unbound.conf
 
-And copy and paste all the text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/unbound.conf"><b>unbound.conf</b></a> file and save (control+x then y then enter) 
+And copy and paste all the text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/unbound.conf"><b>unbound.conf</b></a> file and save (control+x then y then enter) `IMPORTANT:` If you have ipv6 , change line 18 `do-ip6` to 'yes'
  
  ## ╸ Configure Adguard With `Cloudflare(DoH&DoT)` ╸
 
@@ -368,8 +368,9 @@ _Remember this is for when you are connected to wireguard vpn only 24/7 or an ou
  <img src="https://i.imgur.com/x4m6Pbl.jpg" width=450px height=500px>
  
 ### BE AWARE !! 
-_If your network has ip addresses that ends with a number more than 24 for example: 192.168.100.`999` you will not be able to route properly from outside network because applying 24 only allows numbers 1 through 24. You need to instead put `0` to route out of the 24 range, for example : `192.168.0/0`. Or you can change ip range on your router (in my experience you might get better speeds cause it will not route unnecessary allowed ips over the 24 range)_.
+_If your network has ip addresses that ends with a number more than 24 for example: 192.168.100.`999` you will not be able to route properly from outside network because applying 24 only allows numbers 1 through 24. You need to instead put `0` to route out of the 24 range, for example : `192.168.100.0/0`_. 
  
+Or you can change ip range on your router (in my experience you might get better speeds cause it will not route unnecessary allowed ips over the 24 range).
 <p align="center">
  <img src="https://i.imgur.com/ZZ4aMUI.jpg" width=750px height=550px>
  
