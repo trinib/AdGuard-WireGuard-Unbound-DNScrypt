@@ -403,7 +403,7 @@ Once downloaded you can use the application to inspect your data packets where t
       
 * Open cron file by entering in command line `sudo crontab -e`, copy&paste job command line below at the bottom of cron file and save.
 
-      0 3 * * 3 sudo ./update.sh > /home/pi/Log_`date +\%m\%d\%y`.log 2>&1  
+      0 3 * * 3 sudo ./update.sh > /home/pi/Log_`date +\%m\%d\%y`.log 2>&1
       
 Pi will now update every Wednesday at 3am.
 
