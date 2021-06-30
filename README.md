@@ -145,7 +145,7 @@ Run the following command in your terminal:
 
 * You should now be in Adguard home panel
 
-* `IMPORTANT:` In general settings, set "Filters update interval" to `12 hours` and set "Query logs retention" to `24 hours` (I read that for some people logs fill up and slow down pi and needing a restart everytime)
+* `IMPORTANT:` In general settings, set "Query logs retention" to `24 hours` (I read that for some people logs fill up and slow down pi and needing a restart everytime)
 
 ## ╸ Set Up Your Devices To Work With Adguard ╸
 
