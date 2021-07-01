@@ -197,7 +197,7 @@ For recursively querying a host that is not cached as an address, the resolver n
     
 `IMPORTANT:` This needs to update every 6 months. To _**autoupdate**_ root.hints every 6 months you need to create a cron job.
 
-Enter in command line `sudo crontab -e`, it will ask Select an editor(choose 1) and paste these lines at the bottom of crontab and save (control+x then y then enter):
+Enter in command line `crontab -e`, it will ask Select an editor(choose 1) and paste these lines at the bottom of crontab and save (control+x then y then enter):
 
     1 0 1 */6 * wget -O root.hints https://www.internic.net/domain/named.root
     2 0 1 */6 * sudo mv root.hints /var/lib/unbound/
@@ -388,7 +388,7 @@ Once downloaded you can use the application to inspect your data packets where t
  <img src="https://i.imgur.com/Tn4M47R.jpg">
 
 #
-<h2 align="center"> Add a backup DNS server. instructions <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Add-Backup-Dns.md"><b>here</b></a></h2>
+<h1 align="center"> Add a backup DNS server. instructions <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Add-Backup-Dns.md"><b>here</b></a></h2>
  
 #
 <h1 align="center"><b><i>☷ Auto Update Pi ☷</b></i> </h1>
@@ -401,11 +401,11 @@ Once downloaded you can use the application to inspect your data packets where t
 
       sudo chmod 700 update.sh     
       
-* Open cron file by entering in command line `sudo crontab -e`, copy&paste job command line below at the bottom of cron file and save.
+* Open cron file by entering in command line `crontab -e`, copy&paste job command line below at the bottom of cron file and save.
 
-      0 3 * * 3 sudo ./update.sh > /home/pi/Log_`date +\%m\%d\%y`.log 2>&1
+      0 3 * * 3 sudo ./update.sh > /home/pi/update.log 2>&1
       
-Pi will now update every Wednesday at 3am.
+Pi will now update every Wednesday at 3am. Or you can go to https://crontab.guru/ and set you own time
 
 #
 <h1 align="center"><b><i>☷ Log2Ram Install ☷</b></i> </h1>
