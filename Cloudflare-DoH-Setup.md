@@ -1,7 +1,7 @@
 <p align="center">
  <img src="https://i.imgur.com/rbdy7w7.png" width=220px height=100px>
 
-For 32bit OS
+#### For 32bit OS
 ### Download cloudflare ARM 32bit and extract it:
 
     wget https://bin.equinox.io/c/VdrWdbjqyF/cloudflared-stable-linux-arm.tgz && tar -xvzf cloudflared-stable-linux-arm.tgz
@@ -10,7 +10,10 @@ For 32bit OS
   
     sudo cp cloudflared /usr/local/bin/ && sudo chmod +x /usr/local/bin/cloudflared
  
-For 64bit OS
+Done!
+#
+
+#### For 64bit OS
 ### Download cloudflare ARM 64bit :
  
  Go to https://github.com/cloudflare/cloudflared/releases , right click on `cloudflared-linux-arm64` and copy link. In terminal type **"wget copiedlink"** . For example :
@@ -20,8 +23,11 @@ For 64bit OS
 ### Rename and copy the cloudflared file to /usr/local/bin/ and update permissions:
   
     sudo cp cloudflared-linux-arm64 /usr/local/bin/ && sudo chmod +x /usr/local/bin/cloudflared
-
-Check Version:
+  
+Done!
+#
+ 
+### After installing cloudflare 64bit or 32bit check version:
     
     cloudflared -v
     
@@ -56,8 +62,9 @@ Check Version:
  <img src="https://i.imgur.com/DTEPmy1.jpg">
  
  `ctrl + c` to exit status window
+#
  
-### IMPORTANT
+### `IMPORTANT`
 The cloudflared tool will not receive updates through the package manager. However, you should keep the program update to date. You can either do this manually, or automatically with cron script.
 
 Open cron file:
