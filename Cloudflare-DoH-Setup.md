@@ -62,7 +62,7 @@ The cloudflared tool will not receive updates through the package manager. Howev
 
 Open cron file:
  
-    sudo crontab -e
+    crontab -e
  
 Paste command at end of file:
   
