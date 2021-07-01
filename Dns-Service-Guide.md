@@ -43,7 +43,7 @@
       
 10. Use a cron job to make the script run every 5 minutes
 
-        sudo crontab -e
+        crontab -e
         
     Add the following to the bottom of the crontab: 
         
@@ -83,7 +83,7 @@ DONE !
       
 7. Use a cron job to make the script run every 5 minutes
 
-        sudo crontab -e
+        crontab -e
         
     Add the following to the bottom of the crontab: 
         
@@ -123,7 +123,7 @@ DONE !
       
 8. Use a cron job to make the script run every 5 minutes
 
-        sudo crontab -e
+        crontab -e
         
     Add the following to the bottom of the crontab: 
         
