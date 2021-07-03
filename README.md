@@ -296,8 +296,10 @@ My 👇router👇 port setting. Yours maybe different but you'll get it. Remembe
  <b>✹ STEP 6 ✹</b>
 
 <h1 align="center"><b><i>☷ WireGuard Install ☷</b></i> </h1>
- 
- Run in terminal:
+
+👊BIG THANKS👊 for this installation script from <a href="https://github.com/Nyr/wireguard-install"><b>Nyr</b></a>. Follow to keep updated.
+
+Run in terminal 
     
     wget https://git.io/wireguard -O wireguard-install.sh && sudo bash wireguard-install.sh
     
@@ -359,7 +361,7 @@ Now you can import the config file to wireguard or tunsafe windows app (import f
 
 _Remember this is for when you are connected to WireGuard VPN only on an outside network or at home 42/7 cause you already have AdGuard/Unbound/Cloudflare set up and running on your devices manually._ (no issue having both set up)
 
-* In wireguard app, select your tunnel and select edit(pencil on top right) 
+* In wireguard app, select your tunnel and select edit (pencil on top right)
 
 * Under Dns servers enter `pi's ip` and save
 
