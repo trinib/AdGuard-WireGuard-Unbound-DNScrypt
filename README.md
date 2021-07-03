@@ -37,7 +37,7 @@
 - [Installing AdGuard](#-adguard-install--)
   - [Set up your devices to work with Adguard](#-set-up-your-devices-to-work-with-adguard-)
   - [Setting up AdGuard blocklist](#-setting-up-adguard-blocklist-)
-  - [Add/Remove in bulk](#-add-remove-blocklist-in-bulk-)
+  - [Add/Remove in bulk](#-addremove-blocklist-in-bulk-)
 - [Installing Unbound](#-unbound-install--)
 - [Installing Cloudflare](#-cloudflare-install--)
   - [Install Cloudflare (DoH)](#-install-cloudflare-on-pi-with-doh-)
