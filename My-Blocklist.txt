@@ -18,7 +18,6 @@ https://v.firebog.net/hosts/Prigent-Ads.txt
 https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt
 https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.2o7Net/hosts
 https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt
-https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Spam/hosts
 https://v.firebog.net/hosts/static/w3kbl.txt
 https://v.firebog.net/hosts/AdguardDNS.txt
 https://v.firebog.net/hosts/Admiral.txt
@@ -26,7 +25,6 @@ https://raw.githubusercontent.com/anudeepND/blacklist/master/adservers.txt
 https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
 https://v.firebog.net/hosts/Easylist.txt
 https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext
-https://raw.githubusercontent.com/FadeMind/hosts.extras/master/UncheckyAds/hosts
 https://raw.githubusercontent.com/bigdargon/hostsVN/master/hosts
 https://raw.githubusercontent.com/Kees1958/W3C_annual_most_used_survey_blocklist/master/TOP_EU_US_Ads_Trackers_HOST
 https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt
@@ -47,7 +45,6 @@ https://perflyst.github.io/PiHoleBlocklist/regex.list
 https://perflyst.github.io/PiHoleBlocklist/SessionReplay.txt
 https://blocklistproject.github.io/Lists/phishing.txt
 https://blocklistproject.github.io/Lists/tracking.txt
-https://raw.githubusercontent.com/ftpmorph/ftprivacy/master/blocklists/windows10-spying-erm-i-mean-telemetry-lol.txt
 https://raw.githubusercontent.com/ftpmorph/ftprivacy/master/blocklists/smartphone-ads-tracking.txt
 https://raw.githubusercontent.com/CleanMachine1/AdlistTXTS/main/adservers.txt
 https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt
@@ -61,5 +58,21 @@ https://easylist.to/easylist/easyprivacy.txt
 https://easylist.to/easylist/fanboy-annoyance.txt
 https://easylist.to/easylist/fanboy-social.txt
 https://anti-ad.net/easylist.txt
-https://raw.githubusercontent.com/Amazefcc233/no-ads-hosts/master/hosts
 https://hosts.anudeep.me/mirror/adservers.txt
+https://raw.githubusercontent.com/ookangzheng/dbl-oisd-nl/master/abp_light.txt
+https://raw.githubusercontent.com/ookangzheng/dbl-oisd-nl/master/dbl_light.txt
+https://raw.githubusercontent.com/ookangzheng/dbl-oisd-nl/master/hosts_light.txt
+https://raw.githubusercontent.com/ookangzheng/dbl-oisd-nl/master/dnsmasq_light.txt
+https://raw.githubusercontent.com/ookangzheng/dbl-oisd-nl/master/rpz_basic.rpz
+https://raw.githubusercontent.com/smed79/blacklist/master/hosts.txt
+https://www.github.developerdan.com/hosts/lists/ads-and-tracking-extended.txt
+https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level1.netset
+https://raw.githubusercontent.com/azet12/KADhosts/master/KADhosts.txt
+https://raw.githubusercontent.com/mitchellkrogza/Phishing.Database/master/phishing-domains-ACTIVE.txt
+https://gitlab.com/quidsup/notrack-blocklists/-/raw/master/malware.list
+https://gitlab.com/quidsup/notrack-blocklists/-/raw/master/trackers.list
+https://raw.githubusercontent.com/yous/YousList/master/hosts.txt
+https://zerodot1.gitlab.io/CoinBlockerLists/list.txt
+https://gitlab.com/ZeroDot1/CoinBlockerLists/-/raw/master/list_browser.txt
+https://raw.githubusercontent.com/mitchellkrogza/Badd-Boyz-Hosts/master/domains
+https://hosts.ubuntu101.co.za/badips.txt
