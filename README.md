@@ -16,7 +16,7 @@
 
 #### _<a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard</b></a>_ ⫸ Adblocker for your devices at home ( <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md#how-does-adguard-home-compare-to-pi-hole"><b>_AdGuard compared to Pi-Hole_</b></a> )
 #### _<a href="https://www.wireguard.com/"><b>WireGuard</b></a>_ ⫸ A Vpn Server at home accessable from any outside network
-#### _<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a>_ ⫸ A validating, Recursive, Caching DNS Resolver
+#### _<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a>_ ⫸ A Validating, Recursive, Caching DNS Resolver
 #### _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_ ⫸ Better Performance & Security when browsing websites(DoT & DoH)
 #
 <p align="center">
@@ -37,6 +37,7 @@
 - [Installing AdGuard](#-adguard-install--)
   - [Set up your devices to work with Adguard](#-set-up-your-devices-to-work-with-adguard-)
   - [Setting up AdGuard blocklist](#-setting-up-adguard-blocklist-)
+  - [Add/Remove in bulk](#-add-remove-blocklist-in-bulk-)
 - [Installing Unbound](#-unbound-install--)
 - [Installing Cloudflare](#-cloudflare-install--)
   - [Install Cloudflare (DoH)](#-install-cloudflare-on-pi-with-doh-)
@@ -50,6 +51,7 @@
   - [Configure Wireguard with AdGuard/Unbound/Cloudflare](#-configure-wireguard-with-adguardunboundcloudflare-)
     - [Limit traffic for faster connection](#limit-traffic-for-faster-speed-only-when-connected-to-wifi)
     - [IPv6 setup](#ipv6)
+    - [Test Vpn](#how-do-you-know-if-wireguard-vpn-is-really-working-)
     - <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Add-Backup-Dns.md">Add a backup DNS</a>
 - [Auto update your Pi](#-auto-update-pi--)
 - [Improving your SD Card’s potential lifespan](#-log2ram-install--)
@@ -172,14 +174,18 @@ You can search Google for different blocklist.Here is my custom <a href="https:/
  
 <p align="center">
  <img src="https://i.imgur.com/OKUcoMs.jpg">
- 
-### You can only add one by one url to blocklist in adguard for now but there is a python script to add multiple urls.
+
+## ╸ Add/Remove blocklist in bulk ╸
+
+You can only add one by one url to blocklist in adguard for now but there is a python script to add multiple urls.
 
 Open new py file and call it bulkurls.py:
 
     nano /home/pi/bulkurls.py
     
 Then copy and past text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>bulkurls.py</b></a> file and save (control+x then y then enter) **DON'T FORGET TO READ INSTRUCTIONS FROM TEXT IN IT**.
+ 
+To remove blocklist in bulk you need to change `add` in second of last line (..../control/filtering/`add`_url", data = filterObj, headers=headers) in <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>bulkurls.py</b></a> to `remove`
 
 #
 <p align="center">
@@ -221,7 +227,9 @@ Create unbound configuration file by entering in command prompt:
       
     sudo nano /etc/unbound/unbound.conf.d/unbound.conf
 
-And copy and paste all the text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/unbound.conf"><b>unbound.conf</b></a> file and save (control+x then y then enter) `IMPORTANT:` If you have ipv6 , change line 18 `do-ip6` to 'yes'
+And copy and paste all the text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/unbound.conf"><b>unbound.conf</b></a> file and save (control+x then y then enter).
+
+`IMPORTANT:` If you have IPv6 , change line 18 `do-ip6` to 'yes'
  
  ## ╸ Configure Adguard With `Cloudflare(DoH&DoT)` ╸
 
@@ -345,11 +353,11 @@ Tunsafe (getting far faster speed with *Tunsafe beta* than wireguard on windows)
 <p align="center">
  <img src="https://i.imgur.com/FnfUA3J.jpg">
           
-Now you can import the config file to wireguard or tunsafe windows app(import from file option).
+Now you can import the config file to wireguard or tunsafe windows app (import from file option).
 
 ## ╸ Configure WireGuard With `Adguard/Unbound/Cloudflare` ╸
 
-_Remember this is for when you are connected to WireGuard VPN only 24/7 or an outside network cause you already have AdGuard/Unbound/Cloudflare set up and running on your devices manually when on home network._
+_Remember this is for when you are connected to WireGuard VPN only on an outside network or at home 42/7 cause you already have AdGuard/Unbound/Cloudflare set up and running on your devices manually._ (no issue having both set up)
 
 * In wireguard app, select your tunnel and select edit(pencil on top right) 
 
@@ -370,7 +378,7 @@ _Remember this is for when you are connected to WireGuard VPN only 24/7 or an ou
 ### BE AWARE !! 
 `IMPORTANT`: _If your network has ip addresses for devices that ends with a number more than 24 for example: 192.168.100.`999` you will not be able to route properly from outside network because applying 24 only allows numbers 1 through 24. You need to instead put `0` to route out of the 24 range, for example : `192.168.100.0/0`_. 
  
-Or you can change ip range on your router (in my experience you might get better speeds cause it will not route unnecessary allowed ips over the 24 range).
+Or you can change ip range on your router (in my experience you might geta tiny bit better speeds cause it will not route unnecessary allowed ips over the 24 range).
 <p align="center">
  <img src="https://i.imgur.com/ZZ4aMUI.jpg" width=750px height=550px>
  
@@ -380,17 +388,17 @@ If you are using ipv6, when connected to wifi you need to enter in allowed IPs `
 When connected to ethernet cable on pc, you need to enter pi's ipv6 address in "Internet Protocol Version 6(TCP/IPv6)" preferred DNS server. To get pi ipv6 address, enter in terminal `ifconfig` under eth0:inet6. If you see two inet6(public&local), enter local not public. Go to https://ipv6leak.com/ and you should see "_Your IPv6 is not leaking_".
 
 #
-### How do you know if wireguard vpn is really working ??
-For windows download <a href="https://www.wireshark.org/#download."><b>Wireshark</b></a>
+## How do you know if wireguard vpn is really working ??
+For **windows** download <a href="https://www.wireshark.org/#download."><b>Wireshark</b></a>
 
 Once downloaded you can use the application to inspect your data packets where the protocol is set to the one used by Wireguard VPN. When a packet traffic is `encrypted`, it can be read  like this for example:
 <p align="center">
  <img src="https://i.imgur.com/Tn4M47R.jpg">
 
-For android you can use <a href="https://play.google.com/store/apps/details?id=com.emanuelef.remote_capture&hl=en&gl=US"><b>PCAPdroid</b></a>. You should see all connections closed in apps when using WireGuard.
+For **android** you can use <a href="https://play.google.com/store/apps/details?id=com.emanuelef.remote_capture&hl=en&gl=US"><b>PCAPdroid</b></a>. You should see all connections closed and status showing all DNS and not any TLS connections in all apps (open and use apps for PCAPdroid to scan).
 
 #
-<h1 align="center"> Add a backup DNS server. instructions <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Add-Backup-Dns.md"><b>here</b></a></h2>
+<h1 align="center"><a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Add-Backup-Dns.md"><b>👉Add a backup DNS server👈</b></a></h2>
  
 #
 <h1 align="center"><b><i>☷ Auto Update Pi ☷</b></i> </h1>
