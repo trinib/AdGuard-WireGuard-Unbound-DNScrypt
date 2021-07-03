@@ -1,6 +1,5 @@
 https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 https://adaway.org/hosts.txt
-https://www.malwaredomainlist.com/hostslist/hosts.txt
 https://someonewhocares.org/hosts/zero/hosts
 https://raw.githubusercontent.com/DandelionSprout/adfilt/master/GameConsoleAdblockList.txt
 https://raw.githubusercontent.com/mitchellkrogza/The-Big-List-of-Hacked-Malware-Web-Sites/master/hosts
