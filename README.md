@@ -132,6 +132,8 @@ Run in terminal:
 
 <h1 align="center"><b><i>☷ AdGuard Install ☷</b></i> </h1>
 
+This installation script is from <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard Home</b></a> main project. Follow to keep updated.
+
 Run the following command in your terminal:
 
     curl -sSL https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh
@@ -335,31 +337,19 @@ WireGuard for windows: https://download.wireguard.com/windows-client/wireguard-i
 
 Tunsafe (getting far faster speed with *Tunsafe beta* than wireguard on windows): https://tunsafe.com/downloads/TunSafe-1.5-rc2.exe
 
-1. First you need to get the configuration file from pi home directory to pc. In terminal type:
+* Create `new text document` with any name on pc to copy&paste the text from wireguard client configuration file.
 
-       sudo su
-       cp /root/*.conf /home/pi
-    
-2. Create a folder on pc name "pi" to save the WireGuard configuration file. In the folder right-click on the empty space and click `Open a PowerShell window here`, if you don't see that just open PowerShell and in command line type:
- 
-       cd path/to/your/folderlocation   ## you can copy&paste location in address bar from windows explorer ##
-
-3. Instead of ssh we use sftp to get and put files:
-
-       sftp@pi's ip address
-       
-4. After you've log in, you can now copy over the configuration file to your machine. For that, type:
+* To see text in client config file, type in terminal:
+  
+      sudo cat /root/yourclientname.conf
+  
+* Highlight all the text, copy and paste it in the txt file on pc and save. Then rename the extention from `txt` to `conf`. Now you have config file for that wireguard client.
           
-       get *.conf
-       
-<p align="center">
- <img src="https://i.imgur.com/FnfUA3J.jpg">
-          
-Now you can import the config file to wireguard or tunsafe windows app (import from file option).
+* You can now import the config file to wireguard or tunsafe windows app (import from file option).
 
 ## ╸ Configure WireGuard With `Adguard/Unbound/Cloudflare` ╸
 
-_Remember this is for when you are connected to WireGuard VPN only on an outside network or at home 42/7 cause you already have AdGuard/Unbound/Cloudflare set up and running on your devices manually._ (no issue having both set up)
+_Remember this is for when you are connected to WireGuard VPN on an outside network or at home 24/7 cause you already have AdGuard/Unbound/Cloudflare set up and running on your devices manually._ (no issue having both set up. **Just remember with wireguard you will lose about 50% of wifi(not cable) internet speed cause the process of tunneling through pi to router to devices**)
 
 * In wireguard app, select your tunnel and select edit (pencil on top right)
 
@@ -372,11 +362,11 @@ _Remember this is for when you are connected to WireGuard VPN only on an outside
  
 * `IMPORTANT`: Delete in allowed IPs "0.0.0.0/0, ::/0" option because it routes all traffic to your home network which will be slow. You need send traffic through your addresses only. (Only when connected directly with ethernet cable leave in allowed ip `0.0.0.0/0, ::/0` cause i don't seem to lose any speed)
  
-   * First you need to replace it with your network gateway but setting the last number to a zero and <a href="https://www.google.com/search?q=prefix+length+explained&client=firefox-b-d&sxsrf=ALeKk036Jc9vJl73zVXf0yyZs5UlKRlNRQ%3A1621083125589&ei=9cOfYI66I5-qwbkPkdWxkAk&oq=prefix+length+explained&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEAcQHjoHCCMQsAMQJzoHCAAQRxCwA1CUJ1iUJ2CiKmgBcAJ4AIABsAGIAdQCkgEDMC4ymAEAoAEBqgEHZ3dzLXdpesgBCcABAQ&sclient=gws-wiz&ved=0ahUKEwjOiOie3cvwAhUfVTABHZFqDJIQ4dUDCA0&uact=5"><b>prefix lenght</b></a> to 24. For example: `192.168.1.1/24` to `192.168.1.0/24` or like my isp router `192.168.100.1/24` to `192.168.100.0/24`
+* First you need to replace it with your network gateway but setting the last number to a zero and <a href="https://www.google.com/search?q=prefix+length+explained&client=firefox-b-d&sxsrf=ALeKk036Jc9vJl73zVXf0yyZs5UlKRlNRQ%3A1621083125589&ei=9cOfYI66I5-qwbkPkdWxkAk&oq=prefix+length+explained&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEAcQHjoHCCMQsAMQJzoHCAAQRxCwA1CUJ1iUJ2CiKmgBcAJ4AIABsAGIAdQCkgEDMC4ymAEAoAEBqgEHZ3dzLXdpesgBCcABAQ&sclient=gws-wiz&ved=0ahUKEwjOiOie3cvwAhUfVTABHZFqDJIQ4dUDCA0&uact=5"><b>prefix lenght</b></a> to 24. For example: `192.168.1.1/24` to `192.168.1.0/24` or like my isp router `192.168.100.1/24` to `192.168.100.0/24`. **Now I only lose 25% speed**😁
 
 <p align="center">
  <img src="https://i.imgur.com/x4m6Pbl.jpg" width=450px height=500px>
- 
+
 ### BE AWARE !! 
 `IMPORTANT`: _If your network has ip addresses for devices that ends with a number more than 24 for example: 192.168.100.`999` you will not be able to route properly from outside network because applying 24 only allows numbers 1 through 24. You need to instead put `0` to route out of the 24 range, for example : `192.168.100.0/0`_. 
  
