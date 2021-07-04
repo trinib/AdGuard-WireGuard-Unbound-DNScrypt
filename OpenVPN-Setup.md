@@ -58,7 +58,7 @@ OpenVPN (App Store): https://apps.apple.com/us/app/openvpn-connect/id590379981
  
 ## ╸ Configure OpenVPN With `Adguard/Unbound/Cloudflare` ╸
 
-_Remember this is for when you are connected to OpenVPN only on an outside network or at home 42/7 cause you already have AdGuard/Unbound/Cloudflare set up and running on your devices manually_. (no issue having both set up)
+_Remember this is for when you are connected to OpenVPN on an outside network or at home 24/7 cause you already have AdGuard/Unbound/Cloudflare set up and running on your devices manually_. (no issue having both set up)
  
 Open the client.ovpn config file with a text editor like <a href="https://notepad-plus-plus.org/downloads/"><b>notepad++</b></a> and add `dhcp-option DNS pi's_ip` under the line "verb 3"
  
