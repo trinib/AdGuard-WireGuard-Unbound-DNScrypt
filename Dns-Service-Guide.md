@@ -1,15 +1,14 @@
-# Creating Dynamic DNS Hostname Service
+
+<h1 align="center"><b>Creating Dynamic DNS Hostname Service</b></a></h1>
 
 <p align="center">
 <b>You can choose any of these websites:</b>
 <p align="center">
 <a href="https://www.dynu.com/"><img src="https://i.imgur.com/0MUVjFU.png" width=220px height=60px></a>
 <p align="center">
-<a href="https://www.duckdns.org/"><img src="https://i.imgur.com/avh2ROy.png" width=220px height=60px></a>
-<p align="center">
 <a href="https://freedns.afraid.org/"><img src="https://i.imgur.com/wu29VlI.pngg" width=220px height=60px></a>
 
-(I'm currently using dynudns)
+***I'm currently using dynudns, seems to be fastest for me***
 #        
 # DYNUDNS 
 
@@ -18,79 +17,53 @@
 2. Go to https://www.dynu.com/en-US/ControlPanel/DDNS/ and select add domain
 
 <p align="center">
- <img src="https://i.imgur.com/3RRTPBF.jpg">
+ <img src="https://i.imgur.com/3RRTPBF.jpg" width=800px height=550px>
 
 3. Enter any name in host and select a domain in top level options for example : trinibvpn.freeddns.org
 
 <p align="center">
- <img src="https://i.imgur.com/I1wyqim.jpg">
+ <img src="https://i.imgur.com/I1wyqim.jpg" width=800px height=500px>
 
-4. We need to create a sh file to update dns service:
+4. We need to install <a href="https://github.com/ddclient/ddclient#ddclient-v391"><b>DDClient</b></a> to update external **IP** address when it changes:
            
-       sudo nano dynu.sh
+       sudo apt-get install ddclient
        
-5. Copy&Paste this line but with your own username and passowrd :
+5. Put all the parameters in the configuration file before running DDClient:
  
-       echo url="https://api.dynu.com/nic/update?username=USERNAME&password=PASSWORD" | curl -k -o /home/pi/dynu.log -K -
+       sudo /usr/sbin/ddclient -daemon 300 -syslog
         
-7. Set permission to the file :
+6. Open DDClient configuration file:
     
-       sudo chmod 700 dynu.sh
+       sudo nano /etc/ddclient.conf
 
-9. Run this command to check if dynudns updated and go back to https://www.dynu.com/en-US/ControlPanel/DDNS/ and under `LAST UPDATED`, you will see time updated
+7. Copy&Paste text below, just change to your username, password, domain name:
      
-       sudo /home/pi/dynu.sh
+       # ddclient configuration for Dynu
+       #
+       # /etc/ddclient.conf
+       # Check every 5 minutes
+       daemon=600
+       # Log update msgs to syslog
+       syslog=no
+       # Record PID in file
+       pid=/var/run/ddclient.pid
+       # Get ip from server
+       use=web, web=checkip.dynu.com/, web-skip='IP Address'
+       # IP update server
+       server=api.dynu.com
+       protocol=dyndns2
+       # Your info
+       login=USERNAME
+       password=PASSWORD
+       DOMAINNAME
       
-10. Use a cron job to make the script run every 5 minutes
+8. Start DDClient daemon:
 
-        crontab -e
+       sudo systemctl restart ddclient && sudo systemctl start ddclient
         
-    Add the following to the bottom of the crontab: 
-        
-        */5 * * * * sudo /home/pi/dynu.sh >/dev/null 2>&1
 #       
 DONE !
-#        
-# DUCKDNS
-
-1. Create account at https://www.duckdns.org/
-
-2. Verfy reCAPTCHA and add any domain name
-
-<p align="center">
- <img src="https://i.imgur.com/K8m6Jhf.jpg">
-
-3. We need to make a sh file to update dns service:
-           
-       sudo nano duck.sh
-       
-4. Copy&Paste this line but with your own domain name and token :
- 
-       echo url="https://www.duckdns.org/update?domains=domainname&token=YOURVALUE" | curl -k -o /home/pi/duck.log -K -
-        
- * Get token on the site main page
-    
-<p align="center">
- <img src="https://i.imgur.com/zG47ril.jpg">
-        
-5. Set permission to the file :
-    
-       sudo chmod 700 duck.sh
-
-6. Run this command to check if duckdns updated and go to https://www.duckdns.org/ and under `CHANGED`, you will see time updated
      
-       sudo /home/pi/duck.sh
-      
-7. Use a cron job to make the script run every 5 minutes
-
-        crontab -e
-        
-    Add the following to the bottom of the crontab: 
-        
-        */5 * * * * sudo /home/pi/duck.sh >/dev/null 2>&1
-#        
-DONE !
-#       
 # FREEDNS
 
 1. Create account at https://freedns.afraid.org/
@@ -100,11 +73,11 @@ DONE !
 <p align="center">
  <img src="https://i.imgur.com/YHZC7J8.jpg">
 
-3. We need to create a sh file to update dns service:
+3. We can create a script to update external **IP** address when it changes:
            
        sudo nano free.sh
        
-4. Copy&Paste this line but with your token :
+4. Copy&Paste this line but with your token:
  
        echo url="https://freedns.afraid.org/dynamic/update.php?YOURTOKEN" | curl -k -o /home/pi/free.log -K -
         
@@ -113,17 +86,17 @@ DONE !
  <p align="center">
   <img src="https://i.imgur.com/oR4Icyw.jpg">
         
-6. Set permission to the file :
+5. Set permission to the file :
     
        sudo chmod 700 free.sh
 
-7. Run this command to check if freedns updated and go to https://freedns.afraid.org/subdomain/ and check if destination option changed to your external ip
+6. Run this command to check if freedns updated and go to https://freedns.afraid.org/subdomain/ and check if destination option changed to your external ip
      
        sudo /home/pi/free.sh
       
-8. Use a cron job to make the script run every 5 minutes
+7. Use a cron job to make the script run every 5 minutes
 
-        crontab -e
+       crontab -e
         
     Add the following to the bottom of the crontab: 
         
