@@ -65,7 +65,6 @@ https://raw.githubusercontent.com/ookangzheng/dbl-oisd-nl/master/dnsmasq_light.t
 https://raw.githubusercontent.com/ookangzheng/dbl-oisd-nl/master/rpz_basic.rpz
 https://raw.githubusercontent.com/smed79/blacklist/master/hosts.txt
 https://www.github.developerdan.com/hosts/lists/ads-and-tracking-extended.txt
-https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level1.netset
 https://raw.githubusercontent.com/azet12/KADhosts/master/KADhosts.txt
 https://raw.githubusercontent.com/mitchellkrogza/Phishing.Database/master/phishing-domains-ACTIVE.txt
 https://gitlab.com/quidsup/notrack-blocklists/-/raw/master/malware.list
