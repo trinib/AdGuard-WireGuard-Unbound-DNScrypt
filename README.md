@@ -190,7 +190,7 @@ Open new py file and call it bulkurls.py:
     
 Then copy and past text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>bulkurls.py</b></a> file and save (control+x then y then enter) **DON'T FORGET TO READ INSTRUCTIONS FROM TEXT IN IT**.
  
-To remove you need to change `add` in second of last line _(..../control/filtering/`add`_url", data = filterObj, headers=headers)_ to `remove` in bulkurls.py file.
+To remove you need to change `add` in second of last line **(..../control/filtering/`add`_url", data = filterObj, headers=headers)** to `remove` in bulkurls.py file.
 
 #
 <p align="center">
