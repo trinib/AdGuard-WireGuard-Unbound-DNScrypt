@@ -55,7 +55,7 @@
     - <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Add-Backup-Dns.md">Add a backup DNS</a>
 - [Auto update your Pi](#-auto-update-pi--)
 - [Improving your SD Card’s potential lifespan](#-log2ram-install--)
-- [Turn Off Pi leds](#turn-off-pi-leds-)
+- [Turn Off Pi leds](#-turn-off-pi-leds--)
 - [Securing your Raspberry Pi](#-secure-your-raspberry-pi--)
 - [Using Pi-Hole?](#using-pi-hole--)
  
@@ -190,7 +190,7 @@ Open new py file and call it bulkurls.py:
     
 Then copy and past text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>bulkurls.py</b></a> file and save (control+x then y then enter) **DON'T FORGET TO READ INSTRUCTIONS FROM TEXT IN IT**.
  
-To remove blocklist in bulk you need to change `add` in second of last line (..../control/filtering/`add`_url", data = filterObj, headers=headers) to `remove` in bulkurls.py file.
+To remove you need to change `add` in second of last line _(..../control/filtering/`add`_url", data = filterObj, headers=headers)_ to `remove` in bulkurls.py file.
 
 #
 <p align="center">
@@ -424,7 +424,7 @@ Copy and paste this line in terminal:
     wget https://git.io/log2ram -O Log2Ram-Script.sh && sudo chmod +x Log2Ram-Script.sh && sudo ./Log2Ram-Script.sh
     
 #
-<h1 align="center"><b><i>Turn Off Pi Leds</b></i> </h1>
+<h1 align="center"><b><i>☷ Turn Off Pi Leds ☷</b></i> </h1>
 
 I guess unecessary power to leds will impact electricty and heat 🤷😅. No need for it anyways. Open cron file by entering in command line `crontab -e`, copy&paste job command line below at the bottom of cron file and save.
      
