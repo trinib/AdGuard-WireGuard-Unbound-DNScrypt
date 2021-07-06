@@ -37,7 +37,7 @@
 - [Installing AdGuard](#-adguard-install--)
   - [Set up your devices to work with Adguard](#-set-up-your-devices-to-work-with-adguard-)
   - [Setting up AdGuard blocklist](#-setting-up-adguard-blocklist-)
-  - [Add/Remove in bulk](#-addremove-blocklist-in-bulk-)
+    - [Add/Remove multiple URLs to blocklist at once](#-addremove-multiple-urls-)
 - [Installing Unbound](#-unbound-install--)
 - [Installing Cloudflare](#-cloudflare-install--)
   - [Install Cloudflare (DoH)](#-install-cloudflare-on-pi-with-doh-)
@@ -55,9 +55,9 @@
     - <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Add-Backup-Dns.md">Add a backup DNS</a>
 - [Auto update your Pi](#-auto-update-pi--)
 - [Improving your SD Card’s potential lifespan](#-log2ram-install--)
-- [Turn Off Pi leds](#-turn-off-pi-leds--)
+- [Turn Off Pi leds](#turn-off-pi-leds-)
 - [Securing your Raspberry Pi](#-secure-your-raspberry-pi--)
-- [Using Pi-Hole ?](#-using-pi-hole--)
+- [Using Pi-Hole?](#using-pi-hole--)
  
 
 #
@@ -180,9 +180,9 @@ You can search Google for different blocklist.Here is my custom <a href="https:/
 <p align="center">
  <img src="https://i.imgur.com/OKUcoMs.jpg">
 
-## ╸ Add/Remove blocklist in bulk ╸
+## ╸ Add/Remove Multiple URLs ╸
 
-You can only add one by one url to blocklist in adguard for now but there is a python script to add multiple urls.
+You can only add one by one url in dns blocklist in adguard for now but there is a python script to add multiple urls together.
 
 Open new py file and call it bulkurls.py:
 
@@ -190,7 +190,7 @@ Open new py file and call it bulkurls.py:
     
 Then copy and past text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>bulkurls.py</b></a> file and save (control+x then y then enter) **DON'T FORGET TO READ INSTRUCTIONS FROM TEXT IN IT**.
  
-To remove blocklist in bulk you need to change `add` in second of last line (..../control/filtering/`add`_url", data = filterObj, headers=headers) in <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>bulkurls.py</b></a> to `remove`
+To remove blocklist in bulk you need to change `add` in second of last line (..../control/filtering/`add`_url", data = filterObj, headers=headers) to `remove` in bulkurls.py file.
 
 #
 <p align="center">
