@@ -55,7 +55,10 @@
     - <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Add-Backup-Dns.md">Add a backup DNS</a>
 - [Auto update your Pi](#-auto-update-pi--)
 - [Improving your SD Card’s potential lifespan](#-log2ram-install--)
+- [Turn Off Pi leds](#-turn-off-pi-leds--)
 - [Securing your Raspberry Pi](#-secure-your-raspberry-pi--)
+- [Using Pi-Hole ?](#-using-pi-hole--)
+ 
 
 #
 # Requirements
@@ -370,7 +373,7 @@ _Remember this is for when you are connected to WireGuard VPN on an outside netw
 ### BE AWARE !! 
 `IMPORTANT`: _If your network has ip addresses for devices that ends with a number more than 24 for example: 192.168.100.`999` you will not be able to route properly from outside network because applying 24 only allows numbers 1 through 24. You need to instead put `0` to route out of the 24 range, for example : `192.168.100.0/0`_. 
  
-Or you can change ip range on your router (in my experience you might geta tiny bit better speeds cause it will not route unnecessary allowed ips over the 24 range).
+Or you can change ip range on your router (in my experience you might get a tiny bit better speeds cause it will not route unnecessary allowed ips over the 24 range).
 <p align="center">
  <img src="https://i.imgur.com/ZZ4aMUI.jpg" width=750px height=550px>
  
@@ -419,6 +422,18 @@ By pushing the files to your RAM, you can control how often they are written to 
 Copy and paste this line in terminal:
 
     wget https://git.io/log2ram -O Log2Ram-Script.sh && sudo chmod +x Log2Ram-Script.sh && sudo ./Log2Ram-Script.sh
+    
+#
+<h1 align="center"><b><i>Turn Off Pi Leds</b></i> </h1>
+
+I guess unecessary power to leds will impact electricty and heat 🤷😅. No need for it anyways. Open cron file by entering in command line `crontab -e`, copy&paste job command line below at the bottom of cron file and save.
+     
+   Green 
+    
+    @reboot echo none | sudo tee /sys/class/leds/led0/trigger
+   Red
+    
+    @reboot echo none | sudo tee /sys/class/leds/led1/trigger
 
 #
 <h1 align="center"><b><i>☷ Secure Your Raspberry Pi ☷</b></i> </h1>
@@ -429,7 +444,8 @@ Copy and paste this line in terminal:
 
 #
 #
-For `Pi-Hole` lovers you can use instead of Adguard but change these option:
+<h1 align="center"><b><i>Using Pi-Hole ?</b></i> </h1>
+For `Pi-Hole` lovers you can use instead of AdGuard, but for DoT or DoH change these option:
 
 * Use 127.0.0.1#53 for DoT or 127.0.0.1#5053 for DoH in upstream DNS server custom ipv4 option and untick cloudfare or what ever dns you choose during pi installion. Don't know how to make two work simultaneously on pihole. **Let me know if you do**.
 
