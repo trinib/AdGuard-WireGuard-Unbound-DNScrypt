@@ -24,15 +24,15 @@
 <p align="center">
  <img src="https://i.imgur.com/I1wyqim.jpg" width=800px height=500px>
 
-4. We need to install <a href="https://github.com/ddclient/ddclient#ddclient-v391"><b>DDClient</b></a> to update external **IP** address when it changes:
+4. We need to install <a href="https://ddclient.net/"><b>DDclient</b></a> to update external **IP** address when it changes:
            
        sudo apt-get install ddclient
        
-5. Put all the parameters in the configuration file before running DDClient:
+5. Put all the parameters in the configuration file before running DDclient:
  
        sudo /usr/sbin/ddclient -daemon 300 -syslog
         
-6. Open DDClient configuration file:
+6. Open DDclient configuration file:
     
        sudo nano /etc/ddclient.conf
 
@@ -57,9 +57,11 @@
        password=PASSWORD
        DOMAINNAME
       
-8. Start DDClient daemon:
+8. Start DDclient daemon:
 
        sudo systemctl restart ddclient && sudo systemctl start ddclient
+ 
+**You can reboot router and check in dynu control panel to see if ip updated. _(keep note on the last external ip you had)_**
         
 #       
 DONE !
