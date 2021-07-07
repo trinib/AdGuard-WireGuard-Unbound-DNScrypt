@@ -26,7 +26,9 @@
 
 4. We need to install <a href="https://ddclient.net/"><b>DDclient</b></a> to update external **IP** address when it changes:
            
-       sudo apt-get install ddclient
+       sudo apt-get install ddclient -y
+ 
+_It will take you to a setup screen, keep pressing enter until installation is done._
        
 5. Put all the parameters in the configuration file before running DDclient:
  
