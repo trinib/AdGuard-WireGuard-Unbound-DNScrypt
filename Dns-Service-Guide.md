@@ -29,16 +29,12 @@
        sudo apt-get install ddclient -y
  
 _It will take you to a setup screen, keep pressing enter until installation is done._
-       
-5. Put all the parameters in the configuration file before running DDclient:
- 
-       sudo /usr/sbin/ddclient -daemon 300 -syslog
         
-6. Open DDclient configuration file:
+5. Open DDclient configuration file:
     
        sudo nano /etc/ddclient.conf
 
-7. Copy&Paste text below, just change to your username, password, domain name:
+6. Copy&Paste text below, just change to your username, password, domain name:
      
        # ddclient configuration for Dynu
        #
@@ -58,6 +54,10 @@ _It will take you to a setup screen, keep pressing enter until installation is d
        login=USERNAME
        password=PASSWORD
        DOMAINNAME
+ 
+7. Put all the parameters in the configuration file before running DDclient:
+ 
+       sudo /usr/sbin/ddclient -daemon 300 -syslog
       
 8. Start DDclient daemon:
 
