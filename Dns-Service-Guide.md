@@ -23,8 +23,10 @@
 
 <p align="center">
  <img src="https://i.imgur.com/I1wyqim.jpg" width=800px height=500px>
+ 
+**IPV4**
 
-4. We need to install <a href="https://ddclient.net/"><b>DDclient</b></a> to update external **IP** address when it changes:
+4. We need to install <a href="https://ddclient.net/"><b>DDclient</b></a> to update external **IPv4** address when it changes:
            
        sudo apt-get install ddclient -y
  
@@ -54,7 +56,7 @@ _It will take you to a setup screen, keep pressing enter until installation is d
        login=USERNAME
        password=PASSWORD
        DOMAINNAME
- 
+
 7. Put all the parameters in the configuration file before running DDclient:
  
        sudo /usr/sbin/ddclient -daemon 300 -syslog
@@ -63,7 +65,36 @@ _It will take you to a setup screen, keep pressing enter until installation is d
 
        sudo systemctl restart ddclient && sudo systemctl start ddclient
  
-**You can reboot router and check in dynu control panel to see if ip updated. _(keep note on the last external ip you had)_**
+**You can reboot router and check in dynu control panel to see if IPv4 updated. _(keep note on the last external ip you had)_**
+ 
+**IPV6**
+
+We need to use `update URL` command script method because i don't know why with DDclient IPv6 don't get updated and vice versa with IPv4 and update URL command method 😐. So both method is needed.
+ 
+9. We need to create a sh file to update dns service:
+
+       sudo nano dynu.sh
+
+10. Copy&Paste this line but with your own username and passowrd:
+
+        echo url="https://api.dynu.com/nic/update?username=USERNAME&password=PASSWORD" | curl -k -o /home/pi/dynu.log -K -
+
+11. Set permission to the file:
+
+        sudo chmod 700 dynu.sh
+
+12. Run this command to check if dynudns updated and go back to https://www.dynu.com/en-US/ControlPanel/DDNS/ and under `LAST UPDATED`, you will see time updated
+
+        sudo /home/pi/dynu.sh
+
+13. Use a cron job to make the script run every 5 minutes:
+
+        crontab -e
+
+14. Add the following to the bottom of the crontab:
+ 
+        */5 * * * * sudo /home/pi/dynu.sh >/dev/null 2>&1
+ 
         
 #       
 DONE !
