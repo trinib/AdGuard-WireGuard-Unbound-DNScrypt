@@ -308,7 +308,7 @@ Run in terminal
     
     wget https://git.io/wireguard -O wireguard-install.sh && sudo bash wireguard-install.sh
     
-* The script is going to ask you for the hostname that you want to use for the VPN. _If_ you have static ip then continue or else type the dynamic DNS domain that you created from the <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Dns-Service-Guide.md"><b>instructions</b></a>. For example:trinibvpn.freeddns.org
+* The script is going to ask you for Public IPv4/hostname for the VPN. _If_ you have static ip then continue or else type the dynamic DNS domain that you created from the <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Dns-Service-Guide.md"><b>instructions</b></a>. For example:trinibvpn.freeddns.org
 
 * For port option `press enter` for default 51820. For client name, just put any name you want, and for DNS use option 3 (`1.1.1.1`) for now. We will configure `adguard/unbound/cloudflare` with the vpn after its finished installed
 
@@ -352,7 +352,7 @@ Tunsafe (getting far faster speed with *Tunsafe beta* than wireguard on windows)
 
 ## ╸ Configure WireGuard With `Adguard/Unbound/Cloudflare` ╸
 
-_Remember this is for when you are connected to WireGuard VPN on an outside network or at home 24/7 cause you already have AdGuard/Unbound/Cloudflare set up and running on your devices manually._ (no issue having both set up. **Just remember with wireguard you will lose about 50% of wifi(not cable) internet speed cause the process of tunneling through pi to router to devices**)
+_Remember this is for when you are connected to WireGuard VPN on an outside network or at home 24/7 cause you already have AdGuard/Unbound/Cloudflare set up and running on your devices manually._ (no issue having both set up. **Just remember with wireguard you will lose about 40-50% of wifi(not ethernet cable) speed cause the process of tunneling through pi to router to devices**)
 
 * In wireguard app, select your tunnel and select edit (pencil on top right)
 
@@ -408,7 +408,7 @@ For **android** you can use <a href="https://play.google.com/store/apps/details?
       
 * Open cron file by entering in command line `crontab -e`, copy&paste job command line below at the bottom of cron file and save.
 
-      0 3 * * 3 sudo ./update.sh > /home/pi/update.log 2>&1
+      0 3 * * 3 sudo ./update.sh 2>&1 >/home/pi/updatelog
       
 Pi will now update every Wednesday at 3am. Or you can go to https://crontab.guru/ and set your own time schedule.
 
@@ -426,7 +426,7 @@ Copy and paste this line in terminal:
 #
 <h1 align="center"><b><i>☷ Turn Off Pi Leds ☷</b></i> </h1>
 
-I guess unecessary power to leds will impact electricty and heat 🤷😅. No need for it anyways. Open cron file by entering in command line `crontab -e`, copy&paste job command line below at the bottom of cron file and save.
+I guess power to leds will impact electricty and heat 🤷😅. No need for it anyways. Open cron file by entering in command line `crontab -e`, copy&paste job command line below at the bottom of cron file and save.
      
    Green 
     
@@ -445,6 +445,7 @@ I guess unecessary power to leds will impact electricty and heat 🤷😅. No ne
 #
 #
 <h1 align="center"><b><i>Using Pi-Hole ?</b></i> </h1>
+
 For `Pi-Hole` lovers you can use instead of AdGuard, but for DoT or DoH change these option:
 
 * Use 127.0.0.1#53 for DoT or 127.0.0.1#5053 for DoH in upstream DNS server custom ipv4 option and untick cloudfare or what ever dns you choose during pi installion. Don't know how to make two work simultaneously on pihole. **Let me know if you do**.
