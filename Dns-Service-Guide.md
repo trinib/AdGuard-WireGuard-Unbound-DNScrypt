@@ -8,7 +8,7 @@
 <p align="center">
 <a href="https://freedns.afraid.org/"><img src="https://i.imgur.com/wu29VlI.pngg" width=220px height=60px></a>
 
-***I'm currently using dynudns, seems to be fastest for me***
+***I'm currently using dynudns (worked the fastest for me***)
 #        
 # DYNUDNS 
 
@@ -65,7 +65,7 @@
         
 #       
 DONE !
-     
+#     
 # FREEDNS
 
 1. Create account at https://freedns.afraid.org/
@@ -102,6 +102,25 @@ DONE !
         
     Add the following to the bottom of the crontab: 
         
-        */5 * * * * sudo /home/pi/free.sh >/dev/null 2>&1
+       */5 * * * * sudo /home/pi/free.sh >/dev/null 2>&1
+  
 #        
 DONE !
+
+#### If you want to use DDclient instead to update ip for freedns.afraid.org, copy&paste text below in /etc/ddclient.conf:
+        
+    daemon=5m
+    timeout=10
+    syslog=no # log update msgs to syslog
+    #mail=root # mail all msgs to root
+    #mail-failure=root # mail failed update msgs to root
+    pid=/var/run/ddclient.pid # record PID in file.
+    ssl=yes # use ssl-support. Works with
+    # ssl-library
+
+    use=if, if=eth0
+    server=freedns.afraid.org
+    protocol=freedns
+    login=YOUR FREEDNS LOGIN
+    password=YOUR FREEDNS PASSWORD
+    your.freedns.domain
