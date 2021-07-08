@@ -73,6 +73,8 @@ Open cron file:
  
 Paste command at end of file:
   
-    0 3 * * 5 sudo cloudflared update && sudo systemctl restart cloudflared
+    0 3 * * FRI sudo cloudflared update && sudo systemctl restart cloudflared
+ 
+ Will run at 3am every Friday.
     
  
