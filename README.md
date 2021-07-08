@@ -55,7 +55,7 @@
     - <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Add-Backup-Dns.md">Add a backup DNS</a>
 - [Auto update your Pi](#-auto-update-pi--)
 - [Improving your SD Card’s potential lifespan](#-log2ram-install--)
-- [Turn Off Pi leds](#-turn-off-pi-leds--)
+- [Turn Off Pi LEDs](#-turn-off-pi-led-lights--)
 - [Securing your Raspberry Pi](#-secure-your-raspberry-pi--)
 - [Using Pi-Hole?](#using-pi-hole--)
  
@@ -161,7 +161,7 @@ Run the following command in your terminal:
 <p align="center">
  <img src="https://i.imgur.com/nxpiqDw.jpg" width=450px height=580px>
 
-* For PC go to network settings / change adpater options and right click in properties then select "Internet Protocol Version 4(TCP/IPv4)". Enter pi's ip address in preferred DNS server and `Alternitive DNS` to 1.1.1.1
+* For PC go to network settings / change adpater options and right click in properties then select "Internet Protocol Version 4(TCP/IPv4)". Enter pi's ip address in `Preferred DNS` server and  1.1.1.1 in `Alternitive DNS` server
 
 <p align="center">
  <img src="https://i.imgur.com/8gsDk3z.jpg">
@@ -259,7 +259,7 @@ And copy and paste all the text from <a href="https://raw.githubusercontent.com/
   
       sudo service unbound restart
 
-#### Thats it. Now go to https://1.1.1.1/help in browser and you should see _`Connected to 1.1.1.1`/`DNS over HTTPS(DoH)`/`Using DNS over TLS(DoT)`_ saying "Yes".
+#### Thats it. Now go to https://1.1.1.1/help in browser and you should see ***'Connected to 1.1.1.1' -- 'DNS over HTTPS(DoH)' -- 'DNS over TLS(DoT)'*** showing 'Yes'.
 
 <p align="center">
  <img src="https://i.imgur.com/2S3IH5H.jpg" width=650px height=370px>
@@ -334,6 +334,8 @@ Wireguard (App Store): https://apps.apple.com/us/app/wireguard/id1441195209
 
 You need to scan the QR code shown in the terminal with Wireguard app, select the `+ button` and use the option `Scan from QR code` to install configuration.
 
+`TIP:` For android, in more connection settings / vpn, has an option called **Always-on VPN** to have wireguard stay connected at all times in the system so you don't have to worry about the app background proccess ending.
+
 ### ╸ Connecting To The VPN From A PC (Windows) ╸
 
 WireGuard for windows: https://download.wireguard.com/windows-client/wireguard-installer.exe
@@ -370,17 +372,19 @@ _Remember this is for when you are connected to WireGuard VPN on an outside netw
 <p align="center">
  <img src="https://i.imgur.com/x4m6Pbl.jpg" width=450px height=500px>
 
-### BE AWARE !! 
-`IMPORTANT`: _If your network has ip addresses for devices that ends with a number more than 24 for example: 192.168.100.`999` you will not be able to route properly from outside network because applying 24 only allows numbers 1 through 24. You need to instead put `0` to route out of the 24 range, for example : `192.168.100.0/0`_. 
+### PLEASE READ !! , BE AWARE !! 
+`IMPORTANT`: _If your network has ip addresses for devices that ends with a number more than 24(most likely), for example: 192.168.100.`999`, you will not be able to route properly from outside network because applying 24 only allows numbers 1 through 24. You need to instead put `0` to route out of the 24 range, for example : `192.168.100.0/0`_. 
  
-Or you can change ip range on your router (in my experience you might get a tiny bit better speeds cause it will not route unnecessary allowed ips over the 24 range).
+Or you can change ip range on your router (in my experience you might get a tiny bit better speeds cause it will not route unnecessary allowed ip addresses over the 24 range).
 <p align="center">
  <img src="https://i.imgur.com/ZZ4aMUI.jpg" width=750px height=550px>
  
 ## IPV6
-If you are using ipv6, when connected to wifi you need to enter in allowed IPs `fe80::1/0` as well. For example `192.168.100.0/0, fe80::1/0`
+If you are using IPv6, when connected to wifi you need to enter in WireGuard allowed IPs `fe80::1/0` as well. For example `192.168.100.0/0, fe80::1/0`
 
-When connected to ethernet cable on pc, you need to enter pi's ipv6 address in "Internet Protocol Version 6(TCP/IPv6)" preferred DNS server. To get pi ipv6 address, enter in terminal `ifconfig` under eth0:inet6. If you see two inet6(public&local), enter local not public. Go to https://ipv6leak.com/ and you should see "_Your IPv6 is not leaking_".
+When connected to ethernet cable on a windows pc, you need to enter pi's IPv6 address in "Internet Protocol Version 6(TCP/IPv6)" preferred DNS server. Enter in terminal `ifconfig`, under global> inet6 to get pi ipv6 address. If you see two inet6(public&local), enter local not public. 
+ 
+Then go to https://ipv6leak.com/ and you should see "_Your IPv6 is not leaking_".
 
 #
 ## How do you know if wireguard vpn is really working ??
@@ -424,9 +428,9 @@ Copy and paste this line in terminal:
     wget https://git.io/log2ram -O Log2Ram-Script.sh && sudo chmod +x Log2Ram-Script.sh && sudo ./Log2Ram-Script.sh
     
 #
-<h1 align="center"><b><i>☷ Turn Off Pi Leds ☷</b></i> </h1>
+<h1 align="center"><b><i>☷ Turn Off Pi LED Lights ☷</b></i> </h1>
 
-I guess power to leds will impact electricty and heat 🤷😅. No need for it anyways. Open cron file by entering in command line `crontab -e`, copy&paste job command line below at the bottom of cron file and save.
+I guess power to LEDs will impact unnecessary electricty and heat 🤷😅. No need for it anyways if just using it as a network server. Open cron file by entering in command line `crontab -e`, copy&paste job command line below at the bottom of cron file and save.
      
    Green 
     
@@ -434,6 +438,9 @@ I guess power to leds will impact electricty and heat 🤷😅. No need for it a
    Red
     
     @reboot echo none | sudo tee /sys/class/leds/led1/trigger
+
+Reboot pi.
+    
 
 #
 <h1 align="center"><b><i>☷ Secure Your Raspberry Pi ☷</b></i> </h1>
