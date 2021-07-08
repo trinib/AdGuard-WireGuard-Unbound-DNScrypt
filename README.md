@@ -412,9 +412,13 @@ For **android** you can use <a href="https://play.google.com/store/apps/details?
       
 * Open cron file by entering in command line `crontab -e`, copy&paste job command line below at the bottom of cron file and save.
 
-      0 3 * * 3 sudo ./update.sh 2>&1 >/home/pi/updatelog
+      0 3 * * WED sudo ./update.sh 2>&1 >/home/pi/updatelog
       
 Pi will now update every Wednesday at 3am. Or you can go to https://crontab.guru/ and set your own time schedule.
+
+Adjust date/timezone enter in terminal:
+
+    sudo dpkg-reconfigure tzdata
 
 #
 <h1 align="center"><b><i>☷ Log2Ram Install ☷</b></i> </h1>
