@@ -18,7 +18,7 @@ In Bootstrap DNS servers add :
     9.9.9.9
     149.112.112.112
     2620:fe::fe
-    2620:fe::fe:9
+    2620:fe::9
     
 Go to https://browserleaks.com/dns and you should be connected to WoodyNet and Cloudflare servers
 
