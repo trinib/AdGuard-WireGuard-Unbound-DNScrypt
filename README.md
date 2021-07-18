@@ -334,8 +334,6 @@ Wireguard (App Store): https://apps.apple.com/us/app/wireguard/id1441195209
 
 You need to scan the QR code shown in the terminal with Wireguard app, select the `+ button` and use the option `Scan from QR code` to install configuration.
 
-`TIP:` For android, in more connection settings / vpn, has an option called **Always-on VPN** to have wireguard stay connected at all times in the system so you don't have to worry about the app background proccess ending.
-
 ### ╸ Connecting To The VPN From A PC (Windows) ╸
 
 WireGuard for windows: https://download.wireguard.com/windows-client/wireguard-installer.exe
