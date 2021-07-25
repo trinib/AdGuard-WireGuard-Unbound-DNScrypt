@@ -414,9 +414,13 @@ For **android** you can use <a href="https://play.google.com/store/apps/details?
       
 Pi will now update every Wednesday at 3am. Or you can go to https://crontab.guru/ and set your own time schedule.
 
-Adjust date/timezone enter in terminal:
+Adjust pi's date/timezone enter in terminal:
 
     sudo dpkg-reconfigure tzdata
+    
+or set manually
+    
+    sudo date -s "25 DEC 2012 11:14:00"
 
 #
 <h1 align="center"><b><i>☷ Log2Ram Install ☷</b></i> </h1>
