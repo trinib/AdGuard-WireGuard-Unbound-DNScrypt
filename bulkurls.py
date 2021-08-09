@@ -100,7 +100,21 @@ urls = [
 "https://zerodot1.gitlab.io/CoinBlockerLists/list.txt",
 "https://gitlab.com/ZeroDot1/CoinBlockerLists/-/raw/master/list_browser.txt",
 "https://raw.githubusercontent.com/mitchellkrogza/Badd-Boyz-Hosts/master/domains",
-"https://hosts.ubuntu101.co.za/badips.txt"
+"https://hosts.ubuntu101.co.za/badips.txt",
+"https://easylist-downloads.adblockplus.org/easyprivacy.txt",
+"https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt",
+"https://www.i-dont-care-about-cookies.eu/abp/",
+"https://hblock.molinero.dev/hosts",
+"http://winhelp2002.mvps.org/hosts.txt",
+"https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts",
+"https://raw.githubusercontent.com/VeleSila/yhosts/master/hosts.txt",
+"https://iplists.firehol.org/files/alienvault_reputation.ipset",
+"https://orca.pet/notonmyshift/domains.txt",
+"https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/firewall/spy.txt",
+"https://raw.githubusercontent.com/d43m0nhLInt3r/socialblocklists/master/Windows/windowstelemetryblocklist.txt",
+"https://raw.githubusercontent.com/d43m0nhLInt3r/socialblocklists/master/MobileAppAds/appadsblocklist.txt",
+"https://raw.githubusercontent.com/d43m0nhLInt3r/socialblocklists/master/Android/androidblocklist.txt",
+"https://raw.githubusercontent.com/twcau/AdblockRules/master/MurdochList"
 ]
 
 ############ End Of Edits #################
