@@ -11,7 +11,7 @@ https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/
 https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt
 https://curben.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt
 https://paulgb.github.io/BarbBlock/blacklists/hosts-file.txt
-https://abp.oisd.nl/",
+https://abp.oisd.nl
 https://v.firebog.net/hosts/Easyprivacy.txt
 https://v.firebog.net/hosts/Prigent-Ads.txt
 https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt
@@ -35,7 +35,7 @@ https://phishing.army/download/phishing_army_blocklist_extended.txt
 https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt
 https://v.firebog.net/hosts/Shalla-mal.txt
 https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Risk/hosts
-https://urlhaus.abuse.ch/downloads/hostfile/",
+https://urlhaus.abuse.ch/downloads/hostfile
 https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host
 https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_adblocker
 https://perflyst.github.io/PiHoleBlocklist/AmazonFireTV.txt
