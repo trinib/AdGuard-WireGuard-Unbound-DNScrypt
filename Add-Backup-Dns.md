@@ -3,6 +3,8 @@
     
 <h1 align="center"><b>You can add another DNS server alongside Cloudflare for more strenght. Here is a <a href="https://kb.adguard.com/en/general/dns-providers"><b>list</b></a> of DNS Providers </b> </h1>
 
+<h2 align="center"><b>(You might get latency when loading webites, test for yourself and see)</b></h1>
+
 #
 I personally use <a href="https://www.quad9.net/about"><b>Quad9 DNS</b></a> provider with DoH / DoT / & Malware Blocking.
 
