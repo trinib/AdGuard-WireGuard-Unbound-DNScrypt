@@ -10,17 +10,24 @@
        
 * Go to line 18 and set `do-ip6: yes` to  `do-ip6: no`
  
-* Delete lines 159 and 161. `forward-addr: 2606:4700:4700::1111@853#cloudflare-dns.com` & `forward-addr: 2606:4700:4700::1001@853#cloudflare-dns.com`
 #
 
-**3.**  Open cloudflared config file:
+**2.**  Open to stubby config file :
+
+    cd /etc/stubby/ && sudo rm stubby.yml && sudo nano stubby.yml
+    
+* comment the lines 246 to 249
+
+#
+
+**4.**  Open cloudflared config file:
 
     sudo nano /etc/default/cloudflared
         
 * Delete `--upstream https://2606:4700:4700::1111/dns-query --upstream https://2606:4700:4700::1001/dns-query`
 #
 
-**4.**  Go to https://www.dynu.com/en-US/ControlPanel/DDNS and select _Manage your hostname_(pencil under actions) and *turn off* `Wildcard IPv6 Alias` & `Enable IPv6 Address`
+**5.**  Go to https://www.dynu.com/en-US/ControlPanel/DDNS and select _Manage your hostname_(pencil under actions) and *turn off* `Wildcard IPv6 Alias` & `Enable IPv6 Address`
 #
 
 ### *** _Reboot pi_ ***
