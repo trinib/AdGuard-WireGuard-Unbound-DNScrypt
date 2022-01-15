@@ -1,11 +1,13 @@
 # ![logo](https://i.imgur.com/zqJELkl.png)
 <p align="center">
- <img src="https://img.shields.io/badge/License-GPLv3-blue.svg">
+ <img src="https://img.shields.io/badge/License-MIT-blue.svg">
  <img src="https://badges.frapsoft.com/os/v3/open-source.svg?v=103">
  <img src="http://ForTheBadge.com/images/badges/built-with-love.svg">
  <img src="https://img.shields.io/badge/badges-awesome-green.svg">
  <img src="https://img.shields.io/badge/Stay-Safe-red?logo=data:image/svg%2bxml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTEwIDUxMCIgaGVpZ2h0PSI1MTIiIHZpZXdCb3g9IjAgMCA1MTAgNTEwIiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnPjxnPjxwYXRoIGQ9Im0xNzQuNjEgMzAwYy0yMC41OCAwLTQwLjU2IDYuOTUtNTYuNjkgMTkuNzJsLTExMC4wOSA4NS43OTd2MTA0LjQ4M2g1My41MjlsNzYuNDcxLTY1aDEyNi44MnYtMTQ1eiIgZmlsbD0iI2ZmZGRjZSIvPjwvZz48cGF0aCBkPSJtNTAyLjE3IDI4NC43MmMwIDguOTUtMy42IDE3Ljg5LTEwLjc4IDI0LjQ2bC0xNDguNTYgMTM1LjgyaC03OC4xOHYtODVoNjguMThsMTE0LjM0LTEwMC4yMWMxMi44Mi0xMS4yMyAzMi4wNi0xMC45MiA0NC41LjczIDcgNi41NSAxMC41IDE1LjM4IDEwLjUgMjQuMnoiIGZpbGw9IiNmZmNjYmQiLz48cGF0aCBkPSJtMzMyLjgzIDM0OS42M3YxMC4zN2gtNjguMTh2LTYwaDE4LjU1YzI3LjQxIDAgNDkuNjMgMjIuMjIgNDkuNjMgNDkuNjN6IiBmaWxsPSIjZmZjY2JkIi8+PHBhdGggZD0ibTM5OS44IDc3LjN2OC4wMWMwIDIwLjY1LTguMDQgNDAuMDctMjIuNjQgNTQuNjdsLTExMi41MSAxMTIuNTF2LTIyNi42NmwzLjE4LTMuMTljMTQuNi0xNC42IDM0LjAyLTIyLjY0IDU0LjY3LTIyLjY0IDQyLjYyIDAgNzcuMyAzNC42OCA3Ny4zIDc3LjN6IiBmaWxsPSIjZDAwMDUwIi8+PHBhdGggZD0ibTI2NC42NSAyNS44M3YyMjYuNjZsLTExMi41MS0xMTIuNTFjLTE0LjYtMTQuNi0yMi42NC0zNC4wMi0yMi42NC01NC42N3YtOC4wMWMwLTQyLjYyIDM0LjY4LTc3LjMgNzcuMy03Ny4zIDIwLjY1IDAgNDAuMDYgOC4wNCA1NC42NiAyMi42NHoiIGZpbGw9IiNmZjRhNGEiLz48cGF0aCBkPSJtMjEyLjgzIDM2MC4xMnYzMGg1MS44MnYtMzB6IiBmaWxsPSIjZmZjY2JkIi8+PHBhdGggZD0ibTI2NC42NSAzNjAuMTJ2MzBoMzYuMTRsMzIuMDQtMzB6IiBmaWxsPSIjZmZiZGE5Ii8+PC9nPjwvc3ZnPg==">
+
 <p align="center">
+ <img src="https://github.com/websemantics/bragit/blob/master/demo/img/heart.svg" height=40px >
  <img src="https://stars.medv.io/Naereen/badges.svg">
 
 <h1 align="center"><b>A step by step 📜 guide for these</b> </h1>
@@ -16,7 +18,7 @@
 
 #### _<a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard</b></a>_ ⫸ Adblocker for your devices at home ( <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md#how-does-adguard-home-compare-to-pi-hole"><b>_AdGuard compared to Pi-Hole_</b></a> )
 #### _<a href="https://www.wireguard.com/"><b>WireGuard</b></a>_ ⫸ A Vpn Server at home accessable from any outside network(IPv4 & IPv6)
-#### _<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a>_ ⫸ A Validating, Recursive, Caching DNS Resolver
+#### _<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a> with <a href="https://dnsprivacy.org/dns_privacy_daemon_-_stubby/about_stubby/"><b>Stubby</b></a>_ ⫸ A Validating, Recursive, Caching DNS Resolver
 #### _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_ ⫸ Better Performance & Security when browsing websites(DoT & DoH)
 #
 <p align="center">
@@ -27,6 +29,16 @@
  
 <p align="center">
  <img src="https://i.imgur.com/7mk08hI.jpg">
+  
+Last Checked : 14 Jan 2022
+                                           
+Projects            |           Status     
+---------------     |      ----------------
+AdGuard             |      ✅
+Unbound             |      ✅
+Cloudflare          |      ✅
+Stubby              |      ✅
+Wiregaurd           |      ✅                                                
 
 #
 # Contents
@@ -42,6 +54,7 @@
 - [Installing Cloudflare](#-cloudflare-install--)
   - [Install Cloudflare (DoH)](#-install-cloudflare-on-pi-with-doh-)
   - [Configure Cloudflare on Unbound (DoT)](#-configure-cloudflare-on-unbound-with-dot-)
+  - [Configure Stubby (TLS Forwarder)](#-configure-stubby-for-unbound-)
   - [Configure AdGuard with Cloudflare (DoH&DoT)](#-configure-adguard-with-cloudflaredohdot-)
 - [Setting up dynamic DNS service](#-dynamic-dns-service-install--)
 - [Installing WireGuard](#-wireguard-install--)
@@ -52,13 +65,11 @@
     - [Limit traffic for faster connection](#limit-traffic-for-faster-speed-only-when-connected-to-wifi)
     - [IPv6 setup](#ipv6)
 - <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/Disable-All-IPv6.md">Disable all IPv6</a>
-- <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Add-Backup-Dns.md">Add a backup DNS</a>
 - [Test Vpn](#how-do-you-know-if-wireguard-vpn-is-really-working-)
 - [Auto update your Pi](#-auto-update-pi--)
 - [Improving your SD Card’s potential lifespan](#-log2ram-install--)
 - [Turn Off Pi LEDs](#-turn-off-pi-led-lights--)
 - [Securing your Raspberry Pi](#-secure-your-raspberry-pi--)
-- [Using Pi-Hole?](#using-pi-hole--)
 
 #
 # Requirements
@@ -139,7 +150,7 @@ This installation script is from <a href="https://github.com/AdguardTeam/AdGuard
 
 Run the following command in your terminal:
 
-    curl -sSL https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh
+    curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -v
 
 * When installation is finished a window will pop up showing the links to YOUR Adguard home page(Get Started)
 
@@ -156,12 +167,20 @@ Run the following command in your terminal:
 
 ## ╸ Set Up Your Devices To Work With Adguard ╸
 
-* For Android/Apple, go to wifi advanced settings and select static option. In `DNS 1` field enter "pi's ip" address and `DNS 2` to 1.1.1.1
+* For Android/Apple, go to wifi advanced settings and select static option. In `DNS 1` field enter "pi's ip" address
 
 <p align="center">
  <img src="https://i.imgur.com/nxpiqDw.jpg" width=450px height=580px>
 
-* For PC go to network settings / change adpater options and right click in properties then select "Internet Protocol Version 4(TCP/IPv4)". Enter pi's ip address in `Preferred DNS` server and  1.1.1.1 in `Alternitive DNS` server
+* For PC 
+ 
+-- IPV4 --
+ 
+Go to network settings / change adpater options and right click in properties then select "Internet Protocol Version 4(TCP/IPv4)". Enter pi's ip address in `Preferred DNS` server 
+
+-- IPV6 (needed for DOH & DOT to work (later on in guide) if using ipv6 setup with everything) --
+ 
+Go to "Internet Protocol Version 6(TCP/IPv6)" Enter pi's ipv6 address in `Preferred DNS` server (to get it enter `ifconfig` in pi's terminal and look for the first inet6 address. For example 2803:1500:e00:c6e:5767:c362:b727:376f)
 
 <p align="center">
  <img src="https://i.imgur.com/8gsDk3z.jpg">
@@ -224,7 +243,7 @@ Enter in command line `crontab -e`, it will ask Select an editor(choose 1) and p
 
 ## ╸ Install Cloudflare On Pi With `(DoH)` ╸
 
-Install cloudflare with DNS over HTTPS(DoH), follow this 👉 <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Cloudflare-DoH-Setup.md"><b>INSTRUCTION</b></a> 👈. We can set up DNS over TLS(DoT) with unbound next.
+Install cloudflare with DNS over HTTPS(DoH), follow these 👉 <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Cloudflare-DoH-Setup.md"><b>INSTRUCTIONS</b></a> 👈.
 
 ## ╸ Configure Cloudflare On Unbound With `(DoT)` ╸
 
@@ -233,6 +252,18 @@ Create unbound configuration file by entering in command prompt:
     sudo nano /etc/unbound/unbound.conf.d/unbound.conf
 
 And copy and paste all the text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/unbound.conf"><b>unbound.conf</b></a> file and save (control+x then y then enter).
+
+## ╸ Configure Stubby For Unbound ╸
+
+Use Unbound for caching and stubby for TLS forwarder. Install stubby:
+
+    sudo apt install stubby
+    
+Remove and re-create stubby.yaml file and copy/paste all the text from <a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/stubby.yml"><b>👉 this stubby config 👈</b></a> and save. (`cd $home` to return to home folder when finish).
+
+    cd /etc/stubby/ && sudo rm stubby.yml && sudo nano stubby.yml
+    
+Tip : You can also add more DNS servers by uncommenting the needed lines
  
  ## ╸ Configure Adguard With `Cloudflare(DoH&DoT)` ╸
 
@@ -242,20 +273,24 @@ And copy and paste all the text from <a href="https://raw.githubusercontent.com/
  
   * For `DNS over TLS(DoT)` add `127.0.0.1:53` in both "Upstream" and "Bootstrap DNS" server fields
   * For `DNS over HTTPS(DoH)` add `127.0.0.1:5053` in both "Upstream" and "Bootstrap DNS" server fields
+  * For `TLS forwarder(stubby)` add `127.0.0.1:8053` in both "Upstream" and "Bootstrap DNS" server fields
 
-* `IMPORTANT:` For both to work together you need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Fastest Ip Address</b></a>" option
+* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option. Sometimes you get a hit and miss with DOH or DOT from <a href="https://1.1.1.1/help"><b>1.1.1.1</b></a> on pc/windows browsers upon refreshing page multiple times, but it don't seem to have that issue on android browsers. But when 'Fastest IP Address' option is selected the whole issue stops but have slower response time on websites. So its your personal peference to choose between these two option cause i don't know why it does that 🤷, maybe it will resolve itself or i'll find a workaround. But with 'Parallel Request' its noticeably faster browsing and loading times .
 
 <p align="center">
- <img src="https://i.imgur.com/gA01kND.jpg" width=650px height=370px>
+ <img src="https://i.imgur.com/Ug4Euou.jpg" width=650px height=370px>
  
 * Then in DNS setting look for DNS cache configuration section and set cache size to `0` (caching is already handled by the Unbound)
 
 <p align="center">
  <img src="https://i.imgur.com/8Q5Zb0M.jpg" width=650px height=370px>
 
-* You need to restart unbound:
+* You need to restart unbound & stubby and check status:
   
-      sudo service unbound restart
+      sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
+ 
+ <p align="center">
+ <img src="https://i.imgur.com/7zIpWP2.jpg" width=650px height=370px>
 
 #### Thats it. Now go to https://1.1.1.1/help in browser and you should see ***'Connected to 1.1.1.1' -- 'DNS over HTTPS(DoH)' -- 'DNS over TLS(DoT)'*** showing 'Yes'.
 
@@ -319,7 +354,7 @@ Run in terminal
 
 `IMPORTANT:` You will need to add a new user/client for each device you use with the VPN. To add a new user, simply re-run the script and create user with different client name.
                                                                                                    
-## If you want to use _OpenVPN_ instructions are <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/OpenVPN-Setup.md"><b>👉here👈</b></a>      #
+## If you want to use _OpenVPN_ instructions are <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/OpenVPN-Setup.md"><b>👉here👈</b></a>
 
 #
 ### ╸ Connecting To The VPN To Android/IOS Phone ╸
@@ -385,8 +420,6 @@ Then go to https://ipv6leak.com/ and you should see "_Your IPv6 is not leaking_"
  
 <h1 align="left"><a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/Disable-All-IPv6.md"><b>Disable all IPv6</b></a></h2>
 
-<h1 align="left"><a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Add-Backup-Dns.md"><b>Add a backup DNS server</b></a></h2>
-
 #
 ## How do you know if wireguard vpn is really working ??
 For **windows** download <a href="https://www.wireshark.org/#download."><b>Wireshark</b></a>
@@ -447,7 +480,6 @@ I guess power to LEDs will impact unnecessary electricty and heat 🤷😅. No n
 
 Reboot pi.
     
-
 #
 <h1 align="center"><b><i>☷ Secure Your Raspberry Pi ☷</b></i> </h1>
 <p align="center">
@@ -457,13 +489,6 @@ Reboot pi.
 
 #
 #
-<h1 align="center"><b><i>Using Pi-Hole ?</b></i> </h1>
-
-For `Pi-Hole` lovers you can use instead of AdGuard, but for DoT or DoH change these option:
-
-* Use 127.0.0.1#53 for DoT or 127.0.0.1#5053 for DoH in upstream DNS server custom ipv4 option and untick cloudfare or what ever dns you choose during pi installion. Don't know how to make two work simultaneously on pihole. **Let me know if you do**.
-
-* Open the configuration file /etc/dnsmasq.d/01-pihole.conf and make sure that cache size is zero by setting cache-size=0. This step is important because the caching is already handled by the Unbound Please note that the changes made to this file will be overwritten once you update/modify Pi-hole.
 ##
 ##
 <p align="center">
