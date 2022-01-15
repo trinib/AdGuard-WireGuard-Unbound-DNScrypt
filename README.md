@@ -276,7 +276,7 @@ Tip : You can also add more DNS servers by uncommenting the needed lines
   * For `DNS over HTTPS(DoH)` add `127.0.0.1:5053` in both "Upstream" and "Bootstrap DNS" server fields
   * For `TLS forwarder(stubby)` add `127.0.0.1:8053` in both "Upstream" and "Bootstrap DNS" server fields
 
-* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option. Sometimes you get a hit and miss with DOH or DOT from <a href="https://1.1.1.1/help"><b>1.1.1.1</b></a> on pc/windows browsers upon refreshing page multiple times, but it don't seem to have that issue on android browsers. But when 'Fastest IP Address' option is selected the whole issue stops but have slower response time on websites. So its your personal peference to choose between these two option cause i don't know why it does that 🤷(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/2"><b>Issue #2</b></a>), maybe it will resolve itself or i'll find a the problem from adgaurdhome team. But with 'Parallel Request' its noticeably faster browsing and loading times .
+* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option. Sometimes you get a hit and miss with DOH or DOT from <a href="https://1.1.1.1/help"><b>1.1.1.1</b></a> on pc/windows browsers upon refreshing page multiple times, but it don't seem to have that issue on android browsers. But when 'Fastest IP Address' option is selected the whole issue stops but have slower response time on websites. So its your personal peference to choose between these two option cause i don't know why it does that 🤷(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/2"><b>Issue #2</b></a>), maybe it will resolve itself or i'll find the problem from adgaurdhome team. But with 'Parallel Request' its noticeably faster browsing and loading times .
 
 <p align="center">
  <img src="https://i.imgur.com/Ug4Euou.jpg" width=650px height=370px>
@@ -367,6 +367,8 @@ Wireguard (Google Play): https://play.google.com/store/apps/details?id=com.wireg
 Wireguard (App Store): https://apps.apple.com/us/app/wireguard/id1441195209
 
 You need to scan the QR code shown in the terminal with Wireguard app, select the `+ button` and use the option `Scan from QR code` to install configuration.
+
+`IMPORTANT`: Turn on **kenrel module backend** in settings
 
 ### ╸ Connecting To The VPN From A PC (Windows) ╸
 
