@@ -368,7 +368,7 @@ Wireguard (App Store): https://apps.apple.com/us/app/wireguard/id1441195209
 
 You need to scan the QR code shown in the terminal with Wireguard app, select the `+ button` and use the option `Scan from QR code` to install configuration.
 
-`IMPORTANT`: Turn on **kenrel module backend** in settings
+`IMPORTANT`: Enable on **kernel module backend** in settings
 
 ### ╸ Connecting To The VPN From A PC (Windows) ╸
 
@@ -401,7 +401,7 @@ _Remember this is for when you are connected to WireGuard VPN on an outside netw
  
 * `IMPORTANT`: Delete in allowed IPs "0.0.0.0/0, ::/0" option because it routes all traffic to your home network which will be slow. You need send traffic through your addresses only. (Only when connected directly with ethernet cable leave in allowed ip `0.0.0.0/0, ::/0` cause i don't seem to lose any speed)
  
-* First you need to replace it with your network gateway but setting the last number to a zero and <a href="https://www.google.com/search?q=prefix+length+explained&client=firefox-b-d&sxsrf=ALeKk036Jc9vJl73zVXf0yyZs5UlKRlNRQ%3A1621083125589&ei=9cOfYI66I5-qwbkPkdWxkAk&oq=prefix+length+explained&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEAcQHjoHCCMQsAMQJzoHCAAQRxCwA1CUJ1iUJ2CiKmgBcAJ4AIABsAGIAdQCkgEDMC4ymAEAoAEBqgEHZ3dzLXdpesgBCcABAQ&sclient=gws-wiz&ved=0ahUKEwjOiOie3cvwAhUfVTABHZFqDJIQ4dUDCA0&uact=5"><b>prefix lenght</b></a> to 24. For example: `192.168.1.1/24` to `192.168.1.0/24` or like my isp router `192.168.100.1/24` to `192.168.100.0/24`. **Now I only lose 25% speed**😁
+* First you need to replace it with your network gateway but setting the last number to a zero and <a href="https://www.google.com/search?q=prefix+length+explained&client=firefox-b-d&sxsrf=ALeKk036Jc9vJl73zVXf0yyZs5UlKRlNRQ%3A1621083125589&ei=9cOfYI66I5-qwbkPkdWxkAk&oq=prefix+length+explained&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEAcQHjoHCCMQsAMQJzoHCAAQRxCwA1CUJ1iUJ2CiKmgBcAJ4AIABsAGIAdQCkgEDMC4ymAEAoAEBqgEHZ3dzLXdpesgBCcABAQ&sclient=gws-wiz&ved=0ahUKEwjOiOie3cvwAhUfVTABHZFqDJIQ4dUDCA0&uact=5"><b>prefix lenght</b></a> to 24. For example: `192.168.1.1/24` to `192.168.1.0/24` or like my isp router `192.168.100.1/24` to `192.168.100.0/24`. **Now I only lose 25% speed**😁 (ps. using 5g network)
 
 <p align="center">
  <img src="https://i.imgur.com/x4m6Pbl.jpg" width=450px height=500px>
