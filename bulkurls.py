@@ -9,13 +9,10 @@ import json
 ############ INSTRUCTIONS ############
 
 ### INSTALL PIP ###
-# sudo apt-get install python-pip -y
-
-### INSTALL REQUEST ###
-# sudo python -m pip install requests
+# sudo apt-get install python3-pip -y
 
 ### RUN SCRIPT ###
-# sudo python bulkurls.py
+# sudo python3 bulkurls.py
 
 ### SET IP / USERNAME / PASSWORD USING *YOUR* ADGUARD CREDENTIALS ###
 host = "http://your_pi_ip:80" 
