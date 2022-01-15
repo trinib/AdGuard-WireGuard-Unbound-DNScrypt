@@ -49,12 +49,12 @@ round_robin_upstreams: 1
 
 # Require DNSSEC validation. For releases earlier than 1.2 a trust anchor must
 # be configured configured manually. This can be done with unbound-anchor.
- dnssec_return_status: GETDNS_EXTENSION_TRUE
+dnssec_return_status: GETDNS_EXTENSION_TRUE
 
 # Specify the location of the installed trust anchor file (leave commented out
 # for zero configuration DNSSEC)
 # dnssec_trust_anchors: "/etc/unbound/getdns-root.key"
- dnssec_trust_anchors: "/var/lib/unbound/root.key"
+dnssec_trust_anchors: "/var/lib/unbound/root.key"
 
 # Control the maximum number of connection failures that will be permitted
 # before Stubby backs-off from using an individual upstream (default 2)
