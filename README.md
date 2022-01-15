@@ -29,16 +29,17 @@
  
 <p align="center">
  <img src="https://i.imgur.com/7mk08hI.jpg">
-  
+ 
 Last Checked : 14 Jan 2022
-                                           
-Projects            |           Status     
----------------     |      ----------------
-AdGuard             |      ✅
-Unbound             |      ✅
-Cloudflare          |      ✅
-Stubby              |      ✅
-Wiregaurd           |      ✅                                                
+ 
+
+Projects            |      Status     
+---------------     |      --------------
+AdGuard             |       ✅
+Unbound             |       ✅
+Cloudflare          |       ✅
+Stubby              |       ✅
+Wiregaurd           |       ✅                                                
 
 #
 # Contents
@@ -275,7 +276,7 @@ Tip : You can also add more DNS servers by uncommenting the needed lines
   * For `DNS over HTTPS(DoH)` add `127.0.0.1:5053` in both "Upstream" and "Bootstrap DNS" server fields
   * For `TLS forwarder(stubby)` add `127.0.0.1:8053` in both "Upstream" and "Bootstrap DNS" server fields
 
-* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option. Sometimes you get a hit and miss with DOH or DOT from <a href="https://1.1.1.1/help"><b>1.1.1.1</b></a> on pc/windows browsers upon refreshing page multiple times, but it don't seem to have that issue on android browsers. But when 'Fastest IP Address' option is selected the whole issue stops but have slower response time on websites. So its your personal peference to choose between these two option cause i don't know why it does that 🤷, maybe it will resolve itself or i'll find a workaround. But with 'Parallel Request' its noticeably faster browsing and loading times .
+* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option. Sometimes you get a hit and miss with DOH or DOT from <a href="https://1.1.1.1/help"><b>1.1.1.1</b></a> on pc/windows browsers upon refreshing page multiple times, but it don't seem to have that issue on android browsers. But when 'Fastest IP Address' option is selected the whole issue stops but have slower response time on websites. So its your personal peference to choose between these two option cause i don't know why it does that 🤷(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/2"><b>Issue #2</b></a>), maybe it will resolve itself or i'll find a the problem from adgaurdhome team. But with 'Parallel Request' its noticeably faster browsing and loading times .
 
 <p align="center">
  <img src="https://i.imgur.com/Ug4Euou.jpg" width=650px height=370px>
