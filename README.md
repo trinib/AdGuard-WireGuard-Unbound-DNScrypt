@@ -5,11 +5,22 @@
  <img src="http://ForTheBadge.com/images/badges/built-with-love.svg">
  <img src="https://img.shields.io/badge/badges-awesome-green.svg">
  <img src="https://img.shields.io/badge/Stay-Safe-red?logo=data:image/svg%2bxml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTEwIDUxMCIgaGVpZ2h0PSI1MTIiIHZpZXdCb3g9IjAgMCA1MTAgNTEwIiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnPjxnPjxwYXRoIGQ9Im0xNzQuNjEgMzAwYy0yMC41OCAwLTQwLjU2IDYuOTUtNTYuNjkgMTkuNzJsLTExMC4wOSA4NS43OTd2MTA0LjQ4M2g1My41MjlsNzYuNDcxLTY1aDEyNi44MnYtMTQ1eiIgZmlsbD0iI2ZmZGRjZSIvPjwvZz48cGF0aCBkPSJtNTAyLjE3IDI4NC43MmMwIDguOTUtMy42IDE3Ljg5LTEwLjc4IDI0LjQ2bC0xNDguNTYgMTM1LjgyaC03OC4xOHYtODVoNjguMThsMTE0LjM0LTEwMC4yMWMxMi44Mi0xMS4yMyAzMi4wNi0xMC45MiA0NC41LjczIDcgNi41NSAxMC41IDE1LjM4IDEwLjUgMjQuMnoiIGZpbGw9IiNmZmNjYmQiLz48cGF0aCBkPSJtMzMyLjgzIDM0OS42M3YxMC4zN2gtNjguMTh2LTYwaDE4LjU1YzI3LjQxIDAgNDkuNjMgMjIuMjIgNDkuNjMgNDkuNjN6IiBmaWxsPSIjZmZjY2JkIi8+PHBhdGggZD0ibTM5OS44IDc3LjN2OC4wMWMwIDIwLjY1LTguMDQgNDAuMDctMjIuNjQgNTQuNjdsLTExMi41MSAxMTIuNTF2LTIyNi42NmwzLjE4LTMuMTljMTQuNi0xNC42IDM0LjAyLTIyLjY0IDU0LjY3LTIyLjY0IDQyLjYyIDAgNzcuMyAzNC42OCA3Ny4zIDc3LjN6IiBmaWxsPSIjZDAwMDUwIi8+PHBhdGggZD0ibTI2NC42NSAyNS44M3YyMjYuNjZsLTExMi41MS0xMTIuNTFjLTE0LjYtMTQuNi0yMi42NC0zNC4wMi0yMi42NC01NC42N3YtOC4wMWMwLTQyLjYyIDM0LjY4LTc3LjMgNzcuMy03Ny4zIDIwLjY1IDAgNDAuMDYgOC4wNCA1NC42NiAyMi42NHoiIGZpbGw9IiNmZjRhNGEiLz48cGF0aCBkPSJtMjEyLjgzIDM2MC4xMnYzMGg1MS44MnYtMzB6IiBmaWxsPSIjZmZjY2JkIi8+PHBhdGggZD0ibTI2NC42NSAzNjAuMTJ2MzBoMzYuMTRsMzIuMDQtMzB6IiBmaWxsPSIjZmZiZGE5Ii8+PC9nPjwvc3ZnPg==">
-
+ 
 <p align="center">
  <img src="https://github.com/websemantics/bragit/blob/master/demo/img/heart.svg" height=40px >
  <img src="https://stars.medv.io/Naereen/badges.svg">
 
+</p>
+<p align="center">
+    <a href="" alt="GitHub Repo stars">
+        <img src="https://img.shields.io/github/stars/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=FFD700&style=for-the-badge"></a>
+    <a href="" alt="GitHub forks">
+        <img src="https://img.shields.io/github/forks/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=fa3131&style=for-the-badge"></a>
+    <a href="" alt="GitHub watchers">
+        <img src="https://img.shields.io/github/watchers/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=9700b2&style=for-the-badge"></a>
+</p>
+ 
+ 
 <h1 align="center"><b>A step by step 📜 guide for these</b> </h1>
 <h1 align="center"><b> 🅵🆁🅴🅴 network 📡 security projects to work together on a</b> </h1>
 <h1 align="center"><b>𝓡 𝓐 𝓢 𝓟 𝓑 𝓔 𝓡 𝓡 𝓨 ℙ 𝕀 🥧</b> </h1>
@@ -287,7 +298,7 @@ Tip : You can also add more DNS servers by uncommenting the needed lines
   * For `DNS over HTTPS(DoH)` add `127.0.0.1:5053` in both "Upstream" and "Bootstrap DNS" server fields
   * For `TLS forwarder(stubby)` add `127.0.0.1:8053` in both "Upstream" and "Bootstrap DNS" server fields
 
-* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option. Sometimes you get a hit and miss with DoH or DoT from <a href="https://1.1.1.1/help"><b>1.1.1.1</b></a> on pc/windows browsers upon refreshing page multiple times, but it don't seem to have that issue on android browsers. But when <a href="https://github.com/AdguardTeam/AdGuardHome/issues/1678#issuecomment-629555747"><b>Fastest IP Address</b></a> option is selected the whole issue stops but have slower response time on websites. So its your personal peference to choose between these two option cause i don't know why it does that ¯-_(ツ)_-¯, maybe it will resolve itself or i'll find the problem from adgaurdhome team. But with 'Parallel Request' its noticeably faster browsing/loading times and in my opinion 1.1.1.1 sometimes `don't detect DoH or DoT in time because it resolves to fast ?🤔`(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/2"><b>Issue #2</b></a>) .
+* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option. Sometimes you get a hit and miss with DoH or DoT from <a href="https://1.1.1.1/help"><b>1.1.1.1</b></a> on pc/windows browsers upon refreshing page multiple times, but it don't seem to have that issue on android browsers. But when <a href="https://github.com/AdguardTeam/AdGuardHome/issues/1678#issuecomment-629555747"><b>Fastest IP Address</b></a> option is selected the whole issue stops but have slower response time on websites. So its your personal peference to choose between these two option cause i don't know why it does that ¯-_(ツ)_-¯, maybe it will resolve itself or i'll find the problem from adgaurdhome team. But with <i><b>Parallel Request</b></i> its noticeably faster browsing/loading times and in my opinion 1.1.1.1 sometimes `don't detect DoH or DoT in time because it resolves to fast ?🤔`(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/2"><b>Issue #2</b></a>) .
 
 <p align="center">
  <img src="https://i.imgur.com/Ug4Euou.jpg" width=650px height=370px>
@@ -308,7 +319,7 @@ Tip : You can also add more DNS servers by uncommenting the needed lines
 - [x] Connected to 1.1.1.1
 - [x] DNS over HTTPS(DoH)
 - [x] DNS over TLS(DoT)
-
+- [ ] DNS over WARP
 <p align="center">
  <img src="https://i.imgur.com/2S3IH5H.jpg" width=650px height=370px>
 
@@ -451,7 +462,7 @@ Once downloaded you can use the application to inspect your data packets where t
 <p align="center">
  <img src="https://i.imgur.com/Tn4M47R.jpg">
 
-For **android** you can use <a href="https://play.google.com/store/apps/details?id=com.emanuelef.remote_capture&hl=en&gl=US"><b>PCAPdroid</b></a>. You should see all connections closed and status showing all DNS and not any TLS connections in all apps (open and use apps for PCAPdroid to scan).
+For **android** you can use <a href="https://play.google.com/store/apps/details?id=com.emanuelef.remote_capture&hl=en&gl=US"><b>PCAPdroid</b></a>. You should see all connections `closed` and status showing all DNS and not any TLS connections in all apps (open and use apps for PCAPdroid to scan).
  
 **[⬆ BACK TO TOP ⬆](#contents)**
 
