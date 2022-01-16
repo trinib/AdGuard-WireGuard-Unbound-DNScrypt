@@ -30,16 +30,21 @@
 <p align="center">
  <img src="https://i.imgur.com/7mk08hI.jpg">
  
+<p align="center">
 Last Checked : 14 Jan 2022
  
-
-Projects            |      Status     
----------------     |      --------------
-AdGuard             |       ✅
+<div align="center">
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Projects  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           |   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           |
+  :---:             |     :---: 
+AdGuard Home        |       ✅
 Unbound             |       ✅
 Cloudflare          |       ✅
 Stubby              |       ✅
-Wiregaurd           |       ✅                                                
+WireGuard           |       ✅    
+
+</div>
+<div>
 
 #
 # Contents
@@ -75,7 +80,7 @@ Wiregaurd           |       ✅
 #
 # Requirements
    
-   * A Raspberry Pi 3 or 4 version 
+   * A Raspberry Pi 3 or 4 version
    * A router that supports port forwarding(Most Can)
    * MicroSD USB card reader
    * MicroSD card (8GB or bigger, at least Class 4)
@@ -88,7 +93,7 @@ Wiregaurd           |       ✅
 
 <h1 align="center"><b><i>☷ Installing OS Image To SDcard ☷</b></i> </h1>
 
-This tutorial is based on Raspberry Pi OS (32bit or 64bit), but you can use any linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a> you prefer if you know what you are doing.
+This tutorial is based on Raspberry Pi OS (32bit or 64bit), but you can use any linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a> and hardware you prefer if you know what you are doing.
 
 Raspberry Pi OS comes in Desktop and Lite versions(I use lite). You can set Raspberry Pi up with a monitor/keyboard/mouse, or set it up “headlessly” from a terminal.
 
@@ -140,6 +145,8 @@ Run in terminal:
 *_WAIT FOR UPDATE TO FINISH & RESTART PI. THEN CONTINUE TO NEXT STEP_*.....
 
     sudo reboot
+ 
+**[⬆ BACK TO TOP ⬆](#contents)**
 
 #
 <p align="center">
@@ -179,7 +186,7 @@ Run the following command in your terminal:
  
 Go to network settings / change adpater options and right click in properties then select "Internet Protocol Version 4(TCP/IPv4)". Enter pi's ip address in `Preferred DNS` server 
 
--- IPV6 (needed for DOH & DOT to work (later on in guide) if using ipv6 setup with everything) --
+-- IPV6 (needed for `DoH` & `DoT` to work (later on in guide) if using ipv6 on your router --
  
 Go to "Internet Protocol Version 6(TCP/IPv6)" Enter pi's ipv6 address in `Preferred DNS` server (to get it enter `ifconfig` in pi's terminal and look for the second inet6 address(link). For example fe80::1179:a6ab:ae4e:ab12 )
 
@@ -211,6 +218,8 @@ Open new py file and call it bulkurls.py:
 Then copy and past text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>bulkurls.py</b></a> file and save (control+x then y then enter) **DON'T FORGET TO READ INSTRUCTIONS FROM TEXT IN IT**.
  
 To remove you need to change `add` in second of last line **(..../control/filtering/`add`_url", data = filterObj, headers=headers)** to `remove` in bulkurls.py file.
+ 
+**[⬆ BACK TO TOP ⬆](#contents)**
 
 #
 <p align="center">
@@ -235,6 +244,8 @@ Enter in command line `crontab -e`, it will ask Select an editor(choose 1) and p
     
 <p align="center">
  <img src="https://i.imgur.com/26ro62t.jpg">
+ 
+**[⬆ BACK TO TOP ⬆](#contents)**
 
 #    
 <p align="center">
@@ -276,7 +287,7 @@ Tip : You can also add more DNS servers by uncommenting the needed lines
   * For `DNS over HTTPS(DoH)` add `127.0.0.1:5053` in both "Upstream" and "Bootstrap DNS" server fields
   * For `TLS forwarder(stubby)` add `127.0.0.1:8053` in both "Upstream" and "Bootstrap DNS" server fields
 
-* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option. Sometimes you get a hit and miss with DOH or DOT from <a href="https://1.1.1.1/help"><b>1.1.1.1</b></a> on pc/windows browsers upon refreshing page multiple times, but it don't seem to have that issue on android browsers. But when 'Fastest IP Address' option is selected the whole issue stops but have slower response time on websites. So its your personal peference to choose between these two option cause i don't know why it does that 🤷(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/2"><b>Issue #2</b></a>), maybe it will resolve itself or i'll find the problem from adgaurdhome team. But with 'Parallel Request' its noticeably faster browsing and loading times .
+* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option. Sometimes you get a hit and miss with DoH or DoT from <a href="https://1.1.1.1/help"><b>1.1.1.1</b></a> on pc/windows browsers upon refreshing page multiple times, but it don't seem to have that issue on android browsers. But when <a href="https://github.com/AdguardTeam/AdGuardHome/issues/1678#issuecomment-629555747"><b>Fastest IP Address</b></a> option is selected the whole issue stops but have slower response time on websites. So its your personal peference to choose between these two option cause i don't know why it does that ¯_(ツ)_/¯(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/2"><b>Issue #2</b></a>), maybe it will resolve itself or i'll find the problem from adgaurdhome team. But with 'Parallel Request' its noticeably faster browsing/loading times and in my opinion 1.1.1.1 sometimes `don't detect DoH or DoT in time because it resolves to fast ?🤔` .
 
 <p align="center">
  <img src="https://i.imgur.com/Ug4Euou.jpg" width=650px height=370px>
@@ -306,7 +317,9 @@ https://www.cloudflare.com/ssl/encrypted-sni/ - "Secure DNS / DNSSEC / TLS 1.3" 
 https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNSSEC signatures"
  
 **If you do not see things correct check your browser `dns` and `proxy` settings**
- 
+  
+**[⬆ BACK TO TOP ⬆](#contents)**
+
 #
 <p align="center">
  <b>✹ STEP 5 ✹</b>
@@ -433,6 +446,8 @@ Once downloaded you can use the application to inspect your data packets where t
 
 For **android** you can use <a href="https://play.google.com/store/apps/details?id=com.emanuelef.remote_capture&hl=en&gl=US"><b>PCAPdroid</b></a>. You should see all connections closed and status showing all DNS and not any TLS connections in all apps (open and use apps for PCAPdroid to scan).
  
+**[⬆ BACK TO TOP ⬆](#contents)**
+
 #
 <h1 align="center"><b><i>☷ Auto Update Pi ☷</b></i> </h1>
 
@@ -489,6 +504,8 @@ Reboot pi.
 <a href="https://gist.github.com/boseji/c9e91ff3bd0b3cfb62a5e260fe505374"><img src="https://i.imgur.com/a9JQVls.png" width=80px height=90px></a>
 <p align="center">
 <a href="https://gist.github.com/boseji/c9e91ff3bd0b3cfb62a5e260fe505374"><b>LINK</b></a>
+ 
+**[⬆ BACK TO TOP ⬆](#contents)**
 
 #
 #
