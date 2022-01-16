@@ -22,13 +22,13 @@
 #### _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_ ⫸ Better Performance & Security when browsing websites(DoT & DoH)
 #
 <p align="center">
- <img src="https://i.imgur.com/Z9bTcCu.png">
+ <img src="https://i.imgur.com/Z9bTcCu.png" >
  
 <p align="center">
- <img src="https://i.imgur.com/owaA8kD.jpg">
+ <img src="https://i.imgur.com/ni6U1FW.jpg" >
  
 <p align="center">
- <img src="https://i.imgur.com/7mk08hI.jpg">
+ <img src="https://i.imgur.com/owaA8kD.jpg" >
  
 <p align="center">
 Last Checked : 14 Jan 2022
@@ -175,20 +175,20 @@ Run the following command in your terminal:
 
 ## ╸ Set Up Your Devices To Work With Adguard ╸
 
-* For Android/Apple, go to wifi advanced settings and select static option. In `DNS 1` field enter "pi's ip" address
+- For Android/Apple, go to wifi advanced settings and select static option. In `DNS 1` field enter "pi's ip" address
 
 <p align="center">
  <img src="https://i.imgur.com/nxpiqDw.jpg" width=450px height=580px>
 
-* For PC 
+- For PC/Windows
  
--- IPV4 --
+   - <i>IPV4</i>
  
-Go to network settings / change adpater options and right click in properties then select "Internet Protocol Version 4(TCP/IPv4)". Enter pi's ip address in `Preferred DNS` server 
+   Go to network settings / change adpater options and right click in properties then select "Internet Protocol Version 4(TCP/IPv4)". Enter pi's ip address in `Preferred DNS` server 
 
--- IPV6 (needed for `DoH` & `DoT` to work (later on in guide) if using ipv6 on your router --
+   - <i>IPV6 (needed for `DoH` & `DoT` to work (later on in guide) if using ipv6 on your router</i>
  
-Go to "Internet Protocol Version 6(TCP/IPv6)" Enter pi's ipv6 address in `Preferred DNS` server (to get it enter `ifconfig` in pi's terminal and look for the second inet6 address(link). For example fe80::1179:a6ab:ae4e:ab12 )
+    Go to "Internet Protocol Version 6(TCP/IPv6)" Enter pi's ipv6 address in `Preferred DNS` server (to get it enter `ifconfig` in pi's terminal and look for the second inet6 address(link). For example fe80::1179:a6ab:ae4e:ab12 )
 
 <p align="center">
  <img src="https://i.imgur.com/8gsDk3z.jpg">
@@ -287,7 +287,7 @@ Tip : You can also add more DNS servers by uncommenting the needed lines
   * For `DNS over HTTPS(DoH)` add `127.0.0.1:5053` in both "Upstream" and "Bootstrap DNS" server fields
   * For `TLS forwarder(stubby)` add `127.0.0.1:8053` in both "Upstream" and "Bootstrap DNS" server fields
 
-* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option. Sometimes you get a hit and miss with DoH or DoT from <a href="https://1.1.1.1/help"><b>1.1.1.1</b></a> on pc/windows browsers upon refreshing page multiple times, but it don't seem to have that issue on android browsers. But when <a href="https://github.com/AdguardTeam/AdGuardHome/issues/1678#issuecomment-629555747"><b>Fastest IP Address</b></a> option is selected the whole issue stops but have slower response time on websites. So its your personal peference to choose between these two option cause i don't know why it does that ¯_(ツ)_/¯(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/2"><b>Issue #2</b></a>), maybe it will resolve itself or i'll find the problem from adgaurdhome team. But with 'Parallel Request' its noticeably faster browsing/loading times and in my opinion 1.1.1.1 sometimes `don't detect DoH or DoT in time because it resolves to fast ?🤔` .
+* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option. Sometimes you get a hit and miss with DoH or DoT from <a href="https://1.1.1.1/help"><b>1.1.1.1</b></a> on pc/windows browsers upon refreshing page multiple times, but it don't seem to have that issue on android browsers. But when <a href="https://github.com/AdguardTeam/AdGuardHome/issues/1678#issuecomment-629555747"><b>Fastest IP Address</b></a> option is selected the whole issue stops but have slower response time on websites. So its your personal peference to choose between these two option cause i don't know why it does that ¯-_(ツ)_-¯, maybe it will resolve itself or i'll find the problem from adgaurdhome team. But with 'Parallel Request' its noticeably faster browsing/loading times and in my opinion 1.1.1.1 sometimes `don't detect DoH or DoT in time because it resolves to fast ?🤔`(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/2"><b>Issue #2</b></a>) .
 
 <p align="center">
  <img src="https://i.imgur.com/Ug4Euou.jpg" width=650px height=370px>
@@ -304,7 +304,10 @@ Tip : You can also add more DNS servers by uncommenting the needed lines
  <p align="center">
  <img src="https://i.imgur.com/7zIpWP2.jpg" width=650px height=370px>
 
-#### Thats it. Now go to https://1.1.1.1/help in browser and you should see ***'Connected to 1.1.1.1' -- 'DNS over HTTPS(DoH)' -- 'DNS over TLS(DoT)'*** showing 'Yes'.
+#### Thats it. Now go to https://1.1.1.1/help in browser and you should see these options output 'Yes'. 
+- [x] Connected to 1.1.1.1
+- [x] DNS over HTTPS(DoH)
+- [x] DNS over TLS(DoT)
 
 <p align="center">
  <img src="https://i.imgur.com/2S3IH5H.jpg" width=650px height=370px>
@@ -381,7 +384,10 @@ Wireguard (App Store): https://apps.apple.com/us/app/wireguard/id1441195209
 
 You need to scan the QR code shown in the terminal with Wireguard app, select the `+ button` and use the option `Scan from QR code` to install configuration.
 
-`IMPORTANT`: Enable on **kernel module backend** in settings
+`IMPORTANT`: Enable **kernel module backend** in settings
+
+<p align="left">
+ <img src="https://i.imgur.com/R4qbiOQ.jpg" width=250px height=350px>
 
 ### ╸ Connecting To The VPN From A PC (Windows) ╸
 
@@ -408,7 +414,8 @@ _Remember this is for when you are connected to WireGuard VPN on an outside netw
 * Under Dns servers enter `pi's ip` and save
 
 <p align="center">
- <img src="https://i.imgur.com/UC0vWfE.jpg" width=450px height=500px>                                                                                                  
+ <img src="https://i.imgur.com/UC0vWfE.jpg" width=450px height=500px>  
+ 
  
  ### Limit traffic for faster speed *only when connected to wifi*
  
