@@ -14,8 +14,8 @@
 <p align="center">
     <a href="https://img.shields.io/github/stars/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=FFD700&style=for-the-badge" alt="GitHub Repo stars">
         <img src="https://img.shields.io/github/stars/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=FFD700&style=for-the-badge"></a>
-    <a href="https://img.shields.io/github/forks/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=fa3131&style=for-the-badge" alt="GitHub forks">
-        <img src="https://img.shields.io/github/forks/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=fa3131&style=for-the-badge"></a>
+    <a href="https://img.shields.io/github/forks/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=00a671&style=for-the-badge" alt="GitHub forks">
+        <img src="https://img.shields.io/github/forks/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=00a671&style=for-the-badge"></a>
     <a href="https://img.shields.io/github/watchers/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=9700b2&style=for-the-badge" alt="GitHub watchers">
         <img src="https://img.shields.io/github/watchers/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=9700b2&style=for-the-badge"></a>
 </p>
@@ -46,7 +46,7 @@ Last Checked : 14 Jan 2022
  
 <div align="center">
  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Projects  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           |   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Projects  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           |   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         |
   :---:             |     :---: 
 AdGuard Home        |       ✅
 Unbound             |       ✅
