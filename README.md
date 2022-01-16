@@ -181,7 +181,7 @@ Go to network settings / change adpater options and right click in properties th
 
 -- IPV6 (needed for DOH & DOT to work (later on in guide) if using ipv6 setup with everything) --
  
-Go to "Internet Protocol Version 6(TCP/IPv6)" Enter pi's ipv6 address in `Preferred DNS` server (to get it enter `ifconfig` in pi's terminal and look for the first inet6 address. For example 2803:1500:e00:c6e:5767:c362:b727:376f)
+Go to "Internet Protocol Version 6(TCP/IPv6)" Enter pi's ipv6 address in `Preferred DNS` server (to get it enter `ifconfig` in pi's terminal and look for the second inet6 address(link). For example fe80::1179:a6ab:ae4e:ab12 )
 
 <p align="center">
  <img src="https://i.imgur.com/8gsDk3z.jpg">
@@ -416,7 +416,7 @@ Or you can change ip range on your router (in my experience you might get a tiny
 ## IPV6
 If you are using IPv6, when connected to wifi you need to enter in WireGuard allowed IPs `fe80::1/0` as well. For example `192.168.100.0/0, fe80::1/0`
 
-When connected to ethernet cable on a windows pc, you need to enter pi's IPv6 address in "Internet Protocol Version 6(TCP/IPv6)" preferred DNS server. Enter in terminal `ifconfig`, under global> inet6 to get pi ipv6 address. If you see two inet6(public&local), enter local not public. 
+When connected to ethernet cable on a windows pc, you need to enter pi's IPv6 address in "Internet Protocol Version 6(TCP/IPv6)" preferred DNS server. Enter in terminal `ifconfig`, under global> inet6 to get pi ipv6 address. If you see two inet6(global&link), enter global not link. 
  
 Then go to https://ipv6leak.com/ and you should see "_Your IPv6 is not leaking_".
 #
