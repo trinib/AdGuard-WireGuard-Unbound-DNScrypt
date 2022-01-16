@@ -12,11 +12,11 @@
 
 </p>
 <p align="center">
-    <a href="" alt="GitHub Repo stars">
+    <a href="https://img.shields.io/github/stars/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=FFD700&style=for-the-badge" alt="GitHub Repo stars">
         <img src="https://img.shields.io/github/stars/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=FFD700&style=for-the-badge"></a>
-    <a href="" alt="GitHub forks">
+    <a href="https://img.shields.io/github/forks/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=fa3131&style=for-the-badge" alt="GitHub forks">
         <img src="https://img.shields.io/github/forks/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=fa3131&style=for-the-badge"></a>
-    <a href="" alt="GitHub watchers">
+    <a href="https://img.shields.io/github/watchers/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=9700b2&style=for-the-badge" alt="GitHub watchers">
         <img src="https://img.shields.io/github/watchers/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=9700b2&style=for-the-badge"></a>
 </p>
  
