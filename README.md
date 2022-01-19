@@ -49,15 +49,13 @@ Query Time:
 - Default Cloudflare/Quad9/Google DNS Resolvers - `50-70 msec`
 - This set up/configuration -  `5-10 msec`
  
-<details><summary><b>CLICK</b> (🎥Video)</summary>
- 
-<b>Adguard default DNS resolvers & this set up/configuration</b>
+<details><summary><b>CLICK</b> (🎥Video)
+<b>Adguard default DNS resolvers & this set up/configuration</b></summary>
  
 <p>https://user-images.githubusercontent.com/18756975/150093925-0b72d482-6936-48c8-b4d9-292dc8b1f29f.mp4</p></details>
  
-<details><summary><b>CLICK</b> (🎥Video 2)</summary>
- 
-<b>Cloudflare/Quad9/Google DNS Resolvers</b>
+<details><summary><b>CLICK</b> (🎥Video 2)
+<b>Cloudflare/Quad9/Google DNS Resolvers</b></summary>
  
 <p>https://user-images.githubusercontent.com/18756975/150124048-d5a6bddd-f05a-46bb-b733-f32e6eaa7b1b.mp4</p></details>
 
