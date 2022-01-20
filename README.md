@@ -66,11 +66,10 @@ https://user-images.githubusercontent.com/18756975/150230438-b767e86f-4e18-4791-
 
 ### Cloudflare/Quad9/Google DNS Resolvers
  
-https://user-images.githubusercontent.com/18756975/150124048-d5a6bddd-f05a-46bb-b733-f32e6eaa7b1b.mp4
+https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-8ee2-b80227522252.mp4
 
 </p>
 </details>
-
 
 ***
  
@@ -558,10 +557,8 @@ Reboot pi.
  
 **[⬆ BACK TO TOP ⬆](#contents)**
 
-#
-#
-##
-##
+***
+
 <p align="center">
 <b>🎉🎉 THAT'S IT !! 🎉🎉 YOUR FINISH 👌👌
 <p align="center">
