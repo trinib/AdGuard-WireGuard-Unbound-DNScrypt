@@ -43,7 +43,7 @@
   
 ***
 #
-<h1 align="center">📈 Test results with <a href="https://docs.digitalocean.com/products/networking/dns/resources/use-dig/"><b>BIND's DNS Tool </b></a> 📈</h1>
+<h1 align="center">📈 Test results with <a href="https://docs.digitalocean.com/products/networking/dns/resources/use-dig/#installing-dig"><b>BIND's DNS Tool </b></a> 📈</h1>
 
 <b>Query Time in milliseconds:</b>
 - Adguard default DNS resolvers - `60-70 msec`
