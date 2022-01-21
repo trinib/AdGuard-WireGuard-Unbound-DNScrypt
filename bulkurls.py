@@ -123,7 +123,7 @@ urls = [
 "https://www.github.developerdan.com/hosts/lists/amp-hosts-extended.txt",
 "https://raw.githubusercontent.com/badmojr/1Hosts/master/mini/unbound.conf",
 "https://raw.githubusercontent.com/badmojr/1Hosts/master/mini/hosts.txt",
-"https://raw.githubusercontent.com/badmojr/1Hosts/master/mini/adblock.txt.",
+"https://raw.githubusercontent.com/badmojr/1Hosts/master/mini/adblock.txt",
 "https://raw.githubusercontent.com/badmojr/1Hosts/master/mini/hosts.win",
 "https://blocklistproject.github.io/Lists/adguard/ransomware-ags.txt"
 ]
