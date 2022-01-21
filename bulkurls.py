@@ -111,7 +111,20 @@ urls = [
 "https://raw.githubusercontent.com/d43m0nhLInt3r/socialblocklists/master/Windows/windowstelemetryblocklist.txt",
 "https://raw.githubusercontent.com/d43m0nhLInt3r/socialblocklists/master/MobileAppAds/appadsblocklist.txt",
 "https://raw.githubusercontent.com/d43m0nhLInt3r/socialblocklists/master/Android/androidblocklist.txt",
-"https://raw.githubusercontent.com/twcau/AdblockRules/master/MurdochList"
+"https://raw.githubusercontent.com/twcau/AdblockRules/master/MurdochList",
+"https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews/hosts",
+"https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling/hosts",
+"https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Dead/hosts",
+"https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Spam/hosts",
+"https://raw.githubusercontent.com/mitchellkrogza/Badd-Boyz-Hosts/master/hosts",
+"https://winhelp2002.mvps.org/hosts.txt",
+"https://raw.githubusercontent.com/notracking/hosts-blocklists/master/adblock/adblock.txt",
+"https://www.github.developerdan.com/hosts/lists/amp-hosts-extended.txt",
+"https://raw.githubusercontent.com/badmojr/1Hosts/master/mini/unbound.conf",
+"https://raw.githubusercontent.com/badmojr/1Hosts/master/mini/hosts.txt",
+"https://raw.githubusercontent.com/badmojr/1Hosts/master/mini/adblock.txt.",
+"https://raw.githubusercontent.com/badmojr/1Hosts/master/mini/hosts.win",
+"https://blocklistproject.github.io/Lists/adguard/ransomware-ags.txt"
 ]
 
 ############ End Of Edits #################
