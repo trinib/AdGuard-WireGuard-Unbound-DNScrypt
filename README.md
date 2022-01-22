@@ -311,7 +311,7 @@ And copy and paste all the text from <a href="https://raw.githubusercontent.com/
 
 Use Unbound for caching and stubby for TLS forwarder. Install stubby:
 
-    sudo apt install stubby
+    sudo apt install stubby -y
     
 Remove and re-create stubby.yaml file and copy/paste all the text from <a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/stubby.yml"><b>👉 this stubby config 👈</b></a> and save. (`cd $home` to return to home folder when finish).
 
@@ -500,7 +500,7 @@ For **android** you can use <a href="https://play.google.com/store/apps/details?
       
 * Set permission
 
-      sudo chmod 700 update.sh     
+      sudo chmod 700 update.sh
       
 * Open cron file by entering in command line `crontab -e`, copy&paste job command line below at the bottom of cron file and save.
 
