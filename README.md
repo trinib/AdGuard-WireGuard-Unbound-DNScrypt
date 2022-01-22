@@ -43,7 +43,7 @@
   
 ***
 #
-<h1 align="center">📈 Test results with <a href="https://docs.digitalocean.com/products/networking/dns/resources/use-dig/#installing-dig"><b>BIND's DNS Tool </b></a> 📈</h1>
+<h1 align="center">📈 Test results with <a href="https://docs.oracle.com/en-us/iaas/Content/DNS/Tasks/testingdnsusingdig.htm"><b>BIND's DNS Tool </b></a> 📈</h1>
 
 <b>Query Time in milliseconds:</b>
 - Adguard default DNS resolvers - `60-70 msec`
@@ -105,7 +105,6 @@ WireGuard           |       ✅
   - [Configure Cloudflare on Unbound (DoT)](#-configure-cloudflare-on-unbound-with-dot-)
   - [Configure Stubby (TLS Forwarder)](#-configure-stubby-for-unbound-)
   - [Configure AdGuard with Cloudflare (DoH&DoT)](#-configure-adguard-with-cloudflaredohdot-)
-- [Setting up dynamic DNS service](#-dynamic-dns-service-install--)
 - [Installing WireGuard](#-wireguard-install--)
   or <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/OpenVPN-Setup.md">OpenVPN(slower)</a>
   - [Connecting to the VPN to Android/IOS Phone](#-connecting-to-the-vpn-to-androidios-phone-)
@@ -132,7 +131,7 @@ WireGuard           |       ✅
 
 #
 <p align="center">
- <b>✹ STEP 1 ✹</b>
+  <b>👣 STEP 1 👣</b>
 
 <h1 align="center"><b><i>☷ Installing OS Image To SDcard ☷</b></i> </h1>
 
@@ -162,13 +161,13 @@ Now put the SD card into the Raspberry Pi, plug your Ethernet cable and boot up.
 
 ## ╸ Logging into Pi system [Headlessly] ╸
 
-* Now you need to wait for a couple of minutes for your pi first boot up
+* Now you need to wait for a minute for pi's first boot up
 
 * Open browser and log in your router's panel page
 
 * Find list all of the devices connected to the network and copy the IP address of the Raspberry Pi (it will most likely have the hostname `raspberrypi`)
 
-* Open Terminal on your host machine. You can use PowerShell on Windows or JuiceSSH for Android
+* Open Terminal on your host machine. You can use PowerShell on Windows or RaspController for Android
 
 Type the following command:
 
@@ -193,7 +192,7 @@ Run in terminal:
 
 #
 <p align="center">
- <b>✹ STEP 2 ✹</b>
+ <b>👣 STEP 2 👣</b>
 
 <h1 align="center"><b><i>☷ AdGuard Install ☷</b></i> </h1>
 
@@ -245,7 +244,7 @@ In AdGuard homepage under filters select blocklist section for adding and updati
 
 You can search Google for different blocklist.Here is my custom <a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/My-Blocklist.txt"><b>blocklist</b></a> with my urls.
  
-`IMPORTANT:` Some blocklist can block some important contents. If you cross that issue it can be viewed in "Blocked by filters" under general statistics(click the amount) and can be simply unblocked, putting it in "Custom filtering rules". Just look for client ip & time.  
+`IMPORTANT:` Some blocklist can block some important contents or websites. To unblock go "Query Log" section and can be simply unblock, putting it in "Custom filtering rules". Just look for client ip & time.  
  
 <p align="center">
  <img src="https://i.imgur.com/OKUcoMs.jpg">
@@ -266,7 +265,7 @@ To remove you need to change `add` in second of last line **(..../control/filter
 
 #
 <p align="center">
- <b>✹ STEP 3 ✹</b>
+ <b>👣 STEP 3 👣</b>
 
 <h1 align="center"><b><i>☷ Unbound Install ☷</b></i> </h1>
 
@@ -292,7 +291,7 @@ Enter in command line `crontab -e`, it will ask Select an editor(choose 1) and p
 
 #    
 <p align="center">
- <b>✹ STEP 4 ✹</b>   
+ <b>👣 STEP 4 👣</b>   
 
 <h1 align="center"><b><i>☷ Cloudflare Install ☷</b></i> </h1>
 
@@ -330,7 +329,7 @@ Tip : You can also add more DNS servers by uncommenting the needed lines
   * For `DNS over HTTPS(DoH)` add `127.0.0.1:5053` in both "Upstream" and "Bootstrap DNS" server fields
   * For `TLS forwarder(stubby)` add `127.0.0.1:8053` in both "Upstream" and "Bootstrap DNS" server fields
 
-* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option. Sometimes you get a hit and miss with DoH or DoT from <a href="https://1.1.1.1/help"><b>1.1.1.1</b></a> on pc/windows browsers upon refreshing page multiple times, but it don't seem to have that issue on android browsers. But when <a href="https://github.com/AdguardTeam/AdGuardHome/issues/1678#issuecomment-629555747"><b>Fastest IP Address</b></a> option is selected the whole issue stops but have slower response time on websites. So its your personal peference to choose between these two option cause i don't know why it does that ¯-_(ツ)_-¯, maybe it will resolve itself or i'll find the problem from adgaurdhome team. But with <i><b>Parallel Request</b></i> its noticeably faster browsing/loading times and in my opinion 1.1.1.1 sometimes `don't detect DoH or DoT in time because it resolves to fast ?🤔`(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/2"><b>Issue #2</b></a>) .
+* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option. Sometimes you get a hit and miss with DoH or DoT from <a href="https://1.1.1.1/help"><b>1.1.1.1</b></a> on pc/windows browsers upon refreshing page multiple times, but it don't seem to have that issue on android browsers. But when <a href="https://github.com/AdguardTeam/AdGuardHome/issues/1678#issuecomment-629555747"><b>Fastest IP Address</b></a> option is selected the whole issue stops but have slower response time on websites. But with <i><b>Parallel Request</b></i> its noticeably faster browsing/loading times. In my opinion 1.1.1.1 website sometimes `don't detect DoH or DoT in time because of browser windows architecture ?🤔`(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/2"><b>Issue #2</b></a>) Maybe it will resolve itself or i'll find the problem from adgaurdhome team.
 
 <p align="center">
  <img src="https://i.imgur.com/Ug4Euou.jpg" width=650px height=370px>
@@ -368,12 +367,11 @@ https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNS
 
 #
 <p align="center">
- <b>✹ STEP 5 ✹</b>
+ <b>👣 STEP 5 👣</b>
 
-<h1 align="center"><b><i>☷ Dynamic DNS Service Install ☷</b></i> </h1>
+<h1 align="center"><b><i>☷ WireGuard Install ☷</b></i> </h1>
 
 **Before installing WireGuard**, if you do not have a static ip you need to get a free `Dynamic DNS Subdomain` or else your external IP address most likely changes dynamically from your ISP ever so often and for that reason you'll need to set up a dynamic DNS service. 👉👉 **_▓▒░Use this <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Dns-Service-Guide.md"><b>INSTRUCTION HERE</b></a>░▒▓_** 👈👈. Or else skip the step.
-
 
 We also need to set up port fowarding on your router so we can access wireguard outside of our network like in a coffee shop hotspot or your mobile data
 TYPE | VALUE     
@@ -388,13 +386,8 @@ My 👇router👇 port setting. Yours maybe different but you'll get it. Remembe
 
 <p align="center">
  <img src="https://i.imgur.com/9LBEk1i.jpg">
-
-#
-<p align="center">
- <b>✹ STEP 6 ✹</b>
-
-<h1 align="center"><b><i>☷ WireGuard Install ☷</b></i> </h1>
-
+ 
+***
 👊BIG THANKS👊 for this installation script from <a href="https://github.com/Nyr/wireguard-install"><b>Nyr</b></a>. Follow to keep updated.
 
 Run in terminal 
