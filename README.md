@@ -445,7 +445,7 @@ _Remember this is for when you are connected to WireGuard VPN on an outside netw
 
 * In wireguard app, select your tunnel and select edit (pencil on top right)
 
-* Under Dns servers enter `pi's ip` and save
+* Under Dns servers enter `pi's ip` and save (IPv4 & IPv6)
 
 <p align="center">
  <img src="https://i.imgur.com/UC0vWfE.jpg" width=450px height=500px>  
