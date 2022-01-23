@@ -135,7 +135,7 @@ WireGuard           |       ✅
 
 <h1 align="center"><b><i>☷ Installing OS Image To SDcard ☷</b></i> </h1>
 
-This tutorial is based on Raspberry Pi OS (32bit or 64bit), but you can use any linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a> and hardware you prefer if you know what you are doing.
+This tutorial is based on Raspberry Pi OS (32bit or 64bit), but you can use any linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a> and hardware you prefer if you know what you are doing (Raspberry Pi OS is the best in my opinion).
 
 Raspberry Pi OS comes in Desktop and Lite versions(I use lite). You can set Raspberry Pi up with a monitor/keyboard/mouse, or set it up “headlessly” from a terminal.
 
@@ -429,8 +429,6 @@ You need to scan the QR code shown in the terminal with Wireguard app, select th
 
 WireGuard for windows: https://download.wireguard.com/windows-client/wireguard-installer.exe
 
-Tunsafe (getting far faster speed with *Tunsafe beta* than wireguard on windows): https://tunsafe.com/downloads/TunSafe-1.5-rc2.exe
-
 * Create `new text document` with any name on pc to copy&paste the text from wireguard client configuration file.
 
 * To see text in client config file, type in terminal:
@@ -439,7 +437,7 @@ Tunsafe (getting far faster speed with *Tunsafe beta* than wireguard on windows)
   
 * Highlight all the text, copy and paste it in the txt file on pc and save. Then rename the extention from `txt` to `conf`. Now you have config file for that wireguard client.
           
-* You can now import the config file to wireguard or tunsafe windows app (import from file option).
+* You can now import the config file to wireguard (import from file option).
 
 ## ╸ Configure WireGuard With `Adguard/Unbound/Cloudflare` ╸
 
