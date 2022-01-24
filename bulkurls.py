@@ -97,7 +97,6 @@ urls = [
 "https://zerodot1.gitlab.io/CoinBlockerLists/list.txt",
 "https://gitlab.com/ZeroDot1/CoinBlockerLists/-/raw/master/list_browser.txt",
 "https://raw.githubusercontent.com/mitchellkrogza/Badd-Boyz-Hosts/master/domains",
-"https://hosts.ubuntu101.co.za/badips.txt",
 "https://easylist-downloads.adblockplus.org/easyprivacy.txt",
 "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt",
 "https://www.i-dont-care-about-cookies.eu/abp/",
