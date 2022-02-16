@@ -473,7 +473,7 @@ Or you can change ip range on your router (in my experience you might get a tiny
 ## IPV6
 If you are using IPv6, when connected to wifi you need to enter in WireGuard allowed IPs `fe80::1/0` as well. For example `192.168.100.0/0, fe80::1/0`
 
-When connected to ethernet cable on a windows pc, you need to enter pi's IPv6 address in "Internet Protocol Version 6(TCP/IPv6)" preferred DNS server. Enter in terminal `ifconfig`, under global> inet6 to get pi ipv6 address. If you see two inet6(global&link), enter global not link. 
+When connected to ethernet cable on a windows pc, you need to enter ::1 in IPv6 address in "Internet Protocol Version 6(TCP/IPv6)" preferred DNS server.
  
 Then go to https://ipv6leak.com/ and you should see "_Your IPv6 is not leaking_".
 #
