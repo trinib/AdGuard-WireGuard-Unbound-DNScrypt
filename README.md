@@ -230,8 +230,10 @@ Run the following command in your terminal:
 
    - <i>IPV6 (needed for `DoH` & `DoT` to work (later on in guide) if using ipv6 on your router</i>
  
-    Go to "Internet Protocol Version 6(TCP/IPv6)" Enter pi's ipv6 address in `Preferred DNS` server (to get it enter `ifconfig` in pi's terminal and look for the second inet6 address(link). For example fe80::1179:a6ab:ae4e:ab12 )
-
+    Go to "Internet Protocol Version 6(TCP/IPv6)" Enter `::1`
+ 
+ `OPTIONAL` <i>You can a backup dns in 2nd field</i>
+ 
 <p align="center">
  <img src="https://i.imgur.com/8gsDk3z.jpg">
 
@@ -259,7 +261,7 @@ Open new py file and call it bulkurls.py:
     
 Then copy and past text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>bulkurls.py</b></a> file and save (control+x then y then enter) **DON'T FORGET TO READ INSTRUCTIONS FROM TEXT IN IT**.
  
-To remove you need to change `add` in second of last line **(..../control/filtering/`add`_url", data = filterObj, headers=headers)** to `remove` in bulkurls.py file.
+To **remove** you need to change `add` in <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/62ba01ed8ed3a5bc5294b9fe7ee38c3e83ae1b86/bulkurls.py#L150"><b>second of last line</b></a> to `remove` in bulkurls.py file.
  
 **[⬆ BACK TO TOP ⬆](#contents)**
 
@@ -313,7 +315,7 @@ Use Unbound for caching and stubby for TLS forwarder. Install stubby:
 
     sudo apt install stubby -y
     
-Remove and re-create stubby.yaml file and copy/paste all the text from <a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/stubby.yml"><b>👉 this stubby config 👈</b></a> and save. (`cd $home` to return to home folder when finish).
+Remove and re-create stubby.yaml file and copy/paste all the text from <a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/stubby.yml"><b>👉 this stubby config 👈</b></a> and save. (`cd $h` to return to home folder when finish).
 
     cd /etc/stubby/ && sudo rm stubby.yml && sudo nano stubby.yml
     
@@ -329,9 +331,9 @@ Tip : You can also add more DNS servers by uncommenting the needed lines
   * For `DNS over HTTPS(DoH)` add `127.0.0.1:5053` in both "Upstream" and "Bootstrap DNS" server fields
   * For `TLS forwarder(stubby)` add `127.0.0.1:8053` in both "Upstream" and "Bootstrap DNS" server fields
 
-* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option. Sometimes you get a hit and miss with DoH or DoT from <a href="https://1.1.1.1/help"><b>1.1.1.1</b></a> on <b>windows</b> browsers upon refreshing page multiple times, but it don't seem to have that issue on android browsers. But when <a href="https://github.com/AdguardTeam/AdGuardHome/issues/1678#issuecomment-629555747"><b>Fastest IP Address</b></a> option is selected the whole issue stops but have slower response time on websites. But with <i><b>Parallel Request</b></i> its noticeably faster browsing/loading times. In my opinion 1.1.1.1 website sometimes `don't detect DoH or DoT in time because of browser windows architecture ?🤔`(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/2"><b>Issue #2</b></a>) Maybe it will resolve itself or i'll find the problem from adgaurdhome team.
+* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option. Sometimes you get a hit and miss with DoH or DoT from <a href="https://1.1.1.1/help"><b>1.1.1.1</b></a> on <b>windows</b> upon refreshing page multiple times, but it don't seem to have that issue on android browsers. But when <a href="https://github.com/AdguardTeam/AdGuardHome/issues/1678#issuecomment-629555747"><b>Fastest IP Address</b></a> option is selected the whole issue stops but have slower response time on websites. But with <i><b>Parallel Request</b></i> its noticeably faster browsing/loading times. In my opinion 1.1.1.1 website sometimes `don't detect DoH or DoT in time because of browser windows architecture ?🤔`(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/2"><b>Issue/Fix #2</b></a>) Maybe it will resolve itself or i'll find the problem from adgaurdhome team.
  
-<b>`UPDATE`</b> : Tested on Linux Firefox and I <b>absolutely</b> get no miss .. Here is a <a href="https://user-images.githubusercontent.com/18756975/152836479-7402edd5-3c04-4e48-8e04-0157fbfb433e.mp4"><b>video preview </b></a>..So that confirmed it to be just a browser architecture issue with windows.
+<b>`UPDATE`</b> : Tested on Linux Firefox and I <b>absolutely</b> get no miss .. Here is a <a href="https://user-images.githubusercontent.com/18756975/152836479-7402edd5-3c04-4e48-8e04-0157fbfb433e.mp4"><b>video preview </b></a>..So that confirmed it to be just a issue with windows.
 
  
 <p align="center">
@@ -363,8 +365,6 @@ https://browserleaks.com/dns - should show all connected to "Cloudflare"
 https://www.cloudflare.com/ssl/encrypted-sni/ - "Secure DNS / DNSSEC / TLS 1.3" should all be a green tick
 
 https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNSSEC signatures"
- 
-**If you do not see things correct check your browser `dns` and `proxy` settings**
   
 **[⬆ BACK TO TOP ⬆](#contents)**
 
