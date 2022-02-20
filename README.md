@@ -74,7 +74,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
 ***
  
 <p align="center">
-Last Checked : 14 Jan 2022
+⏰Last Checked : 29 Feb 2022⏰
  
 <div align="center">
  
@@ -110,7 +110,7 @@ WireGuard           |       ✅
   - [Connecting to the VPN to Android/IOS Phone](#-connecting-to-the-vpn-to-androidios-phone-)
   - [Connecting to the VPN from a PC (Windows)](#-connecting-to-the-vpn-from-a-pc-windows-)
   - [Configure Wireguard with AdGuard/Unbound/Cloudflare](#-configure-wireguard-with-adguardunboundcloudflare-)
-    - [Limit traffic for faster connection](#limit-traffic-for-faster-speed-only-when-connected-to-wifi)
+    - [Limit traffic for faster connection](#limit-traffic)
     - [IPv6 setup](#ipv6)
 - <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/Disable-All-IPv6.md">Disable all IPv6</a>
 - [Test Vpn](#how-do-you-know-if-wireguard-vpn-is-really-working-)
@@ -232,21 +232,21 @@ Run the following command in your terminal:
  
     Go to "Internet Protocol Version 6(TCP/IPv6)" Enter `::1`
  
- `OPTIONAL` <i>You can a backup dns in 2nd field</i>
+ `OPTIONAL` <i>You can add a backup dns in the alternative fields</i>
  
 <p align="center">
  <img src="https://i.imgur.com/8gsDk3z.jpg">
 
 ## ╸ Setting Up AdGuard Blocklist ╸
  
-In AdGuard homepage under filters select blocklist section for adding and updating your urls.
+In AdGuard homepage under filters, select DNS blocklist section for adding urls.
  
 <p align="center">
  <img src="https://i.imgur.com/shrtJLD.png">
 
 You can search Google for different blocklist.Here is my custom <a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/My-Blocklist.txt"><b>blocklist</b></a> with my urls.
  
-`IMPORTANT:` Some blocklist can block some important contents or websites. To unblock go "Query Log" section and can be simply unblock, putting it in "Custom filtering rules". Just look for client ip & time.  
+`IMPORTANT:` Some blocklist can block some important contents or websites. To unblock go "Query Log" section and will see unblocked option, putting it in "Custom filtering rules". Just look for client ip & time. Or do it manually, just add `@@||thewebsite.com^$important` to rules.
  
 <p align="center">
  <img src="https://i.imgur.com/OKUcoMs.jpg">
@@ -262,6 +262,8 @@ Open new py file and call it bulkurls.py:
 Then copy and past text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>bulkurls.py</b></a> file and save (control+x then y then enter) **DON'T FORGET TO READ INSTRUCTIONS FROM TEXT IN IT**.
  
 To **remove** you need to change `add` in <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/62ba01ed8ed3a5bc5294b9fe7ee38c3e83ae1b86/bulkurls.py#L150"><b>second of last line</b></a> to `remove` in bulkurls.py file.
+ 
+Go to https://hackaday.com/ or https://www.speedtest.net/ to test if ads are blocking
  
 **[⬆ BACK TO TOP ⬆](#contents)**
 
@@ -319,7 +321,7 @@ Remove and re-create stubby.yaml file and copy/paste all the text from <a href="
 
     cd /etc/stubby/ && sudo rm stubby.yml && sudo nano stubby.yml
     
-Tip : You can also add more DNS servers by uncommenting the needed lines
+`Tip:` You can also add more DNS servers by uncommenting the needed lines
  
  ## ╸ Configure Adguard With `Cloudflare(DoH&DoT)` ╸
 
@@ -331,10 +333,7 @@ Tip : You can also add more DNS servers by uncommenting the needed lines
   * For `DNS over HTTPS(DoH)` add `127.0.0.1:5053` in both "Upstream" and "Bootstrap DNS" server fields
   * For `TLS forwarder(stubby)` add `127.0.0.1:8053` in both "Upstream" and "Bootstrap DNS" server fields
 
-* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option. Sometimes you get a hit and miss with DoH or DoT from <a href="https://1.1.1.1/help"><b>1.1.1.1</b></a> on <b>windows</b> upon refreshing page multiple times, but it don't seem to have that issue on android browsers. But when <a href="https://github.com/AdguardTeam/AdGuardHome/issues/1678#issuecomment-629555747"><b>Fastest IP Address</b></a> option is selected the whole issue stops but have slower response time on websites. But with <i><b>Parallel Request</b></i> its noticeably faster browsing/loading times. In my opinion 1.1.1.1 website sometimes `don't detect DoH or DoT in time because of browser windows architecture ?🤔`(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/2"><b>Issue/Fix #2</b></a>) Maybe it will resolve itself or i'll find the problem from adgaurdhome team.
- 
-<b>`UPDATE`</b> : Tested on Linux Firefox and I <b>absolutely</b> get no miss .. Here is a <a href="https://user-images.githubusercontent.com/18756975/152836479-7402edd5-3c04-4e48-8e04-0157fbfb433e.mp4"><b>video preview </b></a>..So that confirmed it to be just a issue with windows.
-
+* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option for dns resolvers to work simultaneously.
  
 <p align="center">
  <img src="https://i.imgur.com/Ug4Euou.jpg" width=650px height=370px>
@@ -350,8 +349,28 @@ Tip : You can also add more DNS servers by uncommenting the needed lines
  
  <p align="center">
  <img src="https://i.imgur.com/7zIpWP2.jpg" width=650px height=370px>
+  
+### `IMPORTANT:` Windows & Android need some tweaking to `stabilize` dns resolvers..Linux works fine(tested on mint)
+  
+### Windows 
+  
+* Install <a href="https://mayakron.altervista.org/support/acrylic/Home.htm"><b>Acrylic DNS Proxy</b></a>
+  
+* Go to `C:\Program Files (x86)\Acrylic DNS Proxy` and open `AcrylicConfiguration.ini` file. Delete everything and copy these <a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/AcrylicConfiguration.ini"><b>👉SETTINGS👈</b></a> only change _**PrimaryServerAddres**_ to your pi's address.
+  
+* In same folder run `RestartAcrylicService.bat`
+  
+`TIP:` Troubleshoot IP/DNS Commands
+ ```
+ipconfig /release
+ipconfig /renew
+ipconfig /flushdns
+ ```
+### Android
+  
+* In whatever browser you use, turn **off** `Use Secure DNS` option.
 
-#### Thats it. Now go to https://1.1.1.1/help in browser and you should see these options output 'Yes'. 
+#### _Thats it_. Now go to https://1.1.1.1/help in browser and you should see these options output 'Yes'. 
 - [x] Connected to 1.1.1.1
 - [x] DNS over HTTPS(DoH)
 - [x] DNS over TLS(DoT)
@@ -385,7 +404,7 @@ Port range | 51820-51820
 Outgoing port | 51820
 Permit Internet acces(if have) | yes 
 
-My 👇router👇 port setting. Yours maybe different but you'll get it. Remember Google 🔍search engine🔎 is your friend. If you cannot connect from a outside network that means isp has blocked outcoming connections, you can call them and ask nicely to get it working..
+My 👇router👇 port setting. Yours maybe different but you'll get it. Remember Google 🔍search engine🔎 is your friend. If you cannot connect from a outside network that means isp has blocked outcoming connections, you can call them and ask nicely to get it working.
 
 <p align="center">
  <img src="https://i.imgur.com/9LBEk1i.jpg">
@@ -432,7 +451,7 @@ You need to scan the QR code shown in the terminal with Wireguard app, select th
 
 WireGuard for windows: https://download.wireguard.com/windows-client/wireguard-installer.exe
 
-* Create `new text document` with any name on pc to copy&paste the text from wireguard client configuration file.
+* Create a `new text document` with any name on pc to copy&paste the text from wireguard client configuration file.
 
 * To see text in client config file, type in terminal:
   
@@ -444,27 +463,29 @@ WireGuard for windows: https://download.wireguard.com/windows-client/wireguard-i
 
 ## ╸ Configure WireGuard With `Adguard/Unbound/Cloudflare` ╸
 
-_Remember this is for when you are connected to WireGuard VPN on an outside network or at home 24/7 cause you already have AdGuard/Unbound/Cloudflare set up and running on your devices manually._ (no issue having both set up. **Just remember with wireguard you will lose about 40-50% of wifi speed(not ethernet cable) speed cause the process of tunneling through pi to router to devices**)
-
+_Remember this is for when you are connected to WireGuard VPN on an outside network or at home 24/7 cause you already have AdGuard/Unbound/Cloudflare set up and running on your devices manually._ (no issue having both set up).
 * In wireguard app, select your tunnel and select edit (pencil on top right)
 
 * Under Dns servers enter `pi's ip` and save (IPv4 & IPv6)
 
 <p align="center">
  <img src="https://i.imgur.com/UC0vWfE.jpg" width=450px height=500px>  
+  
+### Limit traffic
  
+With WireGuard you will lose about 50% of internet speed cause the process of tunneling through pi to router to devices**
  
- ### Limit traffic for faster speed *only when connected to wifi*
+Delete in allowed IPs "0.0.0.0/0, ::/0" option because it routes all traffic to your home network which will be slow. You need send traffic through your addresses only.
  
-* `IMPORTANT`: Delete in allowed IPs "0.0.0.0/0, ::/0" option because it routes all traffic to your home network which will be slow. You need send traffic through your addresses only. (Only when connected directly with ethernet cable leave in allowed ip `0.0.0.0/0, ::/0` cause i don't seem to lose any speed)
+* First you need to replace it with your network gateway but setting the last number to a zero and <a href="https://www.google.com/search?q=prefix+length+explained&client=firefox-b-d&sxsrf=ALeKk036Jc9vJl73zVXf0yyZs5UlKRlNRQ%3A1621083125589&ei=9cOfYI66I5-qwbkPkdWxkAk&oq=prefix+length+explained&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEAcQHjoHCCMQsAMQJzoHCAAQRxCwA1CUJ1iUJ2CiKmgBcAJ4AIABsAGIAdQCkgEDMC4ymAEAoAEBqgEHZ3dzLXdpesgBCcABAQ&sclient=gws-wiz&ved=0ahUKEwjOiOie3cvwAhUfVTABHZFqDJIQ4dUDCA0&uact=5"><b>prefix lenght</b></a> to 24. For example: `192.168.1.1/24` to `192.168.1.0/24` or like my isp router `192.168.100.1/24` to `192.168.100.0/24`. ~~**Now I only lose 25% speed**😁 (ps. using 5g network)~~ 
  
-* First you need to replace it with your network gateway but setting the last number to a zero and <a href="https://www.google.com/search?q=prefix+length+explained&client=firefox-b-d&sxsrf=ALeKk036Jc9vJl73zVXf0yyZs5UlKRlNRQ%3A1621083125589&ei=9cOfYI66I5-qwbkPkdWxkAk&oq=prefix+length+explained&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEAcQHjoHCCMQsAMQJzoHCAAQRxCwA1CUJ1iUJ2CiKmgBcAJ4AIABsAGIAdQCkgEDMC4ymAEAoAEBqgEHZ3dzLXdpesgBCcABAQ&sclient=gws-wiz&ved=0ahUKEwjOiOie3cvwAhUfVTABHZFqDJIQ4dUDCA0&uact=5"><b>prefix lenght</b></a> to 24. For example: `192.168.1.1/24` to `192.168.1.0/24` or like my isp router `192.168.100.1/24` to `192.168.100.0/24`. **Now I only lose 25% speed**😁 (ps. using 5g network)
+`UPDATE:` After a Wireguard update I do not get a faster speed doing this :( .. but it still makes sense _not_ to use `"0.0.0.0/0, ::/0` with wifi. If anyone knows any tweaks to get a boost, let me know.
 
 <p align="center">
  <img src="https://i.imgur.com/x4m6Pbl.jpg" width=450px height=500px>
 
 ### PLEASE READ !! , BE AWARE !! 
-`IMPORTANT`: _If your network has ip addresses for devices that ends with a number more than 24(most likely), for example: 192.168.100.`999`, you will not be able to route properly from outside network because applying 24 only allows numbers 1 through 24. You need to instead put `0` to route out of the 24 range, for example : `192.168.100.0/0`_. 
+`IMPORTANT`: _If your network has ip addresses for devices that ends with a 3 digit number (more than 24), for example: 192.168.100.`999`, you will not be able to route properly from outside network because applying 24 only allows numbers 1 through 24. You need to instead put `0` to route out of the 24 range, for example : `192.168.100.0/0`_. 
  
 Or you can change ip range on your router (in my experience you might get a tiny bit better speeds cause it will not route unnecessary allowed ip addresses over the 24 range).
 <p align="center">
@@ -548,6 +569,8 @@ Reboot pi.
 <a href="https://gist.github.com/boseji/c9e91ff3bd0b3cfb62a5e260fe505374"><img src="https://i.imgur.com/a9JQVls.png" width=80px height=90px></a>
 <p align="center">
 <a href="https://gist.github.com/boseji/c9e91ff3bd0b3cfb62a5e260fe505374"><b>LINK</b></a>
+ 
+(I just use Fail2Ban and change SSH port)
  
 **[⬆ BACK TO TOP ⬆](#contents)**
 
