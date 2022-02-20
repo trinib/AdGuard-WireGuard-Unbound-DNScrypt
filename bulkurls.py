@@ -164,7 +164,7 @@ urls = [
 "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=iptables&showintro=0&mimetype=plaintext",
 "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=msfilter&showintro=0&mimetype=plaintext",
 "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=operafilter&showintro=0&mimetype=plaintext",
-"https://pgl.yoyo.org/adservers/serverlist.php?hostformat=machosts&showintro=0&mimetype=plaintext
+"https://pgl.yoyo.org/adservers/serverlist.php?hostformat=machosts&showintro=0&mimetype=plaintext"
 ]
 
 ############ End Of Edits #################
