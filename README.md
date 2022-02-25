@@ -21,11 +21,9 @@
 </p>
  
  
-<h1 align="center"><b>A step by step 📜 guide for these</b> </h1>
-<h1 align="center"><b> 🅵🆁🅴🅴 network 📡 security projects to work together on a</b> </h1>
-<h1 align="center"><b>𝓡 𝓐 𝓢 𝓟 𝓑 𝓔 𝓡 𝓡 𝓨 ℙ 𝕀 🥧</b> </h1>
-
-#
+<h1 align="center"><b>A step by step 📜 guide for these</b> 
+<h1 align="center"><b> 🅵🆁🅴🅴 network 📡 security projects to work together on a</b>
+<h1 align="center"><b>𝓡 𝓐 𝓢 𝓟 𝓑 𝓔 𝓡 𝓡 𝓨 ℙ 𝕀 🥧</b></h1>
 
 #### _<a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard</b></a>_ ⫸ Adblocker for your devices at home ( <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md#how-does-adguard-home-compare-to-pi-hole"><b>_AdGuard compared to Pi-Hole_</b></a> )
 #### _<a href="https://www.wireguard.com/"><b>WireGuard</b></a>_ ⫸ A Vpn Server at home accessable from any outside network(IPv4 & IPv6)
@@ -50,18 +48,18 @@
 - Default Cloudflare/Quad9/Google DNS Resolvers - `50-70 msec`
 - This set up/configuration -  `5-10 msec`
  
-
-<details><summary><b>CLICK</b> (🎥Video 1)</summary>
+#### 🎥Video Previews🎥
+<details><summary><b>CLICK</b></summary>
 <p>
 
-### Adguard default DNS resolvers vs This set up/configuration
+### Adguard default DNS <i>vs</i> This set up/configuration⭐⭐⭐
  
 https://user-images.githubusercontent.com/18756975/150230438-b767e86f-4e18-4791-b5fe-0813615a37a3.mp4
 
 </p>
 </details>
  
-<details><summary><b>CLICK</b> (🎥Video 2)</summary>
+<details><summary><b>CLICK</b></summary>
 <p>
 
 ### Cloudflare/Quad9/Google DNS Resolvers
@@ -74,7 +72,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
 ***
  
 <p align="center">
-⏰Last Checked : 29 Feb 2022⏰
+⏰Last Checked : 25 Feb 2022⏰
  
 <div align="center">
  
@@ -93,24 +91,24 @@ WireGuard           |       ✅
 # Contents
 - <a href="https://git.io/About">About</a>
 - [Requirements](#requirements)
-- [Installing Pi operating system](#-installing-os-image-to-sdcard--)
+- [Installing Pi operating system](#-installing-os-image-to-sdcard--)<img src="https://www.vectorlogo.zone/logos/raspberrypi/raspberrypi-icon.svg" width=20px height=20px>
   - [Logging into Pi system [Headlessly]](#-logging-into-pi-system-headlessly-)
-- [Installing AdGuard](#-adguard-install--)
+- [Installing AdGuard](#-adguard-install--)<img src="https://www.vectorlogo.zone/logos/adguard/adguard-icon.svg" width=20px height=20px>
   - [Set up your devices to work with Adguard](#-set-up-your-devices-to-work-with-adguard-)
   - [Setting up AdGuard blocklist](#-setting-up-adguard-blocklist-)
     - [Add/Remove multiple URLs to blocklist at once](#-addremove-multiple-urls-)
-- [Installing Unbound](#-unbound-install--)
-- [Installing Cloudflare](#-cloudflare-install--)
+- [Installing Unbound](#-unbound-install--)<img src="https://www.privacyguides.org/assets/img/legacy_svg/3rd-party/unbound.svg" width=20px height=20px>
+- [Installing Cloudflare](#-cloudflare-install--)<img src="https://www.vectorlogo.zone/logos/cloudflare/cloudflare-icon.svg" width=20px height=20px>
   - [Install Cloudflare (DoH)](#-install-cloudflare-on-pi-with-doh-)
   - [Configure Cloudflare on Unbound (DoT)](#-configure-cloudflare-on-unbound-with-dot-)
   - [Configure Stubby (TLS Forwarder)](#-configure-stubby-for-unbound-)
   - [Configure AdGuard with Cloudflare (DoH&DoT)](#-configure-adguard-with-cloudflaredohdot-)
-- [Installing WireGuard](#-wireguard-install--)
-  or <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/OpenVPN-Setup.md">OpenVPN(slower)</a>
+- [Installing WireGuard](#-wireguard-install--)<img src="https://www.vectorlogo.zone/logos/wireguard/wireguard-icon.svg" width=20px height=20px>
+  or <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/OpenVPN-Setup.md">OpenVPN(slower)</a><img src="https://i.imgur.com/Agstbe5.png" width=20px height=20px>
   - [Connecting to the VPN to Android/IOS Phone](#-connecting-to-the-vpn-to-androidios-phone-)
   - [Connecting to the VPN from a PC (Windows)](#-connecting-to-the-vpn-from-a-pc-windows-)
   - [Configure Wireguard with AdGuard/Unbound/Cloudflare](#-configure-wireguard-with-adguardunboundcloudflare-)
-    - [Limit traffic for faster connection](#limit-traffic)
+    - [Limit traffic](#limit-traffic)
     - [IPv6 setup](#ipv6)
 - <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/Disable-All-IPv6.md">Disable all IPv6</a>
 - [Test Vpn](#how-do-you-know-if-wireguard-vpn-is-really-working-)
@@ -135,9 +133,9 @@ WireGuard           |       ✅
 
 <h1 align="center"><b><i>☷ Installing OS Image To SDcard ☷</b></i> </h1>
 
-This tutorial is based on Raspberry Pi OS (32bit or 64bit), but you can use any linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a> and hardware you prefer if you know what you are doing (Raspberry Pi OS is the best in my opinion).
+This tutorial is based on Raspberry Pi OS (32bit or 64bit), but you can use any linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a> and hardware you prefer with some tweaking if you know what you are doing (Raspberry Pi OS is most simple and recommended for Pi).
 
-Raspberry Pi OS comes in Desktop and Lite versions(I use lite). You can set Raspberry Pi up with a monitor/keyboard/mouse, or set it up “headlessly” from a terminal.
+Raspberry Pi OS comes in Desktop and Lite versions(I use lite 64bit). You can set Raspberry Pi up with a monitor/keyboard/mouse, or set it up “headlessly” from a terminal.
 
 Install balenEtcher and download pi image to write on the microSD card.
 
@@ -202,9 +200,9 @@ Run the following command in your terminal:
 
     curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -v
 
-* When installation is finished a window will pop up showing the links to YOUR Adguard home page(Get Started)
+* When installation is finished a window will pop up in terminal showing the different links to YOUR Adguard home page(Get Started)
 
-* In Listen Interfaces option choose `Eth0` and select next
+* `IMPORTANT:` In Listen Interfaces option choose `Eth0` and select next
 
 <p align="center">
  <img src="https://i.imgur.com/Wa00lDp.jpg" width=580px height=690px>
@@ -228,11 +226,11 @@ Run the following command in your terminal:
  
    Go to network settings / change adpater options and right click in properties then select "Internet Protocol Version 4(TCP/IPv4)". Enter pi's ip address in `Preferred DNS` server 
 
-   - <i>IPV6 (needed for `DoH` & `DoT` to work (later on in guide) if using ipv6 on your router</i>
+   - <i>IPV6 (needed for `DoH` & `DoT` to work later on in guide if using ipv6 on your router)</i>
  
     Go to "Internet Protocol Version 6(TCP/IPv6)" Enter `::1`
  
- `OPTIONAL` <i>You can add a backup dns in the alternative fields</i>
+ `OPTIONAL:` <i>You can add a backup dns in the alternative fields</i>
  
 <p align="center">
  <img src="https://i.imgur.com/8gsDk3z.jpg">
@@ -263,7 +261,7 @@ Then copy and past text from <a href="https://raw.githubusercontent.com/trinib/A
  
 To **remove** you need to change `add` in <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/62ba01ed8ed3a5bc5294b9fe7ee38c3e83ae1b86/bulkurls.py#L150"><b>second of last line</b></a> to `remove` in bulkurls.py file.
  
-Go to https://hackaday.com/ or https://www.speedtest.net/ to test if ads are blocking
+Go to https://d3ward.github.io/toolz/adblock.html to test if ads are blocking <img src="https://i.imgur.com/Q5oO9EY.png" width=100px height=80px>
  
 **[⬆ BACK TO TOP ⬆](#contents)**
 
@@ -350,7 +348,7 @@ Remove and re-create stubby.yaml file and copy/paste all the text from <a href="
  <p align="center">
  <img src="https://i.imgur.com/7zIpWP2.jpg" width=650px height=370px>
   
-### `IMPORTANT:` Windows & Android need some tweaking to `stabilize` dns resolvers..Linux works fine(tested on mint)
+### `IMPORTANT:` Windows system & Android browsers need some tweaking to `stabilize` dns resolvers..Linux works fine<i>(tested on mint)</i>
   
 ### Windows 
   
@@ -358,7 +356,7 @@ Remove and re-create stubby.yaml file and copy/paste all the text from <a href="
   
 * Go to `C:\Program Files (x86)\Acrylic DNS Proxy` and open `AcrylicConfiguration.ini` file. Delete everything and copy these <a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/AcrylicConfiguration.ini"><b>👉SETTINGS👈</b></a> only change _**PrimaryServerAddres**_ to your pi's address.
   
-* In same folder run `RestartAcrylicService.bat`
+* In same folder run `RestartAcrylicService.bat` & `PurgeAcrylicCacheData.bat`
   
 `TIP:` Troubleshoot IP/DNS Commands
  ```
@@ -463,7 +461,7 @@ WireGuard for windows: https://download.wireguard.com/windows-client/wireguard-i
 
 ## ╸ Configure WireGuard With `Adguard/Unbound/Cloudflare` ╸
 
-_Remember this is for when you are connected to WireGuard VPN on an outside network or at home 24/7 cause you already have AdGuard/Unbound/Cloudflare set up and running on your devices manually._ (no issue having both set up).
+_Remember this is for when you are connected to WireGuard VPN on an outside network or at home 24/7 cause you already have AdGuard/Unbound/Cloudflare set up and running on your devices manually._ (no issue having both set up fro my experience).
 * In wireguard app, select your tunnel and select edit (pencil on top right)
 
 * Under Dns servers enter `pi's ip` and save (IPv4 & IPv6)
@@ -494,7 +492,7 @@ Or you can change ip range on your router (in my experience you might get a tiny
 ## IPV6
 If you are using IPv6, when connected to wifi you need to enter in WireGuard allowed IPs `fe80::1/0` as well. For example `192.168.100.0/0, fe80::1/0`
 
-When connected to ethernet cable on a windows pc, you need to enter ::1 in IPv6 address in "Internet Protocol Version 6(TCP/IPv6)" preferred DNS server.
+When connected to ethernet cable on a windows pc, you need to enter `::1` in IPv6 address in "Internet Protocol Version 6(TCP/IPv6)" preferred DNS server.
  
 Then go to https://ipv6leak.com/ and you should see "_Your IPv6 is not leaking_".
 #
@@ -570,7 +568,7 @@ Reboot pi.
 <p align="center">
 <a href="https://gist.github.com/boseji/c9e91ff3bd0b3cfb62a5e260fe505374"><b>LINK</b></a>
  
-(I just use Fail2Ban and change SSH port)
+<i>( I just use Fail2Ban and change SSH port )</i>
  
 **[⬆ BACK TO TOP ⬆](#contents)**
 
@@ -580,3 +578,22 @@ Reboot pi.
 <b>🎉🎉 THAT'S IT !! 🎉🎉 YOUR FINISH 👌👌
 <p align="center">
 <b>ANY ISSUES, FIXES OR TIPS TO MAKE THESE PROJECTS BETTER PLEASE CONTRIBUTE🤖</b>
+ 
+***
+ 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"
+<br> 
+<br> 
+<br> 
+
+<p align="center">
+ <img src="https://i.imgur.com/Q07E7SW.gif" width=500px height=30px>
+
+<p align="center">
+<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/stargazers"><img src="https://reporoster.com/stars/dark/trinib/AdGuard-WireGuard-Unbound-Cloudflare"></a>
+ 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" </p>
+     
+
