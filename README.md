@@ -31,7 +31,7 @@
 #### _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_ ⫸ Better Performance & Security when browsing websites(DoT & DoH)
 #
 <p align="center">
- <img src="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/assets/images/awcu.gif" width= "800">
+ <img src="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/assets/images/awcu.gif" width= "800">
   
 ***
 #
@@ -45,7 +45,7 @@
 <details><summary><b>🎥Video Previews🎥<img src="https://media.giphy.com/media/WT5h7PgVSScLLKtMaS/giphy.gif" width=50px height=40px></b></summary>
 <p>
 
-### 【adguard default DNS】 <i>VS</i> 【⭐this set up⭐】
+### 【Adguard default DNS】 <i>VS</i> 【⭐this set up⭐】
  
 https://user-images.githubusercontent.com/18756975/150230438-b767e86f-4e18-4791-b5fe-0813615a37a3.mp4
  
@@ -58,7 +58,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
 
 ***
  
-<h2><p align="center">
+<h3><p align="center">
 ⏰Last Checked : 25 Feb 2022⏰</h2>
  
 <div align="center">
@@ -78,19 +78,19 @@ WireGuard           |       ✅
 # Contents
 - <a href="https://git.io/About">About</a> <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/parrots/party-nyan.gif" width=20px height=20px>
 - [Requirements](#requirements)
-- [Installing Pi operating system](#-installing-os-image-to-sdcard--) <img src="https://www.vectorlogo.zone/logos/raspberrypi/raspberrypi-icon.svg" width=20px height=20px>
+- [Installing Pi operating system](#installing-os-image-to-sdcard-) <img src="https://www.vectorlogo.zone/logos/raspberrypi/raspberrypi-icon.svg" width=20px height=20px>
   - [Logging into Pi system [Headlessly]](#-logging-into-pi-system-headlessly-)
-- [Installing AdGuard](#-adguard-install--) <img src="https://www.vectorlogo.zone/logos/adguard/adguard-icon.svg" width=20px height=20px>
+- [Installing AdGuard](#adguard-install-) <img src="https://www.vectorlogo.zone/logos/adguard/adguard-icon.svg" width=20px height=20px>
   - [Set up your devices to work with Adguard](#-set-up-your-devices-to-work-with-adguard-)
   - [Setting up AdGuard blocklist](#-setting-up-adguard-blocklist-)
     - [Add/Remove multiple URLs to blocklist at once](#-addremove-multiple-urls-)
-- [Installing Unbound](#-unbound-install--) <img src="https://www.privacyguides.org/assets/img/legacy_svg/3rd-party/unbound.svg" width=20px height=20px>
-- [Installing Cloudflare](#-cloudflare-install--) <img src="https://www.vectorlogo.zone/logos/cloudflare/cloudflare-icon.svg" width=20px height=20px>
+- [Installing Unbound](#unbound-install-) <img src="https://www.privacyguides.org/assets/img/legacy_svg/3rd-party/unbound.svg" width=20px height=20px>
+- [Installing Cloudflare](#cloudflare-install-) <img src="https://www.vectorlogo.zone/logos/cloudflare/cloudflare-icon.svg" width=20px height=20px>
   - [Install Cloudflare (DoH)](#-install-cloudflare-on-pi-with-doh-)
   - [Configure Cloudflare on Unbound (DoT)](#-configure-cloudflare-on-unbound-with-dot-)
   - [Configure Stubby (TLS Forwarder)](#-configure-stubby-for-unbound-)
   - [Configure AdGuard with Cloudflare (DoH&DoT)](#-configure-adguard-with-cloudflaredohdot-)
-- [Installing WireGuard](#-wireguard-install--) <img src="https://www.vectorlogo.zone/logos/wireguard/wireguard-icon.svg" width=20px height=20px>
+- [Installing WireGuard](#wireguard-install-) <img src="https://www.vectorlogo.zone/logos/wireguard/wireguard-icon.svg" width=20px height=20px>
   or <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/OpenVPN-Setup.md">OpenVPN(slower)</a> <img src="https://i.imgur.com/Agstbe5.png" width=20px height=20px>
   - [Connecting to the VPN to Android/IOS Phone](#-connecting-to-the-vpn-to-androidios-phone-)
   - [Connecting to the VPN from a PC (Windows)](#-connecting-to-the-vpn-from-a-pc-windows-)
@@ -99,10 +99,10 @@ WireGuard           |       ✅
     - [IPv6 setup](#ipv6)
 - <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/Disable-All-IPv6.md">Disable all IPv6</a>
 - [Test Vpn](#how-do-you-know-if-wireguard-vpn-is-really-working-) <img src="https://i.imgur.com/6Yf8Zra.png" width=20px height=20px>
-- [Auto update your Pi](#-auto-update-pi--)
-- [Improving your SD Card’s potential lifespan](#-log2ram-install--)
-- [Turn Off Pi LEDs](#-turn-off-pi-led-lights--)
-- [Securing your Raspberry Pi](#-secure-your-raspberry-pi--)
+- [Auto update your Pi](#auto-update-pi-)
+- [Improving your SD Card’s potential lifespan](#log2ram-install-)
+- [Turn Off Pi LEDs](#turn-off-pi-led-lights-)
+- [Securing your Raspberry Pi](#secure-your-raspberry-pi-)
 
 #
 # Requirements
@@ -118,7 +118,7 @@ WireGuard           |       ✅
 <p align="center">
   <b><img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px> STEP 1 <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px></b>
 
-<h1 align="center"><b><i>☷ Installing OS Image To SDcard ☷</b></i> </h1>
+<h1 align="center"><b><i>Installing OS Image To SDcard</b></i> </h1>
 
 This tutorial is based on Raspberry Pi OS (32bit or 64bit), but you can use any linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a> and hardware you prefer with some tweaking if you know what you are doing (Raspberry Pi OS is most simple and recommended for Pi).
 
@@ -179,7 +179,7 @@ Run in terminal:
 <p align="center">
  <b><img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px> STEP 2 <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px></b>
 
-<h1 align="center"><b><i>☷ AdGuard Install ☷</b></i> </h1>
+<h1 align="center"><b><i>AdGuard Install</b></i> </h1>
 
 This installation script is from <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard Home</b></a> main project. Follow to keep updated.
 
@@ -256,7 +256,7 @@ Go to https://d3ward.github.io/toolz/adblock.html to test if ads are blocking <i
 <p align="center">
  <b><img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px> STEP 3 <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px></b>
 
-<h1 align="center"><b><i>☷ Unbound Install ☷</b></i> </h1>
+<h1 align="center"><b><i>Unbound Install</b></i> </h1>
 
 Run the following command in your terminal:
 
@@ -282,7 +282,7 @@ Enter in command line `crontab -e`, it will ask Select an editor(choose 1) and p
 <p align="center">
  <b><img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px> STEP 4 <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px></b>   
 
-<h1 align="center"><b><i>☷ Cloudflare Install ☷</b></i> </h1>
+<h1 align="center"><b><i>Cloudflare Install</b></i> </h1>
 
 ## ╸ Install Cloudflare On Pi With `(DoH)` ╸
 
@@ -376,7 +376,7 @@ https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNS
 <p align="center">
  <b><img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px> STEP 5 <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px></b>
 
-<h1 align="center"><b><i>☷ WireGuard Install ☷</b></i> </h1>
+<h1 align="center"><b><i>WireGuard Install</b></i> </h1>
 
 **Before installing WireGuard**, if you do not have a static ip you need to get a free `Dynamic DNS Subdomain` or else your external IP address most likely changes dynamically from your ISP ever so often and for that reason you'll need to set up a dynamic DNS service. 👉👉 **_▓▒░Use this <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Dns-Service-Guide.md"><b>INSTRUCTION HERE</b></a>░▒▓_** 👈👈. Or else skip the step.
 
@@ -498,8 +498,10 @@ For **android** you can use <a href="https://play.google.com/store/apps/details?
  
 **[⬆ BACK TO TOP ⬆](#contents)**
 
+***
+ 
 #
-<h1 align="center"><b><i>☷ Auto Update Pi ☷</b></i> </h1>
+<h1 align="center"><b><i>Auto Update Pi</b></i> </h1>
 
 * Open new sh file called update and copy&paste text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/update.sh"><b>👉here👈</b></a>
 
@@ -524,7 +526,7 @@ or set manually
     sudo date -s "25 DEC 2012 11:14:00"
 
 #
-<h1 align="center"><b><i>☷ Log2Ram Install ☷</b></i> </h1>
+<h1 align="center"><b><i>Log2Ram Install</b></i> </h1>
 
 One of the most significant advantages of offloading your RAM is that it improves your **SD Card’s potential lifespan**.
 Log files are one of the things written to most by the various pieces of software you install.
@@ -535,7 +537,7 @@ Copy and paste this line in terminal:
     wget https://git.io/log2ram -O Log2Ram-Script.sh && sudo chmod +x Log2Ram-Script.sh && sudo ./Log2Ram-Script.sh
     
 #
-<h1 align="center"><b><i>☷ Turn Off Pi LED Lights ☷</b></i> </h1>
+<h1 align="center"><b><i>Turn Off Pi LED Lights</b></i> </h1>
 
 I guess power to LEDs will impact unnecessary electricty and heat 🤷😅. No need for it anyways if just using it as a network server. Open cron file by entering in command line `crontab -e`, copy&paste job command line below at the bottom of cron file and save.
      
@@ -549,7 +551,7 @@ I guess power to LEDs will impact unnecessary electricty and heat 🤷😅. No n
 Reboot pi.
     
 #
-<h1 align="center"><b><i>☷ Secure Your Raspberry Pi ☷</b></i> </h1>
+<h1 align="center"><b><i>Secure Your Raspberry Pi</b></i> </h1>
 <p align="center">
 <a href="https://gist.github.com/boseji/c9e91ff3bd0b3cfb62a5e260fe505374"><img src="https://i.imgur.com/a9JQVls.png" width=80px height=90px></a>
 <p align="center">
