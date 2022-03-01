@@ -31,13 +31,7 @@
 #### _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_ ⫸ Better Performance & Security when browsing websites(DoT & DoH)
 #
 <p align="center">
- <img src="https://i.imgur.com/Z9bTcCu.png" >
- 
-<p align="center">
- <img src="https://i.imgur.com/ni6U1FW.jpg" >
- 
-<p align="center">
- <img src="https://i.imgur.com/owaA8kD.jpg" >
+ <img src="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/assets/images/awcu.gif" width= "800">
   
 ***
 #
@@ -48,21 +42,14 @@
 - Default Cloudflare/Quad9/Google DNS Resolvers - `50-70 msec`
 - This set up/configuration -  `5-10 msec`
  
-#### 🎥Video Previews🎥
-<details><summary><b>CLICK</b></summary>
+<details><summary><b>🎥Video Previews🎥<img src="https://media.giphy.com/media/WT5h7PgVSScLLKtMaS/giphy.gif" width=50px height=40px></b></summary>
 <p>
 
-### Adguard default DNS <i>vs</i> This set up/configuration⭐⭐⭐
+### 【adguard default DNS】 <i>VS</i> 【⭐this set up⭐】
  
 https://user-images.githubusercontent.com/18756975/150230438-b767e86f-4e18-4791-b5fe-0813615a37a3.mp4
-
-</p>
-</details>
  
-<details><summary><b>CLICK</b></summary>
-<p>
-
-### Cloudflare/Quad9/Google DNS Resolvers
+### Standard 【cloudflare/quad9/google】 DNS resolvers
  
 https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-8ee2-b80227522252.mp4
 
@@ -71,8 +58,8 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
 
 ***
  
-<p align="center">
-⏰Last Checked : 25 Feb 2022⏰
+<h2><p align="center">
+⏰Last Checked : 25 Feb 2022⏰</h2>
  
 <div align="center">
  
@@ -89,29 +76,29 @@ WireGuard           |       ✅
 
 #
 # Contents
-- <a href="https://git.io/About">About</a>
+- <a href="https://git.io/About">About</a> <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/parrots/party-nyan.gif" width=20px height=20px>
 - [Requirements](#requirements)
-- [Installing Pi operating system](#-installing-os-image-to-sdcard--)<img src="https://www.vectorlogo.zone/logos/raspberrypi/raspberrypi-icon.svg" width=20px height=20px>
+- [Installing Pi operating system](#-installing-os-image-to-sdcard--) <img src="https://www.vectorlogo.zone/logos/raspberrypi/raspberrypi-icon.svg" width=20px height=20px>
   - [Logging into Pi system [Headlessly]](#-logging-into-pi-system-headlessly-)
-- [Installing AdGuard](#-adguard-install--)<img src="https://www.vectorlogo.zone/logos/adguard/adguard-icon.svg" width=20px height=20px>
+- [Installing AdGuard](#-adguard-install--) <img src="https://www.vectorlogo.zone/logos/adguard/adguard-icon.svg" width=20px height=20px>
   - [Set up your devices to work with Adguard](#-set-up-your-devices-to-work-with-adguard-)
   - [Setting up AdGuard blocklist](#-setting-up-adguard-blocklist-)
     - [Add/Remove multiple URLs to blocklist at once](#-addremove-multiple-urls-)
-- [Installing Unbound](#-unbound-install--)<img src="https://www.privacyguides.org/assets/img/legacy_svg/3rd-party/unbound.svg" width=20px height=20px>
-- [Installing Cloudflare](#-cloudflare-install--)<img src="https://www.vectorlogo.zone/logos/cloudflare/cloudflare-icon.svg" width=20px height=20px>
+- [Installing Unbound](#-unbound-install--) <img src="https://www.privacyguides.org/assets/img/legacy_svg/3rd-party/unbound.svg" width=20px height=20px>
+- [Installing Cloudflare](#-cloudflare-install--) <img src="https://www.vectorlogo.zone/logos/cloudflare/cloudflare-icon.svg" width=20px height=20px>
   - [Install Cloudflare (DoH)](#-install-cloudflare-on-pi-with-doh-)
   - [Configure Cloudflare on Unbound (DoT)](#-configure-cloudflare-on-unbound-with-dot-)
   - [Configure Stubby (TLS Forwarder)](#-configure-stubby-for-unbound-)
   - [Configure AdGuard with Cloudflare (DoH&DoT)](#-configure-adguard-with-cloudflaredohdot-)
-- [Installing WireGuard](#-wireguard-install--)<img src="https://www.vectorlogo.zone/logos/wireguard/wireguard-icon.svg" width=20px height=20px>
-  or <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/OpenVPN-Setup.md">OpenVPN(slower)</a><img src="https://i.imgur.com/Agstbe5.png" width=20px height=20px>
+- [Installing WireGuard](#-wireguard-install--) <img src="https://www.vectorlogo.zone/logos/wireguard/wireguard-icon.svg" width=20px height=20px>
+  or <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/OpenVPN-Setup.md">OpenVPN(slower)</a> <img src="https://i.imgur.com/Agstbe5.png" width=20px height=20px>
   - [Connecting to the VPN to Android/IOS Phone](#-connecting-to-the-vpn-to-androidios-phone-)
   - [Connecting to the VPN from a PC (Windows)](#-connecting-to-the-vpn-from-a-pc-windows-)
   - [Configure Wireguard with AdGuard/Unbound/Cloudflare](#-configure-wireguard-with-adguardunboundcloudflare-)
     - [Limit traffic](#limit-traffic)
     - [IPv6 setup](#ipv6)
 - <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/Disable-All-IPv6.md">Disable all IPv6</a>
-- [Test Vpn](#how-do-you-know-if-wireguard-vpn-is-really-working-)
+- [Test Vpn](#how-do-you-know-if-wireguard-vpn-is-really-working-) <img src="https://i.imgur.com/6Yf8Zra.png" width=20px height=20px>
 - [Auto update your Pi](#-auto-update-pi--)
 - [Improving your SD Card’s potential lifespan](#-log2ram-install--)
 - [Turn Off Pi LEDs](#-turn-off-pi-led-lights--)
@@ -129,7 +116,7 @@ WireGuard           |       ✅
 
 #
 <p align="center">
-  <b>👣 STEP 1 👣</b>
+  <b><img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px> STEP 1 <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px></b>
 
 <h1 align="center"><b><i>☷ Installing OS Image To SDcard ☷</b></i> </h1>
 
@@ -190,7 +177,7 @@ Run in terminal:
 
 #
 <p align="center">
- <b>👣 STEP 2 👣</b>
+ <b><img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px> STEP 2 <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px></b>
 
 <h1 align="center"><b><i>☷ AdGuard Install ☷</b></i> </h1>
 
@@ -244,10 +231,10 @@ In AdGuard homepage under filters, select DNS blocklist section for adding urls.
 
 You can search Google for different blocklist.Here is my custom <a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/My-Blocklist.txt"><b>blocklist</b></a> with my urls.
  
-`IMPORTANT:` Some blocklist can block some important contents or websites. To unblock go "Query Log" section and will see unblocked option, putting it in "Custom filtering rules". Just look for client ip & time. Or do it manually, just add `@@||thewebsite.com^$important` to rules.
+`IMPORTANT:` Some blocklist can block some important contents or websites. To unblock go "Query Log" section and will see _unblock_ option when cursor is hovered over a query, putting unblocked wesites it in "Custom filtering rules" example: `@@||bitly.com^$important`. Look for client ip & time.
  
 <p align="center">
- <img src="https://i.imgur.com/OKUcoMs.jpg">
+ <img src="https://i.imgur.com/1gZibwD.png">
 
 ## ╸ Add/Remove Multiple URLs ╸
 
@@ -267,7 +254,7 @@ Go to https://d3ward.github.io/toolz/adblock.html to test if ads are blocking <i
 
 #
 <p align="center">
- <b>👣 STEP 3 👣</b>
+ <b><img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px> STEP 3 <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px></b>
 
 <h1 align="center"><b><i>☷ Unbound Install ☷</b></i> </h1>
 
@@ -293,7 +280,7 @@ Enter in command line `crontab -e`, it will ask Select an editor(choose 1) and p
 
 #    
 <p align="center">
- <b>👣 STEP 4 👣</b>   
+ <b><img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px> STEP 4 <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px></b>   
 
 <h1 align="center"><b><i>☷ Cloudflare Install ☷</b></i> </h1>
 
@@ -387,7 +374,7 @@ https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNS
 
 #
 <p align="center">
- <b>👣 STEP 5 👣</b>
+ <b><img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px> STEP 5 <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px></b>
 
 <h1 align="center"><b><i>☷ WireGuard Install ☷</b></i> </h1>
 
