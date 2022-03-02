@@ -1,0 +1,69 @@
+name: Create Issue
+description: ❗ Ceate only if using Raspberry Pi & Raspbian OS ❗
+title: "Issue"
+labels: [""]
+assignees:
+  - 
+body:
+  - type: dropdown
+    id: project
+    attributes:
+      label: Project
+      multiple: true
+      description: Which project/projects has issue ?
+      options:
+        - Aduard Home
+        - Wireguard
+        - Unbound
+        - Cloudflare
+        - Stubby 
+    validations:
+      required: true
+  - type: dropdown
+    id: platforms
+    attributes:
+      label: Platform
+      multiple: true
+      description: Which platform/platforms is used ?
+      options:
+        - Windows
+        - Linux
+        - Mac
+        - Android
+        - IOS
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      multiple: true
+      description: Which browser/browsers is used ?
+      options:
+        - Firefox
+        - Chrome
+        - Brave
+        - Opera
+        - Edge 
+    validations:
+      required: true
+  - type: dropdown
+    id: Issue
+    attributes:
+      label: Issue
+      multiple: true
+      description: Issue Type (Optional)
+      options:
+        - Not working
+        - Not installing
+        - Slow speeds
+        - Other (explain in Issue description)
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Issue Description
+      description: 
+      placeholder: 
+      value:
+    validations:
+      required: true
