@@ -164,7 +164,7 @@ urls = [
 "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=iptables&showintro=0&mimetype=plaintext",
 "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=msfilter&showintro=0&mimetype=plaintext",
 "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=operafilter&showintro=0&mimetype=plaintext",
-"https://pgl.yoyo.org/adservers/serverlist.php?hostformat=machosts&showintro=0&mimetype=plaintext"",
+"https://pgl.yoyo.org/adservers/serverlist.php?hostformat=machosts&showintro=0&mimetype=plaintext",
 "https://raw.githubusercontent.com/BlackJack8/iOSAdblockList/master/Regular%20Hosts.txt",
 "https://raw.githubusercontent.com/BlackJack8/iOSAdblockList/master/Hosts.txt",
 "https://raw.githubusercontent.com/uniartisan/adblock_list/master/adblock.txt",
