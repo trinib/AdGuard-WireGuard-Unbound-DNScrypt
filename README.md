@@ -77,7 +77,7 @@ WireGuard           |       ✅
 #
 # Contents
 - <a href="https://git.io/About">About</a> <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/parrots/party-nyan.gif" width=20px height=20px>
-- <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions">Discussions</a> 💬
+- <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions">Discussions</a> <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-speech-balloon.png" width=20px height=20px>
 - [Requirements](#requirements)
 - [Installing Pi operating system](#installing-os-image-to-sdcard-) <img src="https://www.vectorlogo.zone/logos/raspberrypi/raspberrypi-icon.svg" width=20px height=20px>
   - [Logging into Pi system [Headlessly]](#-logging-into-pi-system-headlessly-)
@@ -230,7 +230,7 @@ In AdGuard homepage under filters, select DNS blocklist section for adding urls.
 <p align="center">
  <img src="https://i.imgur.com/shrtJLD.png">
 
-You can search Google for different blocklist.Here is my custom <a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/My-Blocklist.txt"><b>blocklist</b></a> with my urls.
+You can search Google for different blocklist.Here is my custom <a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/My-Blocklist.txt"><b>blocklist</b></a> with my urls or build your own from these <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/Blocklist-Sources.txt"><b>sources</b></a>.
  
 `IMPORTANT:` Some blocklist can block some important contents or websites. To unblock go "Query Log" section and will see _unblock_ option when cursor is hovered over a query, putting unblocked wesites it in "Custom filtering rules" example: `@@||bitly.com^$important`. Look for client ip & time.
  
