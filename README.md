@@ -35,9 +35,9 @@
   
 ***
 #
-<h1 align="center">📈 Test results with <a href="https://docs.oracle.com/en-us/iaas/Content/DNS/Tasks/testingdnsusingdig.htm"><b>BIND's DNS Tool </b></a> 📈</h1>
+<h1 align="center">🧪 Test results with <a href="https://docs.oracle.com/en-us/iaas/Content/DNS/Tasks/testingdnsusingdig.htm"><b>BIND's DNS Tool </b></a> 🧪</h1>
 
-<b>Query Time in milliseconds:</b>
+<b>Query Time (google.com) in milliseconds:</b>
 - Adguard default DNS resolvers - `60-70 msec`
 - Default Cloudflare/Quad9/Google DNS Resolvers - `50-70 msec`
 - This set up/configuration -  `5-10 msec`
@@ -45,11 +45,11 @@
 <details><summary><b>🎥Video Previews🎥<img src="https://media.giphy.com/media/WT5h7PgVSScLLKtMaS/giphy.gif" width=50px height=40px></b></summary>
 <p>
 
-### 【Adguard default DNS】 <i>VS</i> 【⭐this set up⭐】
+### 【Adguard default DNS】<i>VS</i> ⭐this set up⭐ :
  
 https://user-images.githubusercontent.com/18756975/150230438-b767e86f-4e18-4791-b5fe-0813615a37a3.mp4
  
-### Standard 【cloudflare/quad9/google】 DNS resolvers
+### Standard【cloudflare/quad9/google】DNS resolvers :
  
 https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-8ee2-b80227522252.mp4
 
@@ -77,6 +77,7 @@ WireGuard           |       ✅
 #
 # Contents
 - <a href="https://git.io/About">About</a> <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/parrots/party-nyan.gif" width=20px height=20px>
+- <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions">Discussions</a> 💬
 - [Requirements](#requirements)
 - [Installing Pi operating system](#installing-os-image-to-sdcard-) <img src="https://www.vectorlogo.zone/logos/raspberrypi/raspberrypi-icon.svg" width=20px height=20px>
   - [Logging into Pi system [Headlessly]](#-logging-into-pi-system-headlessly-)
