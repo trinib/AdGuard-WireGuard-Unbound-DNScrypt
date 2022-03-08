@@ -1,0 +1,22 @@
+https://firebog.net/
+https://pgl.yoyo.org/adservers/
+https://easylist.to/index.html
+https://secure.fanboy.co.nz/
+https://filterlists.com/
+https://github.com/mitchellkrogza/Badd-Boyz-Hosts
+https://github.com/lightswitch05/hosts
+https://github.com/FadeMind/hosts.extras
+https://github.com/StevenBlack/hosts
+https://github.com/notracking/hosts-blocklists
+https://github.com/clayauld/Secure-Adblocking-DNS
+https://github.com/anudeepND/blacklist
+https://github.com/ookangzheng/dbl-oisd-nl
+https://github.com/EnergizedProtection/block
+https://github.com/blocklistproject/Lists
+https://github.com/badmojr/1Hosts
+https://github.com/ftpmorph/ftprivacy
+https://github.com/Ultimate-Hosts-Blacklist/Ultimate.Hosts.Blacklist
+https://github.com/Perflyst/PiHoleBlocklist
+https://github.com/easylist/easylist
+
+### Help this list and add more resources in a pull request 🙏
