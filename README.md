@@ -77,7 +77,7 @@ WireGuard           |       ✅
 #
 # Contents
 - <a href="https://git.io/About">About</a> <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/parrots/party-nyan.gif" width=20px height=20px>
-- <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions">Discussions</a> <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-speech-balloon.png" width=20px height=20px>
+- <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions">Discussions/F.A.Q</a> <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-speech-balloon.png" width=20px height=20px>
 - [Requirements](#requirements)
 - [Installing Pi operating system](#installing-os-image-to-sdcard-) <img src="https://www.vectorlogo.zone/logos/raspberrypi/raspberrypi-icon.svg" width=20px height=20px>
   - [Logging into Pi system [Headlessly]](#-logging-into-pi-system-headlessly-)
@@ -104,6 +104,7 @@ WireGuard           |       ✅
 - [Improving your SD Card’s potential lifespan](#log2ram-install-)
 - [Turn Off Pi LEDs](#turn-off-pi-led-lights-)
 - [Securing your Raspberry Pi](#secure-your-raspberry-pi-)
+- [Resources](#resources)
 
 #
 # Requirements
@@ -123,7 +124,7 @@ WireGuard           |       ✅
 
 This tutorial is based on Raspberry Pi OS (32bit or 64bit), but you can use any linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a> and hardware you prefer with some tweaking if you know what you are doing (Raspberry Pi OS is most simple and recommended for Pi).
 
-Raspberry Pi OS comes in Desktop and Lite versions(I use lite 64bit). You can set Raspberry Pi up with a monitor/keyboard/mouse, or set it up “headlessly” from a terminal.
+Raspberry Pi OS comes in Desktop and Lite versions(I use lite 32bit)(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/18"><b>why not 64bit</b></a>). You can set Raspberry Pi up with a monitor/keyboard/mouse, or set it up “headlessly” from a terminal.
 
 Install balenEtcher and download pi image to write on the microSD card.
 
@@ -585,5 +586,28 @@ Reboot pi.
  
 <p align="center">
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" </p>
+
+#
+
+## _Resources_ 
+ 
+https://github.com/AdguardTeam/AdGuardHome/
+ 
+https://docs.pi-hole.net/guides/dns/cloudflared/
+
+https://docs.pi-hole.net/guides/dns/unbound/
+ 
+https://nlnetlabs.nl/documentation/unbound/unbound.conf/
+
+https://dnsprivacy.org/dns_privacy_clients/
+
+https://github.com/stong/unbound.conf.d
+
+https://github.com/Nyr/wireguard-install
+ 
+#
+
+ 
+
      
 
