@@ -45,7 +45,7 @@ body:
         - Brave
         - Opera
         - Edge
-        - Nothing
+        - Other
     validations:
       required: true
   - type: dropdown
@@ -58,7 +58,7 @@ body:
         - Not working
         - Not installing
         - Slow speeds
-        - Other (explain in Issue description)
+        - Other (explain in description)
   - type: textarea
     id: what-happened
     attributes:
