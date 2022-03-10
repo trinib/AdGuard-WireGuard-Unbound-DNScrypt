@@ -45,7 +45,7 @@ body:
         - Brave
         - Opera
         - Edge
-        - None
+        - Nothing
     validations:
       required: true
   - type: dropdown
