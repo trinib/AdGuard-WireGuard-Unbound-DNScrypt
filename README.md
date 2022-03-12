@@ -104,7 +104,7 @@ WireGuard           |       ✅
 - [Improving your SD Card’s potential lifespan](#log2ram-install-)
 - [Turn Off Pi LEDs](#turn-off-pi-led-lights-)
 - [Securing your Raspberry Pi](#secure-your-raspberry-pi-)
-- [Resources](#resources)
+- [Repository Resources](#repository-resources) <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-books.png" width=20px height=20px>
 
 #
 # Requirements
@@ -152,7 +152,7 @@ Now put the SD card into the Raspberry Pi, plug your Ethernet cable and boot up.
 
 * Open browser and log in your router's panel page
 
-* Find list all of the devices connected to the network and copy the IP address of the Raspberry Pi (it will most likely have the hostname `raspberrypi`)
+* Find list of all of devices connected to the network and copy the IP address of the Raspberry Pi (it will most likely have the hostname `raspberrypi`)
 
 * Open Terminal on your host machine. You can use PowerShell on Windows or RaspController for Android
 
@@ -589,9 +589,11 @@ Reboot pi.
 
 #
 
-## _Resources_ 
+## _Repository Resources_
+
+https://www.raspberrypi.com/documentation/
  
-https://github.com/AdguardTeam/AdGuardHome/
+https://github.com/AdguardTeam/AdGuardHome/wiki/Getting-Started
  
 https://docs.pi-hole.net/guides/dns/cloudflared/
 
