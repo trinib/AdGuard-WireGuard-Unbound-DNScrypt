@@ -591,9 +591,11 @@ Reboot pi.
 
 ## _Repository Resources_
 
-https://www.raspberrypi.com/documentation/
+<h5 https://www.raspberrypi.com/documentation/
  
 https://github.com/AdguardTeam/AdGuardHome/wiki/Getting-Started
+    
+https://developers.cloudflare.com/
  
 https://docs.pi-hole.net/guides/dns/cloudflared/
 
@@ -605,9 +607,12 @@ https://dnsprivacy.org/dns_privacy_clients/
 
 https://github.com/stong/unbound.conf.d
 
-https://github.com/Nyr/wireguard-install
+https://github.com/Nyr/wireguard-install 
  
-#
+---
+<h4
+ 
+Frequently ask questions : <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>LINK</b></a>
 
  
 
