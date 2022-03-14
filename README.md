@@ -5,10 +5,6 @@
  <img src="http://ForTheBadge.com/images/badges/built-with-love.svg">
  <img src="https://img.shields.io/badge/badges-awesome-green.svg">
  <img src="https://img.shields.io/badge/Stay-Safe-red?logo=data:image/svg%2bxml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTEwIDUxMCIgaGVpZ2h0PSI1MTIiIHZpZXdCb3g9IjAgMCA1MTAgNTEwIiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnPjxnPjxwYXRoIGQ9Im0xNzQuNjEgMzAwYy0yMC41OCAwLTQwLjU2IDYuOTUtNTYuNjkgMTkuNzJsLTExMC4wOSA4NS43OTd2MTA0LjQ4M2g1My41MjlsNzYuNDcxLTY1aDEyNi44MnYtMTQ1eiIgZmlsbD0iI2ZmZGRjZSIvPjwvZz48cGF0aCBkPSJtNTAyLjE3IDI4NC43MmMwIDguOTUtMy42IDE3Ljg5LTEwLjc4IDI0LjQ2bC0xNDguNTYgMTM1LjgyaC03OC4xOHYtODVoNjguMThsMTE0LjM0LTEwMC4yMWMxMi44Mi0xMS4yMyAzMi4wNi0xMC45MiA0NC41LjczIDcgNi41NSAxMC41IDE1LjM4IDEwLjUgMjQuMnoiIGZpbGw9IiNmZmNjYmQiLz48cGF0aCBkPSJtMzMyLjgzIDM0OS42M3YxMC4zN2gtNjguMTh2LTYwaDE4LjU1YzI3LjQxIDAgNDkuNjMgMjIuMjIgNDkuNjMgNDkuNjN6IiBmaWxsPSIjZmZjY2JkIi8+PHBhdGggZD0ibTM5OS44IDc3LjN2OC4wMWMwIDIwLjY1LTguMDQgNDAuMDctMjIuNjQgNTQuNjdsLTExMi41MSAxMTIuNTF2LTIyNi42NmwzLjE4LTMuMTljMTQuNi0xNC42IDM0LjAyLTIyLjY0IDU0LjY3LTIyLjY0IDQyLjYyIDAgNzcuMyAzNC42OCA3Ny4zIDc3LjN6IiBmaWxsPSIjZDAwMDUwIi8+PHBhdGggZD0ibTI2NC42NSAyNS44M3YyMjYuNjZsLTExMi41MS0xMTIuNTFjLTE0LjYtMTQuNi0yMi42NC0zNC4wMi0yMi42NC01NC42N3YtOC4wMWMwLTQyLjYyIDM0LjY4LTc3LjMgNzcuMy03Ny4zIDIwLjY1IDAgNDAuMDYgOC4wNCA1NC42NiAyMi42NHoiIGZpbGw9IiNmZjRhNGEiLz48cGF0aCBkPSJtMjEyLjgzIDM2MC4xMnYzMGg1MS44MnYtMzB6IiBmaWxsPSIjZmZjY2JkIi8+PHBhdGggZD0ibTI2NC42NSAzNjAuMTJ2MzBoMzYuMTRsMzIuMDQtMzB6IiBmaWxsPSIjZmZiZGE5Ii8+PC9nPjwvc3ZnPg==">
- 
-<p align="center">
- <img src="https://github.com/websemantics/bragit/blob/master/demo/img/heart.svg" height=40px >
- <img src="https://stars.medv.io/Naereen/badges.svg">
 
 </p>
 <p align="center">
@@ -19,7 +15,9 @@
     <a href="https://img.shields.io/github/watchers/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=9700b2&style=for-the-badge" alt="GitHub watchers">
         <img src="https://img.shields.io/github/watchers/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=9700b2&style=for-the-badge"></a>
 </p>
- 
+
+<p align="center">
+ <img src="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/assets/images/awcu.gif" width= "700">
  
 <h1 align="center"><b>A step by step 📜 guide for these</b> 
 <h1 align="center"><b> 🅵🆁🅴🅴 network 📡 security projects to work together on a</b>
@@ -29,17 +27,14 @@
 #### _<a href="https://www.wireguard.com/"><b>WireGuard</b></a>_ ⫸ A Vpn Server at home accessable from any outside network(IPv4 & IPv6)
 #### _<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a> with <a href="https://dnsprivacy.org/dns_privacy_daemon_-_stubby/about_stubby/"><b>Stubby</b></a>_ ⫸ A Validating, Recursive, Caching DNS Resolver
 #### _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_ ⫸ Better Performance & Security when browsing websites(DoT & DoH)
-#
-<p align="center">
- <img src="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/assets/images/awcu.gif" width= "700">
   
 ***
 #
-<h1 align="center">🧪 Test results with <a href="https://docs.oracle.com/en-us/iaas/Content/DNS/Tasks/testingdnsusingdig.htm"><b>BIND's DNS Tool </b></a> 🧪</h1>
-
+<h1 align="center">🧪 Speed results with <a href="https://docs.oracle.com/en-us/iaas/Content/DNS/Tasks/testingdnsusingdig.htm"><b>BIND's DNS Tool </b></a> 🧪</h1>
+ 
 <b>Query Time (google.com) in milliseconds:</b>
 - Adguard default DNS resolvers - `60-70 msec`
-- Default Cloudflare/Quad9/Google DNS Resolvers - `50-70 msec`
+- Public Cloudflare/Quad9/Google DNS Resolvers - `50-70 msec`
 - This set up/configuration -  `5-10 msec`
  
 <details><summary><b>🎥Video Previews🎥<img src="https://media.giphy.com/media/WT5h7PgVSScLLKtMaS/giphy.gif" width=50px height=40px></b></summary>
@@ -49,7 +44,7 @@
  
 https://user-images.githubusercontent.com/18756975/150230438-b767e86f-4e18-4791-b5fe-0813615a37a3.mp4
  
-### Standard【cloudflare/quad9/google】DNS resolvers :
+### Public【cloudflare/quad9/google】DNS resolvers :
  
 https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-8ee2-b80227522252.mp4
 
@@ -122,9 +117,9 @@ WireGuard           |       ✅
 
 <h1 align="center"><b><i>Installing OS Image To SDcard</b></i> </h1>
 
-This tutorial is based on Raspberry Pi OS (32bit or 64bit), but you can use any linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a> and hardware you prefer with some tweaking if you know what you are doing (Raspberry Pi OS is most simple and recommended for Pi).
+This tutorial is based on Raspberry Pi OS, but you can use any linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a>(32bit or 64bit) and hardware you prefer with some tweaking _**if you know what you are doing**_! (Raspberry Pi OS is most simple and recommended for Pi).
 
-Raspberry Pi OS comes in Desktop and Lite versions(I use lite 32bit)(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/18"><b>why not 64bit</b></a>). You can set Raspberry Pi up with a monitor/keyboard/mouse, or set it up “headlessly” from a terminal.
+Raspberry Pi OS comes in Desktop and Lite versions(`I use lite 32bit`)(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/20"><b>why not 64bit</b></a>). You can set Raspberry Pi up with a monitor/keyboard/mouse, or set it up “headlessly” from a terminal.
 
 Install balenEtcher and download pi image to write on the microSD card.
 
