@@ -6,11 +6,6 @@ import json
 
 # +++ A SCRIPT TO ADD MULTIPLE BLOCKLIST AT ONCE IN ADGUARD +++ #
 
-############ INSTRUCTIONS ############
-
-### INSTALL PIP ###
-# sudo apt-get install python3-pip -y
-
 ### RUN SCRIPT ###
 # sudo python3 bulkurls.py
 
