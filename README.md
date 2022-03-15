@@ -119,7 +119,7 @@ WireGuard           |       ✅
 
 This tutorial is based on Raspberry Pi OS, but you can use any linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a>(32bit or 64bit) and hardware you prefer with some tweaking _**if you know what you are doing**_! (Raspberry Pi OS is most simple and recommended for Pi).
 
-Raspberry Pi OS comes in Desktop and Lite versions(`I use lite 32bit`)(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/20"><b>why not 64bit</b></a>). You can still use 64bit cause it might not be a issue for you. You can set Raspberry Pi up with a monitor/keyboard/mouse, or set it up “headlessly” from a terminal.
+Raspberry Pi OS comes in Desktop and Lite versions(use lite for headless mode only). You can set Raspberry Pi up with a monitor/keyboard/mouse, or set it up “headlessly” from a terminal. For more experience users, DietPi OS is also recommended.
 
 Install balenEtcher and download pi image to write on the microSD card.
 
