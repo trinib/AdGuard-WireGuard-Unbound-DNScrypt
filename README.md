@@ -104,12 +104,12 @@
  #
  # Requirements
 
-    * A Raspberry Pi 3 or 4 version
-    * A router that supports port forwarding(Most Can)
-    * MicroSD USB card reader
-    * MicroSD card (8GB or bigger, at least Class 4)
-    * Ethernet cable
-    * (Optional if using monitor) MicroHDMI-(RPi 4) or HDMI-(RPi 3)
+   - A Raspberry Pi 3 or 4 version
+   - A router that supports port forwarding(Most Can)
+   - MicroSD USB card reader
+   - MicroSD card (8GB or bigger, at least Class 4)
+   - Ethernet cable
+   - (Optional if using monitor) MicroHDMI-(RPi 4) or HDMI-(RPi 3)
 
  #
  <p align="center">
