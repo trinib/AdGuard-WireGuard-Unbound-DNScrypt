@@ -22,29 +22,13 @@ DNS plays a critical part of almost every aspect of your Internet experience. Ev
 <details><summary><b>🎥1.1.1.1🎥<img src="https://media.giphy.com/media/WT5h7PgVSScLLKtMaS/giphy.gif" width=50px height=40px></b></summary>
 <p>
 
-<details><summary><b>WINDOWS</b></summary>
-<p>  
+<a href="https://user-images.githubusercontent.com/18756975/155061965-92b1faa4-e34d-4090-aa36-59eba5a07946.mp4"><b>WINDOWS</b></a>
     
-https://user-images.githubusercontent.com/18756975/155061965-92b1faa4-e34d-4090-aa36-59eba5a07946.mp4
+<a href="https://user-images.githubusercontent.com/18756975/152836479-7402edd5-3c04-4e48-8e04-0157fbfb433e.mp4"><b>LINUX</b></a>
     
-</p>
- </details>
-     
-<details><summary><b>LINUX</b></summary>
-<p>  
-    
-https://user-images.githubusercontent.com/18756975/152836479-7402edd5-3c04-4e48-8e04-0157fbfb433e.mp4
-    
-</p>
- </details>
+<a href="https://user-images.githubusercontent.com/18756975/155062466-dd1d1fef-38aa-4e0c-b981-8f5327a2d5bb.mp4"><b>ANDROID</b></a>
 
-<details><summary><b>ANDROID</b></summary>
-<p>  
-    
-https://user-images.githubusercontent.com/18756975/155062466-dd1d1fef-38aa-4e0c-b981-8f5327a2d5bb.mp4
-    
 </p>
  </details>
+    
 
- </p>
- </details>
