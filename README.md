@@ -239,14 +239,14 @@ You can only add one by one url in dns blocklist in adguard for now but there is
 
 Install requirements and open new py file(bulkurls.py) :
 ```
-sudo apt-get install python3-pip -y && nano /home/pi/bulkurls.py
+sudo apt-get install python3-pip -y && nano bulkurls.py
 ```  
  
 Then copy and past text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>bulkurls.py</b></a> file and save (control+x then y then enter) **NEED TO CONFIGURE YOUR ADGUARD CREDENTIALS IN FILE**.
  
 _If using **DietPi** install `pip install requests` for its not install by default._
   
-To run : `sudo python3 bulkurl.py`
+To run : `sudo python3 bulkurls.py`
 
 To **remove** you need to change `add` in <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/62ba01ed8ed3a5bc5294b9fe7ee38c3e83ae1b86/bulkurls.py#L150"><b>second of last line</b></a> to `remove` in bulkurls.py file.
 
