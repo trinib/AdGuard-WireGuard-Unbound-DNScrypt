@@ -1,22 +1,29 @@
 <p align="center">
  <img src="https://i.imgur.com/rbdy7w7.png" width=220px height=100px>
 
-#### For 32bit OS
+
+<details><summary><h2><b>For 32bit OS</b></summary>
+<p>
+
 ### Download cloudflare ARM 32bit and extract it:
  
 Go to https://github.com/cloudflare/cloudflared/releases , right click on `cloudflared-linux-arm` and copy link. In terminal type **"wget copiedlink"** . For example :
 
     wget https://github.com/cloudflare/cloudflared/releases/download/2021.12.4/cloudflared-linux-arm
  
-### Copy the cloudflared file to /usr/local/bin/ and update permissions:
+Rename and copy the cloudflared file to /usr/local/bin/ and update permissions:
   
     sudo cp cloudflared-linux-arm /usr/local/bin/cloudflared && sudo chmod +x /usr/local/bin/cloudflared
  
 Done!
-#
+</p>
+ </details>
 
-#### For 64bit OS
-### Download cloudflare ARM 64bit :
+#
+<details><summary><h2><b>For 64bit OS</b></summary>
+<p>
+
+### Download cloudflare ARM 64bit and extract it :
  
 Go to https://github.com/cloudflare/cloudflared/releases , right click on `cloudflared-linux-arm64` and copy link. In terminal type **"wget copiedlink"** . For example :
  
@@ -27,8 +34,10 @@ Go to https://github.com/cloudflare/cloudflared/releases , right click on `cloud
     sudo cp cloudflared-linux-arm64 /usr/local/bin/cloudflared && sudo chmod +x /usr/local/bin/cloudflared
   
 Done!
+</p>
+ </details>
+
 #
- 
 ### After installing cloudflare 64bit or 32bit check version:
     
     cloudflared -v
@@ -50,7 +59,7 @@ Done!
 
 ### Download the cloudflare service file and save it to /lib/systemd/system:
 
-    cd /lib/systemd/system && sudo wget https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/cloudflared.service
+    cd /lib/systemd/system && sudo wget https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/cloudflared.service && cd $h
 
 ### Start cloudflare:
     
