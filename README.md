@@ -117,7 +117,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
 
 <h1 align="center"><b><i>Installing OS Image To SDcard</b></i> </h1>
 
-This tutorial is based on Raspberry Pi OS, but you can use any linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a>(32bit or 64bit) and hardware you prefer with some tweaking _**if you know what you are doing**_! (Raspberry Pi OS is most simple and recommended for Pi or for more experience users, _DietPi OS_ is also recommended.).
+This tutorial is based on Raspberry Pi OS, but you can use any linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a>(32bit or 64bit) and hardware you prefer with some tweaking _**if you know what you are doing**_! (Raspberry Pi OS is most simple and recommended for Pi or for more experience users, _DietPi OS_ is also recommended).
 
 Raspberry Pi OS comes in Desktop and Lite versions(use lite for headless mode only). You can set Raspberry Pi up with a monitor/keyboard/mouse, or set it up “headlessly” from a terminal.
 
@@ -239,11 +239,12 @@ You can only add one by one url in dns blocklist in adguard for now but there is
 
 Install requirements and open new py file(bulkurls.py) :
 ```
-sudo apt-get install python3-pip -y && nano /home/pi/bulkurls.py 
+sudo apt-get install python3-pip -y && nano /home/pi/bulkurls.py
 ```  
-_If using **DietPi** install `pip install request` for its not install by default._
-
+ 
 Then copy and past text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>bulkurls.py</b></a> file and save (control+x then y then enter) **NEED TO CONFIGURE YOUR ADGUARD CREDENTIALS IN FILE**.
+ 
+_If using **DietPi** install `pip install requests` for its not install by default._
   
 To run : `sudo python3 bulkurl.py`
 
