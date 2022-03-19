@@ -140,7 +140,6 @@ https://pgl.yoyo.org/adservers/serverlist.php?hostformat=operafilter&showintro=0
 https://pgl.yoyo.org/adservers/serverlist.php?hostformat=machosts&showintro=0&mimetype=plaintext
 https://raw.githubusercontent.com/hl2guide/Filterlist-for-AdGuard/master/filter_list_URLs.txt
 https://raw.githubusercontent.com/BlackJack8/iOSAdblockList/master/Regular%20Hosts.txt
-https://raw.githubusercontent.com/BlackJack8/iOSAdblockList/master/Hosts.txt
 https://raw.githubusercontent.com/uniartisan/adblock_list/master/adblock.txt
 https://raw.githubusercontent.com/uniartisan/adblock_list/master/adblock_lite.txt
 https://raw.githubusercontent.com/uniartisan/adblock_list/master/adblock_plus.txt
