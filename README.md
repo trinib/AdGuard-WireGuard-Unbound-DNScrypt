@@ -215,6 +215,8 @@ curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/s
      Go to "Internet Protocol Version 6(TCP/IPv6)" Enter `::1`
 
 `OPTIONAL:` <i>You can add a backup dns in the alternative fields</i>
+  
+`BE AWARE:` <i>In android, adding a public dns in second field breaks Adguard adblocking</i>
 
 <p align="center">
  <img src="https://i.imgur.com/8gsDk3z.jpg">
@@ -226,7 +228,7 @@ In AdGuard homepage under filters, select DNS blocklist section for adding urls.
 <p align="center">
  <img src="https://i.imgur.com/shrtJLD.png">
 
-You can search Google for different blocklist.Here is my custom <a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/My-Blocklist.txt"><b>blocklist</b></a> with my urls or build your own from these <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/Blocklist-Sources.txt"><b>sources</b></a>.
+You can search Google for different blocklist.Here is my custom <a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/My-Blocklist.txt"><b>blocklist</b></a> with my urls or build your own from these <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/%F0%9F%A7%B1Blocklist-Sources%E2%84%B9%EF%B8%8F"><b>sources</b></a>.
 
 `IMPORTANT:` Some blocklist can block some important contents or websites. To unblock go "Query Log" section and will see _unblock_ option when cursor is hovered over a query, putting unblocked wesites it in "Custom filtering rules" example: `@@||bitly.com^$important`. Look for client ip & time.
 
@@ -237,14 +239,14 @@ You can search Google for different blocklist.Here is my custom <a href="https:/
 
 You can only add one by one url in dns blocklist in adguard for now but there is a python script to add multiple urls together.
 
-Install requirements and open new py file(bulkurls.py) :
+Open new py file(bulkurls.py) :
 ```
-sudo apt-get install python3-pip -y && nano bulkurls.py
+nano bulkurls.py
 ```  
  
 Then copy and past text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>bulkurls.py</b></a> file and save (control+x then y then enter) **NEED TO CONFIGURE YOUR ADGUARD CREDENTIALS IN FILE**.
  
-_If using **DietPi** install `pip install requests` for its not install by default._
+_If using **DietPi** install `sudo apt-get install python3-pip -y && pip install requests` for its not install by default._
   
 To run : `sudo python3 bulkurls.py`
 
@@ -277,8 +279,7 @@ Enter in command line `crontab -e`, it will ask Select an editor(choose 1) and p
 ```
 _If using **DietPi** you need to install resolvconf and restart unbound-resolvconf.service to set unbound nameserver to 127.0.0.1 :_
 ```
-sudo apt-get install resolvconf -y
-sudo systemctl restart unbound-resolvconf.service
+sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.service
 ```  
 
 <p align="center">
@@ -362,6 +363,8 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
 ### Android
 
  * In whatever browser you use, turn **off** `Use Secure DNS` option.
+ 
+ * Be aware conflicts can occur with custom rooted roms&kernels with build.prop dns tweaks or apps/Magisk module.
 
 #### _Thats it_. Now go to https://1.1.1.1/help in browser and you should see these options output 'Yes'. 
  - [x] Connected to 1.1.1.1
@@ -541,8 +544,19 @@ Log files are one of the things written to most by the various pieces of softwar
 By pushing the files to your RAM, you can control how often they are written to the SD Card. You will still be able to access these files on the RAM as if they sat on your SD Card.
 
 Copy and paste this line in terminal:
+ 
+Manually
 ```
 wget https://git.io/log2ram -O Log2Ram-Script.sh && sudo chmod +x Log2Ram-Script.sh && sudo ./Log2Ram-Script.sh
+```
+or
+
+Add repo source(auto update)
+```
+echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ bullseye main" | sudo tee /etc/apt/sources.list.d/azlux.list
+sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg
+sudo apt update
+sudo apt install log2ram
 ```
 #
 <h1 align="center"><b><i>Turn Off Pi LED Lights</b></i> </h1>
@@ -615,7 +629,9 @@ https://dnsprivacy.org/dns_privacy_clients/
 https://github.com/stong/unbound.conf.d
 
 https://github.com/Nyr/wireguard-install 
-
+    
+https://github.com/azlux/log2ram
+    
 ---
 <h4
 
