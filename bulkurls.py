@@ -139,7 +139,6 @@ urls = [
 "https://curben.gitlab.io/malware-filter/urlhaus-filter-domains.txt",
 "https://curben.gitlab.io/malware-filter/urlhaus-filter-agh.txt",
 "https://curben.gitlab.io/malware-filter/urlhaus-filter-hosts.txt",
-"https://raw.githubusercontent.com/uBlock-LLC/uBlock/master/assets/thirdparties/easylist-downloads.adblockplus.org/easyprivacy.txt",
 "https://raw.githubusercontent.com/easylist/easylist/master/easylist/easylist_adservers.txt",
 "https://raw.githubusercontent.com/easylist/easylist/master/easylist/easylist_general_block.txt",
 "https://raw.githubusercontent.com/easylist/easylist/master/easylist/easylist_adservers_popup.txt",
