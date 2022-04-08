@@ -19,18 +19,14 @@
 <p align="center">
  <img src="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/assets/images/awcu.gif" width= "700">
 
-<h1 align="center"><b>A step by step 📜 guide for these</b> 
-<h1 align="center"><b> 🅵🆁🅴🅴 network 📡 security projects to work together on a</b>
-<h1 align="center"><b>𝓡 𝓐 𝓢 𝓟 𝓑 𝓔 𝓡 𝓡 𝓨 ℙ 𝕀 🥧</b></h1>
-
-#### _<a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard</b></a>_ ⫸ Adblocker for your devices at home ( <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md#how-does-adguard-home-compare-to-pi-hole"><b>_AdGuard compared to Pi-Hole_</b></a> )
-#### _<a href="https://www.wireguard.com/"><b>WireGuard</b></a>_ ⫸ A Vpn Server at home accessable from any outside network(IPv4 & IPv6)
-#### _<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a> with <a href="https://dnsprivacy.org/dns_privacy_daemon_-_stubby/about_stubby/"><b>Stubby</b></a>_ ⫸ A Validating, Recursive, Caching DNS Resolver
-#### _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_ ⫸ Better Performance & Security when browsing websites(DoT & DoH)
+#### _<a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard</b></a>_ : Adblocker for your devices at home ( <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md#how-does-adguard-home-compare-to-pi-hole"><b>_AdGuard compared to Pi-Hole_</b></a> )
+#### _<a href="https://www.wireguard.com/"><b>WireGuard</b></a>_ : A Vpn Server at home accessible from any outside network(IPv4 & IPv6)
+#### _<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a> with <a href="https://dnsprivacy.org/dns_privacy_daemon_-_stubby/about_stubby/"><b>Stubby</b></a>_ : A Validating, Recursive, Caching DNS Resolver
+#### _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_ : Better Performance & Security when browsing websites(DoT & DoH)
 
 ***
 #
-<h1 align="center">🧪 Speed results with <a href="https://docs.oracle.com/en-us/iaas/Content/DNS/Tasks/testingdnsusingdig.htm"><b>BIND's DNS Tool </b></a> 🧪</h1>
+<h2 align="left">🧪 Speed results with <a href="https://docs.oracle.com/en-us/iaas/Content/DNS/Tasks/testingdnsusingdig.htm"><b>BIND's DNS Tool </b></a> 🧪</h1>
 
 <b>Query Time (google.com) in milliseconds:</b>
  - Adguard default DNS resolvers - `60-70 msec`
@@ -80,7 +76,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
    - [Set up your devices to work with Adguard](#-set-up-your-devices-to-work-with-adguard-)
    - [Setting up AdGuard blocklist](#-setting-up-adguard-blocklist-)
      - [Add/Remove multiple URLs to blocklist at once](#-addremove-multiple-urls-)
- - [Installing Unbound](#unbound-install-) <img src="https://www.privacyguides.org/assets/img/legacy_svg/3rd-party/unbound.svg" width=20px height=20px>
+ - [Installing Unbound](#unbound-install-) <img src="https://www.privacytools.io/img/apps/unbound.svg" width=20px height=20px>
  - [Installing Cloudflare](#cloudflare-install-) <img src="https://www.vectorlogo.zone/logos/cloudflare/cloudflare-icon.svg" width=20px height=20px>
    - [Install Cloudflare (DoH)](#-install-cloudflare-on-pi-with-doh-)
    - [Configure Cloudflare on Unbound (DoT)](#-configure-cloudflare-on-unbound-with-dot-)
@@ -134,7 +130,7 @@ Launch Etcher and choose the Raspberry Pi OS image that you downloaded, select y
 <p align="center">
  <img src="https://i.imgur.com/tbB3VIK.jpg">
 
-After flashing is done, look in "This PC” for a disk name “boot or usb drive” (replug usb card reader if not seen). Go to that disk, create a new text file called **_`ssh without 'txt' extention`_**. BE CAREFUL, it's not “ssh.txt”, it's “ssh” without the extension. You need to disabled “Hide extensions for known file types” option in the File Exporer Options if you don't see them.
+After flashing is done, look in "This PC” for a disk name “boot or usb drive” (replug usb card reader if not seen). Go to that disk, create a new text file called **_`ssh without 'txt' extention`_**. BE CAREFUL, it's not “ssh.txt”, it's “ssh” without the extension. You need to disabled “Hide extensions for known file types” option in the File Explorer Options if you don't see them.
 
 <p align="center">
  <img src="https://i.imgur.com/eV6uMbz.jpg">
@@ -208,7 +204,7 @@ curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/s
 
     - <i>IPV4</i>
 
-    Go to network settings / change adpater options and right click in properties then select "Internet Protocol Version 4(TCP/IPv4)". Enter pi's ip address in `Preferred DNS` server 
+    Go to network settings / change adapater options and right click in properties then select "Internet Protocol Version 4(TCP/IPv4)". Enter pi's ip address in `Preferred DNS` server 
 
     - <i>IPV6 (needed for `DoH` & `DoT` to work later on in guide if using ipv6 on your router)</i>
 
@@ -270,7 +266,7 @@ For recursively querying a host that is not cached as an address, the resolver n
 ```
 wget -O root.hints https://www.internic.net/domain/named.root && sudo mv root.hints /var/lib/unbound/
 ```
- `IMPORTANT:` This needs to update every 6 months. To _**autoupdate**_ root.hints every 6 months you need to create a cron job.
+ `IMPORTANT:` This needs to update every 6 months. To _**auto update**_ root.hints every 6 months you need to create a cron job.
 
 Enter in command line `crontab -e`, it will ask Select an editor(choose 1) and paste these lines at the bottom of crontab and save (control+x then y then enter):
 ```
@@ -391,7 +387,7 @@ https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNS
 
 **Before installing WireGuard**, if you do not have a static ip you need to get a free `Dynamic DNS Subdomain` or else your external IP address most likely changes dynamically from your ISP ever so often and for that reason you'll need to set up a dynamic DNS service. 👉👉 **_▓▒░Use this <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Dns-Service-Guide.md"><b>INSTRUCTION HERE</b></a>░▒▓_** 👈👈. Or else skip the step.
 
-We also need to set up port fowarding on your router so we can access wireguard outside of our network like in a coffee shop hotspot or your mobile data
+We also need to set up port forwarding on your router so we can access wireguard outside of our network like in a coffee shop hotspot or your mobile data
 TYPE | VALUE     
 ------------ | -------------
 Device | Raspberry Pi's hostname or IP
@@ -453,7 +449,7 @@ WireGuard for windows: https://download.wireguard.com/windows-client/wireguard-i
 ```
 sudo cat /root/yourclientname.conf
 ```
- * Highlight all the text, copy and paste it in the txt file on pc and save. Then rename the extention from `txt` to `conf`. Now you have config file for that wireguard client.
+ * Highlight all the text, copy and paste it in the txt file on pc and save. Then rename the extension from `txt` to `conf`. Now you have config file for that wireguard client.
 
  * You can now import the config file to wireguard (import from file option).
 
