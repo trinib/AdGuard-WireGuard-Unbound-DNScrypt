@@ -107,10 +107,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
    - Ethernet cable
    - (Optional if using monitor) MicroHDMI-(RPi 4) or HDMI-(RPi 3)
 
- #
- <p align="center">
-   <b><img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px> STEP 1 <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px></b>
-
+#
 <h1 align="center"><b><i>Installing OS Image To SDcard</b></i> </h1>
 
 This tutorial is based on Raspberry Pi OS, but you can use any linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a>(32bit or 64bit) and hardware you prefer with some tweaking _**if you know what you are doing**_! (Raspberry Pi OS is most simple and recommended for Pi or for more experience users, _DietPi OS_ is also recommended).
@@ -169,9 +166,6 @@ sudo reboot
 **[⬆ BACK TO TOP ⬆](#contents)**
 
 #
-<p align="center">
- <b><img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px> STEP 2 <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px></b>
-
 <h1 align="center"><b><i>AdGuard Install</b></i> </h1>
 
 This installation script is from <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard Home</b></a> main project. Follow to keep updated.
@@ -253,9 +247,6 @@ Go to https://d3ward.github.io/toolz/adblock.html to test if ads are blocking <i
 **[⬆ BACK TO TOP ⬆](#contents)**
 
 #
-<p align="center">
- <b><img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px> STEP 3 <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px></b>
-
 <h1 align="center"><b><i>Unbound Install</b></i> </h1>
 
 Run the following command in your terminal:
@@ -380,9 +371,6 @@ https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNS
 **[⬆ BACK TO TOP ⬆](#contents)**
 
 #
-<p align="center">
- <b><img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px> STEP 5 <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px></b>
-
 <h1 align="center"><b><i>WireGuard Install</b></i> </h1>
 
 **Before installing WireGuard**, if you do not have a static ip you need to get a free `Dynamic DNS Subdomain` or else your external IP address most likely changes dynamically from your ISP ever so often and for that reason you'll need to set up a dynamic DNS service. 👉👉 **_▓▒░Use this <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Dns-Service-Guide.md"><b>INSTRUCTION HERE</b></a>░▒▓_** 👈👈. Or else skip the step.
