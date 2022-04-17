@@ -16,31 +16,40 @@
          <img src="https://img.shields.io/github/watchers/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=9700b2&style=for-the-badge"></a>
 </p>
 
-<p align="center">
- <img src="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/assets/images/awcu.gif" width= "700">
 
-#### _<a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard</b></a>_ : Adblocker for your devices at home ( <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md#how-does-adguard-home-compare-to-pi-hole"><b>_AdGuard compared to Pi-Hole_</b></a> )
-#### _<a href="https://www.wireguard.com/"><b>WireGuard</b></a>_ : A Vpn Server at home accessible from any outside network(IPv4 & IPv6)
-#### _<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a> with <a href="https://dnsprivacy.org/dns_privacy_daemon_-_stubby/about_stubby/"><b>Stubby</b></a>_ : A Validating, Recursive, Caching DNS Resolver
-#### _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_ : Better Performance & Security when browsing websites(DoT & DoH)
+<h2><p align="center">
+<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/lang/README.zh-CN.md"><b>🇨🇳</b></a>&nbsp;<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/lang/README.es.md"><b>🇪🇸</b></a>&nbsp;<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/lang/README.ru.md"><b>🇷🇺</b></a>&nbsp;<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/lang/README.hi.md"><b>🇮🇳</b></a>&nbsp;<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/lang/README.fr.md"><b>🇫🇷</b></a>&nbsp;<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/lang/README.it.md"><b>🇮🇹</b></a>&nbsp;<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/lang/README.de.md"><b>🇩🇪</b></a>&nbsp;<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/lang/README.ar.md"><b>🇦🇪</b></a></h2>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/assets/images/awcu.gif" width= "700">
+
+#
+#### _<a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard Home</b></a>_ : Block ads on all your devices( <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md#how-does-adguard-home-compare-to-pi-hole"><b>_compared to Pi-Hole_</b></a> )
+#### _<a href="https://www.wireguard.com/"><b>WireGuard</b></a>_ : VPN server at home accessible from any outside network(IPv4 & IPv6)
+#### _<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a> with <a href="https://dnsprivacy.org/dns_privacy_daemon_-_stubby/about_stubby/"><b>Stubby</b></a>_ : A validating, recursive, caching DNS resolver
+#### _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_ : Better performance & security when browsing websites(DoT & DoH)
+ 
+<p align="right">
+<i>All software are free, open-source and self-hosted&nbsp;</i></br>
+<a href="https://git.io/About"><b>About</b></a> <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/parrots/party-nyan.gif" width=20px height=20px>
 
 ***
 #
-<h2 align="left">🧪 Speed results with <a href="https://docs.oracle.com/en-us/iaas/Content/DNS/Tasks/testingdnsusingdig.htm"><b>BIND's DNS Tool </b></a> 🧪</h1>
+<h3 align="left">🧪 DNS query speed with <a href="https://docs.oracle.com/en-us/iaas/Content/DNS/Tasks/testingdnsusingdig.htm"><b>BIND'S dig Tool </b></a> 🧪</h1>
 
-<b>Query Time (google.com) in milliseconds:</b>
- - Adguard default DNS resolvers - `60-70 msec`
+<b>Results from google.com in milliseconds:</b>
+ - AdGuard default DNS resolvers - `60-70 msec`
  - Public Cloudflare/Quad9/Google DNS Resolvers - `50-70 msec`
  - This set up/configuration -  `5-10 msec`
 
-<details><summary><b>🎥Video Previews🎥<img src="https://media.giphy.com/media/WT5h7PgVSScLLKtMaS/giphy.gif" width=50px height=40px></b></summary>
+<details><summary><b>🎥Preview🎥<img src="https://media.giphy.com/media/WT5h7PgVSScLLKtMaS/giphy.gif" width=50px height=40px></b></summary>
 <p>
 
-### 【Adguard default DNS】<i>VS</i> ⭐this set up⭐ :
+AdGuard default DNS <b><i>vs</i></b> this set up⭐ :
 
 https://user-images.githubusercontent.com/18756975/150230438-b767e86f-4e18-4791-b5fe-0813615a37a3.mp4
 
-### Public【cloudflare/quad9/google】DNS resolvers :
+Public Cloudflare/Quad9/Google DNS resolvers :
 
 https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-8ee2-b80227522252.mp4
 
@@ -50,7 +59,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
 ***
 
 <h4><p align="center">
-⏰Last Checked : 25 Feb 2022⏰</h2>
+⏰Last Checked : 17 April 2022⏰</h2>
 
 <div align="center">
 
@@ -64,41 +73,42 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
 
 </div>
 <div>
-
+ 
 #
-# Contents
- - <a href="https://git.io/About">About</a> <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/parrots/party-nyan.gif" width=20px height=20px>
- - <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions">Discussions/F.A.Q</a> <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-speech-balloon.png" width=20px height=20px>
+# Table of contents
  - [Requirements](#requirements)
- - [Installing Pi operating system](#installing-os-image-to-sdcard-) <img src="https://www.vectorlogo.zone/logos/raspberrypi/raspberrypi-icon.svg" width=20px height=20px>
-   - [Logging into Pi system [Headlessly]](#-logging-into-pi-system-headlessly-)
- - [Installing AdGuard](#adguard-install-) <img src="https://www.vectorlogo.zone/logos/adguard/adguard-icon.svg" width=20px height=20px>
-   - [Set up your devices to work with Adguard](#-set-up-your-devices-to-work-with-adguard-)
-   - [Setting up AdGuard blocklist](#-setting-up-adguard-blocklist-)
-     - [Add/Remove multiple URLs to blocklist at once](#-addremove-multiple-urls-)
- - [Installing Unbound](#unbound-install-) <img src="https://www.privacytools.io/img/apps/unbound.svg" width=20px height=20px>
- - [Installing Cloudflare](#cloudflare-install-) <img src="https://www.vectorlogo.zone/logos/cloudflare/cloudflare-icon.svg" width=20px height=20px>
-   - [Install Cloudflare (DoH)](#-install-cloudflare-on-pi-with-doh-)
-   - [Configure Cloudflare on Unbound (DoT)](#-configure-cloudflare-on-unbound-with-dot-)
-   - [Configure Stubby (TLS Forwarder)](#-configure-stubby-for-unbound-)
-   - [Configure AdGuard with Cloudflare (DoH&DoT)](#-configure-adguard-with-cloudflaredohdot-)
- - [Installing WireGuard](#wireguard-install-) <img src="https://www.vectorlogo.zone/logos/wireguard/wireguard-icon.svg" width=20px height=20px>
+ - [Installing Raspberry Pi OS](#installing-raspberry-pi-os-) <img src="https://www.vectorlogo.zone/logos/raspberrypi/raspberrypi-icon.svg" width=20px height=20px>
+   - [Access Pi OS with SSH](#access-pi-os-with-ssh)
+ - [Install AdGuard Home](#install-adguard-home-) <img src="https://www.vectorlogo.zone/logos/adguard/adguard-icon.svg" width=20px height=20px>
+   - [Set up your devices to work with Adguard](#set-up-your-devices-to-work-with-adguard)
+   - [Setting up AdGuard blocklist](#setting-up-adguard-blocklist)
+     - [Add/Remove multiple URLs](#addremove-multiple-urls)
+ - [Install Unbound](#install-unbound-) <img src="https://www.privacytools.io/img/apps/unbound.svg" width=20px height=20px>
+ - [Install Cloudflare](#install-cloudflare-) <img src="https://www.vectorlogo.zone/logos/cloudflare/cloudflare-icon.svg" width=20px height=20px>
+   - [Setup for Cloudflared (DoH)](#setup-for-cloudflared-doh)
+   - [Configure Cloudflare (DoT) on Unbound](#configure-cloudflare-dot-on-unbound)
+     - [Configure Stubby for Unbound](#configure-stubby-for-unbound)
+   - [Configure AdGuard with Cloudflare (DoH&DoT)](#configure-adguard-with-cloudflaredohdot)
+ - [Install WireGuard](#install-wireguard-) <img src="https://www.vectorlogo.zone/logos/wireguard/wireguard-icon.svg" width=20px height=20px>
    or <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/OpenVPN-Setup.md">OpenVPN(slower)</a> <img src="https://i.imgur.com/Agstbe5.png" width=20px height=20px>
-   - [Connecting to the VPN to Android/IOS Phone](#-connecting-to-the-vpn-to-androidios-phone-)
-   - [Connecting to the VPN from a PC (Windows)](#-connecting-to-the-vpn-from-a-pc-windows-)
-   - [Configure Wireguard with AdGuard/Unbound/Cloudflare](#-configure-wireguard-with-adguardunboundcloudflare-)
+   - [Connecting VPN to Android/IOS Phone](#connecting-vpn-to-androidios-phone)
+   - [Connecting VPN to Windows](#connecting-vpn-to-windows)
+   - [Configure Wireguard with AdGuard/Unbound/Cloudflare](#configure-wireguard-with-adguardunboundcloudflare)
      - [Limit traffic](#limit-traffic)
-     - [IPv6 setup](#ipv6)
- - <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/Disable-All-IPv6.md">Disable all IPv6</a>
- - [Test Vpn](#how-do-you-know-if-wireguard-vpn-is-really-working-) <img src="https://i.imgur.com/6Yf8Zra.png" width=20px height=20px>
- - [Auto update your Pi](#auto-update-pi-)
- - [Improving your SD Card’s potential lifespan](#log2ram-install-)
+     - [IPv6](#ipv6)
+     - [Disable all IPv6](#disable-all-ipv6)
+ - [Test Vpn](#test-vpn) <img src="https://i.imgur.com/6Yf8Zra.png" width=20px height=20px>
+ - [Auto update Pi](#auto-update-pi-)
+ - [Install Log2ram](#install-log2ram-)
  - [Turn Off Pi LEDs](#turn-off-pi-led-lights-)
- - [Securing your Raspberry Pi](#secure-your-raspberry-pi-)
- - [Repository Resources](#repository-resources) <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-books.png" width=20px height=20px>
+ - [Secure your Raspberry Pi](#secure-your-raspberry-pi-)
+ - [Repository Resources](#repository-resources)
+ - [F.A.Q](#faq)
 
 #
 # Requirements
+ 
+This tutorial is based on Raspberry Pi OS, but you can use any Linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a><i>(𝟹𝟸/𝟼𝟺bit)</i>, any hardware or a <a href="https://www.google.com/search?q=What+is+a+VPS+used+for%3F&client=firefox-b-d&biw=1280&bih=582&sxsrf=APq-WBu-yng0bW9IWwNKsQhD6h1ZmRGncw%3A1650151372793&ei=zE9bYpL1L_OOwbkPgZ6DGA&ved=0ahUKEwiSi5rz3Jn3AhVzRzABHQHPAAMQ4dUDCA0&uact=5&oq=What+is+a+VPS+used+for%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBAgAEA0yBAgAEA0yBAgAEA0yBAgAEA0yBggAEA0QHjIGCAAQFhAeMgYIABAWEB4yCAgAEAgQDRAeMggIABAIEA0QHjIICAAQCBANEB46BwgAEEcQsANKBAhBGABKBAhGGABQ8AFY8AFg_ANoAXABeACAAXCIAXCSAQMwLjGYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz"><b>VPS</b></a>.</br>(Raspberry Pi OS is most simple and recommended for Pi or for more experience users, <b>DietPi</b> OS is also recommended)
 
    - A Raspberry Pi 3 or 4 version
    - A router that supports port forwarding(Most Can)
@@ -108,49 +118,44 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
    - (Optional if using monitor) MicroHDMI-(RPi 4) or HDMI-(RPi 3)
 
 #
-<h1 align="center"><b><i>Installing OS Image To SDcard</b></i> </h1>
+<h1 align="center"><b><i>Installing Raspberry Pi OS</b></i> </h1>
 
-This tutorial is based on Raspberry Pi OS, but you can use any linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a>(32bit or 64bit) and hardware you prefer with some tweaking _**if you know what you are doing**_! (Raspberry Pi OS is most simple and recommended for Pi or for more experience users, _DietPi OS_ is also recommended).
+Raspberry Pi OS comes in desktop and lite versions(use lite for <a href="https://www.google.com/search?q=What+is+a+headless+operating+system%3F&client=firefox-b-d&sxsrf=APq-WBvlqMZasn_klYxS5HZmhKQlduKYuQ%3A1650123816301&ei=KORaYtz7EYOdwbkP74G16AE&ved=0ahUKEwjcr5-f9pj3AhWDTjABHe9ADR0Q4dUDCA0&uact=5&oq=What+is+a+headless+operating+system%3F&gs_lcp=Cgdnd3Mtd2l6EAMyCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMEBWMEBYNAEaAFwAXgAgAFqiAFqkgEDMC4xmAEAoAECoAEByAEIwAEB&sclient=gws-wiz"><b>headless</b></a> mode). You can access a Raspberry Pi with a monitor/keyboard/mouse or connect via <a href="https://www.google.com/search?q=linux+ssh+&client=firefox-b-d&sxsrf=APq-WBve72uwEMMqUAe77nZoaygcx-ROMg%3A1650123667623&ei=k-NaYtbfJbmvwbkPpf6nqAQ&ved=0ahUKEwiW9azY9Zj3AhW5VzABHSX_CUUQ4dUDCA0&uact=5&oq=linux+ssh+&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECcyBQgAEIAEMgUIABCRAjIFCAAQkQIyBQgAEIAEMgUIABCABDIFCAAQkQIyBQgAEIAEMgUIABCABDIFCAAQgAQ6BwgAEEcQsANKBAhBGABKBAhGGABQuAFY0AJg1AZoAXABeACAAXaIAeIBkgEDMC4ymAEAoAEByAEIwAEB&sclient=gws-wiz"><b>SSH</b></a> from a terminal.
 
-Raspberry Pi OS comes in Desktop and Lite versions(use lite for headless mode only). You can set Raspberry Pi up with a monitor/keyboard/mouse, or set it up “headlessly” from a terminal.
-
-Install balenEtcher and download pi image to write on the microSD card.
+Install balenEtcher and download Pi image to write on the microSD card.
 
  * Download Raspberry Pi OS: https://www.raspberrypi.org/software/operating-systems/
 
  * Download balenaEtcher: https://www.balena.io/etcher/
 
-After you have `Etcher` installed and `Raspberry Pi OS` file downloaded on your computer, you can now insert the SD card with microSD USB card reader into your computer.
+After you have `Etcher` installed and `Raspberry Pi OS` file downloaded, you can now insert the SD card with microSD USB card reader into your computer.
 
-Launch Etcher and choose the Raspberry Pi OS image that you downloaded, select your microSD card and click “Flash”.
+- Launch Etcher and choose the Raspberry Pi OS image that you downloaded, select your microSD card and click `Flash`.
 
-<p align="center">
- <img src="https://i.imgur.com/tbB3VIK.jpg">
-
-After flashing is done, look in "This PC” for a disk name “boot or usb drive” (replug usb card reader if not seen). Go to that disk, create a new text file called **_`ssh without 'txt' extention`_**. BE CAREFUL, it's not “ssh.txt”, it's “ssh” without the extension. You need to disabled “Hide extensions for known file types” option in the File Explorer Options if you don't see them.
+After flashing is done, look in "This PC” for a disk name “boot or USB drive” (re-plug USB card reader if not seen). Go to that disk, create a new text file called **_`ssh without 'txt' extension`_**. Disable “Hide extensions for known file types” in the file explorer options if you don't see it.
 
 <p align="center">
  <img src="https://i.imgur.com/eV6uMbz.jpg">
 
-Now put the SD card into the Raspberry Pi, plug your Ethernet cable and boot up.
+<i>Place SD card into the Raspberry Pi, plug in Ethernet cable and boot up</i>
 
-## ╸ Logging into Pi system [Headlessly] ╸
+## Access Pi OS with SSH
 
- * Now you need to wait for a minute for pi's first boot up
+ * Wait for a minute for Pi's first boot up
 
  * Open browser and log in your router's panel page
 
  * Find list of all devices connected to your network and copy the IP address of the Raspberry Pi (it will most likely have the hostname `raspberrypi`)
 
- * Open Terminal on your host machine. You can use PowerShell on Windows or RaspController for Android
+ * Open terminal on your host machine. You can use powerShell on Windows or RaspController for android.
 
 Type the following command:
 ```
-ssh pi@pi's ip address
+ssh pi@pi's IP address
 ```
-You can use right mouse button to paste text in Windows PowerShell.
+<i>You can use right mouse button to paste text in Windows powerShell</i>.
 
-Type “yes” for fingerprint question, and type "raspberry" for a password. The passwords will be invisible when typing in linux interface. You can type **_`sudo passwd pi`_** to change password.
+Type “yes” for fingerprint question, and type "raspberry" for default password(passwords will be invisible in command line). You can type **_`sudo passwd pi`_** to change password.
 
 <p align="center">
  <img src="https://i.imgur.com/Wf30jxG.jpg">
@@ -159,14 +164,14 @@ Run in terminal:
 ```
 sudo apt update -y && sudo apt upgrade -y
 ```
-*_WAIT FOR UPDATE TO FINISH & RESTART PI. THEN CONTINUE TO NEXT STEP_*.....
+*_Reboot when finished_*
 ```
 sudo reboot
 ```
-**[⬆ BACK TO TOP ⬆](#contents)**
+**[⬆ Return to contents ⬆](#table-of-contents)**
 
 #
-<h1 align="center"><b><i>AdGuard Install</b></i> </h1>
+<h1 align="center"><b><i>Install AdGuard Home</b></i> </h1>
 
 This installation script is from <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard Home</b></a> main project. Follow to keep updated.
 
@@ -174,67 +179,62 @@ Run the following command in your terminal:
 ```
 curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -v
 ```
- * When installation is finished a window will pop up in terminal showing the different links to YOUR Adguard home page(Get Started)
+ * When installation is finished, a window will pop up in terminal showing `links` to your AdGuard home page(Get Started)
 
  * `IMPORTANT:` In Listen Interfaces option choose `Eth0` and select next
-
-<p align="center">
+ 
+ <p align="center">
   <img src="https://i.imgur.com/Wa00lDp.jpg" width=580px height=690px>
 
- * Set up username and password
+ * Set up username & password and login into admin panel
 
- * You should now be in Adguard home panel
+ * `IMPORTANT:` In general settings, set "Query logs retention" to `24 hours`. (I read that for some people logs fill up which slows down Pi and needing a reboot)
 
- * `IMPORTANT:` In general settings, set "Query logs retention" to `24 hours` (I read that for some people logs fill up and slow down pi and needing a restart everytime)
+## Set up your devices to work with AdGuard
 
-## ╸ Set Up Your Devices To Work With Adguard ╸
-
- - For Android/Apple, go to wifi advanced settings and select static option. In `DNS 1` field enter "pi's ip" address
+ - For Android/Apple, go to WiFi advanced settings and select static option. In `DNS 1` field enter "Pi's IP" address
 
  <p align="center">
   <img src="https://i.imgur.com/nxpiqDw.jpg" width=450px height=580px>
 
  - For PC/Windows
 
-    - <i>IPV4</i>
+    - <i>IPv4</i>
 
-    Go to network settings / change adapater options and right click in properties then select "Internet Protocol Version 4(TCP/IPv4)". Enter pi's ip address in `Preferred DNS` server 
+    Go to network settings / change adapter options and right click in properties then select "Internet Protocol Version 4(TCP/IPv4)". Enter Pi's IP address in `Preferred DNS` server.
 
-    - <i>IPV6 (needed for `DoH` & `DoT` to work later on in guide if using ipv6 on your router)</i>
+    - <i>IPv6 (needed for `DoH` & `DoT` to work later on in guide if using IPv6 on your router)</i>
 
      Go to "Internet Protocol Version 6(TCP/IPv6)" Enter `::1`
 
-`OPTIONAL:` <i>You can add a backup dns in the alternative fields</i>
+`OPTIONAL:` <i>You can add a backup DNS in the alternative fields</i>
   
-`BE AWARE:` <i>In android, adding a public dns in second field breaks Adguard adblocking</i>
+`BE AWARE:` <i>In android, adding a public DNS in second field breaks AdGuard ad blocking</i>
 
 <p align="center">
  <img src="https://i.imgur.com/8gsDk3z.jpg">
 
-## ╸ Setting Up AdGuard Blocklist ╸
+## Setting up AdGuard blocklist
 
-In AdGuard homepage under filters, select DNS blocklist section for adding urls.
+In AdGuard homepage under filters, select DNS blocklist section for adding URLs.
 
 <p align="center">
  <img src="https://i.imgur.com/shrtJLD.png">
 
-You can search Google for different blocklist.Here is my custom <a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/My-Blocklist.txt"><b>blocklist</b></a> with my urls or build your own from these <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/%F0%9F%A7%B1Blocklist-Sources%E2%84%B9%EF%B8%8F"><b>sources</b></a>.
+You can search Google for different blocklist. Here is my custom blocklist[<a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/My-Blocklist.txt"><b>click here</b></a>] with my URLs or build your own from these sources[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/%F0%9F%A7%B1Blocklist-Sources%E2%84%B9%EF%B8%8F"><b>click here</b></a>].
 
-`IMPORTANT:` Some blocklist can block some important contents or websites. To unblock go "Query Log" section and will see _unblock_ option when cursor is hovered over a query, putting unblocked wesites it in "Custom filtering rules" example: `@@||bitly.com^$important`. Look for client ip & time.
+`IMPORTANT:` Some blocklist can block some important contents or websites. To unblock go "Query Log" section and will see _unblock_ option when cursor is hovered over a query, putting unblocked websites it in "Custom filtering rules" example: `@@||bitly.com^$important`. Look for client IP & time.
 
-<p align="center">
- <img src="https://i.imgur.com/1gZibwD.png">
+## Add/Remove multiple URLs
 
-## ╸ Add/Remove Multiple URLs ╸
-
-You can only add one by one url in dns blocklist in adguard for now but there is a python script to add multiple urls together.
+You can only add one by one URL in DNS blocklist with AdGuard for now but there is a python script to add multiple URLs at once.
 
 Open new py file(bulkurls.py) :
 ```
 nano bulkurls.py
 ```  
  
-Then copy and past text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>bulkurls.py</b></a> file and save (control+x then y then enter) **NEED TO CONFIGURE YOUR ADGUARD CREDENTIALS IN FILE**.
+Then copy and paste script configurations[<a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>click here</b></a>]. Set `your AdGuard credentials` and save (control+x then y then enter).
  
 _If using **DietPi** install `sudo apt-get install python3-pip -y && pip install requests` for its not install by default._
   
@@ -244,10 +244,10 @@ To **remove** you need to change `add` in <a href="https://github.com/trinib/AdG
 
 Go to https://d3ward.github.io/toolz/adblock.html to test if ads are blocking <img src="https://i.imgur.com/Q5oO9EY.png" width=100px height=80px>
 
-**[⬆ BACK TO TOP ⬆](#contents)**
+**[⬆ Return to contents ⬆](#table-of-contents)**
 
 #
-<h1 align="center"><b><i>Unbound Install</b></i> </h1>
+<h1 align="center"><b><i>Install Unbound</b></i> </h1>
 
 Run the following command in your terminal:
 ```
@@ -259,7 +259,7 @@ wget -O root.hints https://www.internic.net/domain/named.root && sudo mv root.hi
 ```
  `IMPORTANT:` This needs to update every 6 months. To _**auto update**_ root.hints every 6 months you need to create a cron job.
 
-Enter in command line `crontab -e`, it will ask Select an editor(choose 1) and paste these lines at the bottom of crontab and save (control+x then y then enter):
+Enter in command line `crontab -e`, it will ask select an editor(choose 1) and paste these lines at the bottom of crontab and save (control+x then y then enter):
 ```
 1 0 1 */6 * wget -O root.hints https://www.internic.net/domain/named.root
 2 0 1 */6 * sudo mv root.hints /var/lib/unbound/
@@ -272,36 +272,33 @@ sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.
 <p align="center">
  <img src="https://i.imgur.com/26ro62t.jpg">
 
-**[⬆ BACK TO TOP ⬆](#contents)**
+**[⬆ Return to contents ⬆](#table-of-contents)**
 
 #    
-<p align="center">
- <b><img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px> STEP 4 <img src="https://github.com/seanprashad/slackmoji/blob/master/emoji/party/party-footprints.png" width=20px height=20px></b>   
+<h1 align="center"><b><i>Install Cloudflare</b></i> </h1>
 
-<h1 align="center"><b><i>Cloudflare Install</b></i> </h1>
+## Setup for Cloudflared `(DoH)`
+[<a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Cloudflare-DoH-Setup.md"><b>click here</b></a>]</h4>
 
-## ╸ Install Cloudflare On Pi With `(DoH)` ╸
-
-Install cloudflare with DNS over HTTPS(DoH), follow these 👉 <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Cloudflare-DoH-Setup.md"><b>INSTRUCTIONS</b></a> 👈.
-
-## ╸ Configure Cloudflare On Unbound With `(DoT)` ╸
+## Configure Cloudflare `(DoT)` on Unbound
 
 Create unbound configuration file by entering in command prompt:
 ```
 sudo nano /etc/unbound/unbound.conf.d/unbound.conf
 ```
-And copy and paste all the text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/unbound.conf"><b>unbound.conf</b></a> file and save (control+x then y then enter).
+And copy and paste all the text from this unbound.conf file[<a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/unbound.conf"><b>click here</b></a>] and save (control+x then y then enter).
 
-## ╸ Configure Stubby For Unbound ╸
+## Configure Stubby for Unbound
 
-Use Unbound for caching and stubby for TLS forwarder. Install stubby:
+Use Unbound for caching and stubby as a TLS forwarder. Install stubby:
 ```
 sudo apt install stubby -y
 ```
-Remove and re-create stubby.yaml file and copy/paste all the text from <a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/stubby.yml"><b>👉 this stubby config 👈</b></a> and save. (`cd $h` to return to home folder when finish).
+Remove and re-create stubby.yaml file:
 ```
 cd /etc/stubby/ && sudo rm stubby.yml && sudo nano stubby.yml
 ```
+And copy and paste all the text from this stubby config file[<a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/stubby.yml"><b>click here</b></a>] and save. (`cd` to return to home folder when finish).
 * Restart unbound & stubby and check status:
 ```
 sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
@@ -309,19 +306,17 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
 <p align="center">
  <img src="https://i.imgur.com/7zIpWP2.jpg" width=650px height=370px>
 
-## ╸ Configure Adguard With `Cloudflare(DoH&DoT)` ╸
+## Configure AdGuard with `Cloudflare(DoH&DoT)`
 
- * In AdGuard homepage under settings select "Dns settings"
+ * In AdGuard homepage under settings select "DNS settings"
 
- * Delete everything from "Upstream" and "Bootstrap DNS" server options and:
+ * Delete everything from "Upstream" and "Bootstrap DNS" server options and enter:
 
    * For `DNS over TLS(DoT)` add `127.0.0.1:53` in both "Upstream" and "Bootstrap DNS" server fields
    * For `DNS over HTTPS(DoH)` add `127.0.0.1:5053` in both "Upstream" and "Bootstrap DNS" server fields
    * For `TLS forwarder(stubby)` add `127.0.0.1:8053` in both "Upstream" and "Bootstrap DNS" server fields
 
-* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option for dns resolvers to work simultaneously.
-  
-<b>Click apply and test upstreams</b>(might get a error in the first testing only).
+* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option for DNS resolvers to work simultaneously.
 
 <p align="center">
  <img src="https://i.imgur.com/Ug4Euou.jpg" width=650px height=370px>
@@ -330,14 +325,16 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
 
 <p align="center">
  <img src="https://i.imgur.com/8Q5Zb0M.jpg" width=650px height=370px>
+ 
+<b>Click apply and test upstreams</b>(might get a error in the first testing only).
 
-### `IMPORTANT:` Windows system & Android browsers need some tweaking to `stabilize` dns resolvers..Linux works fine<i>(tested on mint)</i>
+#### `IMPORTANT:` Windows system & Android browsers need some tweaking to `stabilize` DNS resolvers..Linux works fine<i>(tested on mint)</i>
 
 ### Windows 
 
- * Install <a href="https://mayakron.altervista.org/support/acrylic/Home.htm"><b>Acrylic DNS Proxy</b></a>
+ * Install Acrylic DNS Proxy: https://mayakron.altervista.org/support/acrylic/Home.htm
 
- * Go to `C:\Program Files (x86)\Acrylic DNS Proxy` and open `AcrylicConfiguration.ini` file. Delete everything and copy these <a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/AcrylicConfiguration.ini"><b>👉SETTINGS👈</b></a> only change _**PrimaryServerAddres**_ to your pi's address.
+ * Go to `C:\Program Files (x86)\Acrylic DNS Proxy` and open `AcrylicConfiguration.ini` file. Delete everything and copy these settings[<a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/AcrylicConfiguration.ini"><b>click here</b></a>], only change _**PrimaryServerAddres**_ to your Pi's address.
 
  * In same folder run `RestartAcrylicService.bat` & `PurgeAcrylicCacheData.bat`
 
@@ -351,7 +348,7 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
 
  * In whatever browser you use, turn **off** `Use Secure DNS` option.
  
- * Be aware conflicts can occur with custom rooted roms&kernels with build.prop dns tweaks or apps/Magisk module.
+ * Be aware conflicts can occur with custom rooted roms&kernels with build.prop DNS tweaks or apps/Magisk module.
 
 #### _Thats it_. Now go to https://1.1.1.1/help in browser and you should see these options output 'Yes'. 
  - [x] Connected to 1.1.1.1
@@ -368,23 +365,23 @@ https://www.cloudflare.com/ssl/encrypted-sni/ - "Secure DNS / DNSSEC / TLS 1.3" 
 
 https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNSSEC signatures"
 
-**[⬆ BACK TO TOP ⬆](#contents)**
+**[⬆ Return to contents ⬆](#table-of-contents)**
 
 #
-<h1 align="center"><b><i>WireGuard Install</b></i> </h1>
+<h1 align="center"><b><i>Install WireGuard</b></i> </h1>
 
-**Before installing WireGuard**, if you do not have a static ip you need to get a free `Dynamic DNS Subdomain` or else your external IP address most likely changes dynamically from your ISP ever so often and for that reason you'll need to set up a dynamic DNS service. 👉👉 **_▓▒░Use this <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Dns-Service-Guide.md"><b>INSTRUCTION HERE</b></a>░▒▓_** 👈👈. Or else skip the step.
+**Before installing WireGuard**, if you do not have a <a href="https://www.google.com/search?client=firefox-b-d&q=static+IP"><b>static IP</b></a> you need to get a free `Dynamic DNS Subdomain` or else your external IP address changes dynamically from your ISP so you'll need to set up a dynamic DNS service[**<a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Dns-Service-Guide.md"><b>click here</b></a>**]. Or else skip the step.
 
-We also need to set up port forwarding on your router so we can access wireguard outside of our network like in a coffee shop hotspot or your mobile data
+You also need to set up <a href="https://www.google.com/search?q=What+is+port+forwarding+used+for%3F&client=firefox-b-d&sxsrf=APq-WBuwPqGlPJ6N9_l6qpQ3e5sYoUxZAQ%3A1650219365125&ei=ZVlcYo6sB6SGwbkP8tGOwA8&ved=0ahUKEwjO8ryY2pv3AhUkQzABHfKoA_gQ4dUDCA0&uact=5&oq=What+is+port+forwarding+used+for%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDMAVjMAWCBBWgBcAF4AIABbIgBbJIBAzAuMZgBAKABAqABAcgBCsABAQ&sclient=gws-wiz"><b>port forwarding</b></a> on your router so you can access WireGuard outside of our network like in a coffee shop hotspot or your mobile data.
 TYPE | VALUE     
 ------------ | -------------
 Device | Raspberry Pi's hostname or IP
 Protocol | UDP
 Port range | 51820-51820
 Outgoing port | 51820
-Permit Internet acces(if have) | yes 
+Permit Internet access(if have) | yes 
 
-My 👇router👇 port setting. Yours maybe different but you'll get it. Remember Google 🔍search engine🔎 is your friend. If you cannot connect from a outside network that means isp has blocked outcoming connections, you can call them and ask nicely to get it working.
+My 👇router👇 port setting. Yours maybe different but you'll get it. Remember Google 🔍search engine🔎 is your friend. If you cannot connect from a outside network that means ISP has blocked outgoing connections, you can call them and ask nicely to get it working.
 
 <p align="center">
  <img src="https://i.imgur.com/9LBEk1i.jpg">
@@ -396,9 +393,9 @@ Run in terminal
 ```
 wget https://git.io/wireguard -O wireguard-install.sh && sudo bash wireguard-install.sh
 ```
- * The script is going to ask you for Public IPv4/hostname for the VPN. _If_ you have static ip then continue or else type the dynamic DNS domain that you created from the <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Dns-Service-Guide.md"><b>instructions</b></a>. For example:trinibvpn.freeddns.org
+ * The script is going to ask you for Public IPv4/hostname for the VPN. _If_ you have static IP then continue or else type the dynamic DNS domain that you created from the <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Dns-Service-Guide.md"><b>instructions</b></a>. For example:trinibvpn.freeddns.org
 
- * For port option `press enter` for default 51820. For client name, just put any name you want, and for DNS use option 3 (`1.1.1.1`) for now. We will configure `adguard/unbound/cloudflare` with the vpn after its finished installed
+ * For port option `press enter` for default 51820. For client name, just put any name you want, and for DNS use option 3 (`1.1.1.1`) for now. You will configure `AdGuard/Unbound/Cloudflare` with the VPN after its finished installed.
 
 <p align="center">
  <img src="https://i.imgur.com/WUNZIK4.jpg">
@@ -409,96 +406,103 @@ sudo cp /root/yourclientname.conf /home/pi && sudo qrencode -t ansiutf8 < yourcl
 ```
 `IMPORTANT:` You will need to add a new user/client for each device you use with the VPN. To add a new user, simply re-run the script and create user with different client name.
 
-## If you want to use _OpenVPN_ instructions are <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/OpenVPN-Setup.md"><b>👉here👈</b></a>
+<b>Use _OpenVPN_</b>[<a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/OpenVPN-Setup.md"><b>click here</b></a>]
 
 #
-### ╸ Connecting To The VPN To Android/IOS Phone ╸
+### Connecting VPN To Android/IOS Phone
 
-Install the WireGuard app from Google Play or App Store
+Install the WireGuard app from Google Play or App Store:
 
-Wireguard (Google Play): https://play.google.com/store/apps/details?id=com.wireguard.android
+WireGuard (Google Play): https://play.google.com/store/apps/details?id=com.wireguard.android
 
-Wireguard (App Store): https://apps.apple.com/us/app/wireguard/id1441195209
+WireGuard (App Store): https://apps.apple.com/us/app/wireguard/id1441195209
 
-You need to scan the QR code shown in the terminal with Wireguard app, select the `+ button` and use the option `Scan from QR code` to install configuration.
+You need to scan the QR code shown in the terminal with WireGuard app, select the `+ button` and use the option `Scan from QR code` to install configuration.
 
 `IMPORTANT`: Enable **kernel module backend** in settings
 
 <p align="left">
  <img src="https://i.imgur.com/R4qbiOQ.jpg" width=250px height=350px>
 
-### ╸ Connecting To The VPN From A PC (Windows) ╸
+### Connecting VPN to Windows
 
 WireGuard for windows: https://download.wireguard.com/windows-client/wireguard-installer.exe
 
- * Create a `new text document` with any name on pc to copy&paste the text from wireguard client configuration file.
+ * Create a `new text document` with any name on PV to copy&paste the text from WireGuard client configuration file.
 
  * To see text in client config file, type in terminal:
 ```
 sudo cat /root/yourclientname.conf
 ```
- * Highlight all the text, copy and paste it in the txt file on pc and save. Then rename the extension from `txt` to `conf`. Now you have config file for that wireguard client.
+ * Highlight all the text, copy and paste it in the txt file on PC and save. Then rename the extension from `txt` to `conf`. Now you have config file for that WireGuard client.
 
- * You can now import the config file to wireguard (import from file option).
+ * You can now import the config file to WireGuard (import from file option).
 
-## ╸ Configure WireGuard With `Adguard/Unbound/Cloudflare` ╸
+## Configure WireGuard with `Adguard/Unbound/Cloudflare`
 
-_Remember this is for when you are connected to WireGuard VPN on an outside network or at home 24/7 cause you already have AdGuard/Unbound/Cloudflare set up and running on your devices manually._ (no issue having both set up fro my experience).
- * In wireguard app, select your tunnel and select edit (pencil on top right)
+_Remember this is for when you are connected to WireGuard VPN on an outside network or at home 24/7 cause you already have AdGuard/Unbound/Cloudflare set up and running on your devices manually._ (no issue having both set up fro my experience)
+ * In WireGuard app, select your tunnel and select edit (pencil on top right)
 
- * Under Dns servers enter `pi's ip` and save (IPv4 & IPv6)
+ * Under DNS servers enter `Pi's IP` and save (IPv4 & IPv6)
 
 <p align="center">
  <img src="https://i.imgur.com/UC0vWfE.jpg" width=450px height=500px>  
 
  ### Limit traffic
 
-With WireGuard you will lose about 50% of internet speed cause the process of tunneling through pi to router to devices**
+With WireGuard you will lose about 50% of internet speed cause the process of tunneling through Pi to router to devices**
 
 Delete in allowed IPs "0.0.0.0/0, ::/0" option because it routes all traffic to your home network which will be slow. You need send traffic through your addresses only.
 
- * First you need to replace it with your network gateway but setting the last number to a zero and <a href="https://www.google.com/search?q=prefix+length+explained&client=firefox-b-d&sxsrf=ALeKk036Jc9vJl73zVXf0yyZs5UlKRlNRQ%3A1621083125589&ei=9cOfYI66I5-qwbkPkdWxkAk&oq=prefix+length+explained&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEAcQHjoHCCMQsAMQJzoHCAAQRxCwA1CUJ1iUJ2CiKmgBcAJ4AIABsAGIAdQCkgEDMC4ymAEAoAEBqgEHZ3dzLXdpesgBCcABAQ&sclient=gws-wiz&ved=0ahUKEwjOiOie3cvwAhUfVTABHZFqDJIQ4dUDCA0&uact=5"><b>prefix lenght</b></a> to 24. For example: `192.168.1.1/24` to `192.168.1.0/24` or like my isp router `192.168.100.1/24` to `192.168.100.0/24`. ~~**Now I only lose 25% speed**😁 (ps. using 5g network)~~ 
+ * First you need to replace it with your network gateway but setting the last number to a zero and <a href="https://www.google.com/search?q=prefix+length+explained&client=firefox-b-d&sxsrf=ALeKk036Jc9vJl73zVXf0yyZs5UlKRlNRQ%3A1621083125589&ei=9cOfYI66I5-qwbkPkdWxkAk&oq=prefix+length+explained&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEAcQHjoHCCMQsAMQJzoHCAAQRxCwA1CUJ1iUJ2CiKmgBcAJ4AIABsAGIAdQCkgEDMC4ymAEAoAEBqgEHZ3dzLXdpesgBCcABAQ&sclient=gws-wiz&ved=0ahUKEwjOiOie3cvwAhUfVTABHZFqDJIQ4dUDCA0&uact=5"><b>prefix length</b></a> to 24. For example: `192.168.1.1/24` to `192.168.1.0/24` or like my ISP router `192.168.100.1/24` to `192.168.100.0/24`. ~~**Now I only lose 25% speed**😁 (PS. using 5g network)~~ 
 
-`UPDATE:` After a Wireguard update I do not get a faster speed doing this :( .. but it still makes sense _not_ to use `"0.0.0.0/0, ::/0` with wifi. If anyone knows any tweaks to get a boost, let me know.
+`UPDATE:` After a WireGuard update I do not get a faster speed doing this😞 .. but it still makes sense _not_ to use `"0.0.0.0/0, ::/0` with WiFi. If anyone knows any tweaks to get a boost, let me know.
 
 <p align="center">
  <img src="https://i.imgur.com/x4m6Pbl.jpg" width=450px height=500px>
 
 ### PLEASE READ !! , BE AWARE !! 
-`IMPORTANT`: _If your network has ip addresses for devices that ends with a 3 digit number (more than 24), for example: 192.168.100.`999`, you will not be able to route properly from outside network because applying 24 only allows numbers 1 through 24. You need to instead put `0` to route out of the 24 range, for example : `192.168.100.0/0`_. 
+`IMPORTANT`: _If your network has IP addresses for devices that ends with a 3 digit number (more than 24), for example: 192.168.100.`254`, you will not be able to route properly from outside network because applying 24 only allows numbers 1 through 24. You need to instead put `0` to route out of the 24 range, for example : `192.168.100.0/0`_. 
 
-Or you can change ip range on your router (in my experience you might get a tiny bit better speeds cause it will not route unnecessary allowed ip addresses over the 24 range).
+Or you can change IP range on your router (in my experience you might get a tiny bit better speeds cause it will not route unnecessary allowed IP addresses over the 24 range).
 <p align="center">
  <img src="https://i.imgur.com/ZZ4aMUI.jpg" width=750px height=550px>
 
-## IPV6
-If you are using IPv6, when connected to wifi you need to enter in WireGuard allowed IPs `fe80::1/0` as well. For example `192.168.100.0/0, fe80::1/0`
+## IPv6
+If you are using IPv6, when connected to WiFi you need to enter in WireGuard allowed IPs `fe80::1/0` as well. For example `192.168.100.0/0, fe80::1/0`
 
-When connected to ethernet cable on a windows pc, you need to enter `::1` in IPv6 address in "Internet Protocol Version 6(TCP/IPv6)" preferred DNS server.
+When connected to Ethernet cable on a windows PC, you need to enter `::1` in IPv6 address in "Internet Protocol Version 6(TCP/IPv6)" preferred DNS server.
 
 Then go to https://ipv6leak.com/ and you should see "_Your IPv6 is not leaking_".
 #
+ 
+## Disable all IPv6
 
-<h1 align="left"><a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/Disable-All-IPv6.md"><b>Disable all IPv6</b></a></h2>
+#### Disable IPv6 if you don't have it or don't want it[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/Disable-All-IPv6.md"><b>click here</b></a>]. In result if you have weak internet, disabling IPv6 can speed up dns request but have less security.
 
 #
-## How do you know if wireguard vpn is really working ??
-For **windows** download <a href="https://www.wireshark.org/#download."><b>Wireshark</b></a>
+## Test VPN
 
-Once downloaded you can use the application to inspect your data packets where the protocol is set to the one used by Wireguard VPN. When a packet traffic is `encrypted`, it can be read  like this for example:
+How do you know if WireGuard VPN is really working?
+
+For **windows** download Wireshark: https://www.wireshark.org/#download
+
+Once downloaded you can use the application to inspect your data packets where the protocol is set to the one used by WireGuard VPN. When a packet traffic is `encrypted`, it can be read  like this for example:
 <p align="center">
  <img src="https://i.imgur.com/Tn4M47R.jpg">
 
-For **android** you can use <a href="https://play.google.com/store/apps/details?id=com.emanuelef.remote_capture&hl=en&gl=US"><b>PCAPdroid</b></a>. You should see all connections `closed` and status showing all DNS and not any TLS connections in all apps (open and use apps for PCAPdroid to scan).
+For **android** you can use PCAPdroid: https://play.google.com/store/apps/details?id=com.emanuelef.remote_capture&hl=en&gl=US
+                                                                                                                                
+You should see all connections `closed` and status showing all DNS and not any TLS connections in all apps. (open and use apps for PCAPdroid to scan)
 
-**[⬆ BACK TO TOP ⬆](#contents)**
+**[⬆ Return to contents ⬆](#table-of-contents)**
 
 ***
 
 #
 <h1 align="center"><b><i>Auto Update Pi</b></i> </h1>
 
-* Open new sh file called update and copy&paste text from <a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/update.sh"><b>👉here👈</b></a>
+* Open new sh file called update and copy&paste script[<a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/update.sh"><b>click here</b></a>]
 ```
 sudo nano update.sh
 ```
@@ -512,7 +516,7 @@ sudo chmod 700 update.sh
 ```
 Pi will now update every Wednesday at 3am. Or you can go to https://crontab.guru/ and set your own time schedule.
 
-Adjust pi's date/timezone enter in terminal:
+Adjust Pi's date/timezone enter in terminal:
 ```
 sudo dpkg-reconfigure tzdata
 ```
@@ -521,7 +525,7 @@ or set manually
 sudo date -s "25 DEC 2012 11:14:00"
 ```
 #
-<h1 align="center"><b><i>Log2Ram Install</b></i> </h1>
+<h1 align="center"><b><i>Install Log2Ram</b></i> </h1>
 
 One of the most significant advantages of offloading your RAM is that it improves your **SD Card’s potential lifespan**.
 Log files are one of the things written to most by the various pieces of software you install.
@@ -543,9 +547,9 @@ sudo apt update
 sudo apt install log2ram
 ```
 #
-<h1 align="center"><b><i>Turn Off Pi LED Lights</b></i> </h1>
+<h1 align="center"><b><i>Turn off Pi LED lights</b></i> </h1>
 
-I guess power to LEDs will impact unnecessary electricty and heat 🤷😅. No need for it anyways if just using it as a network server. Open cron file by entering in command line `crontab -e`, copy&paste job command line below at the bottom of cron file and save.
+I guess power to LEDs will impact unnecessary electricity and heat 🤷😅. No need for it anyways if just using it as a network server. Open cron file by entering in command line `crontab -e`, copy&paste job command line below at the bottom of cron file and save.
 
 Green 
 ```
@@ -555,24 +559,21 @@ Red
 ```
 @reboot echo none | sudo tee /sys/class/leds/led1/trigger
 ```
-Reboot pi.
+Reboot Pi.
 
 #
-<h1 align="center"><b><i>Secure Your Raspberry Pi</b></i> </h1>
+<h1 align="center"><b><i>Secure your Raspberry Pi</b></i> </h1>
 <p align="center">
 <a href="https://gist.github.com/boseji/c9e91ff3bd0b3cfb62a5e260fe505374"><img src="https://i.imgur.com/a9JQVls.png" width=80px height=90px></a>
 <p align="center">
-<a href="https://gist.github.com/boseji/c9e91ff3bd0b3cfb62a5e260fe505374"><b>LINK</b></a>
+[<a href="https://gist.github.com/boseji/c9e91ff3bd0b3cfb62a5e260fe505374"><b>click here</b></a>]
 
 <i>( I just use Fail2Ban and change SSH port )</i>
 
-**[⬆ BACK TO TOP ⬆](#contents)**
+**[⬆ Return to contents ⬆](#table-of-contents)**
 
 ***
 
-<p align="center">
-<b>🎉🎉 THAT'S IT !! 🎉🎉 YOUR FINISH 👌👌
-<p align="center">
 <b>ANY ISSUES, FIXES OR TIPS TO MAKE THESE PROJECTS BETTER PLEASE CONTRIBUTE🤖</b>
 
 ***
@@ -590,7 +591,7 @@ Reboot pi.
 <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/stargazers"><img src="https://reporoster.com/stars/dark/trinib/AdGuard-WireGuard-Unbound-Cloudflare"></a>
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" </p>
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"</p>
 
 #
 
@@ -619,11 +620,7 @@ https://github.com/Nyr/wireguard-install
 https://github.com/azlux/log2ram
 
 ---
-<h4
 
-Frequently ask questions : <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>LINK</b></a>
-
-
-
-
-
+## _F.A.Q_
+ 
+Frequently ask questions[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>click here</b></a>]
