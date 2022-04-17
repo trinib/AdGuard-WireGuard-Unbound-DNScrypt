@@ -1,6 +1,3 @@
-<h1 align="center"><b>Disable IPv6 if you don't have it or don't want it. In result if you have weak internet, disabling IPv6 can speed up dns request but have less security.
-</b> </h1>
-
 **1.**  In AdGuard homepage go to DNS settings, under DNS server configuration section 
 
 * Check `Disable IPv6` option
