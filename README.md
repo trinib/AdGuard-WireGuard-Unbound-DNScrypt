@@ -69,9 +69,7 @@ Last Checked⏰ : 17 April 2022</h2>
  Cloudflare          |       ✅
  Stubby              |       ✅
  WireGuard           |       ✅    
-
 </div>
-<div>
  
 #
 # Table of contents
