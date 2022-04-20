@@ -30,7 +30,7 @@
 #### _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_ : Better performance & security when browsing websites(DoT & DoH)
  
 <p align="right">
-<i>All software are free, open-source and&nbsp;self-hosted&nbsp;</i></br><a href="https://git.io/About"><b>About</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<i>All software are free, open-source and&nbsp;self-hosted&nbsp;</i></br><a href="https://git.io/About"><b>About</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>F.A.Q</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 ***
 
@@ -101,7 +101,6 @@ Last Checked⏰ : 17 April 2022</h2>
  - [Turn Off Pi LEDs](#turn-off-pi-led-lights-)
  - [Secure your Raspberry Pi](#secure-your-raspberry-pi-)
  - [Repository Resources](#repository-resources)
- - [F.A.Q](#faq)
 
 #
 # Requirements
@@ -118,7 +117,7 @@ This tutorial is based on Raspberry Pi, but you can use any Linux <a href="https
 #
 <h1 align="center"><b><i>Install Raspberry Pi OS</b></i> </h1>
 
-Raspberry Pi OS comes in desktop and lite versions(use lite for <a href="https://www.google.com/search?q=What+is+a+headless+operating+system%3F&client=firefox-b-d&sxsrf=APq-WBvlqMZasn_klYxS5HZmhKQlduKYuQ%3A1650123816301&ei=KORaYtz7EYOdwbkP74G16AE&ved=0ahUKEwjcr5-f9pj3AhWDTjABHe9ADR0Q4dUDCA0&uact=5&oq=What+is+a+headless+operating+system%3F&gs_lcp=Cgdnd3Mtd2l6EAMyCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMEBWMEBYNAEaAFwAXgAgAFqiAFqkgEDMC4xmAEAoAECoAEByAEIwAEB&sclient=gws-wiz"><b>headless</b></a> mode). You can access a Raspberry Pi with a monitor/keyboard/mouse or connect via <a href="https://www.google.com/search?q=linux+ssh+&client=firefox-b-d&sxsrf=APq-WBve72uwEMMqUAe77nZoaygcx-ROMg%3A1650123667623&ei=k-NaYtbfJbmvwbkPpf6nqAQ&ved=0ahUKEwiW9azY9Zj3AhW5VzABHSX_CUUQ4dUDCA0&uact=5&oq=linux+ssh+&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECcyBQgAEIAEMgUIABCRAjIFCAAQkQIyBQgAEIAEMgUIABCABDIFCAAQkQIyBQgAEIAEMgUIABCABDIFCAAQgAQ6BwgAEEcQsANKBAhBGABKBAhGGABQuAFY0AJg1AZoAXABeACAAXaIAeIBkgEDMC4ymAEAoAEByAEIwAEB&sclient=gws-wiz"><b>SSH</b></a> from a terminal.
+Raspberry Pi OS comes in desktop and lite versions(use lite for <a href="https://www.google.com/search?q=What+is+a+headless+operating+system%3F&client=firefox-b-d&sxsrf=APq-WBvlqMZasn_klYxS5HZmhKQlduKYuQ%3A1650123816301&ei=KORaYtz7EYOdwbkP74G16AE&ved=0ahUKEwjcr5-f9pj3AhWDTjABHe9ADR0Q4dUDCA0&uact=5&oq=What+is+a+headless+operating+system%3F&gs_lcp=Cgdnd3Mtd2l6EAMyCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMEBWMEBYNAEaAFwAXgAgAFqiAFqkgEDMC4xmAEAoAECoAEByAEIwAEB&sclient=gws-wiz"><b>headless</b></a> mode). You can access a Raspberry Pi with a monitor/keyboard/mouse or connect via <a href="https://www.google.com/search?q=linux+ssh+&client=firefox-b-d&sxsrf=APq-WBve72uwEMMqUAe77nZoaygcx-ROMg%3A1650123667623&ei=k-NaYtbfJbmvwbkPpf6nqAQ&ved=0ahUKEwiW9azY9Zj3AhW5VzABHSX_CUUQ4dUDCA0&uact=5&oq=linux+ssh+&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECcyBQgAEIAEMgUIABCRAjIFCAAQkQIyBQgAEIAEMgUIABCABDIFCAAQkQIyBQgAEIAEMgUIABCABDIFCAAQgAQ6BwgAEEcQsANKBAhBGABKBAhGGABQuAFY0AJg1AZoAXABeACAAXaIAeIBkgEDMC4ymAEAoAEByAEIwAEB&sclient=gws-wiz"><b>ssh</b></a> from a terminal.
 
 Install balenEtcher and download Pi image to write on the microSD card.
 
@@ -153,7 +152,7 @@ ssh pi@pi's IP address
 ```
 <i>You can use right mouse button to paste text in Windows powerShell</i>.
 
-Type “yes” for fingerprint question, and type "raspberry" for default password(passwords will be invisible in command line). You can type **_`sudo passwd pi`_** to change password.
+Type “yes” for fingerprint question, and type "raspberry" for default password(passwords will be invisible in command line). You can type **_`sudo passwd pi`_** to change password after.
 
 <p align="center">
  <img src="https://i.imgur.com/Wf30jxG.jpg">
@@ -219,7 +218,11 @@ In AdGuard homepage under filters, select DNS blocklist section for adding URLs.
 <p align="center">
  <img src="https://i.imgur.com/shrtJLD.png">
 
-You can search Google for different blocklist. Here is my custom blocklist[<a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/My-Blocklist.txt"><b>click here</b></a>] with my URLs or build your own from these sources[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/%F0%9F%A7%B1Blocklist-Sources%E2%84%B9%EF%B8%8F"><b>click here</b></a>].
+You can search Google for different blocklist. Here is my custom blocklist for example[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/My-Blocklist.txt"><b>click here</b></a>]. Build your own from a list of main blocklist sources I collected[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/%F0%9F%A7%B1Blocklist-Sources%E2%84%B9%EF%B8%8F"><b>click here</b></a>]. Or check out:
+</br>
+<a href="https://github.com/T145/black-mirror"><b>Tblack-mirror</b></a> - _***Automatically maintained malicious host blacklists and false-positive whitelists***_ 
+</br>
+👊BIG THANKS👊to <a href="https://github.com/T145"><b>T145</b></a>
 
 `IMPORTANT:` Some blocklist can block some important contents or websites. To unblock go "Query Log" section and will see _unblock_ option when cursor is hovered over a query, putting unblocked websites it in "Custom filtering rules" example: `@@||bitly.com^$important`. Look for client IP & time.
 
@@ -616,9 +619,7 @@ https://github.com/stong/unbound.conf.d
 https://github.com/Nyr/wireguard-install 
     
 https://github.com/azlux/log2ram
+    
+https://github.com/T145/black-mirror
 
 ---
-
-## _F.A.Q_
- 
-Frequently ask questions[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>click here</b></a>]
