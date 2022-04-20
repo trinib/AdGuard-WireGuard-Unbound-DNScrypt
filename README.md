@@ -217,12 +217,15 @@ In AdGuard homepage under filters, select DNS blocklist section for adding URLs.
 
 <p align="center">
  <img src="https://i.imgur.com/shrtJLD.png">
+ 
+My blocklist for example[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/My-Blocklist.txt"><b>click here</b></a>]
 
-You can search Google for different blocklist. Here is my custom blocklist for example[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/My-Blocklist.txt"><b>click here</b></a>]. Build your own from a list of main blocklist sources I collected[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/%F0%9F%A7%B1Blocklist-Sources%E2%84%B9%EF%B8%8F"><b>click here</b></a>]. Or check out:
+***Ultimate blocklists sources*** :
 </br>
-<a href="https://github.com/T145/black-mirror"><b>Tblack-mirror</b></a> - _***Automatically maintained malicious host blacklists and false-positive whitelists***_ 
+<img src="https://raw.githubusercontent.com/T145/black-mirror/master/.github/images/logo.png" width=30%>   
+<a href="https://github.com/T145/black-mirror"><b>Tblack-mirror</b></a> - _Automatically maintained malicious host blacklists and false-positive whitelists_
 </br>
-👊BIG THANKS👊to <a href="https://github.com/T145"><b>T145</b></a>
+👊BIG THANKS👊 to <a href="https://github.com/T145"><b>T145</b></a>
 
 `IMPORTANT:` Some blocklist can block some important contents or websites. To unblock go "Query Log" section and will see _unblock_ option when cursor is hovered over a query, putting unblocked websites it in "Custom filtering rules" example: `@@||bitly.com^$important`. Look for client IP & time.
 
