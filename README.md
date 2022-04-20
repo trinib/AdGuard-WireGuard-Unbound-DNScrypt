@@ -223,7 +223,7 @@ My blocklist for example[<a href="https://github.com/trinib/AdGuard-WireGuard-Un
 ***Ultimate blocklists sources*** :
 </br>
 <img src="https://raw.githubusercontent.com/T145/black-mirror/master/.github/images/logo.png" width=30%>   
-<a href="https://github.com/T145/black-mirror"><b>Tblack-mirror</b></a> - _Automatically maintained malicious host blacklists and false-positive whitelists_
+<a href="https://github.com/T145/black-mirror"><b>black-mirror</b></a> - _Automatically maintained malicious host blacklists and false-positive whitelists_
 </br>
 👊BIG THANKS👊 to <a href="https://github.com/T145"><b>T145</b></a>
 
