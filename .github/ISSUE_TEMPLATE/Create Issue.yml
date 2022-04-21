@@ -1,7 +1,7 @@
 name: Create Issue
 description: ❗ Ceate only if using Raspberry Pi & Raspbian OS ❗
 title: "Issue"
-labels: [""]
+labels: ["issue"]
 assignees:
   - 
 body:
