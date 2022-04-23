@@ -30,9 +30,9 @@
 #### _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_ : Better performance & security when browsing websites(DoT & DoH)
  
 <p align="right">
-<i>All software are free, open-source and&nbsp;self-hosted&nbsp;</i></br><a href="https://git.io/About"><b>About</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>F.A.Q</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<i>All software are free, open-source and&nbsp;self-hosted&nbsp;</i></br><a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/wiki/About"><b>About</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>F.a.q</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki"><b>Wiki</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-***
+#
 
 <h3 align="left">DNS query speed with <a href="https://docs.oracle.com/en-us/iaas/Content/DNS/Tasks/testingdnsusingdig.htm"><b>BIND'S dig Tool </b></a> 🧪</h1>
 
@@ -55,7 +55,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
 </p>
  </details>
 
-***
+#
 
 <h4><p align="center">
 Last Checked⏰ : 17 April 2022</h2>
@@ -96,12 +96,7 @@ Last Checked⏰ : 17 April 2022</h2>
      - [IPv6](#ipv6)
      - [Disable all IPv6](#disable-all-ipv6)
  - [Test Vpn](#test-vpn) <img src="https://i.imgur.com/6Yf8Zra.png" width=20px height=20px>
- - [Auto update Pi](#auto-update-pi-)
- - [Install Log2ram](#install-log2ram-)
- - [Turn Off Pi LEDs](#turn-off-pi-led-lights-)
- - [Secure your Raspberry Pi](#secure-your-raspberry-pi-)
  - [Repository Resources](#repository-resources)
-
 #
 # Requirements
  
@@ -220,7 +215,7 @@ In AdGuard homepage under filters, select DNS blocklist section for adding URLs.
 
 ***Ultimate blocklists sources*** :
 </br>
-<img src="https://raw.githubusercontent.com/T145/black-mirror/master/.github/images/logo.png" width=30%>   
+<a href="https://github.com/T145/black-mirror"><img src="https://raw.githubusercontent.com/T145/black-mirror/master/.github/images/logo.png" width=220px height=60px></a>  
 <a href="https://github.com/T145/black-mirror"><b>black-mirror</b></a> - _Automatically maintained malicious host blacklists and false-positive whitelists_
 </br>
 👊BIG THANKS👊 to <a href="https://github.com/T145"><b>T145</b></a>
@@ -280,7 +275,7 @@ sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.
 <h1 align="center"><b><i>Install Cloudflare</b></i> </h1>
 
 ## Setup for Cloudflared `(DoH)`
-[<a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Cloudflare-DoH-Setup.md"><b>click here</b></a>]</h4>
+[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Cloudflared-service-with-DNS-over-HTTPS-proxy"><b>click here</b></a>]</h4>
 
 ## Configure Cloudflare `(DoT)` on Unbound
 
@@ -372,9 +367,9 @@ https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNS
 #
 <h1 align="center"><b><i>Install WireGuard</b></i> </h1>
 
-**Before installing WireGuard**, if you do not have a <a href="https://www.google.com/search?client=firefox-b-d&q=static+IP"><b>static IP</b></a> you need to get a free `Dynamic DNS Subdomain` or else your external IP address changes dynamically from your ISP so you'll need to set up a dynamic DNS service[**<a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Dns-Service-Guide.md"><b>click here</b></a>**]. Or else skip the step.
+**Before installing WireGuard**, if you do not have a <a href="https://www.google.com/search?client=firefox-b-d&q=static+IP"><b>static IP</b></a> you need to get a free `Dynamic DNS Subdomain` or else your external IP address changes dynamically from your ISP so you'll need to set up a dynamic DNS service[**<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-a-Dynamic-DNS-Hostname-Service"><b>click here</b></a>**]. Or else skip the step.
 
-You also need to set up <a href="https://www.google.com/search?q=What+is+port+forwarding+used+for%3F&client=firefox-b-d&sxsrf=APq-WBuwPqGlPJ6N9_l6qpQ3e5sYoUxZAQ%3A1650219365125&ei=ZVlcYo6sB6SGwbkP8tGOwA8&ved=0ahUKEwjO8ryY2pv3AhUkQzABHfKoA_gQ4dUDCA0&uact=5&oq=What+is+port+forwarding+used+for%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDMAVjMAWCBBWgBcAF4AIABbIgBbJIBAzAuMZgBAKABAqABAcgBCsABAQ&sclient=gws-wiz"><b>port forwarding</b></a> on your router so you can access WireGuard outside of our network like in a coffee shop hotspot or your mobile data.
+You also need to set up <a href="https://www.google.com/search?q=What+is+port+forwarding+used+for%3F&client=firefox-b-d&sxsrf=APq-WBuwPqGlPJ6N9_l6qpQ3e5sYoUxZAQ%3A1650219365125&ei=ZVlcYo6sB6SGwbkP8tGOwA8&ved=0ahUKEwjO8ryY2pv3AhUkQzABHfKoA_gQ4dUDCA0&uact=5&oq=What+is+port+forwarding+used+for%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDMAVjMAWCBBWgBcAF4AIABbIgBbJIBAzAuMZgBAKABAqABAcgBCsABAQ&sclient=gws-wiz"><b>port forwarding</b></a> on your router so you can access WireGuard network anywhere like a coffee shop hotspot and even from mobile data tethering.
 TYPE | VALUE     
 ------------ | -------------
 Device | Raspberry Pi's hostname or IP
@@ -395,7 +390,7 @@ Run in terminal
 ```
 wget https://git.io/wireguard -O wireguard-install.sh && sudo bash wireguard-install.sh
 ```
- * The script is going to ask you for Public IPv4/hostname for the VPN. _If_ you have static IP then continue or else type the dynamic DNS domain that you created from the <a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/Dns-Service-Guide.md"><b>instructions</b></a>. For example:trinibvpn.freeddns.org
+ * The script is going to ask you for Public IPv4/hostname for the VPN. _If_ you have static IP then continue or else type the dynamic DNS domain that you created from the <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-a-Dynamic-DNS-Hostname-Service"><b>instructions</b></a>. For example:trinibvpn.freeddns.org
 
  * For port option `press enter` for default 51820. For client name, just put any name you want, and for DNS use option 3 (`1.1.1.1`) for now. You will configure `AdGuard/Unbound/Cloudflare` with the VPN after its finished installed.
 
@@ -408,7 +403,7 @@ sudo cp /root/yourclientname.conf /home/pi && sudo qrencode -t ansiutf8 < yourcl
 ```
 `IMPORTANT:` You will need to add a new user/client for each device you use with the VPN. To add a new user, simply re-run the script and create user with different client name.
 
-<b>Use _OpenVPN_</b>[<a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/blob/main/OpenVPN-Setup.md"><b>click here</b></a>]
+<b>Use _OpenVPN_</b>[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-OpenVPN"><b>click here</b></a>]
 
 #
 ### Connecting VPN To Android/IOS Phone
@@ -480,7 +475,7 @@ Then go to https://ipv6leak.com/ and you should see "_Your IPv6 is not leaking_"
  
 ## Disable all IPv6
 
-#### Disable IPv6 if you don't have it or don't want it[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/Disable-All-IPv6.md"><b>click here</b></a>]. In result if you have weak internet, disabling IPv6 can speed up dns request but have less security.
+#### Disable IPv6 if you don't have it or don't want it[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Disable-all-IPv6"><b>click here</b></a>]. In result if you have weak internet, disabling IPv6 can speed up dns request but have less security.
 
 #
 ## Test VPN
@@ -501,84 +496,8 @@ You should see all connections `closed` and status showing all DNS and not any T
 
 ***
 
-#
-<h1 align="center"><b><i>Auto Update Pi</b></i> </h1>
-
-* Open new sh file called update and copy&paste script[<a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/update.sh"><b>click here</b></a>]
-```
-sudo nano update.sh
-```
- * Set permission
-```
-sudo chmod 700 update.sh
-```
- * Open cron file by entering in command line `crontab -e`, copy&paste job command line below at the bottom of cron file and save.
-```
-0 3 * * WED sudo ./update.sh 2>&1 >/home/pi/updatelog
-```
-Pi will now update every Wednesday at 3am. Or you can go to https://crontab.guru/ and set your own time schedule.
-
-Adjust Pi's date/timezone enter in terminal:
-```
-sudo dpkg-reconfigure tzdata
-```
-or set manually
-```
-sudo date -s "25 DEC 2012 11:14:00"
-```
-#
-<h1 align="center"><b><i>Install Log2Ram</b></i> </h1>
-
-One of the most significant advantages of offloading your RAM is that it improves your **SD Card’s potential lifespan**.
-Log files are one of the things written to most by the various pieces of software you install.
-By pushing the files to your RAM, you can control how often they are written to the SD Card. You will still be able to access these files on the RAM as if they sat on your SD Card.
-
-Copy and paste this line in terminal:
- 
-Manually
-```
-wget https://git.io/log2ram -O Log2Ram-Script.sh && sudo chmod +x Log2Ram-Script.sh && sudo ./Log2Ram-Script.sh
-```
-or
-
-Add repo source(auto update)
-```
-echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ bullseye main" | sudo tee /etc/apt/sources.list.d/azlux.list
-sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg
-sudo apt update
-sudo apt install log2ram
-```
-#
-<h1 align="center"><b><i>Turn off Pi LED lights</b></i> </h1>
-
-I guess power to LEDs will impact unnecessary electricity and heat 🤷😅. No need for it anyways if just using it as a network server. Open cron file by entering in command line `crontab -e`, copy&paste job command line below at the bottom of cron file and save.
-
-Green 
-```
-@reboot echo none | sudo tee /sys/class/leds/led0/trigger
- ```   
-Red
-```
-@reboot echo none | sudo tee /sys/class/leds/led1/trigger
-```
-Reboot Pi.
-
-#
-<h1 align="center"><b><i>Secure your Raspberry Pi</b></i> </h1>
-<p align="center">
-<a href="https://gist.github.com/boseji/c9e91ff3bd0b3cfb62a5e260fe505374"><img src="https://i.imgur.com/a9JQVls.png" width=80px height=90px></a>
-<p align="center">
-[<a href="https://gist.github.com/boseji/c9e91ff3bd0b3cfb62a5e260fe505374"><b>click here</b></a>]
-
-<i>( I just use Fail2Ban and change SSH port )</i>
-
-**[⬆ Return to contents ⬆](#table-of-contents)**
-
-***
-
 <b>ANY ISSUES, FIXES OR TIPS TO MAKE THESE PROJECTS BETTER PLEASE CONTRIBUTE🤖</b>
 
-***
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"
@@ -619,8 +538,5 @@ https://github.com/stong/unbound.conf.d
 
 https://github.com/Nyr/wireguard-install 
     
-https://github.com/azlux/log2ram
-    
 https://github.com/T145/black-mirror
 
----
