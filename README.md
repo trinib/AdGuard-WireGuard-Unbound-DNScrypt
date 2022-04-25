@@ -17,31 +17,37 @@
 </p>
 
 
-<h2><p align="center">
-<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/lang/README.zh-CN.md"><b>🇨🇳</b></a>&nbsp;<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/lang/README.es.md"><b>🇪🇸</b></a>&nbsp;<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/lang/README.ru.md"><b>🇷🇺</b></a>&nbsp;<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/lang/README.hi.md"><b>🇮🇳</b></a>&nbsp;<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/lang/README.fr.md"><b>🇫🇷</b></a>&nbsp;<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/lang/README.it.md"><b>🇮🇹</b></a>&nbsp;<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/lang/README.de.md"><b>🇩🇪</b></a>&nbsp;<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/lang/README.ar.md"><b>🇦🇪</b></a></h2>
-
 <h2 align="center"><img src="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/assets/images/awcu.gif" width= "700"></h2>
  
-## Features
+<h1 align="center">Features</h1>
+
+<div align="center"> 
  
-#### _<a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard Home</b></a>_ : Block banners, pop-ups and video ads on all your devices
-#### _<a href="https://www.wireguard.com/"><b>WireGuard</b></a>_ : VPN server at home accessible from any public network(IPv4 & IPv6)
-#### _<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a> with <a href="https://dnsprivacy.org/dns_privacy_daemon_-_stubby/about_stubby/"><b>Stubby</b></a>_ : Validating, recursive, caching DNS resolver
-#### _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_ : Better performance & security when browsing websites(DoT & DoH)
+_<a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard Home</b></a>_</br>
+Block banners, pop-ups and video advertisements network-wide
+ 
+ _<a href="https://www.wireguard.com/"><b>WireGuard</b></a>_</br>
+A VPN server accessible from public networks (IPv4 & IPv6)
+ 
+ _<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a> & <a href="https://dnsprivacy.org/dns_privacy_daemon_-_stubby/about_stubby/"><b>Stubby</b></a>_</br>
+A validating, recursive, caching DNS resolver and TLS forwarder
+ 
+ _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_</br>
+Better performance & security for websites, APIs, and Internet applications (DoT & DoH)
+</div>
  
 <p align="right">
-<i>All software are free, open-source and&nbsp;self-hosted&nbsp;</i></br><a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/wiki/About"><b>About</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>F.a.q</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki"><b>Wiki</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<i>All software are free, open-source and&nbsp;self-hosted&nbsp;</i></br><a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/wiki/About"><b>ABOUT</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>FAQ</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki"><b>WIKI</b></a>
 
 #
 
-<h3 align="left">DNS query speed using <a href="https://docs.oracle.com/en-us/iaas/Content/DNS/Tasks/testingdnsusingdig.htm"><b>BIND'S dig tool</b></a> 🧪</h3>
+<h3 align="left">DNS query speed 🧪</h3>
+<a href="https://docs.oracle.com/en-us/iaas/Content/DNS/Tasks/testingdnsusingdig.htm"><b>BIND'S dig tool</b></a> results from google.com servers:
 
-<b>Results from google.com servers:</b>
  - AdGuard default DNS resolvers - `60-70 msec`
  - Public Cloudflare/Quad9/Google DNS Resolvers - `50-70 msec`
  - This setup/configuration -  `5-10 msec`
-
-<details><summary><b>Preview🎥<img src="https://media.giphy.com/media/WT5h7PgVSScLLKtMaS/giphy.gif" width=50px height=40px></b></summary>
+<details><summary>🎥 Preview</summary>
 <p>
 
 AdGuard default <b><i>vs</i></b> setup/configuration:
@@ -49,17 +55,19 @@ AdGuard default <b><i>vs</i></b> setup/configuration:
 https://user-images.githubusercontent.com/18756975/150230438-b767e86f-4e18-4791-b5fe-0813615a37a3.mp4
 
 Public Cloudflare/Quad9/Google:</br>
-(<i>same results if addresses are added manually on systems</i>)
+<i>(same results if addresses are added manually on systems)</i>
 
 https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-8ee2-b80227522252.mp4
 
 </p>
  </details>
+ 
+<p align="right">
+<b>Project Status</b>
 
-#
-
-<h4><p align="center">
-Last Checked⏰ : 17 April 2022</h2>
+<div align="right">
+<details><summary>Last tested: 17 April 2022</summary>
+<p>
 
 <div align="center">
 
@@ -70,6 +78,10 @@ Last Checked⏰ : 17 April 2022</h2>
  Cloudflare          |       ✅
  Stubby              |       ✅
  WireGuard           |       ✅    
+</div>
+
+</p>
+ </details>
 </div>
  
 #
@@ -101,7 +113,7 @@ Last Checked⏰ : 17 April 2022</h2>
 #
 # Requirements
  
-This tutorial is installed on Raspberry Pi, but you can use any Linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a><i>(𝟹𝟸/𝟼𝟺bit)</i>, any hardware or <a href="https://www.google.com/search?q=What+is+a+VPS+used+for%3F&client=firefox-b-d&biw=1280&bih=582&sxsrf=APq-WBu-yng0bW9IWwNKsQhD6h1ZmRGncw%3A1650151372793&ei=zE9bYpL1L_OOwbkPgZ6DGA&ved=0ahUKEwiSi5rz3Jn3AhVzRzABHQHPAAMQ4dUDCA0&uact=5&oq=What+is+a+VPS+used+for%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBAgAEA0yBAgAEA0yBAgAEA0yBAgAEA0yBggAEA0QHjIGCAAQFhAeMgYIABAWEB4yCAgAEAgQDRAeMggIABAIEA0QHjIICAAQCBANEB46BwgAEEcQsANKBAhBGABKBAhGGABQ8AFY8AFg_ANoAXABeACAAXCIAXCSAQMwLjGYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz"><b>VPS</b></a>.</br>(Raspberry Pi OS is most simple and recommended for Pi. For more experience users, <a href="https://dietpi.com/"><b>DietPi</b></a> OS is also recommended)
+This tutorial is installed on Raspberry Pi, but you can use any Linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a><i>(𝟹𝟸/𝟼𝟺bit)</i>, any hardware or <a href="https://www.google.com/search?q=What+is+a+VPS+used+for%3F&client=firefox-b-d&biw=1280&bih=582&sxsrf=APq-WBu-yng0bW9IWwNKsQhD6h1ZmRGncw%3A1650151372793&ei=zE9bYpL1L_OOwbkPgZ6DGA&ved=0ahUKEwiSi5rz3Jn3AhVzRzABHQHPAAMQ4dUDCA0&uact=5&oq=What+is+a+VPS+used+for%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBAgAEA0yBAgAEA0yBAgAEA0yBAgAEA0yBggAEA0QHjIGCAAQFhAeMgYIABAWEB4yCAgAEAgQDRAeMggIABAIEA0QHjIICAAQCBANEB46BwgAEEcQsANKBAhBGABKBAhGGABQ8AFY8AFg_ANoAXABeACAAXCIAXCSAQMwLjGYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz"><b>VPS</b></a>.</br>_(Raspberry Pi OS is most simple and recommended for Pi. For more experience users, <a href="https://dietpi.com/"><b>DietPi</b></a> OS is also recommended)_
 
    - A Raspberry Pi 3 or 4 version
    - A router that supports port forwarding(most can)
@@ -328,9 +340,9 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
 <p align="center">
  <img src="https://i.imgur.com/8Q5Zb0M.jpg" width=650px height=370px>
  
-<b>Click apply and test upstreams</b>(might get a error in the first testing only).
+Click apply and test upstreams(might get a error in the first testing only).
 
-<b>`IMPORTANT:`Make Windows system and Android browsers DNS resolving more `stable`. Linux works fine</b><i>(tested on mint)</i>
+<b>`IMPORTANT:`Make DNS resolving more `stable` on Windows system and Android browsers. Linux works fine</b><i>(tested on ubuntu)</i>
 
 #### Windows 
 
@@ -500,8 +512,6 @@ You should see all connections `closed` and status showing all DNS and not any T
 #
 
 ## _Repository Resources_
-
-<h5 https://www.raspberrypi.com/documentation/
 
 https://github.com/AdguardTeam/AdGuardHome/wiki/Getting-Started
 
