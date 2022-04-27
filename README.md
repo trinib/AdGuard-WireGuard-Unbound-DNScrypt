@@ -6,6 +6,9 @@
  <img src="https://img.shields.io/badge/badges-awesome-green.svg">
  <img src="https://img.shields.io/badge/Stay-Safe-red?logo=data:image/svg%2bxml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTEwIDUxMCIgaGVpZ2h0PSI1MTIiIHZpZXdCb3g9IjAgMCA1MTAgNTEwIiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnPjxnPjxwYXRoIGQ9Im0xNzQuNjEgMzAwYy0yMC41OCAwLTQwLjU2IDYuOTUtNTYuNjkgMTkuNzJsLTExMC4wOSA4NS43OTd2MTA0LjQ4M2g1My41MjlsNzYuNDcxLTY1aDEyNi44MnYtMTQ1eiIgZmlsbD0iI2ZmZGRjZSIvPjwvZz48cGF0aCBkPSJtNTAyLjE3IDI4NC43MmMwIDguOTUtMy42IDE3Ljg5LTEwLjc4IDI0LjQ2bC0xNDguNTYgMTM1LjgyaC03OC4xOHYtODVoNjguMThsMTE0LjM0LTEwMC4yMWMxMi44Mi0xMS4yMyAzMi4wNi0xMC45MiA0NC41LjczIDcgNi41NSAxMC41IDE1LjM4IDEwLjUgMjQuMnoiIGZpbGw9IiNmZmNjYmQiLz48cGF0aCBkPSJtMzMyLjgzIDM0OS42M3YxMC4zN2gtNjguMTh2LTYwaDE4LjU1YzI3LjQxIDAgNDkuNjMgMjIuMjIgNDkuNjMgNDkuNjN6IiBmaWxsPSIjZmZjY2JkIi8+PHBhdGggZD0ibTM5OS44IDc3LjN2OC4wMWMwIDIwLjY1LTguMDQgNDAuMDctMjIuNjQgNTQuNjdsLTExMi41MSAxMTIuNTF2LTIyNi42NmwzLjE4LTMuMTljMTQuNi0xNC42IDM0LjAyLTIyLjY0IDU0LjY3LTIyLjY0IDQyLjYyIDAgNzcuMyAzNC42OCA3Ny4zIDc3LjN6IiBmaWxsPSIjZDAwMDUwIi8+PHBhdGggZD0ibTI2NC42NSAyNS44M3YyMjYuNjZsLTExMi41MS0xMTIuNTFjLTE0LjYtMTQuNi0yMi42NC0zNC4wMi0yMi42NC01NC42N3YtOC4wMWMwLTQyLjYyIDM0LjY4LTc3LjMgNzcuMy03Ny4zIDIwLjY1IDAgNDAuMDYgOC4wNCA1NC42NiAyMi42NHoiIGZpbGw9IiNmZjRhNGEiLz48cGF0aCBkPSJtMjEyLjgzIDM2MC4xMnYzMGg1MS44MnYtMzB6IiBmaWxsPSIjZmZjY2JkIi8+PHBhdGggZD0ibTI2NC42NSAzNjAuMTJ2MzBoMzYuMTRsMzIuMDQtMzB6IiBmaWxsPSIjZmZiZGE5Ii8+PC9nPjwvc3ZnPg==">
 
+
+<h2 align="center"><img src="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/assets/images/awcu.gif" width= "700"></h2>
+
 </p>
  <p align="center">
      <a href="https://img.shields.io/github/stars/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=FFD700&style=for-the-badge" alt="GitHub Repo stars">
@@ -15,9 +18,6 @@
      <a href="https://img.shields.io/github/watchers/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=9700b2&style=for-the-badge" alt="GitHub watchers">
          <img src="https://img.shields.io/github/watchers/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=9700b2&style=for-the-badge"></a>
 </p>
-
-
-<h2 align="center"><img src="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/assets/images/awcu.gif" width= "700"></h2>
  
 <h1 align="center">Features</h1>
 
@@ -113,7 +113,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
 #
 # Requirements
  
-This tutorial is installed on Raspberry Pi, but you can use any Linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a><i>(𝟹𝟸/𝟼𝟺bit)</i>, any hardware or <a href="https://www.google.com/search?q=What+is+a+VPS+used+for%3F&client=firefox-b-d&biw=1280&bih=582&sxsrf=APq-WBu-yng0bW9IWwNKsQhD6h1ZmRGncw%3A1650151372793&ei=zE9bYpL1L_OOwbkPgZ6DGA&ved=0ahUKEwiSi5rz3Jn3AhVzRzABHQHPAAMQ4dUDCA0&uact=5&oq=What+is+a+VPS+used+for%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBAgAEA0yBAgAEA0yBAgAEA0yBAgAEA0yBggAEA0QHjIGCAAQFhAeMgYIABAWEB4yCAgAEAgQDRAeMggIABAIEA0QHjIICAAQCBANEB46BwgAEEcQsANKBAhBGABKBAhGGABQ8AFY8AFg_ANoAXABeACAAXCIAXCSAQMwLjGYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz"><b>VPS</b></a>.</br>_(Raspberry Pi OS is most simple and recommended for Pi. For more experience users, <a href="https://dietpi.com/"><b>DietPi</b></a> OS is also recommended)_
+This tutorial is installed on Raspberry Pi, but you can use any Linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a><i>(𝟹𝟸/𝟼𝟺bit)</i>, any hardware or <a href="https://www.google.com/search?q=What+is+cloud+hosting+and+how+does+it+work%3F&client=firefox-b-d&biw=1280&bih=582&sxsrf=APq-WBv6YzP1uwdIJUrzsZs92CVrLMle2A%3A1651061176738&ei=uDFpYsvQLImOwbkPs-qJ6AY&ved=0ahUKEwjLjMSXmrT3AhUJRzABHTN1Am0Q4dUDCA0&uact=5&oq=What+is+cloud+hosting+and+how+does+it+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUIA6WIA6YPc8aAJwAXgAgAF6iAF6kgEDMC4xmAEAoAECoAEByAEJwAEB&sclient=gws-wiz"><b>cloud service</b></a>.</br>_(Raspberry Pi OS is most simple and recommended for Pi. For more experience users, <a href="https://dietpi.com/"><b>DietPi</b></a> OS is also recommended)_
 
    - A Raspberry Pi 3 or 4 version
    - A router that supports port forwarding(most can)
@@ -340,7 +340,7 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
 <p align="center">
  <img src="https://i.imgur.com/8Q5Zb0M.jpg" width=650px height=370px>
  
-Click apply and test upstreams(might get a error in the first testing only).
+Click apply and test upstreams
 
 <b>`IMPORTANT:`Make DNS resolving more `stable` on Windows system and Android browsers. Linux works fine</b><i>(tested on ubuntu)</i>
 
@@ -384,7 +384,7 @@ https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNS
 #
 <h1 align="center"><b><i>Install WireGuard</b></i> </h1>
 
-**Before installing WireGuard**, if you do not have a <a href="https://www.google.com/search?client=firefox-b-d&q=static+IP"><b>static IP</b></a> you need to get a free `Dynamic DNS Subdomain` or else your external IP address changes dynamically from your ISP. Install a dynamic DNS service to keep DNS records automatically up to date when an IP address changes[**<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-a-Dynamic-DNS-Hostname-Service"><b>click here</b></a>**]. Or else skip this.
+**Before installing WireGuard**, if you do not have a <a href="https://www.google.com/search?client=firefox-b-d&q=static+IP"><b>static IP</b></a> it will change dynamically from your internet service provider or from a router reboot. You will need to setup a dynamic DNS service with a hostname to keep automatically up-to-date with a  dynamic IP[**<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-a-Dynamic-DNS-Hostname-Service"><b>click here</b></a>**]. Or else skip this.
 
 You also need to set up <a href="https://www.google.com/search?q=What+is+port+forwarding+used+for%3F&client=firefox-b-d&sxsrf=APq-WBuwPqGlPJ6N9_l6qpQ3e5sYoUxZAQ%3A1650219365125&ei=ZVlcYo6sB6SGwbkP8tGOwA8&ved=0ahUKEwjO8ryY2pv3AhUkQzABHfKoA_gQ4dUDCA0&uact=5&oq=What+is+port+forwarding+used+for%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDMAVjMAWCBBWgBcAF4AIABbIgBbJIBAzAuMZgBAKABAqABAcgBCsABAQ&sclient=gws-wiz"><b>port forwarding</b></a> on your router so you can access WireGuard network anywhere like a coffee shop hotspot and even from mobile data tethering.
 TYPE | VALUE     
@@ -408,7 +408,7 @@ Run in terminal
 ```
 wget https://git.io/wireguard -O wireguard-install.sh && sudo bash wireguard-install.sh
 ```
- * The script is going to ask you for Public IPv4/hostname for the VPN. If you have static IP then continue or else type the dynamic DNS domain that you created from the <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-a-Dynamic-DNS-Hostname-Service"><b>instructions</b></a>. For example:`trinibvpn.freeddns.org`
+ * The script is going to ask you for Public IPv4/hostname for the VPN. If you have static IP then continue or else type the dynamic DNS domain that you created from the <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Dynamic-DNS-service"><b>instructions</b></a>. For example:`trinibvpn.freeddns.org`
 
  * For port option `press enter` for default 51820. For client name, just put any name you want, and for DNS use option 3 (`1.1.1.1`) for now.
 
@@ -453,9 +453,12 @@ sudo cat /root/yourclientname.conf
 
  * You can now import the config file to WireGuard (import from file option).
 
+
 ## Configure WireGuard with `Adguard/Unbound/Cloudflare`
 
-Only do this for when you are connected to WireGuard VPN on an outside network or just want to use VPN at home 24/7 cause you already have it set up locally and running on your devices manually(no issue having both set up from my experience). (<i>Not sure if you might need to do this if on a VPS</i>)
+`ADVICE:`_I think it do not make much of a difference to use DoT/DoH with WireGuard security protocols. Though from my experience and in forums, it does not seem to cause any issues using it together. Mainly do this for adblocking feature with a VPN._
+ 
+Only do this when you are connected to WireGuard VPN on an outside network because you already have it set up locally(in dns server) and running on your devices manually(no issue having both set up from my experience).
  * In WireGuard app, select your tunnel and select edit (pencil on top right)
 
  * Under DNS servers enter `Pi's IP` and save (IPv4 & IPv6)
@@ -465,12 +468,12 @@ Only do this for when you are connected to WireGuard VPN on an outside network o
 
 ### Limit traffic
 
-WireGuard will lose a fair percentage of internet speed from the process of tunneling through Pi, to router and to devices. You need send traffic through your local network only for better speeds[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Limit-traffic-on-VPN"><b>click here</b></a>].
+WireGuard will lose a fair percentage of internet speed from the process of tunneling through Linux system, to router and to devices. You need send traffic through your local network only for better speeds[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Limit-traffic-on-VPN"><b>click here</b></a>].
 
 #
 ### Disable all IPv6
 
-#### Disable IPv6 if you don't have it or don't want it[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Disable-all-IPv6"><b>click here</b></a>]. In result if you have weak internet, disabling IPv6 can speed up dns request but have less security.
+#### Disable IPv6 if you don't have it or don't want it[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Disable-all-IPv6"><b>click here</b></a>]. In result if you have weak internet, disabling IPv6 can speed up dns records and request but have less security.
 
 #
 ## Test VPN
@@ -513,7 +516,7 @@ You should see all connections `closed` and status showing all DNS and not any T
 
 ## _Repository Resources_
 
-https://github.com/AdguardTeam/AdGuardHome/wiki/Getting-Started
+https://github.com/AdguardTeam/AdGuardHome/wiki
 
 https://developers.cloudflare.com/
 
