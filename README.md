@@ -384,7 +384,7 @@ https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNS
 #
 <h1 align="center"><b><i>Install WireGuard</b></i> </h1>
 
-**Before installing WireGuard**, if you do not have a <a href="https://www.google.com/search?client=firefox-b-d&q=static+IP"><b>static IP</b></a> it will change dynamically from your internet service provider or from a router reboot. You will need to setup a dynamic DNS service with a hostname to keep automatically up-to-date with a  dynamic IP[**<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-a-Dynamic-DNS-Hostname-Service"><b>click here</b></a>**]. Or else skip this.
+**Before installing WireGuard**, if you do not have a <a href="https://www.google.com/search?client=firefox-b-d&q=static+IP"><b>static IP</b></a> it will change dynamically from your internet service provider or from a router reboot. You will need to setup a dynamic DNS service with a hostname to keep automatically up-to-date with a  dynamic IP[**<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-a-DNS-domain-hostname"><b>click here</b></a>**]. Or else skip this.
 
 You also need to set up <a href="https://www.google.com/search?q=What+is+port+forwarding+used+for%3F&client=firefox-b-d&sxsrf=APq-WBuwPqGlPJ6N9_l6qpQ3e5sYoUxZAQ%3A1650219365125&ei=ZVlcYo6sB6SGwbkP8tGOwA8&ved=0ahUKEwjO8ryY2pv3AhUkQzABHfKoA_gQ4dUDCA0&uact=5&oq=What+is+port+forwarding+used+for%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDMAVjMAWCBBWgBcAF4AIABbIgBbJIBAzAuMZgBAKABAqABAcgBCsABAQ&sclient=gws-wiz"><b>port forwarding</b></a> on your router so you can access WireGuard network anywhere like a coffee shop hotspot and even from mobile data tethering.
 TYPE | VALUE     
@@ -453,12 +453,10 @@ sudo cat /root/yourclientname.conf
 
  * You can now import the config file to WireGuard (import from file option).
 
-
 ## Configure WireGuard with `Adguard/Unbound/Cloudflare`
 
-`ADVICE:`_I think it do not make much of a difference to use DoT/DoH with WireGuard security protocols. Though from my experience and in forums, it does not seem to cause any issues using it together. Mainly do this for adblocking feature with a VPN._
+`ADVICE:`_I think it do not make much of a difference to use DoT/DoH with WireGuard security protocols. Though from my experience and in forums, it does not seem to cause any issues using them together. Mainly do this for adblocking with a VPN on public networks._
  
-Only do this when you are connected to WireGuard VPN on an outside network because you already have it set up locally(in dns server) and running on your devices manually(no issue having both set up from my experience).
  * In WireGuard app, select your tunnel and select edit (pencil on top right)
 
  * Under DNS servers enter `Pi's IP` and save (IPv4 & IPv6)
