@@ -1,7 +1,5 @@
 #!/bin/bash
 
-logger "Update Script: Starting..."
-
 echo '[*] Refreshing repository cache...'
 sudo apt-get update -y
 echo '[*] Repository cache refreshed.'
@@ -19,8 +17,5 @@ sudo apt-get autoclean -y
 sudo apt-get autoremove -y
 echo '[*] Package cleanup complete.'
 
-logger "Update Script: Done."
-
-echo "[*] Rebooting...";
-
-sudo reboot;
+echo "[*] Rebooting..."
+sudo reboot
