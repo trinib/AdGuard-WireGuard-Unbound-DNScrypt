@@ -7,7 +7,7 @@ install_aborted="false"
 ### Refer to https://github.com/azlux/log2ram for more details
 
 ### Installing 
-## wget https://git.io/log2ram -O Log2Ram-Script.sh && sudo chmod +x Log2Ram-Script.sh && sudo ./Log2Ram-Script.sh
+## wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/assets/scripts/Log2Ram-Script.sh -O Log2Ram-Script.sh && sudo chmod +x Log2Ram-Script.sh && sudo ./Log2Ram-Script.sh
 
 #### Uninstalling log2ram (if needed in future)
 ## sudo chmod +x /usr/local/bin/uninstall-log2ram.sh && sudo /usr/local/bin/uninstall-log2ram.sh
