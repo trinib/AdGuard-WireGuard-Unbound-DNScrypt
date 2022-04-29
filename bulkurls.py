@@ -15,10 +15,10 @@ host = "http://your_pi_ip:80"
 userName = "Yours"
 # Your password
 password = "Yours"
-# MY blocklist (add your own: https://github.com/T145/black-mirror) 
+# My blocklist (add your own: https://github.com/T145/black-mirror) 
 urls = [
 "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt",
-"https://adaway.org/hosts.txt"
+"https://adaway.org/hosts.txt",
 "https://someonewhocares.org/hosts/zero/hosts",
 "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/GameConsoleAdblockList.txt",
 "https://raw.githubusercontent.com/mitchellkrogza/The-Big-List-of-Hacked-Malware-Web-Sites/master/hosts",
