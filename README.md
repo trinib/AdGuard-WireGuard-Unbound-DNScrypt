@@ -220,7 +220,7 @@ curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/s
 
 ## Updating AdGuard
  
-AdGuard Home can be updated from user interface or <a href="https://github.com/AdguardTeam/AdGuardHome/wiki/FAQ#how-to-update-adguard-home-manually"><b>manally</b></a> with command line which is the better way for now. <br>
+AdGuard Home can be updated from user interface or <a href="https://github.com/AdguardTeam/AdGuardHome/wiki/FAQ#how-to-update-adguard-home-manually"><b>manually</b></a> with command line which is the better way for now. <br>
 _Use script constructed with update commands[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/AdGuard-Home-update-script"><b>click here</b></a>]_.
 
 ## Setting up AdGuard blocklist
