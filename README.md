@@ -91,7 +91,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
  - [Install Raspberry Pi OS](#install-raspberry-pi-os-) <img src="https://www.vectorlogo.zone/logos/raspberrypi/raspberrypi-icon.svg" width=20px height=20px>
    - [Access Pi OS with SSH](#access-pi-os-with-ssh)
  - [Install AdGuard Home](#install-adguard-home-) <img src="https://www.vectorlogo.zone/logos/adguard/adguard-icon.svg" width=20px height=20px>
-   - [Set up your devices to work with Adguard](#set-up-your-devices-to-work-with-adguard)
+   - [Setup devices to work with Adguard](#setup-devices-to-work-with-adguard)
    - [Updating Adguard](#updating-adguard)
    - [Setting up AdGuard blocklist](#setting-up-adguard-blocklist)
      - [Add/Remove multiple URLs](#addremove-multiple-urls)
@@ -103,18 +103,19 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
      - [Configure Stubby for Unbound](#configure-stubby-for-unbound)
    - [Configure AdGuard with Cloudflare (DoH&DoT)](#configure-adguard-with-cloudflaredohdot)
  - [Install WireGuard](#install-wireguard-) <img src="https://www.vectorlogo.zone/logos/wireguard/wireguard-icon.svg" width=20px height=20px>
-   or <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-OpenVPN">OpenVPN</a> <img src="https://i.imgur.com/Agstbe5.png" width=20px height=20px>
    - [Connecting VPN to Android/IOS Phone](#connecting-vpn-to-androidios-phone)
    - [Connecting VPN to Windows](#connecting-vpn-to-windows)
+   - [Install OpenVPN](#install-openvpn-as-a-alternativeclick-here)</a> <img src="https://i.imgur.com/Agstbe5.png" width=20px height=20px>
    - [Configure Wireguard with AdGuard/Unbound/Cloudflare](#configure-wireguard-with-adguardunboundcloudflare)
      - [Limit traffic](#limit-traffic)
      - [Disable all IPv6](#disable-all-ipv6)
    - [Test Vpn](#test-vpn) <img src="https://i.imgur.com/6Yf8Zra.png" width=20px height=20px>
  - [Repository Resources](#repository-resources)
+
 #
 # Requirements
  
-This tutorial is installed with Raspberry Pi, but you can use any Linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a><i>(𝟹𝟸/𝟼𝟺bit)</i>, any hardware or <a href="https://www.google.com/search?q=What+is+cloud+hosting+and+how+does+it+work%3F&client=firefox-b-d&biw=1280&bih=582&sxsrf=APq-WBv6YzP1uwdIJUrzsZs92CVrLMle2A%3A1651061176738&ei=uDFpYsvQLImOwbkPs-qJ6AY&ved=0ahUKEwjLjMSXmrT3AhUJRzABHTN1Am0Q4dUDCA0&uact=5&oq=What+is+cloud+hosting+and+how+does+it+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUIA6WIA6YPc8aAJwAXgAgAF6iAF6kgEDMC4xmAEAoAECoAEByAEJwAEB&sclient=gws-wiz"><b>cloud service</b></a>.</br>_(Raspberry Pi OS is most simple and recommended for Pi. For more experience users, <a href="https://dietpi.com/"><b>DietPi</b></a> OS is also recommended)_
+This tutorial is installed with Raspberry Pi. Other Linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a><i>(𝟹𝟸/𝟼𝟺bit)</i>, hardware or <a href="https://www.google.com/search?q=What+is+cloud+hosting+and+how+does+it+work%3F&client=firefox-b-d&biw=1280&bih=582&sxsrf=APq-WBv6YzP1uwdIJUrzsZs92CVrLMle2A%3A1651061176738&ei=uDFpYsvQLImOwbkPs-qJ6AY&ved=0ahUKEwjLjMSXmrT3AhUJRzABHTN1Am0Q4dUDCA0&uact=5&oq=What+is+cloud+hosting+and+how+does+it+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUIA6WIA6YPc8aAJwAXgAgAF6iAF6kgEDMC4xmAEAoAECoAEByAEJwAEB&sclient=gws-wiz"><b>cloud service</b></a> can be used.</br>_(Raspberry Pi OS is most simple and recommended for Pi. For more experience users, <a href="https://dietpi.com/"><b>DietPi</b></a> OS is also recommended)_
 
    - A Raspberry Pi 3 or 4 version
    - A router that supports port forwarding(most can)
@@ -126,15 +127,15 @@ This tutorial is installed with Raspberry Pi, but you can use any Linux <a href=
 #
 <h1 align="center"><b><i>Install Raspberry Pi OS</b></i> </h1>
 
-Raspberry Pi OS comes in desktop and lite versions(use lite for <a href="https://www.google.com/search?q=What+is+a+headless+operating+system%3F&client=firefox-b-d&sxsrf=APq-WBvlqMZasn_klYxS5HZmhKQlduKYuQ%3A1650123816301&ei=KORaYtz7EYOdwbkP74G16AE&ved=0ahUKEwjcr5-f9pj3AhWDTjABHe9ADR0Q4dUDCA0&uact=5&oq=What+is+a+headless+operating+system%3F&gs_lcp=Cgdnd3Mtd2l6EAMyCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMEBWMEBYNAEaAFwAXgAgAFqiAFqkgEDMC4xmAEAoAECoAEByAEIwAEB&sclient=gws-wiz"><b>headless</b></a> mode). You can access a Raspberry Pi with a monitor/keyboard/mouse or connect via <a href="https://www.google.com/search?q=What+is+SSH+in+Linux%3F&client=firefox-b-d&sxsrf=APq-WBsiHvek7g0OrBHWDbEy-x7m-B6O3Q%3A1650481751310&ei=V1pgYoHNEs-uwbkPtI25mAI&ved=0ahUKEwjB1PrTq6P3AhVPVzABHbRGDiMQ4dUDCA0&uact=5&oq=What+is+SSH+in+Linux%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjoHCCMQsAMQJzoHCAAQRxCwAzoHCAAQsAMQQzoKCAAQ5AIQsAMYAToPCC4Q1AIQyAMQsAMQQxgCSgQIQRgASgQIRhgBUM8IWM8IYJAMaAFwAXgAgAFxiAFxkgEDMC4xmAEAoAECoAEByAERwAEB2gEGCAEQARgJ2gEGCAIQARgI&sclient=gws-wiz"><b>ssh</b></a> from a terminal.
+Raspberry Pi OS comes in desktop and lite versions(use lite for <a href="https://www.google.com/search?q=What+is+a+headless+operating+system%3F&client=firefox-b-d&sxsrf=APq-WBvlqMZasn_klYxS5HZmhKQlduKYuQ%3A1650123816301&ei=KORaYtz7EYOdwbkP74G16AE&ved=0ahUKEwjcr5-f9pj3AhWDTjABHe9ADR0Q4dUDCA0&uact=5&oq=What+is+a+headless+operating+system%3F&gs_lcp=Cgdnd3Mtd2l6EAMyCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMEBWMEBYNAEaAFwAXgAgAFqiAFqkgEDMC4xmAEAoAECoAEByAEIwAEB&sclient=gws-wiz"><b>headless</b></a> mode). It can be accessed with a monitor/keyboard/mouse or connect via <a href="https://www.google.com/search?q=What+is+SSH+in+Linux%3F&client=firefox-b-d&sxsrf=APq-WBsiHvek7g0OrBHWDbEy-x7m-B6O3Q%3A1650481751310&ei=V1pgYoHNEs-uwbkPtI25mAI&ved=0ahUKEwjB1PrTq6P3AhVPVzABHbRGDiMQ4dUDCA0&uact=5&oq=What+is+SSH+in+Linux%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjoHCCMQsAMQJzoHCAAQRxCwAzoHCAAQsAMQQzoKCAAQ5AIQsAMYAToPCC4Q1AIQyAMQsAMQQxgCSgQIQRgASgQIRhgBUM8IWM8IYJAMaAFwAXgAgAFxiAFxkgEDMC4xmAEAoAECoAEByAERwAEB2gEGCAEQARgJ2gEGCAIQARgI&sclient=gws-wiz"><b>ssh</b></a> from a terminal.
 
-Install balenEtcher and download Pi image to write on the microSD card.
+Install balenEtcher and download Pi image to write on a microSD card.
 
  * Download Raspberry Pi OS: https://www.raspberrypi.org/software/operating-systems/
 
  * Download balenaEtcher: https://www.balena.io/etcher/
 
-- Launch Etcher and choose the Raspberry Pi image that you downloaded, select your microSD card and click `Flash`.
+- Launch Etcher and choose the Raspberry Pi image, select microSD card and click `Flash`.
 
 After flashing is done, look in "This PC” for a disk name “boot or USB drive” (re-plug USB card reader if not seen). Go to that disk, create a new text file called **_`ssh without 'txt' extension`_**. <br><i>(Disable “Hide extensions for known file types” in the file explorer options if not showing)</i>
 
@@ -147,19 +148,19 @@ After flashing is done, look in "This PC” for a disk name “boot or USB drive
 
  * Wait for a minute for Pi's first boot up
 
- * Open browser and log in your router's panel page
+ * Open browser and login router's panel page
 
- * Find list of all devices connected to your network and copy the IP address of the Raspberry Pi. It will most likely have the hostname `raspberrypi`
+ * Find list of all devices connected to network and copy the IP address of the Raspberry Pi. It will most likely have the hostname `raspberrypi`
 
- * Open terminal on your host machine. You can use powerShell on Windows or RaspController for android.
+ * Open terminal on host machine <i>(Windows powershell or raspcontroller for Android can be used)</i>.
 
 Type the following command:
 ```
 ssh pi@pi's IP address
 ```
-<i>You can use right mouse button to paste text in Windows powerShell</i>.
+<i>Use right mouse button to paste text in Windows powerShell</i>.
 
-Type “yes” for fingerprint question, and type "`raspberry`" for default password, passwords will be invisible in command line. <br><i>(You can after type `sudo passwd pi` to change password)</i>
+Type “yes” for fingerprint question, and type "`raspberry`" for default password, passwords will be invisible in command line. <br><i>(type `sudo passwd pi` to change password)</i>
 
 <p align="center">
  <img src="https://i.imgur.com/Wf30jxG.jpg">
@@ -179,7 +180,7 @@ sudo reboot
 
 This installation script is from <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard Home</b></a> main project. Follow to keep updated.
 
-Run the following command in your terminal:
+Run the following command in terminal:
 ```
 curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -v
 ```
@@ -194,7 +195,7 @@ curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/s
 
  * `IMPORTANT:` In general settings, set "Query logs retention" to `24 hours`. (I read that for some people logs fill up which slows down Pi and needing a reboot)
 
-## Set up your devices to work with AdGuard
+## Setup devices to work with AdGuard
 
  - For Android/Apple, go to WiFi advanced settings and select static option. In `DNS 1` field enter "Pi's IP" address
 
@@ -211,7 +212,7 @@ curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/s
 
      Go to "Internet Protocol Version 6(TCP/IPv6)" Enter `::1`
 
-`OPTIONAL:` <i>You can add a backup DNS in the alternative fields</i>
+`OPTIONAL:` <i>Add a backup DNS in the alternative fields</i>
   
 `BE AWARE:` <i>In Android, adding a public DNS in second field breaks AdGuard ad blocking</i>🤷
 
@@ -220,7 +221,7 @@ curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/s
 
 ## Updating AdGuard
  
-AdGuard Home can be updated from user interface or <a href="https://github.com/AdguardTeam/AdGuardHome/wiki/FAQ#how-to-update-adguard-home-manually"><b>manually</b></a> with command line which is the better way for now. <br>
+AdGuard Home can be updated from user interface or <a href="https://github.com/AdguardTeam/AdGuardHome/wiki/FAQ#how-to-update-adguard-home-manually"><b>manually</b></a> with command line which I recommend for now. <br>
 _Use script constructed with update commands[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/AdGuard-Home-update-script"><b>click here</b></a>]_.
 
 ## Setting up AdGuard blocklist
@@ -237,11 +238,11 @@ In AdGuard homepage under filters, select DNS blocklist section for adding URLs.
 </br>
 👊BIG THANKS👊 to <a href="https://github.com/T145"><b>T145</b></a>
 
-`IMPORTANT:` Some lists can block important web content. To unblock, go to "Query Log" section, hover cursor over that specific query<i>(look for client IP & time)</i> to show _unblock_ option. The links is automatically created in "Custom filtering rules" example: `@@||bitly.com^$important`(you can add the websites manually as well).
+`IMPORTANT:` Some lists can block important web content. To unblock, go to "Query Log" section, hover cursor over that specific query<i>(look for client IP & time)</i> to show _unblock_ option. The links is automatically created in "Custom filtering rules" example: `@@||bitly.com^$important`(can add the websites manually as well).
 
 ## Add/Remove multiple URLs
 
-You can only add one by one URL in DNS blocklist with AdGuard for now but there is a python script to add multiple URLs at once.
+Only one URL can be added at a time in DNS blocklist with AdGuard for now, but there is a python script to add multiple URLs at once.
 
 Create a new python file(bulkurls.py):
 ```
@@ -254,35 +255,37 @@ _If using **DietPi** install `sudo apt-get install python3-pip -y && pip install
   
 To run : `sudo python3 bulkurls.py`
 
-To **remove** you need to change `add` in <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/62ba01ed8ed3a5bc5294b9fe7ee38c3e83ae1b86/bulkurls.py#L150"><b>second of last line</b></a> to `remove` in bulkurls.py file.
+To **remove** change `add` in <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/62ba01ed8ed3a5bc5294b9fe7ee38c3e83ae1b86/bulkurls.py#L150"><b>second of last line</b></a> to `remove` in bulkurls.py file.
 
 Go to https://d3ward.github.io/toolz/adblock.html to test if ads are blocking <img src="https://i.imgur.com/Q5oO9EY.png" width=100px height=80px>
 
 ## Install SSL certificate
 
-If you are using AdGuard Home on a `VPS(Virtual private server)`, get a <a href="https://www.google.com/search?q=What+is+purpose+of+SSL+certificate%3F&client=firefox-b-d&sxsrf=APq-WBsi9wVR8QaPcOuMXEpKVMqtOxrI-A%3A1650799271342&ei=pzJlYvDEFJbUkPIP48mPkAY&ved=0ahUKEwiwtKfByqz3AhUWKkQIHePkA2IQ4dUDCA0&uact=5&oq=What+is+purpose+of+SSL+certificate%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeOgcIABBHELADOgcIABCwAxBDOgoIABDkAhCwAxgBOhUILhDHARCvARDUAhDIAxCwAxBDGAI6EgguEMcBENEDEMgDELADEEMYAkoECEEYAEoECEYYAVC7AVi7AWDnBGgBcAF4AIABbYgBbZIBAzAuMZgBAKABAqABAcgBE8ABAdoBBggBEAEYCdoBBggCEAEYCA&sclient=gws-wiz"><b>SSL certificate</b></a> to make connection secure and data safe[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-auto-renewal-SSL-certificate"><b>click here</b></a>]. In this case your DNS resolver(AdGuard Home) resides outside your network, and your DNS requests have better protection from the third parties.
+If using AdGuard Home on a `VPS(Virtual private server)`, get a <a href="https://www.google.com/search?q=What+is+purpose+of+SSL+certificate%3F&client=firefox-b-d&sxsrf=APq-WBsi9wVR8QaPcOuMXEpKVMqtOxrI-A%3A1650799271342&ei=pzJlYvDEFJbUkPIP48mPkAY&ved=0ahUKEwiwtKfByqz3AhUWKkQIHePkA2IQ4dUDCA0&uact=5&oq=What+is+purpose+of+SSL+certificate%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeOgcIABBHELADOgcIABCwAxBDOgoIABDkAhCwAxgBOhUILhDHARCvARDUAhDIAxCwAxBDGAI6EgguEMcBENEDEMgDELADEEMYAkoECEEYAEoECEYYAVC7AVi7AWDnBGgBcAF4AIABbYgBbZIBAzAuMZgBAKABAqABAcgBE8ABAdoBBggBEAEYCdoBBggCEAEYCA&sclient=gws-wiz"><b>SSL certificate</b></a> to make connection secure and data safe[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-auto-renewal-SSL-certificate"><b>click here</b></a>]. In this case your DNS resolver(AdGuard Home) resides outside your network, and your DNS requests have better protection from the third parties.
 
 **[⬆ Return to contents ⬆](#table-of-contents)**
 
 #
 <h1 align="center"><b><i>Install Unbound</b></i> </h1>
 
-Run the following command in your terminal:
+`RECOMMENDED:`Before installing other DNS resolvers, it is a good idea to turn off <a href="https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html"><b>systemd-resolved</b></a> DNSStubListener(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/27"><b>issue#27</b></a>).
+
+Run the following command in terminal:
 ```
 sudo apt install unbound -y
 ```
-For recursively querying a host that is not cached as an address, the resolver needs to start at the top of the server tree and query the root servers, to know where to go for the top level domain for the address being queried. Unbound comes with default builtin hints.
+For recursively querying a host that is not cached as an address, the resolver needs to start at the top of the server tree and query the root servers, to know where to go for the top level domain for the address being queried. Unbound comes with default built-in hints.
 ```
 wget -O root.hints https://www.internic.net/domain/named.root && sudo mv root.hints /var/lib/unbound/
 ```
- `IMPORTANT:` This needs to update every 6 months. To _**auto update**_ root.hints every 6 months you need to create a cron job.
+ `IMPORTANT:` This needs to update every 6 months using <a href="https://www.google.com/search?q=How+does+cron+job+work%3F&client=firefox-b-d&sxsrf=ALiCzsbaAmCCZqLJt2cOtQ3UXn7wxrWD3Q%3A1651353477111&ei=hadtYt-vBoavqtsP_fGX4Ak&ved=0ahUKEwifhpuL27z3AhWGl2oFHf34BZwQ4dUDCA0&uact=5&oq=How+does+cron+job+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDTAVjTAWDRBmgBcAF4AIABfYgBfZIBAzAuMZgBAKABAqABAcgBCcABAQ&sclient=gws-wiz"><b>cron job</b></a>.
 
-Enter in command line `crontab -e`, it will ask select an editor(choose 1) and paste these lines at the bottom of crontab and save (control+x then y then enter):
+Enter in command line `crontab -e`, it will ask select an editor(choose 1), paste these lines at the bottom of crontab and save (control+x then y then enter):
 ```
 1 0 1 */6 * wget -O root.hints https://www.internic.net/domain/named.root
 2 0 1 */6 * sudo mv root.hints /var/lib/unbound/
 ```
-_If using **DietPi** you need to install resolvconf and restart unbound-resolvconf.service to set unbound nameserver to 127.0.0.1 :_
+_If using **DietPi**, install resolvconf and restart unbound-resolvconf.service to set default nameserver :_
 ```
 sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.service
 ```  
@@ -326,7 +329,7 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
 
 ## Configure AdGuard with `Cloudflare(DoH&DoT)`
 
- * In AdGuard homepage under settings select "DNS settings"
+ * In AdGuard homepage under settings, select "DNS settings"
 
  * Delete everything from "Upstream" and "Bootstrap DNS" server options and enter:
 
@@ -334,7 +337,7 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
    * For `DNS over HTTPS(DoH)` add `127.0.0.1:5053` in both "Upstream" and "Bootstrap DNS" server fields
    * For `TLS forwarder(stubby)` add `127.0.0.1:8053` in both "Upstream" and "Bootstrap DNS" server fields
 
-* `IMPORTANT:` You need to check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option for DNS resolvers to work simultaneously.
+* `IMPORTANT:` Check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option for DNS resolvers to work simultaneously.
 
 <p align="center">
  <img src="https://i.imgur.com/Ug4Euou.jpg" width=650px height=370px>
@@ -364,11 +367,11 @@ Click apply and test upstreams
   ```
 #### Android
 
- * In whatever browser you use, turn **off** `Use Secure DNS` option.
+ * In whatever browser is used, turn **off** `Use Secure DNS` option if available.
  
  * Be aware conflicts can occur with custom rooted roms&kernels with build.prop DNS tweaks or apps/magisk module.
 
-#### _Thats it_. Now go to https://1.1.1.1/help in browser and you should see these options output 'Yes'. 
+#### Now go to https://1.1.1.1/help in browser and these options should output 'Yes'. 
  - [x] Connected to 1.1.1.1
  - [x] DNS over HTTPS(DoH)
  - [x] DNS over TLS(DoT)
@@ -404,28 +407,29 @@ My router port setting:
 <p align="center">
  <img src="https://i.imgur.com/9LBEk1i.jpg" width="640" height="420">
 </br>
-Other router brands will have different interface look but you can figure it out. Remember Google search engine🔎 is your friend. If you cannot connect from a outside network that means ISP has blocked outgoing connections, you can call them and ask nicely to get it working.
+Other router brands will have a different interface look. Google search it for help. If you cannot connect from a outside network that means your ISP has blocked outgoing connections, call them and ask nicely to unblock.
 
+#
 👊BIG THANKS👊 for this installation script from <a href="https://github.com/Nyr/wireguard-install"><b>Nyr</b></a>. Follow to keep updated.
 
-Run in terminal 
+Run the following command in terminal:
 ```
 wget https://git.io/wireguard -O wireguard-install.sh && sudo bash wireguard-install.sh
 ```
- * The script is going to ask you for Public IPv4/hostname for the VPN. If you have static IP then continue or else type the dynamic DNS domain that you created from the <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Dynamic-DNS-service"><b>instructions</b></a>. For example:`trinibvpn.freeddns.org`
+ * The script is going to ask for a Public IPv4/hostname for the VPN. If you have static IP then continue or else type the dynamic DNS hostname that you created from the <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Dynamic-DNS-service"><b>instructions</b></a>. For example:`trinibvpn.freeddns.org`
 
- * For port option `press enter` for default 51820. For client name, just put any name you want, and for DNS use option 3 (`1.1.1.1`) for now.
+ * For port option `press enter` for default 51820, set client name and for DNS use option 3 (`1.1.1.1`) for now.
 
 <p align="center">
  <img src="https://i.imgur.com/WUNZIK4.jpg">
 
- * Wait until the installation is finished and QR code to show, don't close. But if you do, to `regenerate qrcode`, enter in terminal but replacing just the name `yourclientname.conf` file to yours: 
+ * Wait until the installation is finished and QR code to show, <b>don't close</b>. But if do, to `regenerate qrcode`, enter in terminal but replacing just the name `yourclientname.conf` file to yours: 
 ```
 sudo cp /root/yourclientname.conf /home/pi && sudo qrencode -t ansiutf8 < yourclientname.conf
 ```
-`IMPORTANT:` You will need to add a new user/client for each device you use with the VPN. To add a new user, simply re-run the script and create user with different client name.
+`IMPORTANT:` You will need to add a new client/user for each device used with the VPN<i>(cannot share 1 client to multiple devices)</i>. To add, re-run the script and create another user with different client name.
 
-<b>_Use OpenVPN_</b> [<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-OpenVPN"><b>click here</b></a>]
+#### Install _OpenVPN_ as a alternative[[click here]](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-OpenVPN)
 
 #
 ### Connecting VPN To Android/IOS Phone
@@ -436,7 +440,7 @@ WireGuard (Google Play): https://play.google.com/store/apps/details?id=com.wireg
 
 WireGuard (App Store): https://apps.apple.com/us/app/wireguard/id1441195209
 
-You need to scan the QR code shown in the terminal with WireGuard app, select the `+ button` and use the option `Scan from QR code` to install configuration.
+Scan the QR code shown in the terminal with WireGuard app, select the `+ button` and use the option `Scan from QR code` to install configuration.
 
 `IMPORTANT`: Enable **kernel module backend** in settings
 
@@ -453,15 +457,15 @@ WireGuard for windows: https://download.wireguard.com/windows-client/wireguard-i
 ```
 sudo cat /root/yourclientname.conf
 ```
- * Highlight all the text, copy and paste it in the txt file on PC and save. Then rename the extension from `txt` to `conf`. Now you have config file for that WireGuard client.
+ * Highlight all the text, copy and paste it in the txt file on PC and save. Then rename the extension from `txt` to `conf`. Now you have config file for that specific WireGuard client/user.
 
- * You can now import the config file to WireGuard (import from file option).
+ * Import the config file to WireGuard (import from file option).
 
 ## Configure WireGuard with `Adguard/Unbound/Cloudflare`
 
 `ADVICE:`_I think it do not make much of a difference to use DoT/DoH with WireGuard security protocols. Though from my experience and in forums, it does not seem to cause any issues using them together. Mainly do this for adblocking with a VPN on public networks._
  
- * In WireGuard app, select your tunnel and select edit (pencil on top right)
+ * In WireGuard app, select your tunnel name and select edit (pencil on top right)
 
  * Under DNS servers enter `Pi's IP` and save (IPv4 & IPv6)
 
@@ -480,15 +484,15 @@ WireGuard will lose a fair percentage of internet speed from the process of tunn
 #
 ## Test VPN
 
-How do you know if WireGuard VPN is really working?
+How to know if WireGuard VPN is really working?
 
 For **windows** download Wireshark: https://www.wireshark.org/#download
 
-Once downloaded you can use the application to inspect your data packets where the protocol is set to the one used by WireGuard VPN. When a packet traffic is `encrypted`, it can be read  like this for example:
+Once downloaded, use the application to inspect data packets where the protocol is set to the one used by WireGuard VPN. When a packet traffic is `encrypted`, it can be read  like this for example:
 <p align="center">
  <img src="https://i.imgur.com/Tn4M47R.jpg">
 
-For **android** you can use PCAPdroid: https://play.google.com/store/apps/details?id=com.emanuelef.remote_capture&hl=en&gl=US
+For **android** use PCAPdroid: https://play.google.com/store/apps/details?id=com.emanuelef.remote_capture&hl=en&gl=US
                                                                                                                                 
 You should see all connections `closed` and status showing all `DNS port 53` and not any TLS port 443 connections from all apps. (open and use apps for PCAPdroid to scan)
 
