@@ -92,6 +92,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
    - [Access Pi OS with SSH](#access-pi-os-with-ssh)
  - [Install AdGuard Home](#install-adguard-home-) <img src="https://www.vectorlogo.zone/logos/adguard/adguard-icon.svg" width=20px height=20px>
    - [Set up your devices to work with Adguard](#set-up-your-devices-to-work-with-adguard)
+   - [Updating Adguard](#updating-adguard)
    - [Setting up AdGuard blocklist](#setting-up-adguard-blocklist)
      - [Add/Remove multiple URLs](#addremove-multiple-urls)
    - [Install SSL certificate](#install-ssl-certificate)
@@ -113,7 +114,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
 #
 # Requirements
  
-This tutorial is installed on Raspberry Pi, but you can use any Linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a><i>(𝟹𝟸/𝟼𝟺bit)</i>, any hardware or <a href="https://www.google.com/search?q=What+is+cloud+hosting+and+how+does+it+work%3F&client=firefox-b-d&biw=1280&bih=582&sxsrf=APq-WBv6YzP1uwdIJUrzsZs92CVrLMle2A%3A1651061176738&ei=uDFpYsvQLImOwbkPs-qJ6AY&ved=0ahUKEwjLjMSXmrT3AhUJRzABHTN1Am0Q4dUDCA0&uact=5&oq=What+is+cloud+hosting+and+how+does+it+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUIA6WIA6YPc8aAJwAXgAgAF6iAF6kgEDMC4xmAEAoAECoAEByAEJwAEB&sclient=gws-wiz"><b>cloud service</b></a>.</br>_(Raspberry Pi OS is most simple and recommended for Pi. For more experience users, <a href="https://dietpi.com/"><b>DietPi</b></a> OS is also recommended)_
+This tutorial is installed with Raspberry Pi, but you can use any Linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a><i>(𝟹𝟸/𝟼𝟺bit)</i>, any hardware or <a href="https://www.google.com/search?q=What+is+cloud+hosting+and+how+does+it+work%3F&client=firefox-b-d&biw=1280&bih=582&sxsrf=APq-WBv6YzP1uwdIJUrzsZs92CVrLMle2A%3A1651061176738&ei=uDFpYsvQLImOwbkPs-qJ6AY&ved=0ahUKEwjLjMSXmrT3AhUJRzABHTN1Am0Q4dUDCA0&uact=5&oq=What+is+cloud+hosting+and+how+does+it+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUIA6WIA6YPc8aAJwAXgAgAF6iAF6kgEDMC4xmAEAoAECoAEByAEJwAEB&sclient=gws-wiz"><b>cloud service</b></a>.</br>_(Raspberry Pi OS is most simple and recommended for Pi. For more experience users, <a href="https://dietpi.com/"><b>DietPi</b></a> OS is also recommended)_
 
    - A Raspberry Pi 3 or 4 version
    - A router that supports port forwarding(most can)
@@ -133,11 +134,9 @@ Install balenEtcher and download Pi image to write on the microSD card.
 
  * Download balenaEtcher: https://www.balena.io/etcher/
 
-After you have `Etcher` installed and `Raspberry Pi OS` file downloaded, you can now insert the SD card with microSD USB card reader into your computer.
-
 - Launch Etcher and choose the Raspberry Pi image that you downloaded, select your microSD card and click `Flash`.
 
-After flashing is done, look in "This PC” for a disk name “boot or USB drive” (re-plug USB card reader if not seen). Go to that disk, create a new text file called **_`ssh without 'txt' extension`_**. <i>(Disable “Hide extensions for known file types” in the file explorer options if you don't see it)</i>
+After flashing is done, look in "This PC” for a disk name “boot or USB drive” (re-plug USB card reader if not seen). Go to that disk, create a new text file called **_`ssh without 'txt' extension`_**. <br><i>(Disable “Hide extensions for known file types” in the file explorer options if not showing)</i>
 
 <p align="center">
  <img src="https://i.imgur.com/eV6uMbz.jpg">
@@ -150,7 +149,7 @@ After flashing is done, look in "This PC” for a disk name “boot or USB drive
 
  * Open browser and log in your router's panel page
 
- * Find list of all devices connected to your network and copy the IP address of the Raspberry Pi (it will most likely have the hostname `raspberrypi`)
+ * Find list of all devices connected to your network and copy the IP address of the Raspberry Pi. It will most likely have the hostname `raspberrypi`
 
  * Open terminal on your host machine. You can use powerShell on Windows or RaspController for android.
 
@@ -160,7 +159,7 @@ ssh pi@pi's IP address
 ```
 <i>You can use right mouse button to paste text in Windows powerShell</i>.
 
-Type “yes” for fingerprint question, and type "`raspberry`" for default password(passwords will be invisible in command line). <i>(You can after type `sudo passwd pi` to change password)</i>.
+Type “yes” for fingerprint question, and type "`raspberry`" for default password, passwords will be invisible in command line. <br><i>(You can after type `sudo passwd pi` to change password)</i>
 
 <p align="center">
  <img src="https://i.imgur.com/Wf30jxG.jpg">
@@ -208,7 +207,7 @@ curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/s
 
     Go to network settings / change adapter options, right click in properties and select "Internet Protocol Version 4(TCP/IPv4)". Enter Pi's IP address in `Preferred DNS` server.
 
-    - <i>IPv6 (needed for `DoH` & `DoT` to work later on in guide if using IPv6 on your router)</i>
+    - <i>IPv6 (needed for `DoH` & `DoT` to detect if using IPv6)</i>
 
      Go to "Internet Protocol Version 6(TCP/IPv6)" Enter `::1`
 
@@ -218,6 +217,11 @@ curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/s
 
 <p align="center">
  <img src="https://i.imgur.com/8gsDk3z.jpg">
+
+## Updating AdGuard
+ 
+AdGuard Home can be updated from user interface or <a href="https://github.com/AdguardTeam/AdGuardHome/wiki/FAQ#how-to-update-adguard-home-manually"><b>manally</b></a> with command line which is the better way for now. <br>
+_Use script constructed with update commands[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/AdGuard-Home-update-script"><b>click here</b></a>]_.
 
 ## Setting up AdGuard blocklist
 
@@ -486,7 +490,7 @@ Once downloaded you can use the application to inspect your data packets where t
 
 For **android** you can use PCAPdroid: https://play.google.com/store/apps/details?id=com.emanuelef.remote_capture&hl=en&gl=US
                                                                                                                                 
-You should see all connections `closed` and status showing all DNS and not any TLS connections in all apps. (open and use apps for PCAPdroid to scan)
+You should see all connections `closed` and status showing all `DNS port 53` and not any TLS port 443 connections from all apps. (open and use apps for PCAPdroid to scan)
 
 **[⬆ Return to contents ⬆](#table-of-contents)**
 
