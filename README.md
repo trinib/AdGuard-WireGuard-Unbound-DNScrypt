@@ -30,10 +30,14 @@ Block banners, pop-ups and video advertisements network-wide
 A VPN server accessible from public networks (IPv4 & IPv6)
  
  _<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a> & <a href="https://dnsprivacy.org/dns_privacy_daemon_-_stubby/about_stubby/"><b>Stubby</b></a>_</br>
-A validating, recursive, caching DNS resolver and TLS forwarder
+A validating, recursive, caching DNS resolver and TLS forwarder (DoT)
+
+_<a href="https://dnscrypt.info/"><b>DNScrypt</b></a>_</br>
+Modern encrypted DNS protocols such as DNSCrypt v2, DNS-over-HTTPS, Anonymized DNSCrypt and oDoH (Oblivious DoH).
  
  _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_</br>
-Better performance & security for websites, APIs, and Internet applications (DoT & DoH)
+Better performance & security for websites, APIs, and Internet applications
+
 </div>
  
 <p align="right">
@@ -75,7 +79,8 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
    :---:             |     :---: 
  AdGuard Home        |       ✅
  Unbound             |       ✅
- Cloudflare          |       ✅
+ Cloudflared         |       ✅
+ DNScrypt            |       ✅
  Stubby              |       ✅
  WireGuard           |       ✅    
 </div>
@@ -98,15 +103,15 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
    - [Install SSL certificate](#install-ssl-certificate)
  - [Install Unbound](#install-unbound-) <img src="https://www.privacytools.io/img/apps/unbound.svg" width=20px height=20px>
  - [Install Cloudflare](#install-cloudflare-) <img src="https://www.vectorlogo.zone/logos/cloudflare/cloudflare-icon.svg" width=20px height=20px>
-   - [Setup Cloudflared with (DoH)](#setup-cloudflared-with-doh)
+   - [Setup Cloudflare with (DoH/oDoH)](#setup-cloudflare-with-dohodoh)
    - [Configure Cloudflare (DoT) on Unbound](#configure-cloudflare-dot-on-unbound)
      - [Configure Stubby for Unbound](#configure-stubby-for-unbound)
-   - [Configure AdGuard with Cloudflare (DoH&DoT)](#configure-adguard-with-cloudflaredohdot)
+   - [Configure AdGuard with (DoH/DoT/oDoH)](#configure-adguard-with-dohdotodoh)
  - [Install WireGuard](#install-wireguard-) <img src="https://www.vectorlogo.zone/logos/wireguard/wireguard-icon.svg" width=20px height=20px>
    - [Connecting VPN to Android/IOS Phone](#connecting-vpn-to-androidios-phone)
    - [Connecting VPN to Windows](#connecting-vpn-to-windows)
    - [Install OpenVPN](#install-openvpn-as-a-alternativeclick-here)</a> <img src="https://i.imgur.com/Agstbe5.png" width=20px height=20px>
-   - [Configure Wireguard with AdGuard/Unbound/Cloudflare](#configure-wireguard-with-adguardunboundcloudflare)
+   - [Configure Wireguard with AdGuard & DNS security](#configure-wireguard-with-adguard--dns-security)
      - [Limit traffic](#limit-traffic)
      - [Disable all IPv6](#disable-all-ipv6)
    - [Test Vpn](#test-vpn) <img src="https://i.imgur.com/6Yf8Zra.png" width=20px height=20px>
@@ -208,7 +213,7 @@ curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/s
 
     Go to network settings / change adapter options, right click in properties and select "Internet Protocol Version 4(TCP/IPv4)". Enter Pi's IP address in `Preferred DNS` server.
 
-    - <i>IPv6 (needed for `DoH` & `DoT` to detect if using IPv6)</i>
+    - <i>IPv6 (needed for `DoH` & `DoT` to detect if using it)</i>
 
      Go to "Internet Protocol Version 6(TCP/IPv6)" Enter `::1`
 
@@ -221,7 +226,7 @@ curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/s
 
 ## Updating AdGuard
  
-AdGuard Home can be updated from user interface or <a href="https://github.com/AdguardTeam/AdGuardHome/wiki/FAQ#how-to-update-adguard-home-manually"><b>manually</b></a> with command line which I recommend for now. <br>
+AdGuard Home can be updated from its user interface or <a href="https://github.com/AdguardTeam/AdGuardHome/wiki/FAQ#how-to-update-adguard-home-manually"><b>manually</b></a> from command line which I recommend for now. <br>
 _Use script constructed with update commands[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/AdGuard-Home-update-script"><b>click here</b></a>]_.
 
 ## Setting up AdGuard blocklist
@@ -285,7 +290,7 @@ Enter in command line `crontab -e`, it will ask select an editor(choose 1), past
 1 0 1 */6 * wget -O root.hints https://www.internic.net/domain/named.root
 2 0 1 */6 * sudo mv root.hints /var/lib/unbound/
 ```
-_If using **DietPi**, install resolvconf and restart unbound-resolvconf.service to set default nameserver :_
+_If using **DietPi**, install resolvconf and restart unbound-resolvconf.service to set default nameserver(127.0.0.1) :_
 ```
 sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.service
 ```  
@@ -298,8 +303,14 @@ sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.
 #    
 <h1 align="center"><b><i>Install Cloudflare</b></i> </h1>
 
-## Setup Cloudflared with `(DoH)`
-Install Cloudflared service daemon with DNS over HTTPS configurations[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Cloudflared-service-with-DNS-over-HTTPS-proxy"><b>click here</b></a>]</h4>
+## Setup Cloudflare with `(DoH/oDoH)`
+Option 1 (Simple)<br>_(DNS over HTTPS only)_<br>Cloudflare Tunnel[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Cloudflared-Tunnel-(DoH)"><b>click here</b></a>]</h4>
+
+Option 2 (Advanced)<br>_(DNS over HTTPS / Oblivious DNS Over HTTPS / Anonymized DNS)_<br>DNScrypt proxy[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-DNScrypt-proxy-(DoH)(oDoH)(Anonymized-DNS)"><b>click here</b></a>]</h4> 
+
+<a href="https://research.cloudflare.com/projects/odns/"><b>Oblivious DNS Over HTTPS </b></a></h4>(oDoH) is a newly proposed open-source DNS standard built by engineers from Cloudflare, Apple, and Fastly which is supposed to increase the privacy of already existing DNS Over HTTPS.
+
+<a href="https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Anonymized-DNS"><b>Anonymized</b></a> DNS client encrypts the query for the final server instead of directly reaching a server that is one of the public resolvers, but sends it to a <a href="https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/relays.md"><b>relay</b></a>.
 
 ## Configure Cloudflare `(DoT)` on Unbound
 
@@ -327,15 +338,17 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
 <p align="center">
  <img src="https://i.imgur.com/7zIpWP2.jpg" width=650px height=370px>
 
-## Configure AdGuard with `Cloudflare(DoH&DoT)`
+## Configure AdGuard with `(DoH/DoT/oDoH)`
 
  * In AdGuard homepage under settings, select "DNS settings"
 
- * Delete everything from "Upstream" and "Bootstrap DNS" server options and enter:
+ * Delete everything from both _**Upstream**_ and _**Bootstrap DNS**_ server options and add:
 
-   * For `DNS over TLS(DoT)` add `127.0.0.1:53` in both "Upstream" and "Bootstrap DNS" server fields
-   * For `DNS over HTTPS(DoH)` add `127.0.0.1:5053` in both "Upstream" and "Bootstrap DNS" server fields
-   * For `TLS forwarder(stubby)` add `127.0.0.1:8053` in both "Upstream" and "Bootstrap DNS" server fields
+   - DNS over TLS - `127.0.0.1:53`
+   - DNS over HTTPS/Oblivious DNS over HTTPS - 
+      - `127.0.0.1:5053`(cloudflared tunnel) 
+      - `127.0.0.1:5353`(dnscrypt proxy)
+   - TLS forwarder(stubby) - `127.0.0.1:8053` 
 
 * `IMPORTANT:` Check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option for DNS resolvers to work simultaneously.
 
@@ -461,9 +474,9 @@ sudo cat /root/yourclientname.conf
 
  * Import the config file to WireGuard (import from file option).
 
-## Configure WireGuard with `Adguard/Unbound/Cloudflare`
+## Configure WireGuard with `Adguard & Dns security`
 
-`ADVICE:`_I think it do not make much of a difference to use DoT/DoH with WireGuard security protocols. Though from my experience and in forums, it does not seem to cause any issues using them together. Mainly do this for adblocking with a VPN on public networks._
+`ADVICE:`_I think it might not make much of a difference to use DoT/DoH/oDoH with WireGuard security protocols. Though from my experience and in forums, it does not seem to cause any issues using them together. Mainly this is to achieve adblocking with a VPN on public networks._
  
  * In WireGuard app, select your tunnel name and select edit (pencil on top right)
 
@@ -520,20 +533,20 @@ You should see all connections `closed` and status showing all `DNS port 53` and
 
 #
 
-## _Repository Resources_
+## Repository Resources
 
 https://github.com/AdguardTeam/AdGuardHome/wiki
 
 https://developers.cloudflare.com/
 
-https://docs.pi-hole.net/
-
-https://nlnetlabs.nl/documentation/unbound/unbound.conf/
+https://unbound.docs.nlnetlabs.nl/en/latest/
 
 https://dnsprivacy.org/dns_privacy_clients/
+ 
+https://github.com/DNSCrypt/dnscrypt-proxy/wiki
     
 https://github.com/anudeepND/pihole-unbound
 
-https://github.com/Nyr/wireguard-install 
-    
+https://github.com/Nyr/wireguard-install
+     
 https://github.com/T145/black-mirror
