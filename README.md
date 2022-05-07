@@ -33,7 +33,7 @@ A VPN server accessible from public networks (IPv4 & IPv6)
 A validating, recursive, caching DNS resolver and TLS forwarder (DoT)
 
 _<a href="https://dnscrypt.info/"><b>DNScrypt</b></a>_</br>
-Modern encrypted DNS protocols such as DNSCrypt v2, DNS-over-HTTPS, Anonymized DNSCrypt and oDoH (Oblivious DoH).
+Modern encrypted DNS protocols such as DNSCrypt v2, DNS-over-HTTPS, Anonymized DNSCrypt and oDoH (Oblivious DoH)
  
  _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_</br>
 Better performance & security for websites, APIs, and Internet applications
