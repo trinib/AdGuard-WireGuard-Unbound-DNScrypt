@@ -18,7 +18,7 @@ body:
         - Other (explain in description)
     validations:
       required: true
-        - type: dropdown
+  - type: dropdown
     id: os
     attributes:
       label: Architecture
