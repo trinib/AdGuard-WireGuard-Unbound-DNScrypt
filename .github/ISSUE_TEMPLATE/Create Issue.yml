@@ -1,5 +1,5 @@
 name: Create Issue
-description: "Issue"
+description: "🐛"
 title: "Issue"
 labels: ["issue"]
 assignees: 
@@ -23,7 +23,7 @@ body:
     attributes:
       label: Architecture
       multiple: true
-      description: Which type of OS used ?
+      description: Which type of processor used ?
       options:
         - 32-bit
         - 64-bit
