@@ -1,4 +1,5 @@
 name: Create Issue
+description: "Issue"
 title: "Issue"
 labels: ["issue"]
 assignees: 
