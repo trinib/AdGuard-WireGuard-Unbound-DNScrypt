@@ -111,7 +111,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
    - [Connecting VPN to Android/IOS Phone](#connecting-vpn-to-androidios-phone)
    - [Connecting VPN to Windows](#connecting-vpn-to-windows)
    - [Install OpenVPN](#install-openvpn-as-a-alternativeclick-here)</a> <img src="https://i.imgur.com/Agstbe5.png" width=20px height=20px>
-   - [Configure Wireguard with AdGuard & DNS security](#configure-wireguard-with-adguard--dns-security)
+   - [Configure WireGuard with AdGuard & DNS security](#configure-wireguard-with-adguard--dns-security)
      - [Limit traffic](#limit-traffic)
      - [Disable all IPv6](#disable-all-ipv6)
    - [Test Vpn](#test-vpn) <img src="https://i.imgur.com/6Yf8Zra.png" width=20px height=20px>
@@ -153,7 +153,7 @@ After flashing is done, look in "This PC” for a disk name “boot or USB drive
 
  * Wait for a minute for Pi's first boot up
 
- * Open browser and login router's panel page
+ * Open browser and login router's admin panel(default gateway address)
 
  * Find list of all devices connected to network and copy the IP address of the Raspberry Pi. It will most likely have the hostname `raspberrypi`
 
@@ -186,8 +186,18 @@ sudo reboot
 This installation script is from <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard Home</b></a> main project. Follow to keep updated.
 
 Run the following command in terminal:
+
+Stable :
 ```
 curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -v
+```
+<a href="https://www.google.com/search?q=what+is+beta+channels&client=firefox-b-d&sxsrf=ALiCzsaUXM2wZwGBHigwBipZONSnbj67Bg%3A1651991460917&ei=pGN3YpDUN9WqwbkP3Li8qAY&ved=0ahUKEwiQtszho8_3AhVVVTABHVwcD2UQ4dUDCA4&oq=what+is+beta+chjannels&gs_lcp=Cgdnd3Mtd2l6EAxKBAhBGABKBAhGGABQAFgAYABoAHABeACAAQCIAQCSAQCYAQA&sclient=gws-wiz"><b>Beta</b></a> - testing version of AdGuard Home. More or less stable versions<i>(recommended for Raspberry Pi)</i> :
+```
+curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -c beta
+```
+<a href="https://www.google.com/search?q=Is+Edge+Beta+good%3F&client=firefox-b-d&sxsrf=ALiCzsZTfrTaft7sTdzJ2_RhGpdL25WlIA%3A1651991558520&ei=BmR3Ype6H93vkvQPsNSA-AQ&ved=0ahUKEwiX1ZGQpM_3AhXdt4QIHTAqAE8Q4dUDCA4&uact=5&oq=Is+Edge+Beta+good%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUM0BWM0BYKUGaAFwAXgAgAGKAYgBigGSAQMwLjGYAQCgAQKgAQHIAQnAAQE&sclient=gws-wiz"><b>Edge</b></a> - newest version of AdGuard Home. New updates are pushed to this channel daily and might not be stable :
+```
+curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -c edge
 ```
  * When installation is finished, it will show the `links` to your AdGuard home page(Get Started) in terminal
 
@@ -304,9 +314,9 @@ sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.
 <h1 align="center"><b><i>Install Cloudflare</b></i> </h1>
 
 ## Setup Cloudflare with `(DoH/oDoH)`
-Option 1 (Simple)<br>_(DNS over HTTPS only)_<br>Cloudflare Tunnel[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Cloudflared-Tunnel-(DoH)"><b>click here</b></a>]</h4>
+<b>Option 1</b> (Simple)<br>_(DNS over HTTPS only)_<br>Cloudflare Tunnel[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Cloudflared-Tunnel-(DoH)"><b>click here</b></a>]</h4>
 
-Option 2 (Advanced)<br>_(DNS over HTTPS / Oblivious DNS Over HTTPS / Anonymized DNS)_<br>DNScrypt proxy[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-DNScrypt-proxy-(DoH)(oDoH)(Anonymized-DNS)"><b>click here</b></a>]</h4> 
+<b>Option 2</b> (Advanced)<br>_(DNS over HTTPS / Oblivious DNS Over HTTPS / Anonymized DNS)_<br>DNScrypt proxy[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-DNScrypt-proxy-(DoH)(oDoH)(Anonymized-DNS)"><b>click here</b></a>]</h4> 
 
 <a href="https://research.cloudflare.com/projects/odns/"><b>Oblivious DNS Over HTTPS </b></a></h4>(oDoH) is a newly proposed open-source DNS standard built by engineers from Cloudflare, Apple, and Fastly which is supposed to increase the privacy of already existing DNS Over HTTPS.
 
@@ -442,9 +452,8 @@ sudo cp /root/yourclientname.conf /home/pi && sudo qrencode -t ansiutf8 < yourcl
 ```
 `IMPORTANT:` You will need to add a new client/user for each device used with the VPN<i>(cannot share 1 client to multiple devices)</i>. To add, re-run the script and create another user with different client name.
 
-#### Install _OpenVPN_ as a alternative[[click here]](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-OpenVPN)
+#### _Install OpenVPN as a alternative_[[click here]](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-OpenVPN)
 
-#
 ### Connecting VPN To Android/IOS Phone
 
 Install the WireGuard app from Google Play or App Store:
