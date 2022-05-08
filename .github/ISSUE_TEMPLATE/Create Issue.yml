@@ -1,8 +1,8 @@
 name: Create Issue
-description: ❗ Ceate only if using Raspberry Pi & Raspbian OS ❗
+description:
 title: "Issue"
 labels: ["issue"]
-assignees:
+assignees: 
   - 
 body:
   - type: dropdown
@@ -12,22 +12,21 @@ body:
       multiple: true
       description: Which type of OS used ?
       options:
-        - 32-bit
-        - 64-bit
+        - Raspberry Pi
+        - DietPi
+        - Ubuntu
+        - Other (explain in description)
     validations:
       required: true
-  - type: dropdown
-    id: project
+        - type: dropdown
+    id: os
     attributes:
-      label: Project
+      label: Architecture
       multiple: true
-      description: Which project/projects has issue ?
+      description: Which type of OS used ?
       options:
-        - Aduard Home
-        - Wireguard
-        - Unbound
-        - Cloudflare
-        - Stubby 
+        - 32-bit
+        - 64-bit
     validations:
       required: true
   - type: dropdown
@@ -42,6 +41,21 @@ body:
         - Mac
         - Android
         - IOS
+    validations:
+      required: true
+  - type: dropdown
+    id: project
+    attributes:
+      label: Project
+      multiple: true
+      description: Which project/projects has issue ?
+      options:
+        - Aduard Home
+        - Wireguard
+        - Unbound
+        - Cloudflare
+        - Stubby
+        - DNScrypt
     validations:
       required: true
   - type: dropdown
