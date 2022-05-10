@@ -320,7 +320,7 @@ sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.
 ## Setup Cloudflare with `(DoH/oDoH)`
 <b>Option 1 (Simple)</b><br>Cloudflare Tunnel[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Cloudflared-Tunnel-(DoH)"><b>click here</b></a>]:<br>(DNS over HTTPS only)
 
-<b>Option 2 (Advanced)</b><h4>DNScrypt proxy[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-DNScrypt-proxy-(DoH)(oDoH)(Anonymized-DNS)"><b>click here</b></a>]:</h4>- DNS over HTTPS <br>- Oblivious DNS Over HTTPS (exerimental)<br>- Anonymized DNS
+<b>Option 2 (Advanced)</b><h4>DNScrypt proxy[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-DNScrypt-proxy-(DoH)(oDoH)(Anonymized-DNS)"><b>click here</b></a>]:</h4>- DNS over HTTPS <br>- Oblivious DNS Over HTTPS (experimental)<br>- Anonymized DNS
 
 _<a href="https://research.cloudflare.com/projects/odns/"><b>Oblivious DNS Over HTTPS </b></a></h4>(oDoH) is a newly proposed open-source DNS standard built by engineers from Cloudflare, Apple, and Fastly which is supposed to increase the privacy of already existing DNS Over HTTPS_.
 
@@ -336,7 +336,7 @@ And copy and paste all the text from this unbound.conf file[<a href="https://raw
 
 ## Configure Stubby and Unbound
 
-Use Unbound for caching and Stubby as a <a href="https://www.google.com/search?q=How+does+TLS+proxy+work%3F&client=firefox-b-d&sxsrf=ALiCzsaNlPunZpYtzDVoVA6PVTkY6rOqyQ%3A1651275938995&ei=onhsYsqtPImRggez_K2oBA&ved=0ahUKEwjKhpSeurr3AhWJiOAKHTN-C0UQ4dUDCA4&uact=5&oq=How+does+TLS+proxy+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMUBWMUBYMkHaAFwAXgAgAGfAYgBnwGSAQMwLjGYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz"><b>TLS forwarder</b></a>. Install stubby:
+Use Unbound for caching and Stubby as a <a href="https://www.google.com/search?q=How+does+TLS+proxy+work%3F&client=firefox-b-d&sxsrf=ALiCzsaNlPunZpYtzDVoVA6PVTkY6rOqyQ%3A1651275938995&ei=onhsYsqtPImRggez_K2oBA&ved=0ahUKEwjKhpSeurr3AhWJiOAKHTN-C0UQ4dUDCA4&uact=5&oq=How+does+TLS+proxy+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMUBWMUBYMkHaAFwAXgAgAGfAYgBnwGSAQMwLjGYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz"><b>TLS forwarder</b></a>.<br>Install Stubby:
 ```
 sudo apt install stubby -y
 ```
@@ -500,7 +500,7 @@ sudo cat /root/yourclientname.conf
 
  * Import the config file to WireGuard (import from file option).
 
-## Configure WireGuard with adblocking & Dns security
+## Configure WireGuard with adblocking & DNS security
 
 `ADVICE:`_I think it might not make much of a difference to use DoT/DoH/oDoH with WireGuard security protocols. Though from my experience and in forums, it does not seem to cause any issues using them together. Mainly this is to achieve adblocking with a VPN on public networks._
  
