@@ -101,17 +101,21 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
    - [Setting up AdGuard blocklist](#setting-up-adguard-blocklist)
      - [Add/Remove multiple URLs](#addremove-multiple-urls)
    - [Install SSL certificate](#install-ssl-certificate)
- - [Install Unbound](#install-unbound-) <img src="https://www.privacytools.io/img/apps/unbound.svg" width=20px height=20px>
+ - [Install Unbound](#install-unbound-) <img src="https://www.vectorlogo.zone/logos/nlnetlabsnl_unbound/nlnetlabsnl_unbound-icon.svg" width=20px height=20px>
  - [Install Cloudflare](#install-cloudflare-) <img src="https://www.vectorlogo.zone/logos/cloudflare/cloudflare-icon.svg" width=20px height=20px>
    - [Setup Cloudflare with (DoH/oDoH)](#setup-cloudflare-with-dohodoh)
+     - [DNScrypt proxy](#dnscrypt-proxyclick-here) <img src="https://i.imgur.com/lEHVsn3.png" width=20px height=20px>
    - [Configure Cloudflare (DoT) on Unbound](#configure-cloudflare-dot-on-unbound)
-     - [Configure Stubby for Unbound](#configure-stubby-for-unbound)
+     - [Configure Stubby and Unbound](#configure-stubby-and-unbound)
    - [Configure AdGuard with (DoH/DoT/oDoH)](#configure-adguard-with-dohdotodoh)
+     - [Stable DNS resolving](#stable-dns-resolving)
+       - [Windows](#windows)
+       - [Android](#android)
  - [Install WireGuard](#install-wireguard-) <img src="https://www.vectorlogo.zone/logos/wireguard/wireguard-icon.svg" width=20px height=20px>
    - [Connecting VPN to Android/IOS Phone](#connecting-vpn-to-androidios-phone)
    - [Connecting VPN to Windows](#connecting-vpn-to-windows)
    - [Install OpenVPN](#install-openvpn-as-a-alternativeclick-here)</a> <img src="https://i.imgur.com/Agstbe5.png" width=20px height=20px>
-   - [Configure WireGuard with AdGuard & DNS security](#configure-wireguard-with-adguard--dns-security)
+   - [Configure WireGuard with adblocking & DNS security](#configure-wireguard-with-adblocking--dns-security)
      - [Limit traffic](#limit-traffic)
      - [Disable all IPv6](#disable-all-ipv6)
    - [Test Vpn](#test-vpn) <img src="https://i.imgur.com/6Yf8Zra.png" width=20px height=20px>
@@ -223,7 +227,7 @@ curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/s
 
     Go to network settings / change adapter options, right click in properties and select "Internet Protocol Version 4(TCP/IPv4)". Enter Pi's IP address in `Preferred DNS` server.
 
-    - <i>IPv6 (needed for `DoH` & `DoT` to detect if using it)</i>
+    - <i>IPv6 (needed for `DoH`/`DoT`/`oDoH` to detect if using it)</i>
 
      Go to "Internet Protocol Version 6(TCP/IPv6)" Enter `::1`
 
@@ -272,7 +276,7 @@ To run : `sudo python3 bulkurls.py`
 
 To **remove** change `add` in <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/62ba01ed8ed3a5bc5294b9fe7ee38c3e83ae1b86/bulkurls.py#L150"><b>second of last line</b></a> to `remove` in bulkurls.py file.
 
-Go to https://d3ward.github.io/toolz/adblock.html to test if ads are blocking <img src="https://i.imgur.com/Q5oO9EY.png" width=100px height=80px>
+Go to https://d3ward.github.io/toolz/adblock.html to test if ads are blocking <img src="https://i.imgur.com/Q5oO9EY.png" width=100px height=80px><br>Or just visit some ad infested sites.
 
 ## Install SSL certificate
 
@@ -314,13 +318,13 @@ sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.
 <h1 align="center"><b><i>Install Cloudflare</b></i> </h1>
 
 ## Setup Cloudflare with `(DoH/oDoH)`
-<b>Option 1</b> (Simple)<br>_(DNS over HTTPS only)_<br>Cloudflare Tunnel[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Cloudflared-Tunnel-(DoH)"><b>click here</b></a>]</h4>
+<b>Option 1 (Simple)</b><br>Cloudflare Tunnel[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Cloudflared-Tunnel-(DoH)"><b>click here</b></a>]:<br>(DNS over HTTPS only)
 
-<b>Option 2</b> (Advanced)<br>_(DNS over HTTPS / Oblivious DNS Over HTTPS / Anonymized DNS)_<br>DNScrypt proxy[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-DNScrypt-proxy-(DoH)(oDoH)(Anonymized-DNS)"><b>click here</b></a>]</h4> 
+<b>Option 2 (Advanced)</b><h4>DNScrypt proxy[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-DNScrypt-proxy-(DoH)(oDoH)(Anonymized-DNS)"><b>click here</b></a>]:</h4>- DNS over HTTPS <br>- Oblivious DNS Over HTTPS (exerimental)<br>- Anonymized DNS
 
-<a href="https://research.cloudflare.com/projects/odns/"><b>Oblivious DNS Over HTTPS </b></a></h4>(oDoH) is a newly proposed open-source DNS standard built by engineers from Cloudflare, Apple, and Fastly which is supposed to increase the privacy of already existing DNS Over HTTPS.
+_<a href="https://research.cloudflare.com/projects/odns/"><b>Oblivious DNS Over HTTPS </b></a></h4>(oDoH) is a newly proposed open-source DNS standard built by engineers from Cloudflare, Apple, and Fastly which is supposed to increase the privacy of already existing DNS Over HTTPS_.
 
-<a href="https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Anonymized-DNS"><b>Anonymized</b></a> DNS client encrypts the query for the final server instead of directly reaching a server that is one of the public resolvers, but sends it to a <a href="https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/relays.md"><b>relay</b></a>.
+_<a href="https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Anonymized-DNS"><b>Anonymized DNS</b></a> client encrypts the query for the final server instead of directly reaching a server that is one of the public resolvers, but sends it to a <a href="https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/relays.md"><b>relay</b></a>_.
 
 ## Configure Cloudflare `(DoT)` on Unbound
 
@@ -330,9 +334,9 @@ sudo nano /etc/unbound/unbound.conf.d/unbound.conf
 ```
 And copy and paste all the text from this unbound.conf file[<a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/unbound.conf"><b>click here</b></a>] and save (control+x then y then enter).
 
-## Configure Stubby for Unbound
+## Configure Stubby and Unbound
 
-Use Unbound for caching and stubby as a <a href="https://www.google.com/search?q=How+does+TLS+proxy+work%3F&client=firefox-b-d&sxsrf=ALiCzsaNlPunZpYtzDVoVA6PVTkY6rOqyQ%3A1651275938995&ei=onhsYsqtPImRggez_K2oBA&ved=0ahUKEwjKhpSeurr3AhWJiOAKHTN-C0UQ4dUDCA4&uact=5&oq=How+does+TLS+proxy+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMUBWMUBYMkHaAFwAXgAgAGfAYgBnwGSAQMwLjGYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz"><b>TLS forwarder</b></a>. Install stubby:
+Use Unbound for caching and Stubby as a <a href="https://www.google.com/search?q=How+does+TLS+proxy+work%3F&client=firefox-b-d&sxsrf=ALiCzsaNlPunZpYtzDVoVA6PVTkY6rOqyQ%3A1651275938995&ei=onhsYsqtPImRggez_K2oBA&ved=0ahUKEwjKhpSeurr3AhWJiOAKHTN-C0UQ4dUDCA4&uact=5&oq=How+does+TLS+proxy+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMUBWMUBYMkHaAFwAXgAgAGfAYgBnwGSAQMwLjGYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz"><b>TLS forwarder</b></a>. Install stubby:
 ```
 sudo apt install stubby -y
 ```
@@ -347,18 +351,29 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
 ```
 <p align="center">
  <img src="https://i.imgur.com/7zIpWP2.jpg" width=650px height=370px>
+ 
+`IMPORTANT:`Forward Stubby address in Unbound upstreams. Open `nano /etc/unbound/unbound.conf.d/unbound.conf` and uncomment Stubby address(remove # infront of line):
+```yaml
+# forward-addr: 127.0.0.1@8053
+# forward-addr: ::1@8053
+forward-addr: 127.0.0.1@8053
+forward-addr: ::1@8053
+```
 
 ## Configure AdGuard with `(DoH/DoT/oDoH)`
 
  * In AdGuard homepage under settings, select "DNS settings"
 
- * Delete everything from both _**Upstream**_ and _**Bootstrap DNS**_ server options and add:
+ * Delete everything from both _**Upstream**_ and _**Bootstrap DNS**_ server options and add the following for:
 
-   - DNS over TLS - `127.0.0.1:53`
-   - DNS over HTTPS/Oblivious DNS over HTTPS - 
+   - DNS over TLS(unbound) : `127.0.0.1:53`
+ 
+   - DNS over HTTPS/Oblivious DNS over HTTPS :
+ 
       - `127.0.0.1:5053`(cloudflared tunnel) 
       - `127.0.0.1:5353`(dnscrypt proxy)
-   - TLS forwarder(stubby) - `127.0.0.1:8053` 
+ 
+   - TLS forwarder(stubby) : `127.0.0.1:8053` 
 
 * `IMPORTANT:` Check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option for DNS resolvers to work simultaneously.
 
@@ -372,7 +387,9 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
  
 Click apply and test upstreams
 
-<b>`IMPORTANT:`Make DNS resolving more `stable` on Windows system and Android browsers. Linux works fine</b><i>(tested on ubuntu)</i>
+#### Stable DNS resolving
+ 
+`IMPORTANT:`Help resolve multiple DNS servers on Windows system and Android browsers. Linux works fine</b><i>(tested on ubuntu)</i>
 
 #### Windows 
 
@@ -483,13 +500,13 @@ sudo cat /root/yourclientname.conf
 
  * Import the config file to WireGuard (import from file option).
 
-## Configure WireGuard with `Adguard & Dns security`
+## Configure WireGuard with adblocking & Dns security
 
 `ADVICE:`_I think it might not make much of a difference to use DoT/DoH/oDoH with WireGuard security protocols. Though from my experience and in forums, it does not seem to cause any issues using them together. Mainly this is to achieve adblocking with a VPN on public networks._
  
  * In WireGuard app, select your tunnel name and select edit (pencil on top right)
 
- * Under DNS servers enter `Pi's IP` and save (IPv4 & IPv6)
+ * Under DNS servers enter `Pi's IP`(IPv4 & IPv6) and save
 
 <p align="center">
  <img src="https://i.imgur.com/UC0vWfE.jpg" width=450px height=500px>  
