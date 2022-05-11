@@ -345,13 +345,7 @@ Remove and re-create stubby.yaml file:
 cd /etc/stubby/ && sudo rm stubby.yml && sudo nano stubby.yml
 ```
 And copy and paste all the text from this stubby config file[<a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/stubby.yml"><b>click here</b></a>] and save. (`cd` to return to home folder when finish).
-* Restart unbound & stubby and check status:
-```
-sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
-```
-<p align="center">
- <img src="https://i.imgur.com/7zIpWP2.jpg" width=650px height=370px>
- 
+
 `IMPORTANT:`Forward Stubby address in Unbound upstreams. Open `nano /etc/unbound/unbound.conf.d/unbound.conf` and uncomment Stubby address(remove # infront of line):
 ```yaml
 # forward-addr: 127.0.0.1@8053
@@ -359,6 +353,14 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
 forward-addr: 127.0.0.1@8053
 forward-addr: ::1@8053
 ```
+
+* Restart unbound & stubby and check status:
+```
+sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
+```
+<p align="center">
+ <img src="https://i.imgur.com/7zIpWP2.jpg" width=650px height=370px>
+ 
 
 ## Configure AdGuard with `(DoH/DoT/oDoH)`
 
