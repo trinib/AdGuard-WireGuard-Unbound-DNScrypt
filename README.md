@@ -25,25 +25,19 @@
  
 _<a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard Home</b></a>_</br>
 Block banners, pop-ups and video advertisements network-wide
- 
+# 
  _<a href="https://www.wireguard.com/"><b>WireGuard</b></a>_</br>
 A VPN server accessible from public networks (IPv4 & IPv6)
- 
- _<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a> & <a href="https://dnsprivacy.org/dns_privacy_daemon_-_stubby/about_stubby/"><b>Stubby</b></a>_</br>
-A validating, recursive, caching DNS resolver and TLS forwarder (DoT)
-
-_<a href="https://dnscrypt.info/"><b>DNScrypt</b></a>_</br>
-Modern encrypted DNS protocols such as DNSCrypt v2, DNS-over-HTTPS, Anonymized DNSCrypt and oDoH (Oblivious DoH)
- 
+ #
+_<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a>_</br>A validating, recursive, caching DNS resolver (DoT)</br>**_with_**</br>_<a href="https://dnsprivacy.org/dns_privacy_daemon_-_stubby/about_stubby/"><b>Stubby</b></a>_ (simple)</br>
+DNS queries are sent to resolvers over an encrypted TLS connection providing increased privacy</br>**_or_**</br>_<a href="https://dnscrypt.info/"><b>DNScrypt</b></a>_ (advanced)</br>Modern encrypted DNS protocols such as DNSCrypt v2, DNS-over-HTTPS, Anonymized DNSCrypt and oDoH (Oblivious DoH)
+ #
  _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_</br>
 Better performance & security for websites, APIs, and Internet applications
-
-</div>
- 
+#
+</div> 
 <p align="right">
 <i>All software are free, open-source and&nbsp;self-hosted&nbsp;</i></br><a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/wiki/About"><b>ABOUT</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>FAQ</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki"><b>WIKI</b></a>
-
-#
 
 <h3 align="left">DNS query speed 🧪</h3>
 <a href="https://docs.oracle.com/en-us/iaas/Content/DNS/Tasks/testingdnsusingdig.htm"><b>BIND'S dig tool</b></a> results from google.com servers:
@@ -336,7 +330,7 @@ And copy and paste all the text from this unbound.conf file[<a href="https://raw
 
 ## Configure Stubby and Unbound
 
-Use Unbound for caching and Stubby as a <a href="https://www.google.com/search?q=How+does+TLS+proxy+work%3F&client=firefox-b-d&sxsrf=ALiCzsaNlPunZpYtzDVoVA6PVTkY6rOqyQ%3A1651275938995&ei=onhsYsqtPImRggez_K2oBA&ved=0ahUKEwjKhpSeurr3AhWJiOAKHTN-C0UQ4dUDCA4&uact=5&oq=How+does+TLS+proxy+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMUBWMUBYMkHaAFwAXgAgAGfAYgBnwGSAQMwLjGYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz"><b>TLS forwarder</b></a>.<br>Install Stubby:
+Use Unbound for caching and Stubby as a <a href="https://www.google.com/search?q=How+does+TLS+proxy+work%3F&client=firefox-b-d&sxsrf=ALiCzsaNlPunZpYtzDVoVA6PVTkY6rOqyQ%3A1651275938995&ei=onhsYsqtPImRggez_K2oBA&ved=0ahUKEwjKhpSeurr3AhWJiOAKHTN-C0UQ4dUDCA4&uact=5&oq=How+does+TLS+proxy+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMUBWMUBYMkHaAFwAXgAgAGfAYgBnwGSAQMwLjGYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz"><b>TLS forwarder</b></a>(if NOT using DNScrypt).<br>Install Stubby:
 ```
 sudo apt install stubby -y
 ```
@@ -353,6 +347,7 @@ And copy and paste all the text from this stubby config file[<a href="https://ra
 forward-addr: 127.0.0.1@8053
 forward-addr: ::1@8053
 ```
+`IMPORTANT:`Stubby and DNScrypt cannot be used together when both are set to run as a forwarder, else redundant caching will occur.
 
 * Restart unbound & stubby and check status:
 ```
