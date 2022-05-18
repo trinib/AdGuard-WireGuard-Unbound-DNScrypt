@@ -108,7 +108,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
  - [Install WireGuard](#install-wireguard-) <img src="https://www.vectorlogo.zone/logos/wireguard/wireguard-icon.svg" width=20px height=20px>
    - [Connecting VPN to Android/IOS Phone](#connecting-vpn-to-androidios-phone)
    - [Connecting VPN to Windows](#connecting-vpn-to-windows)
-   - [Install OpenVPN](#install-openvpn-as-a-alternativeclick-here)</a> <img src="https://i.imgur.com/Agstbe5.png" width=20px height=20px>
+   - [Install OpenVPN](#install-openvpn-as-an-alternativeclick-here)</a> <img src="https://i.imgur.com/Agstbe5.png" width=20px height=20px>
    - [Configure WireGuard with adblocking & DNS security](#configure-wireguard-with-adblocking--dns-security)
      - [Limit traffic](#limit-traffic)
      - [Disable all IPv6](#disable-all-ipv6)
@@ -130,29 +130,25 @@ This tutorial is installed with Raspberry Pi. Other Linux <a href="https://githu
 #
 <h1 align="center"><b><i>Install Raspberry Pi OS</b></i> </h1>
 
-Raspberry Pi OS comes in desktop and lite versions(use lite for <a href="https://www.google.com/search?q=What+is+a+headless+operating+system%3F&client=firefox-b-d&sxsrf=APq-WBvlqMZasn_klYxS5HZmhKQlduKYuQ%3A1650123816301&ei=KORaYtz7EYOdwbkP74G16AE&ved=0ahUKEwjcr5-f9pj3AhWDTjABHe9ADR0Q4dUDCA0&uact=5&oq=What+is+a+headless+operating+system%3F&gs_lcp=Cgdnd3Mtd2l6EAMyCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMEBWMEBYNAEaAFwAXgAgAFqiAFqkgEDMC4xmAEAoAECoAEByAEIwAEB&sclient=gws-wiz"><b>headless</b></a> mode). It can be accessed with a monitor/keyboard/mouse or connect via <a href="https://www.google.com/search?q=What+is+SSH+in+Linux%3F&client=firefox-b-d&sxsrf=APq-WBsiHvek7g0OrBHWDbEy-x7m-B6O3Q%3A1650481751310&ei=V1pgYoHNEs-uwbkPtI25mAI&ved=0ahUKEwjB1PrTq6P3AhVPVzABHbRGDiMQ4dUDCA0&uact=5&oq=What+is+SSH+in+Linux%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjoHCCMQsAMQJzoHCAAQRxCwAzoHCAAQsAMQQzoKCAAQ5AIQsAMYAToPCC4Q1AIQyAMQsAMQQxgCSgQIQRgASgQIRhgBUM8IWM8IYJAMaAFwAXgAgAFxiAFxkgEDMC4xmAEAoAECoAEByAERwAEB2gEGCAEQARgJ2gEGCAIQARgI&sclient=gws-wiz"><b>ssh</b></a> from a terminal.
+Raspberry Pi OS comes in desktop and lite versions(use lite for <a href="https://www.google.com/search?q=What+is+a+headless+operating+system%3F&client=firefox-b-d&sxsrf=APq-WBvlqMZasn_klYxS5HZmhKQlduKYuQ%3A1650123816301&ei=KORaYtz7EYOdwbkP74G16AE&ved=0ahUKEwjcr5-f9pj3AhWDTjABHe9ADR0Q4dUDCA0&uact=5&oq=What+is+a+headless+operating+system%3F&gs_lcp=Cgdnd3Mtd2l6EAMyCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMEBWMEBYNAEaAFwAXgAgAFqiAFqkgEDMC4xmAEAoAECoAEByAEIwAEB&sclient=gws-wiz"><b>headless</b></a> mode). It can be accessed with a monitor/keyboard/mouse or connect via <a href="https://www.google.com/search?q=What+is+SSH+in+Linux%3F&client=firefox-b-d&sxsrf=APq-WBsiHvek7g0OrBHWDbEy-x7m-B6O3Q%3A1650481751310&ei=V1pgYoHNEs-uwbkPtI25mAI&ved=0ahUKEwjB1PrTq6P3AhVPVzABHbRGDiMQ4dUDCA0&uact=5&oq=What+is+SSH+in+Linux%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjoHCCMQsAMQJzoHCAAQRxCwAzoHCAAQsAMQQzoKCAAQ5AIQsAMYAToPCC4Q1AIQyAMQsAMQQxgCSgQIQRgASgQIRhgBUM8IWM8IYJAMaAFwAXgAgAFxiAFxkgEDMC4xmAEAoAECoAEByAERwAEB2gEGCAEQARgJ2gEGCAIQARgI&sclient=gws-wiz"><b>ssh</b></a> from a terminal. Raspberry Pi OS <b>cannot</b> be set up through the <a href="https://www.raspberrypi.com/news/raspberry-pi-bullseye-update-april-2022/#Headless%20setup"><b>wizard</b></a> anymore, the Raspberry Pi <a href="https://www.raspberrypi.com/news/raspberry-pi-imager-imaging-utility/"><b>Imager tool</b></a> is needed to preconfigure an image user account.
 
-Install balenEtcher and download Pi image to write on a microSD card.
+ * Install Raspberry Pi Imager tool: https://www.raspberrypi.com/software/
 
  * Download Raspberry Pi OS: https://www.raspberrypi.org/software/operating-systems/
 
- * Download balenaEtcher: https://www.balena.io/etcher/
-
-- Launch Etcher and choose the Raspberry Pi image, select microSD card and click `Flash`.
-
-After flashing is done, look in "This PC” for a disk name “boot or USB drive” (re-plug USB card reader if not seen). Go to that disk, create a new text file called **_`ssh without 'txt' extension`_**. <br><i>(Disable “Hide extensions for known file types” in the file explorer options if not showing)</i>
+- Open Pi Imager tool and configure settings in advanced options. Choose image, select microSD card and click `Write`.
 
 <p align="center">
- <img src="https://i.imgur.com/eV6uMbz.jpg">
-
+ <img src="https://i.imgur.com/S6pDPZv.png">
+ 
 <i>Place SD card into the Raspberry Pi, plug in Ethernet cable and boot up</i>
 
 ## Access Pi OS with SSH
 
  * Wait for a minute for Pi's first boot up
 
- * Open browser and login router's admin panel(default gateway address)
-
+ * Open browser and login router's admin panel(default <a href="https://www.google.com/search?client=firefox-b-d&q=find+default+gateway+address"><b>gateway</b></a> address)
+ 
  * Find list of all devices connected to network and copy the IP address of the Raspberry Pi. It will most likely have the hostname `raspberrypi`
 
  * Open terminal on host machine <i>(Windows powershell or raspcontroller for Android can be used)</i>.
@@ -163,7 +159,7 @@ ssh pi@pi's IP address
 ```
 <i>Use right mouse button to paste text in Windows powerShell</i>.
 
-Type “yes” for fingerprint question, and type "`raspberry`" for default password, passwords will be invisible in command line. <br><i>(type `sudo passwd pi` to change password)</i>
+Type “yes” for fingerprint question, and enter password.
 
 <p align="center">
  <img src="https://i.imgur.com/Wf30jxG.jpg">
@@ -444,10 +440,10 @@ My router port setting:
 <p align="center">
  <img src="https://i.imgur.com/9LBEk1i.jpg" width="640" height="420">
 </br>
-Other router brands will have a different interface look. Google search it for help. If you cannot connect from a outside network that means your ISP has blocked outgoing connections, call them and ask nicely to unblock.
+Other router brands will have a different interface look. Google search it for help. If you cannot connect from a outside network that means your ISP has blocked outcoming connections, call them and ask nicely to unblock.
 
 #
-👊BIG THANKS👊 for this installation script from <a href="https://github.com/Nyr/wireguard-install"><b>Nyr</b></a>. Follow to keep updated.
+👊BIG THANKS👊 for this installation script from <a href="https://github.com/Nyr/wireguard-install"><b>Nyr</b></a>. Follow to keep updated.<br>(<a href="https://www.pivpn.io/"><b>PIVPN</b></a> can also be used)
 
 Run the following command in terminal:
 ```
@@ -466,7 +462,7 @@ sudo cp /root/yourclientname.conf /home/pi && sudo qrencode -t ansiutf8 < yourcl
 ```
 `IMPORTANT:` You will need to add a new client/user for each device used with the VPN<i>(cannot share 1 client to multiple devices)</i>. To add, re-run the script and create another user with different client name.
 
-#### _Install OpenVPN as a alternative_[[click here]](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-OpenVPN)
+#### _Install OpenVPN as an alternative_[[click here]](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-OpenVPN)
 
 ### Connecting VPN To Android/IOS Phone
 
