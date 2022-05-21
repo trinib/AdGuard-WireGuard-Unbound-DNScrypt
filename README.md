@@ -130,7 +130,7 @@ This tutorial is installed with Raspberry Pi. Other Linux <a href="https://githu
 #
 <h1 align="center"><b><i>Install Raspberry Pi OS</b></i> </h1>
 
-Raspberry Pi OS comes in desktop and lite versions(use lite for <a href="https://www.google.com/search?q=What+is+a+headless+operating+system%3F&client=firefox-b-d&sxsrf=APq-WBvlqMZasn_klYxS5HZmhKQlduKYuQ%3A1650123816301&ei=KORaYtz7EYOdwbkP74G16AE&ved=0ahUKEwjcr5-f9pj3AhWDTjABHe9ADR0Q4dUDCA0&uact=5&oq=What+is+a+headless+operating+system%3F&gs_lcp=Cgdnd3Mtd2l6EAMyCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMEBWMEBYNAEaAFwAXgAgAFqiAFqkgEDMC4xmAEAoAECoAEByAEIwAEB&sclient=gws-wiz"><b>headless</b></a> mode). It can be accessed with a monitor/keyboard/mouse or connect via <a href="https://www.google.com/search?q=What+is+SSH+in+Linux%3F&client=firefox-b-d&sxsrf=APq-WBsiHvek7g0OrBHWDbEy-x7m-B6O3Q%3A1650481751310&ei=V1pgYoHNEs-uwbkPtI25mAI&ved=0ahUKEwjB1PrTq6P3AhVPVzABHbRGDiMQ4dUDCA0&uact=5&oq=What+is+SSH+in+Linux%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjoHCCMQsAMQJzoHCAAQRxCwAzoHCAAQsAMQQzoKCAAQ5AIQsAMYAToPCC4Q1AIQyAMQsAMQQxgCSgQIQRgASgQIRhgBUM8IWM8IYJAMaAFwAXgAgAFxiAFxkgEDMC4xmAEAoAECoAEByAERwAEB2gEGCAEQARgJ2gEGCAIQARgI&sclient=gws-wiz"><b>ssh</b></a> from a terminal. Raspberry Pi OS <b>cannot</b> be set up through the <a href="https://www.raspberrypi.com/news/raspberry-pi-bullseye-update-april-2022/#Headless%20setup"><b>wizard</b></a> anymore, the Raspberry Pi <a href="https://www.raspberrypi.com/news/raspberry-pi-imager-imaging-utility/"><b>Imager tool</b></a> is needed to preconfigure an image user account.
+Raspberry Pi OS comes in desktop and lite versions(use lite for <a href="https://www.google.com/search?q=What+is+a+headless+operating+system%3F&client=firefox-b-d&sxsrf=APq-WBvlqMZasn_klYxS5HZmhKQlduKYuQ%3A1650123816301&ei=KORaYtz7EYOdwbkP74G16AE&ved=0ahUKEwjcr5-f9pj3AhWDTjABHe9ADR0Q4dUDCA0&uact=5&oq=What+is+a+headless+operating+system%3F&gs_lcp=Cgdnd3Mtd2l6EAMyCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMEBWMEBYNAEaAFwAXgAgAFqiAFqkgEDMC4xmAEAoAECoAEByAEIwAEB&sclient=gws-wiz"><b>headless</b></a> mode). It can be accessed with a monitor/keyboard/mouse or connect via <a href="https://www.google.com/search?q=What+is+SSH+in+Linux%3F&client=firefox-b-d&sxsrf=APq-WBsiHvek7g0OrBHWDbEy-x7m-B6O3Q%3A1650481751310&ei=V1pgYoHNEs-uwbkPtI25mAI&ved=0ahUKEwjB1PrTq6P3AhVPVzABHbRGDiMQ4dUDCA0&uact=5&oq=What+is+SSH+in+Linux%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjoHCCMQsAMQJzoHCAAQRxCwAzoHCAAQsAMQQzoKCAAQ5AIQsAMYAToPCC4Q1AIQyAMQsAMQQxgCSgQIQRgASgQIRhgBUM8IWM8IYJAMaAFwAXgAgAFxiAFxkgEDMC4xmAEAoAECoAEByAERwAEB2gEGCAEQARgJ2gEGCAIQARgI&sclient=gws-wiz"><b>ssh</b></a> from a terminal. Raspberry Pi OS <b>cannot</b> be set up through the <a href="https://www.raspberrypi.com/news/raspberry-pi-bullseye-update-april-2022/#Headless%20setup"><b>wizard</b></a> anymore, the <a href="https://www.raspberrypi.com/news/raspberry-pi-imager-imaging-utility/"><b>Imager tool</b></a> is needed to preconfigure an image user account.
 
  * Install Raspberry Pi Imager tool: https://www.raspberrypi.com/software/
 
@@ -260,9 +260,9 @@ nano bulkurls.py
 
 Then copy and paste script text[<a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>click here</b></a>]. Set `your AdGuard credentials` and save (control+x then y then enter).
  
-_If using **DietPi** install `sudo apt-get install python3-pip -y && pip install requests` for its not install by default._
+_If using **DietPi** install `sudo apt-get install python3-pip -y && pip install requests` for it is not installed by default._
   
-To run : `sudo python3 bulkurls.py`
+To run : `sudo python3 bulkurls.py`<br>_Reboot when finished_
 
 To **remove** change `add` in <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/62ba01ed8ed3a5bc5294b9fe7ee38c3e83ae1b86/bulkurls.py#L150"><b>second of last line</b></a> to `remove` in bulkurls.py file.
 
@@ -443,7 +443,7 @@ My router port setting:
 Other router brands will have a different interface look. Google search it for help. If you cannot connect from a outside network that means your ISP has blocked outcoming connections, call them and ask nicely to unblock.
 
 #
-👊BIG THANKS👊 for this installation script from <a href="https://github.com/Nyr/wireguard-install"><b>Nyr</b></a>. Follow to keep updated.<br>(<a href="https://www.pivpn.io/"><b>PIVPN</b></a> can also be used)
+👊BIG THANKS👊 for this installation script from <a href="https://github.com/Nyr/wireguard-install"><b>Nyr</b></a>. Follow to keep updated.<br>(<a href="https://www.pivpn.io/"><b>PiVPN</b></a> script can also be used)
 
 Run the following command in terminal:
 ```
