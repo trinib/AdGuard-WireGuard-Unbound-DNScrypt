@@ -23,17 +23,17 @@
 
 <div align="center"> 
  
-_<a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard Home</b></a>_</br>
-Block banners, pop-ups and video advertisements network-wide
-# 
- _<a href="https://www.wireguard.com/"><b>WireGuard</b></a>_</br>
-A VPN server accessible from public networks (IPv4 & IPv6)
- #
-_<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a>_</br>A validating, recursive, caching DNS resolver (DoT)</br>**_with_**</br>_<a href="https://dnsprivacy.org/dns_privacy_daemon_-_stubby/about_stubby/"><b>Stubby</b></a>_ (simple)</br>
-DNS queries are sent to resolvers over an encrypted TLS connection providing increased privacy</br>**_or_**</br>_<a href="https://dnscrypt.info/"><b>DNScrypt</b></a>_ (advanced)</br>Modern encrypted DNS protocols such as DNSCrypt v2, DNS-over-HTTPS, Anonymized DNSCrypt and oDoH (Oblivious DoH)
- #
- _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_</br>
-Better performance & security for websites, APIs, and Internet applications
+_<a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard Home</b></a>_</br>Block banners, pop-ups and video advertisements network-wide
+
+ _<a href="https://www.wireguard.com/"><b>WireGuard</b></a> or <a href="https://openvpn.net/"><b>OpenVPN</b></a>_</br>A VPN server accessible from public networks (IPv4 & IPv6)
+
+_<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a> or <a href="https://www.knot-resolver.cz/"><b>Knot</b></a>_</br>A validating, recursive, caching DNS resolvers (DoT)
+
+_<a href="https://dnsprivacy.org/dns_privacy_daemon_-_stubby/about_stubby/"><b>Stubby</b></a>_</br>DNS queries are sent to resolvers over an encrypted TLS connection providing increased privacy
+
+_<a href="https://dnscrypt.info/"><b>DNScrypt</b></a>_</br>Modern encrypted DNS protocols such as DNSCrypt v2, DNS-over-HTTPS, Anonymized DNSCrypt and oDoH (Oblivious DoH)
+
+ _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_</br>Better performance & security for websites, APIs, and Internet applications
 #
 </div> 
 <p align="right">
@@ -53,35 +53,12 @@ AdGuard default <b><i>vs</i></b> setup/configuration:
 https://user-images.githubusercontent.com/18756975/150230438-b767e86f-4e18-4791-b5fe-0813615a37a3.mp4
 
 Public Cloudflare/Quad9/Google:</br>
-<i>(same results if addresses are added manually on systems)</i>
+<i>(same results if addresses are added manually in a system's network DNS fields)</i>
 
 https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-8ee2-b80227522252.mp4
 
 </p>
  </details>
- 
-<p align="right">
-<b>Project Status</b>
-
-<div align="right">
-<details><summary>Last tested: 17 April 2022</summary>
-<p>
-
-<div align="center">
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Projects &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           |   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         |
-   :---:             |     :---: 
- AdGuard Home        |       ✅
- Unbound             |       ✅
- Cloudflared         |       ✅
- DNScrypt            |       ✅
- Stubby              |       ✅
- WireGuard           |       ✅    
-</div>
-
-</p>
- </details>
-</div>
  
 #
 # Table of contents
@@ -96,6 +73,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
      - [Add/Remove multiple URLs](#addremove-multiple-urls)
    - [Install SSL certificate](#install-ssl-certificate)
  - [Install Unbound](#install-unbound-) <img src="https://www.vectorlogo.zone/logos/nlnetlabsnl_unbound/nlnetlabsnl_unbound-icon.svg" width=20px height=20px>
+ - [Install Knot](#install-knot-resolver-as-an-alternativeclick-here) <img src="https://i.imgur.com/0DT4zlN.png" width=20px height=20px>
  - [Install Cloudflare](#install-cloudflare-) <img src="https://www.vectorlogo.zone/logos/cloudflare/cloudflare-icon.svg" width=20px height=20px>
    - [Setup Cloudflare with (DoH/oDoH)](#setup-cloudflare-with-dohodoh)
      - [DNScrypt proxy](#dnscrypt-proxyclick-here) <img src="https://i.imgur.com/lEHVsn3.png" width=20px height=20px>
@@ -177,19 +155,19 @@ sudo reboot
 #
 <h1 align="center"><b><i>Install AdGuard Home</b></i> </h1>
 
-This installation script is from <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard Home</b></a> main project. Follow to keep updated.
+Installation scripts are from <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard Home</b></a> main project. Follow to keep updated.
 
-Run the following command in terminal:
+Run one of the following command in terminal:
 
-Stable :
+Stable:
 ```
 curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -v
 ```
-<a href="https://www.google.com/search?q=what+is+beta+channels&client=firefox-b-d&sxsrf=ALiCzsaUXM2wZwGBHigwBipZONSnbj67Bg%3A1651991460917&ei=pGN3YpDUN9WqwbkP3Li8qAY&ved=0ahUKEwiQtszho8_3AhVVVTABHVwcD2UQ4dUDCA4&oq=what+is+beta+chjannels&gs_lcp=Cgdnd3Mtd2l6EAxKBAhBGABKBAhGGABQAFgAYABoAHABeACAAQCIAQCSAQCYAQA&sclient=gws-wiz"><b>Beta</b></a> - testing version of AdGuard Home. More or less stable versions<i>(recommended for Raspberry Pi)</i> :
+Beta - testing version of AdGuard Home. More or less stable versions<i>(recommended for Raspberry Pi)</i>:
 ```
 curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -c beta
 ```
-<a href="https://www.google.com/search?q=Is+Edge+Beta+good%3F&client=firefox-b-d&sxsrf=ALiCzsZTfrTaft7sTdzJ2_RhGpdL25WlIA%3A1651991558520&ei=BmR3Ype6H93vkvQPsNSA-AQ&ved=0ahUKEwiX1ZGQpM_3AhXdt4QIHTAqAE8Q4dUDCA4&uact=5&oq=Is+Edge+Beta+good%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUM0BWM0BYKUGaAFwAXgAgAGKAYgBigGSAQMwLjGYAQCgAQKgAQHIAQnAAQE&sclient=gws-wiz"><b>Edge</b></a> - newest version of AdGuard Home. New updates are pushed to this channel daily and might not be stable :
+Edge - newest version of AdGuard Home. New updates are pushed to this channel daily and might not be stable:
 ```
 curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -c edge
 ```
@@ -223,7 +201,7 @@ curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/s
 
 `OPTIONAL:` <i>Add a backup DNS in the alternative fields</i>
   
-`BE AWARE:` <i>In Android, adding a public DNS in second field breaks AdGuard ad blocking</i>🤷
+`BE AWARE:` <i>In Android, adding a public DNS in second field breaks AdGuard ad blocking</i>
 
 <p align="center">
  <img src="https://i.imgur.com/8gsDk3z.jpg">
@@ -301,6 +279,8 @@ sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.
 
 <p align="center">
  <img src="https://i.imgur.com/26ro62t.jpg">
+ 
+#### _Install Knot Resolver as an alternative_[[click here]](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Knot-Resolver)
 
 **[⬆ Return to contents ⬆](#table-of-contents)**
 
@@ -343,7 +323,7 @@ And copy and paste all the text from this stubby config file[<a href="https://ra
 forward-addr: 127.0.0.1@8053
 forward-addr: ::1@8053
 ```
-`IMPORTANT:`Stubby and DNScrypt cannot be used together when both are set to run as a forwarder, else redundant caching will occur.
+`IMPORTANT:`Stubby and DNScrypt **cannot** be used together when both are set to run as a forwarder, else redundant caching will occur.
 
 * Restart unbound & stubby and check status:
 ```
@@ -359,7 +339,7 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
 
  * Delete everything from both _**Upstream**_ and _**Bootstrap DNS**_ server options and add the following for:
 
-   - DNS over TLS(unbound) : `127.0.0.1:53`
+   - DNS over TLS(unbound/knot) : `127.0.0.1:53`
  
    - DNS over HTTPS/Oblivious DNS over HTTPS :
  
@@ -559,6 +539,8 @@ https://github.com/AdguardTeam/AdGuardHome/wiki
 https://developers.cloudflare.com/
 
 https://unbound.docs.nlnetlabs.nl/en/latest/
+ 
+https://knot-resolver.readthedocs.io/en/stable/#
 
 https://dnsprivacy.org/dns_privacy_clients/
  
