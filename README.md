@@ -37,7 +37,7 @@ _<a href="https://dnscrypt.info/"><b>DNScrypt</b></a>_</br>Modern encrypted DNS 
 #
 </div> 
 <p align="right">
-<i>All software are free, open-source and&nbsp;self-hosted&nbsp;</i></br><a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/wiki/About"><b>ABOUT</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>FAQ</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki"><b>WIKI</b></a>
+<i>All software are free, open-source and&nbsp;self-hosted&nbsp;</i></br><a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/wiki/About"><b>ABOUT</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>FAQ</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki"><b>WIKI</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions"><b>DISCUSS</b></a>
 
 <h3 align="left">DNS query speed 🧪</h3>
 <a href="https://docs.oracle.com/en-us/iaas/Content/DNS/Tasks/testingdnsusingdig.htm"><b>BIND'S dig tool</b></a> results from google.com servers:
@@ -73,7 +73,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
      - [Add/Remove multiple URLs](#addremove-multiple-urls)
    - [Install SSL certificate](#install-ssl-certificate)
  - [Install Unbound](#install-unbound-) <img src="https://www.vectorlogo.zone/logos/nlnetlabsnl_unbound/nlnetlabsnl_unbound-icon.svg" width=20px height=20px>
- - [Install Knot](#install-knot-resolver-as-an-alternativeclick-here) <img src="https://i.imgur.com/0DT4zlN.png" width=20px height=20px>
+ - [Install Knot](#install-knot-resolver-as-an-alternativeclick-here) <img src="https://www.vectorlogo.zone/logos/knot-resolvercz/knot-resolvercz-icon.svg" width=20px height=20px>
  - [Install Cloudflare](#install-cloudflare-) <img src="https://www.vectorlogo.zone/logos/cloudflare/cloudflare-icon.svg" width=20px height=20px>
    - [Setup Cloudflare with (DoH/oDoH)](#setup-cloudflare-with-dohodoh)
      - [DNScrypt proxy](#dnscrypt-proxyclick-here) <img src="https://i.imgur.com/lEHVsn3.png" width=20px height=20px>
@@ -255,13 +255,15 @@ If using AdGuard Home on a `VPS(Virtual private server)`, get a <a href="https:/
 #
 <h1 align="center"><b><i>Install Unbound</b></i> </h1>
 
-`RECOMMENDED:`Before installing other DNS resolvers, it is a good idea to turn off <a href="https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html"><b>systemd-resolved</b></a> DNSStubListener(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/27"><b>issue#27</b></a>).
+`RECOMMENDED:` Before installing other DNS resolvers, it is a good idea to turn off <a href="https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html"><b>systemd-resolved</b></a> DNSStubListener(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/27"><b>issue#27</b></a>).
 
-Run the following command in terminal:
+`OPTIONAL:` Installing via the package manager is the easiest option with automatic updates and stable versions. The downside is that it can be outdated for some distributions or not have all the compile-time options included that you want. Building and compiling Unbound yourself ensures that you have the latest version and all the compile-time options you desire[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Build-Unbound-from-source"><b>click here</b></a>].
+
+For the version from package manager, run the following command in terminal:
 ```
 sudo apt install unbound -y
 ```
-For recursively querying a host that is not cached as an address, the resolver needs to start at the top of the server tree and query the root servers, to know where to go for the top level domain for the address being queried. Unbound comes with default built-in hints.
+For recursively querying a host that is not cached as an address, the resolver needs to start at the top of the server tree and query the root servers, to know where to go for the top level domain for the address being queried. Unbound comes with default built-in hints.<br>Download latest:
 ```
 wget -O root.hints https://www.internic.net/domain/named.root && sudo mv root.hints /var/lib/unbound/
 ```
@@ -272,7 +274,7 @@ Enter in command line `crontab -e`, it will ask select an editor(choose 1), past
 1 0 1 */6 * wget -O root.hints https://www.internic.net/domain/named.root
 2 0 1 */6 * sudo mv root.hints /var/lib/unbound/
 ```
-_If using **DietPi**, install resolvconf and restart unbound-resolvconf.service to set default nameserver(127.0.0.1) :_
+_If using **DietPi**, install resolvconf and restart unbound-resolvconf.service to set default nameserver(127.0.0.1):_
 ```
 sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.service
 ```  
@@ -302,26 +304,27 @@ Create a unbound configuration file with DNS over TLS settings. Enter in termina
 ```
 sudo nano /etc/unbound/unbound.conf.d/unbound.conf
 ```
-And copy and paste all the text from this unbound.conf file[<a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/unbound.conf"><b>click here</b></a>] and save (control+x then y then enter).
+And copy&paste these settings[<a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/unbound.conf"><b>click here</b></a>] and save (control+x then y then enter).
 
 ## Configure Stubby and Unbound
 
-Use Unbound for caching and Stubby as a <a href="https://www.google.com/search?q=How+does+TLS+proxy+work%3F&client=firefox-b-d&sxsrf=ALiCzsaNlPunZpYtzDVoVA6PVTkY6rOqyQ%3A1651275938995&ei=onhsYsqtPImRggez_K2oBA&ved=0ahUKEwjKhpSeurr3AhWJiOAKHTN-C0UQ4dUDCA4&uact=5&oq=How+does+TLS+proxy+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMUBWMUBYMkHaAFwAXgAgAGfAYgBnwGSAQMwLjGYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz"><b>TLS forwarder</b></a>(if NOT using DNScrypt).<br>Install Stubby:
+Use Unbound for caching and Stubby as a <a href="https://www.google.com/search?q=How+does+TLS+proxy+work%3F&client=firefox-b-d&sxsrf=ALiCzsaNlPunZpYtzDVoVA6PVTkY6rOqyQ%3A1651275938995&ei=onhsYsqtPImRggez_K2oBA&ved=0ahUKEwjKhpSeurr3AhWJiOAKHTN-C0UQ4dUDCA4&uact=5&oq=How+does+TLS+proxy+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMUBWMUBYMkHaAFwAXgAgAGfAYgBnwGSAQMwLjGYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz"><b>TLS forwarder</b></a>(if NOT using with DNScrypt).
+
+`OPTIONAL:` Building and compiling Stubby yourself ensures that you have the latest version[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Build-Stubby-from-source"><b>click here</b></a>].
+
+Install the version from package manager:
 ```
 sudo apt install stubby -y
 ```
 Remove and re-create stubby.yaml file:
 ```
-cd /etc/stubby/ && sudo rm stubby.yml && sudo nano stubby.yml
+sudo rm /etc/stubby/stubby.yml && sudo nano /etc/stubby/stubby.yml
 ```
-And copy and paste all the text from this stubby config file[<a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/stubby.yml"><b>click here</b></a>] and save. (`cd` to return to home folder when finish).
+And copy&paste these settings[<a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/stubby.yml"><b>click here</b></a>] and save.
 
-`IMPORTANT:`Forward Stubby address in Unbound upstreams. Open `nano /etc/unbound/unbound.conf.d/unbound.conf` and uncomment Stubby address(remove # infront of line):
-```yaml
-# forward-addr: 127.0.0.1@8053
-# forward-addr: ::1@8053
-forward-addr: 127.0.0.1@8053
-forward-addr: ::1@8053
+`IMPORTANT:` Forward Stubby address in Unbound upstreams. Open `nano /etc/unbound/unbound.conf.d/unbound.conf` and uncomment Stubby addresses(remove # infront of lines [169](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/68726b2c1e24d1940ac82775be9aa76748f564d2/unbound.conf#L169)&[170](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/68726b2c1e24d1940ac82775be9aa76748f564d2/unbound.conf#L170))<br>Or just enter in command line:
+```
+awk '{sub(/[#]forward-addr: 127.0.0.1@8053/,"forward-addr: 127.0.0.1@8053") || sub(/[#]forward-addr: ::1@8053/,"forward-addr: ::1@8053")}1' /etc/unbound/unbound.conf.d/unbound.conf > unbound.conf && sudo mv unbound.conf /etc/unbound/unbound.conf.d/
 ```
 `IMPORTANT:`Stubby and DNScrypt **cannot** be used together when both are set to run as a forwarder, else redundant caching will occur.
 
@@ -362,7 +365,7 @@ Click apply and test upstreams
 
 #### Stable DNS resolving
  
-`IMPORTANT:`Help resolve multiple DNS servers on Windows system and Android browsers. Linux works fine</b><i>(tested on ubuntu)</i>
+`IMPORTANT:` Help resolve multiple DNS servers on Windows system and Android browsers. Linux works fine</b><i>(tested on ubuntu)</i>
 
 #### Windows 
 
@@ -394,8 +397,6 @@ Click apply and test upstreams
 
 #### Other sites to check security
 https://browserleaks.com/dns - should show all connected to "Cloudflare"
-
-https://www.cloudflare.com/ssl/encrypted-sni/ - "Secure DNS / DNSSEC / TLS 1.3" should all be a green tick
 
 https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNSSEC signatures"
 
@@ -454,7 +455,7 @@ WireGuard (App Store): https://apps.apple.com/us/app/wireguard/id1441195209
 
 Scan the QR code shown in the terminal with WireGuard app, select the `+ button` and use the option `Scan from QR code` to install configuration.
 
-`IMPORTANT`: Enable **kernel module backend** in settings
+`IMPORTANT:` Enable **kernel module backend** in settings
 
 <p align="left">
  <img src="https://i.imgur.com/R4qbiOQ.jpg" width=250px height=350px>
@@ -545,8 +546,6 @@ https://knot-resolver.readthedocs.io/en/stable/#
 https://dnsprivacy.org/dns_privacy_clients/
  
 https://github.com/DNSCrypt/dnscrypt-proxy/wiki
-    
-https://github.com/anudeepND/pihole-unbound
 
 https://github.com/Nyr/wireguard-install
      
