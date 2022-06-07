@@ -219,7 +219,7 @@ In AdGuard homepage under filters, select DNS blocklist section for adding URLs.
 ***Ultimate blocklists sources*** :
 </br>
 <a href="https://github.com/T145/black-mirror"><img src="https://raw.githubusercontent.com/T145/black-mirror/master/.github/images/logo.png" width=220px height=60px></a>  
-<a href="https://github.com/T145/black-mirror"><b>black-mirror</b></a> - _Automatically maintained malicious host blacklists and false-positive whitelists_
+<a href="https://github.com/T145/black-mirror#-sources"><b>black-mirror</b></a> - _Automatically maintained malicious host blacklists and false-positive whitelists_
 </br>
 👊BIG THANKS👊 to <a href="https://github.com/T145"><b>T145</b></a>
 
