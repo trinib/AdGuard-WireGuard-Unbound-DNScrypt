@@ -16,7 +16,7 @@ userName = "Yours"
 # Your password
 password = "Yours"
 
-### My urls (can delete and add your own from https://github.com/T145/black-mirror) 
+### Example urls (can remove and add your own from https://github.com/T145/black-mirror#-sources) 
 urls = [
 "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt",
 "https://adaway.org/hosts.txt",
@@ -77,7 +77,6 @@ urls = [
 "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt",
 "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt",
 "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/unbreak.txt",
-"https://curben.gitlab.io/malware-filter/urlhaus-filter.txt",
 "https://abp.oisd.nl/basic/",
 "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareAdGuardHome.txt",
 "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/resource-abuse.txt",
