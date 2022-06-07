@@ -200,8 +200,6 @@ curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/s
      Go to "Internet Protocol Version 6(TCP/IPv6)" Enter `::1`
 
 `OPTIONAL:` <i>Add a backup DNS in the alternative fields</i>
-  
-`BE AWARE:` <i>In Android, adding a public DNS in second field breaks AdGuard ad blocking</i>
 
 <p align="center">
  <img src="https://i.imgur.com/8gsDk3z.jpg">
@@ -240,11 +238,13 @@ Then copy and paste script text[<a href="https://raw.githubusercontent.com/trini
  
 _If using **DietPi** install `sudo apt-get install python3-pip -y && pip install requests` for it is not installed by default._
   
-To run : `sudo python3 bulkurls.py`<br>_Reboot when finished_
+To run : `sudo python3 bulkurls.py`
 
-To **remove** change `add` in <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/62ba01ed8ed3a5bc5294b9fe7ee38c3e83ae1b86/bulkurls.py#L150"><b>second of last line</b></a> to `remove` in bulkurls.py file.
-
-Go to https://d3ward.github.io/toolz/adblock.html to test if ads are blocking <img src="https://i.imgur.com/Q5oO9EY.png" width=100px height=80px><br>Or just visit some ad infested sites.
+To **remove** change `add` in <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/62ba01ed8ed3a5bc5294b9fe7ee38c3e83ae1b86/bulkurls.py#L150"><b>second of last line</b></a> to `remove` in bulkurls.py file.<br>
+Or just enter in command line:
+```
+sed -i 's/add_url/remove_url/g' bulkurls.py
+```
 
 ## Install SSL certificate
 
@@ -282,7 +282,7 @@ sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.
 <p align="center">
  <img src="https://i.imgur.com/26ro62t.jpg">
  
-#### _Install Knot Resolver as an alternative_[[click here]](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Knot-Resolver)
+### _Install Knot Resolver as an alternative[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Knot-Resolver"><b>click here</b></a>]_
 
 **[⬆ Return to contents ⬆](#table-of-contents)**
 
@@ -384,6 +384,8 @@ Click apply and test upstreams
 #### Android
 
  * In whatever browser is used, turn **off** `Use Secure DNS` option if available.
+
+ *  Try adding Pi's IP address in 2nd DNS field.
  
  * Be aware conflicts can occur with custom rooted roms&kernels with build.prop DNS tweaks or apps/magisk module.
 
@@ -443,7 +445,7 @@ sudo cp /root/yourclientname.conf /home/pi && sudo qrencode -t ansiutf8 < yourcl
 ```
 `IMPORTANT:` You will need to add a new client/user for each device used with the VPN<i>(cannot share 1 client to multiple devices)</i>. To add, re-run the script and create another user with different client name.
 
-#### _Install OpenVPN as an alternative_[[click here]](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-OpenVPN)
+### _Install OpenVPN as an alternative[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-OpenVPN"><b>click here</b></a>]_
 
 ### Connecting VPN To Android/IOS Phone
 
