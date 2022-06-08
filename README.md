@@ -237,7 +237,8 @@ Then copy and paste script text[<a href="https://raw.githubusercontent.com/trini
  
 _If using **DietPi** install `sudo apt-get install python3-pip -y && pip install requests` for it is not installed by default._
   
-To run : `sudo python3 bulkurls.py`
+To run : `sudo python3 bulkurls.py`<br>
+_(Reboot when finished)_
 
 To **remove** change `add` in <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/62ba01ed8ed3a5bc5294b9fe7ee38c3e83ae1b86/bulkurls.py#L150"><b>second of last line</b></a> to `remove` in bulkurls.py file.<br>
 Or just change it from command line in terminal:
@@ -247,7 +248,6 @@ sed -i 's/add_url/remove_url/g' bulkurls.py
 # Revert
 sed -i 's/remove_url/add_url/g' bulkurls.py
 ```
-_Reboot_
 
 ## Uninstall Adguard
 
