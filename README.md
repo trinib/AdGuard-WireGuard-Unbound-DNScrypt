@@ -97,7 +97,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
 #
 # Requirements
  
-This tutorial is installed with Raspberry Pi. Other Linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a><i>(𝟹𝟸/𝟼𝟺bit)</i>, hardware or <a href="https://www.google.com/search?q=What+is+cloud+hosting+and+how+does+it+work%3F&client=firefox-b-d&biw=1280&bih=582&sxsrf=APq-WBv6YzP1uwdIJUrzsZs92CVrLMle2A%3A1651061176738&ei=uDFpYsvQLImOwbkPs-qJ6AY&ved=0ahUKEwjLjMSXmrT3AhUJRzABHTN1Am0Q4dUDCA0&uact=5&oq=What+is+cloud+hosting+and+how+does+it+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUIA6WIA6YPc8aAJwAXgAgAF6iAF6kgEDMC4xmAEAoAECoAEByAEJwAEB&sclient=gws-wiz"><b>cloud service</b></a> can be used.</br>_(Raspberry Pi OS is most simple and recommended for Pi. For more experience users, <a href="https://dietpi.com/"><b>DietPi</b></a> OS is also recommended)_
+This tutorial is installed with Raspberry Pi(Debian). Other Linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a><i>(𝟹𝟸/𝟼𝟺bit)</i>, hardware or <a href="https://www.google.com/search?q=What+is+cloud+hosting+and+how+does+it+work%3F&client=firefox-b-d&biw=1280&bih=582&sxsrf=APq-WBv6YzP1uwdIJUrzsZs92CVrLMle2A%3A1651061176738&ei=uDFpYsvQLImOwbkPs-qJ6AY&ved=0ahUKEwjLjMSXmrT3AhUJRzABHTN1Am0Q4dUDCA0&uact=5&oq=What+is+cloud+hosting+and+how+does+it+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUIA6WIA6YPc8aAJwAXgAgAF6iAF6kgEDMC4xmAEAoAECoAEByAEJwAEB&sclient=gws-wiz"><b>cloud service</b></a> can be used.</br>_(Raspberry Pi OS is most simple and recommended for Pi. For more experience users, <a href="https://dietpi.com/"><b>DietPi</b></a> OS is also recommended)_
 
    - A Raspberry Pi 3 or 4 version
    - A router that supports port forwarding(most can)
@@ -156,8 +156,7 @@ sudo reboot
 #
 <h1 align="center"><b><i>Install AdGuard Home</b></i> </h1>
 
-Installation scripts are from <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard Home</b></a> main project. Follow to keep updated.
-
+Installation scripts are from <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard Home</b></a> main project. Follow to keep updated.<br>
 Run one of the following command in terminal:
 
 Stable:
@@ -228,8 +227,7 @@ In AdGuard homepage under filters, select DNS blocklist section for adding URLs.
 
 ## Add/Remove multiple URLs
 
-Only one URL can be added at a time in DNS blocklist with AdGuard for now, but there is a python script to add multiple URLs at once.
-
+Only one URL can be added at a time in DNS blocklist with AdGuard for now, but there is a python script to add multiple URLs at once.<br>
 Create a new python file(bulkurls.py):
 ```
 nano bulkurls.py
@@ -242,14 +240,15 @@ _If using **DietPi** install `sudo apt-get install python3-pip -y && pip install
 To run : `sudo python3 bulkurls.py`
 
 To **remove** change `add` in <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/62ba01ed8ed3a5bc5294b9fe7ee38c3e83ae1b86/bulkurls.py#L150"><b>second of last line</b></a> to `remove` in bulkurls.py file.<br>
-Or just enter in command line:
+Or just add it from command line in terminal:
 ```
 sed -i 's/add_url/remove_url/g' bulkurls.py
 ```
+_Reboot_
 
 ## Uninstall Adguard
 
-Run this script in terminal:
+Run a single line url command to run this <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/assets/scripts/remove_adguard.sh"><b>script</b></a> using <a href="https://www.google.com/search?q=What+does+cURL+actually+do%3F&client=firefox-b-d&sxsrf=ALiCzsbIVTaRzlDt3jC6H5lirpsy2S0LoA%3A1654699803869&ei=G7egYprXNNbawbkP38uIqAE&ved=0ahUKEwja0JOQjZ74AhVWbTABHd8lAhUQ4dUDCA0&uact=5&oq=What+does+cURL+actually+do%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAeEBYQHTIICCEQHhAWEB0yCAghEB4QFhAdMggIIRAeEBYQHTIICCEQHhAWEB0yCAghEB4QFhAdOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUI8DWI8DYNgGaAFwAXgAgAGcAYgBnAGSAQMwLjGYAQCgAQKgAQHIAQnAAQE&sclient=gws-wiz"><b>curl</b></a> in terminal:
 ```
 curl -s -L https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/assets/scripts/remove_adguard.sh | sh
 ```
@@ -265,7 +264,7 @@ If using AdGuard Home on a `VPS(Virtual private server)`, get a <a href="https:/
 
 `RECOMMENDED:` Before installing other DNS resolvers, it is a good idea to turn off <a href="https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html"><b>systemd-resolved</b></a> DNSStubListener(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/27"><b>issue#27</b></a>).
 
-`OPTIONAL:` Installing via the package manager is the easiest option with automatic updates and stable versions. The downside is that it can be outdated for some distributions or not have all the compile-time options included that you want. Building and compiling Unbound yourself ensures that you have the latest version and all the compile-time options you desire[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Build-Unbound-from-source"><b>click here</b></a>].
+`OPTIONAL:` Installing via the package manager is the easiest option with automatic updates and stable versions. The downside is that it can be outdated for some distributions or not have all the compile-time options included that you want.<br>**Building and compiling** Unbound yourself ensures that you have the latest version and all the compile-time options you desire[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Build-Unbound-from-source"><b>click here</b></a>].
 
 For the version from package manager, run the following command in terminal:
 ```
@@ -302,8 +301,7 @@ sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.
 
 <b>Option 2 (Advanced)</b><h4>DNScrypt proxy[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-DNScrypt-proxy-(DoH)(oDoH)(Anonymized-DNS)"><b>click here</b></a>]:</h4>- DNS over HTTPS <br>- Oblivious DNS Over HTTPS (experimental)<br>- Anonymized DNS
 
-_<a href="https://research.cloudflare.com/projects/odns/"><b>Oblivious DNS Over HTTPS </b></a></h4>(oDoH) is a newly proposed open-source DNS standard built by engineers from Cloudflare, Apple, and Fastly which is supposed to increase the privacy of already existing DNS Over HTTPS_.
-
+_<a href="https://research.cloudflare.com/projects/odns/"><b>Oblivious DNS Over HTTPS </b></a></h4>(oDoH) is a newly proposed open-source DNS standard built by engineers from Cloudflare, Apple, and Fastly which is supposed to increase the privacy of already existing DNS Over HTTPS_.<br>
 _<a href="https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Anonymized-DNS"><b>Anonymized DNS</b></a> client encrypts the query for the final server instead of directly reaching a server that is one of the public resolvers, but sends it to a <a href="https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/relays.md"><b>relay</b></a>_.
 
 ## Configure Cloudflare `(DoT)` on Unbound
@@ -318,7 +316,7 @@ And copy&paste these settings[<a href="https://raw.githubusercontent.com/trinib/
 
 Use Unbound for caching and Stubby as a <a href="https://www.google.com/search?q=How+does+TLS+proxy+work%3F&client=firefox-b-d&sxsrf=ALiCzsaNlPunZpYtzDVoVA6PVTkY6rOqyQ%3A1651275938995&ei=onhsYsqtPImRggez_K2oBA&ved=0ahUKEwjKhpSeurr3AhWJiOAKHTN-C0UQ4dUDCA4&uact=5&oq=How+does+TLS+proxy+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMUBWMUBYMkHaAFwAXgAgAGfAYgBnwGSAQMwLjGYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz"><b>TLS forwarder</b></a>(if NOT using with DNScrypt).
 
-`OPTIONAL:` Building and compiling Stubby yourself ensures that you have the latest version[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Build-Stubby-from-source"><b>click here</b></a>].
+`OPTIONAL:` **Building and compiling** Stubby yourself ensures that you have the latest version[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Build-Stubby-from-source"><b>click here</b></a>].
 
 Install the version from package manager:
 ```
