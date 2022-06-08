@@ -240,9 +240,12 @@ _If using **DietPi** install `sudo apt-get install python3-pip -y && pip install
 To run : `sudo python3 bulkurls.py`
 
 To **remove** change `add` in <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/62ba01ed8ed3a5bc5294b9fe7ee38c3e83ae1b86/bulkurls.py#L150"><b>second of last line</b></a> to `remove` in bulkurls.py file.<br>
-Or just add it from command line in terminal:
+Or just change it from command line in terminal:
 ```
 sed -i 's/add_url/remove_url/g' bulkurls.py
+
+# Revert
+sed -i 's/remove_url/add_url/g' bulkurls.py
 ```
 _Reboot_
 
