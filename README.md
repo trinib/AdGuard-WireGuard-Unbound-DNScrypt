@@ -71,6 +71,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
    - [Updating Adguard](#updating-adguard)
    - [Setting up AdGuard blocklist](#setting-up-adguard-blocklist)
      - [Add/Remove multiple URLs](#addremove-multiple-urls)
+   - [Uninstall Adguard](#uninstall-adguard)
    - [Install SSL certificate](#install-ssl-certificate)
  - [Install Unbound](#install-unbound-) <img src="https://www.vectorlogo.zone/logos/nlnetlabsnl_unbound/nlnetlabsnl_unbound-icon.svg" width=20px height=20px>
  - [Install Knot](#install-knot-resolver-as-an-alternativeclick-here) <img src="https://www.vectorlogo.zone/logos/knot-resolvercz/knot-resolvercz-icon.svg" width=20px height=20px>
@@ -244,6 +245,13 @@ To **remove** change `add` in <a href="https://github.com/trinib/AdGuard-WireGua
 Or just enter in command line:
 ```
 sed -i 's/add_url/remove_url/g' bulkurls.py
+```
+
+## Uninstall Adguard
+
+Run this script in terminal:
+```
+curl -s -L https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/assets/scripts/remove_adguard.sh | sh
 ```
 
 ## Install SSL certificate
