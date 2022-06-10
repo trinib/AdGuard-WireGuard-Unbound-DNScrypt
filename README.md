@@ -180,7 +180,8 @@ curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/s
 
  * Set up username&password and then login admin panel
 
- * `IMPORTANT:` In general settings, set "Query logs retention" to `24 hours`. (I read that for some people logs fill up which slows down Pi and needing a reboot)
+> **Note**
+In general settings, set "Query logs retention" to `24 hours`. (I read that for some people logs fill up which slows down Pi and needing a reboot)
 
 ## Setup devices to work with AdGuard
 
@@ -223,7 +224,8 @@ In AdGuard homepage under filters, select DNS blocklist section for adding URLs.
 </br>
 👊BIG THANKS👊 to <a href="https://github.com/T145"><b>T145</b></a>
 
-`IMPORTANT:` Some lists can block important web content. To unblock, go to "Query Log" section, hover cursor over that specific query<i>(look for client IP & time)</i> to show _unblock_ option. The links is automatically created in "Custom filtering rules" example: `@@||bitly.com^$important`(can add the websites manually as well).
+> **Note**
+Some lists can block important web content. To unblock, go to "Query Log" section, hover cursor over that specific query<i>(look for client IP & time)</i> to show _unblock_ option. The links is automatically created in "Custom filtering rules" example: `@@||bitly.com^$important`(can add the websites manually as well).
 
 ## Add/Remove multiple URLs
 
@@ -265,7 +267,8 @@ If using AdGuard Home on a `VPS(Virtual private server)`, get a <a href="https:/
 #
 <h1 align="center"><b><i>Install Unbound</b></i> </h1>
 
-`RECOMMENDED:` Before installing other DNS resolvers, it is a good idea to turn off <a href="https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html"><b>systemd-resolved</b></a> DNSStubListener(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/27"><b>issue#27</b></a>).
+> **Note**
+Before installing other DNS resolvers, it is a good idea to turn off <a href="https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html"><b>systemd-resolved</b></a> DNSStubListener(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/27"><b>issue#27</b></a>).
 
 `OPTIONAL:` Installing via the package manager is the easiest option with automatic updates and stable versions. The downside is that it can be outdated for some distributions or not have all the compile-time options included that you want.<br>**Building and compiling** Unbound yourself ensures that you have the latest version and all the compile-time options you desire[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Build-Unbound-from-source"><b>click here</b></a>].
 
@@ -277,7 +280,8 @@ For recursively querying a host that is not cached as an address, the resolver n
 ```
 wget -O root.hints https://www.internic.net/domain/named.root && sudo mv root.hints /var/lib/unbound/
 ```
- `IMPORTANT:` This needs to update every 6 months using <a href="https://www.google.com/search?q=How+does+cron+job+work%3F&client=firefox-b-d&sxsrf=ALiCzsbaAmCCZqLJt2cOtQ3UXn7wxrWD3Q%3A1651353477111&ei=hadtYt-vBoavqtsP_fGX4Ak&ved=0ahUKEwifhpuL27z3AhWGl2oFHf34BZwQ4dUDCA0&uact=5&oq=How+does+cron+job+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDTAVjTAWDRBmgBcAF4AIABfYgBfZIBAzAuMZgBAKABAqABAcgBCcABAQ&sclient=gws-wiz"><b>cron job</b></a>.
+
+ - This needs to update every 6 months using <a href="https://www.google.com/search?q=How+does+cron+job+work%3F&client=firefox-b-d&sxsrf=ALiCzsbaAmCCZqLJt2cOtQ3UXn7wxrWD3Q%3A1651353477111&ei=hadtYt-vBoavqtsP_fGX4Ak&ved=0ahUKEwifhpuL27z3AhWGl2oFHf34BZwQ4dUDCA0&uact=5&oq=How+does+cron+job+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDTAVjTAWDRBmgBcAF4AIABfYgBfZIBAzAuMZgBAKABAqABAcgBCcABAQ&sclient=gws-wiz"><b>cron job</b></a>.
 
 Enter in command line `crontab -e`, it will ask select an editor(choose 1), paste these lines at the bottom of crontab and save (control+x then y then enter):
 ```
@@ -330,11 +334,12 @@ Download stubby.yaml file and move it to stubby folder:
 wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/stubby.yml && sudo mv stubby.yml /etc/stubby/
 ```
 
-`IMPORTANT:` Forward Stubby address in Unbound upstreams. Open `nano /etc/unbound/unbound.conf.d/unbound.conf` and uncomment Stubby addresses(remove # infront of lines [169](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/68726b2c1e24d1940ac82775be9aa76748f564d2/unbound.conf#L169)&[170](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/68726b2c1e24d1940ac82775be9aa76748f564d2/unbound.conf#L170))<br>Or do it from command line:
+ - Forward Stubby address in Unbound upstreams. Open `nano /etc/unbound/unbound.conf.d/unbound.conf` and uncomment Stubby addresses(remove # infront of lines [169](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/68726b2c1e24d1940ac82775be9aa76748f564d2/unbound.conf#L169)&[170](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/68726b2c1e24d1940ac82775be9aa76748f564d2/unbound.conf#L170))<br>Or do it from command line:
 ```
 awk '{sub(/[#]forward-addr: 127.0.0.1@8053/,"forward-addr: 127.0.0.1@8053") || sub(/[#]forward-addr: ::1@8053/,"forward-addr: ::1@8053")}1' /etc/unbound/unbound.conf.d/unbound.conf > unbound.conf && sudo mv unbound.conf /etc/unbound/unbound.conf.d/
 ```
-`IMPORTANT:`Stubby and DNScrypt **cannot** be used together when both are set to run as a forwarder, else redundant caching will occur.
+> **Note**
+Stubby and DNScrypt **cannot** be used together when both are set to run as a forwarder, else redundant caching will occur.
 
 * Restart unbound & stubby and check status:
 ```
@@ -415,6 +420,7 @@ https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNS
 #
 <h1 align="center"><b><i>Install WireGuard</b></i> </h1>
 
+> **Warning**
 **Before installing WireGuard**, if you do not have a <a href="https://www.google.com/search?client=firefox-b-d&q=static+IP"><b>static IP</b></a> it will change dynamically from your internet service provider or from a router reboot. You will need to setup a dynamic DNS service with a hostname to keep automatically up-to-date with a  dynamic IP[**<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-a-DNS-domain-hostname"><b>click here</b></a>**]. Or else skip this.
 
 You also need to set up <a href="https://www.google.com/search?q=What+is+port+forwarding+used+for%3F&client=firefox-b-d&sxsrf=APq-WBuwPqGlPJ6N9_l6qpQ3e5sYoUxZAQ%3A1650219365125&ei=ZVlcYo6sB6SGwbkP8tGOwA8&ved=0ahUKEwjO8ryY2pv3AhUkQzABHfKoA_gQ4dUDCA0&uact=5&oq=What+is+port+forwarding+used+for%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDMAVjMAWCBBWgBcAF4AIABbIgBbJIBAzAuMZgBAKABAqABAcgBCsABAQ&sclient=gws-wiz"><b>port forwarding</b></a> on your router so you can access WireGuard network anywhere like a coffee shop hotspot and even from mobile data tethering.
@@ -451,7 +457,9 @@ wget https://git.io/wireguard -O wireguard-install.sh && sudo bash wireguard-ins
 ```
 sudo cp /root/yourclientname.conf /home/pi && sudo qrencode -t ansiutf8 < yourclientname.conf
 ```
-`IMPORTANT:` You will need to add a new client/user for each device used with the VPN<i>(cannot share 1 client to multiple devices)</i>. To add, re-run the script and create another user with different client name.
+                                                                                             
+> **Warning**
+You will need to add a new client/user for each device used with the VPN<i>(cannot share 1 client to multiple devices)</i>. To add, re-run the script and create another user with different client name.
 
 ### _Install OpenVPN as an alternative[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-OpenVPN"><b>click here</b></a>]_
 
@@ -465,7 +473,8 @@ WireGuard (App Store): https://apps.apple.com/us/app/wireguard/id1441195209
 
 Scan the QR code shown in the terminal with WireGuard app, select the `+ button` and use the option `Scan from QR code` to install configuration.
 
-`IMPORTANT:` Enable **kernel module backend** in settings
+> **Note**
+Enable **kernel module backend** in settings
 
 <p align="left">
  <img src="https://i.imgur.com/R4qbiOQ.jpg" width=250px height=350px>
@@ -486,7 +495,8 @@ sudo cat /root/yourclientname.conf
 
 ## Configure WireGuard with adblocking & DNS security
 
-`ADVICE:`_I think it might not make much of a difference to use DoT/DoH/oDoH with WireGuard security protocols. Though from my experience and in forums, it does not seem to cause any issues using them together. Mainly this is to achieve adblocking with a VPN on public networks._
+> **Note**
+I think it might not make much of a difference to use DoT/DoH/oDoH with WireGuard security protocols. Though from my experience and in forums, it does not seem to cause any issues using them together. Mainly this is to achieve adblocking with a VPN on public networks._
  
  * In WireGuard app, select your tunnel name and select edit (pencil on top right)
 
