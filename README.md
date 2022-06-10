@@ -338,7 +338,7 @@ wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudfla
 ```
 awk '{sub(/[#]forward-addr: 127.0.0.1@8053/,"forward-addr: 127.0.0.1@8053") || sub(/[#]forward-addr: ::1@8053/,"forward-addr: ::1@8053")}1' /etc/unbound/unbound.conf.d/unbound.conf > unbound.conf && sudo mv unbound.conf /etc/unbound/unbound.conf.d/
 ```
-> **Note**
+> **Warning**
 Stubby and DNScrypt **cannot** be used together when both are set to run as a forwarder, else redundant caching will occur.
 
 * Restart unbound & stubby and check status:
