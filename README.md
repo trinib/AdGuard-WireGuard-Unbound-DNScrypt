@@ -163,7 +163,7 @@ Stable:
 ```
 curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -v
 ```
-Beta - testing version of AdGuard Home. More or less stable versions<i>(recommended for Raspberry Pi)</i>:
+Beta - testing version of AdGuard Home. More or less stable versions:
 ```
 curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -c beta
 ```
@@ -237,6 +237,7 @@ nano bulkurls.py
 
 Then copy and paste script text[<a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>click here</b></a>]. Set `your AdGuard credentials` and save (control+x then y then enter).
  
+> **Note**
 _If using **DietPi** install `sudo apt-get install python3-pip -y && pip install requests` for it is not installed by default._
   
 To run : `sudo python3 bulkurls.py`<br>
@@ -268,7 +269,7 @@ If using AdGuard Home on a `VPS(Virtual private server)`, get a <a href="https:/
 <h1 align="center"><b><i>Install Unbound</b></i> </h1>
 
 > **Note**
-Before installing other DNS resolvers, it is a good idea to turn off <a href="https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html"><b>systemd-resolved</b></a> DNSStubListener(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/27"><b>issue#27</b></a>).
+Before installing other DNS resolvers, it is a good idea to turn off <a href="https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html"><b>systemd-resolved</b></a> - DNSStubListener(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/27"><b>issue#27</b></a>).
 
 `OPTIONAL:` Installing via the package manager is the easiest option with automatic updates and stable versions. The downside is that it can be outdated for some distributions or not have all the compile-time options included that you want.<br>**Building and compiling** Unbound yourself ensures that you have the latest version and all the compile-time options you desire[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Build-Unbound-from-source"><b>click here</b></a>].
 
@@ -288,10 +289,11 @@ Enter in command line `crontab -e`, it will ask select an editor(choose 1), past
 1 0 1 */6 * wget -O root.hints https://www.internic.net/domain/named.root
 2 0 1 */6 * sudo mv root.hints /var/lib/unbound/
 ```
-_If using **DietPi**, install resolvconf and restart unbound-resolvconf.service to set default nameserver(127.0.0.1):_
-```
-sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.service
-```  
+> **Note**
+_If using **DietPi**, install resolvconf and restart unbound-resolvconf.service to set default nameserver to 127.0.0.1:_
+
+>     sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.service
+ 
 
 <p align="center">
  <img src="https://i.imgur.com/26ro62t.jpg">
@@ -351,7 +353,7 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
 
 ## Configure AdGuard with `(DoH/DoT/oDoH)`
 
- * In AdGuard homepage under settings, select "DNS settings"
+ * In AdGuard homepage under settings, select **DNS settings**
 
  * Delete everything from both _**Upstream**_ and _**Bootstrap DNS**_ server options and add the following for:
 
@@ -378,7 +380,8 @@ Click apply and test upstreams
 
 #### Stable DNS resolving
  
-`IMPORTANT:` Help resolve multiple DNS servers on Windows system and Android browsers. Linux works fine</b><i>(tested on ubuntu)</i>
+> **Note**
+Help resolve multiple DNS servers on Windows system and Android browsers. Linux works fine</b><i>(tested on ubuntu)</i>
 
 #### Windows 
 
