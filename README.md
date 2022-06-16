@@ -417,6 +417,8 @@ Help resolve multiple DNS servers on Windows system and Android browsers. Linux 
 https://browserleaks.com/dns - should show all connected to "Cloudflare"
 
 https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNSSEC signatures"
+ 
+ https://dnscheck.tools/ - inspect your dns resolvers (DNSSEC using ECDSA P-256,DNSSEC using ECDSA P-384,DNSSEC using Ed25519)
 
 **[⬆ Return to contents ⬆](#table-of-contents)**
 
