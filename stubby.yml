@@ -134,11 +134,11 @@ upstream_recursive_servers:
 
 # IPv4 addresses
 ## Cloudflare 1.1.1.1 and 1.0.0.1
-## (NOTE: recommend reducing idle_timeout to 9000 if using Coudflare)
-  - address_data: 1.1.1.1
-    tls_auth_name: "cloudflare-dns.com"
-  - address_data: 1.0.0.1
-    tls_auth_name: "cloudflare-dns.com"
+## (NOTE: recommend reducing idle_timeout to 9000 if using Cloudflare)
+#  - address_data: 1.1.1.1
+#    tls_auth_name: "cloudflare-dns.com"
+#  - address_data: 1.0.0.1
+#    tls_auth_name: "cloudflare-dns.com"
 ## Quad 9 'secure' service - Filters, does DNSSEC, does ECS
 #  - address_data: 9.9.9.11
 #    tls_auth_name: "dns.quad9.net"
@@ -242,11 +242,11 @@ upstream_recursive_servers:
 
 #IPv6 addresses
 ## Cloudflare servers
-## (NOTE: recommend reducing idle_timeout to 9000 if using Coudflare)
-  - address_data: 2606:4700:4700::1111
-    tls_auth_name: "cloudflare-dns.com"
-  - address_data: 2606:4700:4700::1001
-    tls_auth_name: "cloudflare-dns.com"
+## (NOTE: recommend reducing idle_timeout to 9000 if using Cloudflare)
+#  - address_data: 2606:4700:4700::1111
+#    tls_auth_name: "cloudflare-dns.com"
+#  - address_data: 2606:4700:4700::1001
+#    tls_auth_name: "cloudflare-dns.com"
 ## Quad 9 'secure' service - Filters, does DNSSEC, does ECS
 #  - address_data: 2620:fe::11
 #    tls_auth_name: "dns.quad9.net"
