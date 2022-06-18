@@ -30,7 +30,7 @@ _<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a> o
 
 _<a href="https://dnsprivacy.org/dns_privacy_daemon_-_stubby/about_stubby/"><b>Stubby</b></a>_</br>DNS queries are sent to resolvers over an encrypted TLS connection providing increased privacy
 
- _<a href="https://github.com/cloudflare/cloudflared"><b>Cloudflare Tunnel</b></a>_</br>A tunneling daemon that proxies traffic from a DNS network to your origins(DoH)
+ _<a href="https://github.com/cloudflare/cloudflared"><b>Cloudflared Tunnel</b></a>_</br>A tunneling daemon that proxies traffic from a DNS network to your origins(DoH)
 
 _<a href="https://dnscrypt.info/"><b>DNScrypt</b></a>_</br>Modern encrypted DNS protocols such as DNSCrypt v2, DNS-over-HTTPS, Anonymized DNSCrypt and oDoH (Oblivious DoH)
  
@@ -341,6 +341,8 @@ wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudfla
 ```
 awk '{sub(/[#]forward-addr: 127.0.0.1@8053/,"forward-addr: 127.0.0.1@8053") || sub(/[#]forward-addr: ::1@8053/,"forward-addr: ::1@8053")}1' /etc/unbound/unbound.conf.d/unbound.conf > unbound.conf && sudo mv unbound.conf /etc/unbound/unbound.conf.d/
 ```
+ - Choose DNS provider[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/DNS-Providers#stubby"><b>click here</b></a>]
+
 > **Warning**
 Stubby and DNScrypt **cannot** be used together when both are set to run as a forwarder, else redundant caching will occur.
 
