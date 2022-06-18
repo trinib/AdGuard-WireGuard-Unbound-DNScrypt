@@ -33,7 +33,7 @@ edns_client_subnet_private : 1
 # https://tools.ietf.org/html/rfc7828
 # This keeps idle TLS connections open to avoid the overhead of opening a new 
 # connection for every query.
-idle_timeout: 9000
+idle_timeout: 1000
 
 # Set the listen addresses for the stubby DAEMON. This specifies localhost IPv4
 # and IPv6. It will listen on port 53 by default. Use <IP_address>@<port> to 
