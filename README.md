@@ -1,4 +1,3 @@
-# ![logo](https://i.imgur.com/zqJELkl.png)
 <p align="center">
  <img src="https://img.shields.io/badge/License-MIT-blue.svg">
  <img src="https://badges.frapsoft.com/os/v3/open-source.svg?v=103">
@@ -31,9 +30,10 @@ _<a href="https://www.nlnetlabs.nl/projects/unbound/about/"><b>Unbound</b></a> o
 
 _<a href="https://dnsprivacy.org/dns_privacy_daemon_-_stubby/about_stubby/"><b>Stubby</b></a>_</br>DNS queries are sent to resolvers over an encrypted TLS connection providing increased privacy
 
-_<a href="https://dnscrypt.info/"><b>DNScrypt</b></a>_</br>Modern encrypted DNS protocols such as DNSCrypt v2, DNS-over-HTTPS, Anonymized DNSCrypt and oDoH (Oblivious DoH)
+ _<a href="https://github.com/cloudflare/cloudflared"><b>Cloudflare Tunnel</b></a>_</br>A tunneling daemon that proxies traffic from a DNS network to your origins(DoH)
 
- _<a href="https://www.cloudflare.com/learning/what-is-cloudflare/"><b>Cloudflare</b></a>_</br>Better performance & security for websites, APIs, and Internet applications
+_<a href="https://dnscrypt.info/"><b>DNScrypt</b></a>_</br>Modern encrypted DNS protocols such as DNSCrypt v2, DNS-over-HTTPS, Anonymized DNSCrypt and oDoH (Oblivious DoH)
+ 
 #
 </div> 
 <p align="right">
@@ -75,10 +75,10 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
    - [Install SSL certificate](#install-ssl-certificate)
  - [Install Unbound](#install-unbound-) <img src="https://www.vectorlogo.zone/logos/nlnetlabsnl_unbound/nlnetlabsnl_unbound-icon.svg" width=20px height=20px>
  - [Install Knot](#install-knot-resolver-as-an-alternativeclick-here) <img src="https://www.vectorlogo.zone/logos/knot-resolvercz/knot-resolvercz-icon.svg" width=20px height=20px>
- - [Install Cloudflare](#install-cloudflare-) <img src="https://www.vectorlogo.zone/logos/cloudflare/cloudflare-icon.svg" width=20px height=20px>
-   - [Setup Cloudflare with (DoH/oDoH)](#setup-cloudflare-with-dohodoh)
+ - [Setup DNS security](#setup-dns-security-)
+   - [Configure DoH/oDoH](#configure-dohodoh)
      - [DNScrypt proxy](#dnscrypt-proxyclick-here) <img src="https://i.imgur.com/lEHVsn3.png" width=20px height=20px>
-   - [Configure Cloudflare (DoT) on Unbound](#configure-cloudflare-dot-on-unbound)
+   - [Configure DoT on Unbound](#configure-dot-on-unbound)
      - [Configure Stubby and Unbound](#configure-stubby-and-unbound)
    - [Configure AdGuard with (DoH/DoT/oDoH)](#configure-adguard-with-dohdotodoh)
      - [Stable DNS resolving](#stable-dns-resolving)
@@ -303,9 +303,9 @@ _If using **DietPi**, install resolvconf and restart unbound-resolvconf.service 
 **[⬆ Return to contents ⬆](#table-of-contents)**
 
 #    
-<h1 align="center"><b><i>Install Cloudflare</b></i> </h1>
+<h1 align="center"><b><i>Setup DNS Security</b></i> </h1>
 
-## Setup Cloudflare with `(DoH/oDoH)`
+## Configure DoH/oDoH
 <b>Option 1 (Simple)</b><br>Cloudflare Tunnel[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Cloudflared-Tunnel-(DoH)"><b>click here</b></a>]:<br>(DNS over HTTPS only)
 
 <b>Option 2 (Advanced)</b><h4>DNScrypt proxy[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-DNScrypt-proxy-(DoH)(oDoH)(Anonymized-DNS)"><b>click here</b></a>]:</h4>- DNS over HTTPS <br>- Oblivious DNS Over HTTPS (experimental)<br>- Anonymized DNS
@@ -313,13 +313,14 @@ _If using **DietPi**, install resolvconf and restart unbound-resolvconf.service 
 _<a href="https://research.cloudflare.com/projects/odns/"><b>Oblivious DNS Over HTTPS </b></a></h4>(oDoH) is a newly proposed open-source DNS standard built by engineers from Cloudflare, Apple, and Fastly which is supposed to increase the privacy of already existing DNS Over HTTPS_.<br>
 _<a href="https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Anonymized-DNS"><b>Anonymized DNS</b></a> client encrypts the query for the final server instead of directly reaching a server that is one of the public resolvers, but sends it to a <a href="https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/relays.md"><b>relay</b></a>_.
 
-## Configure Cloudflare `(DoT)` on Unbound
+## Configure DoT on Unbound
 
 Download unbound configuration file with DNS over TLS settings and move it to unbound folder.<br>
 Enter in terminal:
 ```
 wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/unbound.conf && sudo mv unbound.conf /etc/unbound/unbound.conf.d/
 ```
+ - Choose DNS provider[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/DNS-Providers#unbound"><b>click here</b></a>]
 
 ## Configure Stubby and Unbound
 
@@ -478,8 +479,7 @@ WireGuard (App Store): https://apps.apple.com/us/app/wireguard/id1441195209
 
 Scan the QR code shown in the terminal with WireGuard app, select the `+ button` and use the option `Scan from QR code` to install configuration.
 
-> **Note**
-Enable **kernel module backend** in settings
+- Enable **kernel module backend** in settings
 
 <p align="left">
  <img src="https://i.imgur.com/R4qbiOQ.jpg" width=250px height=350px>
