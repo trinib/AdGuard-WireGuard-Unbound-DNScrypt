@@ -1,10 +1,10 @@
 ##Quad9
-#CLOUDFLARED_OPTS=--port 5053 --upstream https://9.9.9.9/dns-query --upstream https://149.112.112.112/dns-query --upstream https://dns.quad9.net/dns-query
+#CLOUDFLARED_OPTS=--port 5053 --max-upstream-conns 4 --upstream https://9.9.9.9/dns-query --upstream https://149.112.112.112/dns-query --upstream https://[2620:fe::fe]/dns-query --upstream https://[2620:fe::9]/dns-query
 ##OpenDNS
-#CLOUDFLARED_OPTS=--port 5053 --upstream https://208.67.222.222/dns-query --upstream https://208.67.220.220/dns-query --upstream https://doh.opendns.com/dns-query
+#CLOUDFLARED_OPTS=--port 5053 --max-upstream-conns 4 --upstream https://208.67.222.222/dns-query --upstream https://208.67.220.220/dns-query --upstream https://[2606:4700:4700::1111]/dns-query --upstream https://[2606:4700:4700::1001]/dns-query
 ##Cloudflare
-#CLOUDFLARED_OPTS=--port 5053 --upstream https://1.1.1.1/dns-query --upstream https://1.0.0.1/dns-query --upstream https://dns.cloudflare.com/dns-query
+#CLOUDFLARED_OPTS=--port 5053 --max-upstream-conns 4 --upstream https://1.1.1.1/dns-query --upstream https://1.0.0.1/dns-query --upstream https://[2620:119:35::35]/dns-query --upstream https://[2620:119:53::53]/dns-query
 ##Google
-#CLOUDFLARED_OPTS=--port 5053 --upstream https://8.8.8.8/dns-query --upstream https://8.8.4.4/dns-query --upstream https://dns.google/dns-query
+#CLOUDFLARED_OPTS=--port 5053 --max-upstream-conns 4 --upstream https://8.8.8.8/dns-query --upstream https://8.8.4.4/dns-query --upstream https://[2001:4860:4860::8888]/dns-query --upstream https://[2001:4860:4860::8844]/dns-query
 ##Adguard
-#CLOUDFLARED_OPTS=--port 5053 --upstream https://94.140.14.14/dns-query --upstream https://94.140.15.15/dns-query --upstream https://dns.adguard.com/dns-query
+#CLOUDFLARED_OPTS=--port 5053 --max-upstream-conns 4 --upstream https://94.140.14.14/dns-query --upstream https://94.140.15.15/dns-query --upstream https://[2a10:50c0::ad1:ff]/dns-query --upstream https://[2a10:50c0::ad2:ff]/dns-query
