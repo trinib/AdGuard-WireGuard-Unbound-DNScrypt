@@ -315,7 +315,7 @@ _<a href="https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Anonymized-DNS"><b>Ano
 
 ## Configure DoT on Unbound
 
-Download unbound configuration file with DNS over TLS settings and move it to unbound folder.<br>
+Download unbound <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/unbound.conf"><b>configuration</b></a> file with DNS over TLS settings and move it to unbound folder.<br>
 Enter in terminal:
 ```
 wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/unbound.conf && sudo mv unbound.conf /etc/unbound/unbound.conf.d/
@@ -332,14 +332,14 @@ Install the version from package manager:
 ```
 sudo apt install stubby -y
 ```
-Download stubby.yaml file and move it to stubby folder:
+Download stubby <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/stubby.yml"><b>configuration</b></a> file and replace with default one in stubby folder:
 ```
 wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/stubby.yml && sudo mv stubby.yml /etc/stubby/
 ```
 
- - Forward Stubby address in Unbound upstreams. Open `nano /etc/unbound/unbound.conf.d/unbound.conf` and uncomment Stubby addresses(remove # infront of lines [169](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/68726b2c1e24d1940ac82775be9aa76748f564d2/unbound.conf#L169)&[170](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/68726b2c1e24d1940ac82775be9aa76748f564d2/unbound.conf#L170))<br>Or do it from command line:
+ - Forward Stubby address in Unbound upstreams. Open `sudo nano /etc/unbound/unbound.conf.d/`<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/unbound.conf"><b>`unbound.conf`</b></a> and uncomment Stubby addresses(remove # infront of lines [169](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/68726b2c1e24d1940ac82775be9aa76748f564d2/unbound.conf#L169)&[170](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/68726b2c1e24d1940ac82775be9aa76748f564d2/unbound.conf#L170))<br>Or do it from command line:
 ```
-awk '{sub(/[#]forward-addr: 127.0.0.1@8053/,"forward-addr: 127.0.0.1@8053") || sub(/[#]forward-addr: ::1@8053/,"forward-addr: ::1@8053")}1' /etc/unbound/unbound.conf.d/unbound.conf > unbound.conf && sudo mv unbound.conf /etc/unbound/unbound.conf.d/
+sudo sed -i '169,170s/'#'/''/g' /etc/unbound/unbound.conf.d
 ```
  - Choose DNS provider[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/DNS-Providers#stubby"><b>click here</b></a>]
 
@@ -429,9 +429,8 @@ https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNS
 <h1 align="center"><b><i>Install WireGuard</b></i> </h1>
 
 > **Warning**
-**Before installing WireGuard**, if you do not have a <a href="https://www.google.com/search?client=firefox-b-d&q=static+IP"><b>static IP</b></a> it will change dynamically from your internet service provider or from a router reboot. You will need to setup a dynamic DNS service with a hostname to keep automatically up-to-date with a  dynamic IP[**<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-a-DNS-domain-hostname"><b>click here</b></a>**]. Or else skip this.
+**Before installing WireGuard**, if you do not have a <a href="https://www.google.com/search?client=firefox-b-d&q=static+IP"><b>static IP</b></a> it will change dynamically from your internet service provider or from a router reboot. You will need to setup a dynamic DNS service with a hostname to keep automatically up-to-date with a  dynamic IP[**<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-a-DNS-domain-hostname"><b>click here</b></a>**]. Or else skip.<br>You also need to set up <a href="https://www.google.com/search?q=What+is+port+forwarding+used+for%3F&client=firefox-b-d&sxsrf=APq-WBuwPqGlPJ6N9_l6qpQ3e5sYoUxZAQ%3A1650219365125&ei=ZVlcYo6sB6SGwbkP8tGOwA8&ved=0ahUKEwjO8ryY2pv3AhUkQzABHfKoA_gQ4dUDCA0&uact=5&oq=What+is+port+forwarding+used+for%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDMAVjMAWCBBWgBcAF4AIABbIgBbJIBAzAuMZgBAKABAqABAcgBCsABAQ&sclient=gws-wiz"><b>port forwarding</b></a> on your router so you can access WireGuard network anywhere like a coffee shop hotspot and even from mobile data tethering.
 
-You also need to set up <a href="https://www.google.com/search?q=What+is+port+forwarding+used+for%3F&client=firefox-b-d&sxsrf=APq-WBuwPqGlPJ6N9_l6qpQ3e5sYoUxZAQ%3A1650219365125&ei=ZVlcYo6sB6SGwbkP8tGOwA8&ved=0ahUKEwjO8ryY2pv3AhUkQzABHfKoA_gQ4dUDCA0&uact=5&oq=What+is+port+forwarding+used+for%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDMAVjMAWCBBWgBcAF4AIABbIgBbJIBAzAuMZgBAKABAqABAcgBCsABAQ&sclient=gws-wiz"><b>port forwarding</b></a> on your router so you can access WireGuard network anywhere like a coffee shop hotspot and even from mobile data tethering.
 TYPE | VALUE     
 ------------ | -------------
 Device | Raspberry Pi's hostname or IP
@@ -503,7 +502,7 @@ sudo cat /root/yourclientname.conf
 ## Configure WireGuard with adblocking & DNS security
 
 > **Note**
-I think it might not make much of a difference to use DoT/DoH/oDoH with WireGuard security protocols. Though from my experience and in forums, it does not seem to cause any issues using them together. Mainly this is to achieve adblocking with a VPN on public networks._
+I think it might not make much of a difference to use DoT/DoH/oDoH with WireGuard security protocols. Though from my experience and in forums, it does not seem to cause any issues using them together. Mainly this is to achieve adblocking with a VPN on public networks.
  
  * In WireGuard app, select your tunnel name and select edit (pencil on top right)
 
