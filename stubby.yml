@@ -153,6 +153,16 @@ upstream_recursive_servers:
 ## unclear if it honours the edns_client_subnet_private request from stubby)
 #  - address_data: 9.9.9.10
 #    tls_auth_name: "dns.quad9.net"
+## Google
+#  - address_data: 8.8.8.8
+#    tls_auth_name: "tls://dns.google"
+#  - address_data: 8.8.4.4
+#    tls_auth_name: "tls://dns.google"
+## Adguard
+#  - address_data: 94.140.14.14
+#    tls_auth_name: "tls://dns.adguard.com"
+#  - address_data: 94.140.15.15
+#    tls_auth_name: "tls://dns.adguard.com"
 ## The Uncensored DNS servers
 #  - address_data: 89.233.43.71
 #    tls_auth_name: "unicast.censurfridns.dk"
@@ -261,6 +271,16 @@ upstream_recursive_servers:
 ## unclear if it honours the edns_client_subnet_private request from stubby)
 #  - address_data: 2620:fe::10
 #    tls_auth_name: "dns.quad9.net"
+## Google
+#  - address_data: 2001:4860:4860::8888
+#    tls_auth_name: "tls://dns.google"
+#  - address_data: 2001:4860:4860::8844
+#    tls_auth_name: "tls://dns.google"
+## Adguard
+#  - address_data: 2a10:50c0::ad1:ff
+#    tls_auth_name: "tls://dns.adguard.com"
+#  - address_data: 2a10:50c0::ad2:ff
+#    tls_auth_name: "tls://dns.adguard.com"
 ## The Uncensored DNS server
 #  - address_data: 2a01:3a0:53:53::0
 #    tls_auth_name: "unicast.censurfridns.dk"
