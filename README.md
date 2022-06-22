@@ -254,7 +254,7 @@ sed -i 's/remove_url/add_url/g' bulkurls.py
 
 ## Uninstall Adguard
 
-Run this <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/assets/scripts/remove_adguard.sh"><b>script</b></a> through network using <a href="https://www.google.com/search?q=What+does+cURL+actually+do%3F&client=firefox-b-d&sxsrf=ALiCzsbIVTaRzlDt3jC6H5lirpsy2S0LoA%3A1654699803869&ei=G7egYprXNNbawbkP38uIqAE&ved=0ahUKEwja0JOQjZ74AhVWbTABHd8lAhUQ4dUDCA0&uact=5&oq=What+does+cURL+actually+do%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAeEBYQHTIICCEQHhAWEB0yCAghEB4QFhAdMggIIRAeEBYQHTIICCEQHhAWEB0yCAghEB4QFhAdOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUI8DWI8DYNgGaAFwAXgAgAGcAYgBnAGSAQMwLjGYAQCgAQKgAQHIAQnAAQE&sclient=gws-wiz"><b>curl</b></a> in terminal:
+Run this <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/assets/scripts/remove_adguard.sh"><b>script</b></a> from repo through network using <a href="https://www.google.com/search?q=What+does+cURL+actually+do%3F&client=firefox-b-d&sxsrf=ALiCzsbIVTaRzlDt3jC6H5lirpsy2S0LoA%3A1654699803869&ei=G7egYprXNNbawbkP38uIqAE&ved=0ahUKEwja0JOQjZ74AhVWbTABHd8lAhUQ4dUDCA0&uact=5&oq=What+does+cURL+actually+do%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAeEBYQHTIICCEQHhAWEB0yCAghEB4QFhAdMggIIRAeEBYQHTIICCEQHhAWEB0yCAghEB4QFhAdOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUI8DWI8DYNgGaAFwAXgAgAGcAYgBnAGSAQMwLjGYAQCgAQKgAQHIAQnAAQE&sclient=gws-wiz"><b>curl</b></a> in terminal:
 ```
 curl -s -L https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/assets/scripts/remove_adguard.sh | sh
 ```
@@ -339,7 +339,7 @@ wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudfla
 
  - Forward Stubby address in Unbound upstreams. Open `sudo nano /etc/unbound/unbound.conf.d/`<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/unbound.conf"><b>`unbound.conf`</b></a> and uncomment Stubby addresses(remove # infront of lines [169](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/68726b2c1e24d1940ac82775be9aa76748f564d2/unbound.conf#L169)&[170](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/68726b2c1e24d1940ac82775be9aa76748f564d2/unbound.conf#L170))<br>Or do it from command line:
 ```
-sudo sed -i '169,170s/'#'/''/g' /etc/unbound/unbound.conf.d
+awk '{sub(/[#]forward-addr: 127.0.0.1@8053/,"forward-addr: 127.0.0.1@8053") || sub(/[#]forward-addr: ::1@8053/,"forward-addr: ::1@8053")}1' /etc/unbound/unbound.conf.d/unbound.conf > unbound.conf && sudo mv unbound.conf /etc/unbound/unbound.conf.d/
 ```
  - Choose DNS provider[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/DNS-Providers#stubby"><b>click here</b></a>]
 
