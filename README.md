@@ -173,10 +173,10 @@ curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/s
 ```
  * When installation is finished, it will show the `links` to your AdGuard home page(Get Started) in terminal
 
- * `IMPORTANT:` In Listen Interfaces option choose `Eth0` and select next
+ * Choose `Eth0` in **Listen Interfaces** option
  
  <p align="center">
-  <img src="https://i.imgur.com/Wa00lDp.jpg" width=580px height=690px>
+  <img src="https://i.imgur.com/5W70PLb.png" width=580px height=690px>
 
  * Set up username&password and then login admin panel
 
@@ -215,7 +215,7 @@ _Use script constructed with update commands[<a href="https://github.com/trinib/
 In AdGuard homepage under filters, select DNS blocklist section for adding URLs.
 
 <p align="center">
- <img src="https://i.imgur.com/shrtJLD.png">
+ <img src="https://i.imgur.com/xAlbKPW.png">
 
 ***Ultimate blocklists sources*** :
 </br>
@@ -282,7 +282,7 @@ For recursively querying a host that is not cached as an address, the resolver n
 wget -O root.hints https://www.internic.net/domain/named.root && sudo mv root.hints /var/lib/unbound/
 ```
 
- - This needs to update every 6 months using <a href="https://www.google.com/search?q=How+does+cron+job+work%3F&client=firefox-b-d&sxsrf=ALiCzsbaAmCCZqLJt2cOtQ3UXn7wxrWD3Q%3A1651353477111&ei=hadtYt-vBoavqtsP_fGX4Ak&ved=0ahUKEwifhpuL27z3AhWGl2oFHf34BZwQ4dUDCA0&uact=5&oq=How+does+cron+job+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDTAVjTAWDRBmgBcAF4AIABfYgBfZIBAzAuMZgBAKABAqABAcgBCcABAQ&sclient=gws-wiz"><b>cron job</b></a>.
+This needs to update every 6 months using <a href="https://www.google.com/search?q=How+does+cron+job+work%3F&client=firefox-b-d&sxsrf=ALiCzsbaAmCCZqLJt2cOtQ3UXn7wxrWD3Q%3A1651353477111&ei=hadtYt-vBoavqtsP_fGX4Ak&ved=0ahUKEwifhpuL27z3AhWGl2oFHf34BZwQ4dUDCA0&uact=5&oq=How+does+cron+job+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDTAVjTAWDRBmgBcAF4AIABfYgBfZIBAzAuMZgBAKABAqABAcgBCcABAQ&sclient=gws-wiz"><b>cron job</b></a>.
 
 Enter in command line `crontab -e`, it will ask select an editor(choose 1), paste these lines at the bottom of crontab and save (control+x then y then enter):
 ```
@@ -306,7 +306,7 @@ _If using **DietPi**, install resolvconf and restart unbound-resolvconf.service 
 <h1 align="center"><b><i>Setup DNS Security</b></i> </h1>
 
 ## Configure DoH/oDoH
-<b>Option 1 (Simple)</b><br>Cloudflare Tunnel[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Cloudflared-Tunnel-(DoH)"><b>click here</b></a>]:<br>(DNS over HTTPS only)
+<b>Option 1 (Simple)</b><br><br>Cloudflare Tunnel[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Cloudflared-Tunnel-(DoH)"><b>click here</b></a>]:<br>(DNS over HTTPS only)
 
 <b>Option 2 (Advanced)</b><h4>DNScrypt proxy[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-DNScrypt-proxy-(DoH)(oDoH)(Anonymized-DNS)"><b>click here</b></a>]:</h4>- DNS over HTTPS <br>- Oblivious DNS Over HTTPS (experimental)<br>- Anonymized DNS
 
@@ -372,12 +372,12 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
 * `IMPORTANT:` Check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option for DNS resolvers to work simultaneously.
 
 <p align="center">
- <img src="https://i.imgur.com/Ug4Euou.jpg" width=650px height=370px>
+ <img src="https://i.imgur.com/iQRdMax.png" width=650px height=370px>
 
  * Then in DNS setting look for DNS cache configuration section and set cache size to `0` (caching is already handled by Unbound) and click apply.
 
 <p align="center">
- <img src="https://i.imgur.com/8Q5Zb0M.jpg" width=650px height=370px>
+ <img src="https://i.imgur.com/TdzhNUo.png" width=650px height=370px>
  
 Click apply and test upstreams
 
@@ -414,7 +414,7 @@ Help resolve multiple DNS servers on Windows system and Android browsers. Linux 
  - [x] DNS over TLS(DoT)
  - [ ] DNS over WARP
  <p align="center">
-  <img src="https://i.imgur.com/2S3IH5H.jpg" width=650px height=370px>
+  <img src="https://i.imgur.com/ootfGYq.jpg" width=650px height=350px>
 
 #### Other sites to check security
 https://browserleaks.com/dns - should show all connected to "Cloudflare"
