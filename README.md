@@ -71,7 +71,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
    - [Updating Adguard](#updating-adguard)
    - [Setting up AdGuard blocklist](#setting-up-adguard-blocklist)
      - [Add/Remove multiple URLs](#addremove-multiple-urls)
-   - [Uninstall Adguard](#uninstall-adguard)
+   - [Uninstall AdGuard](#uninstall-adguard)
    - [Install SSL certificate](#install-ssl-certificate)
  - [Install Unbound](#install-unbound-) <img src="https://www.vectorlogo.zone/logos/nlnetlabsnl_unbound/nlnetlabsnl_unbound-icon.svg" width=20px height=20px>
  - [Install Knot](#install-knot-resolver-as-an-alternativeclick-here) <img src="https://www.vectorlogo.zone/logos/knot-resolvercz/knot-resolvercz-icon.svg" width=20px height=20px>
@@ -176,7 +176,7 @@ curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/s
  * Choose `Eth0` in **Listen Interfaces** option
  
  <p align="center">
-  <img src="https://i.imgur.com/5W70PLb.png" width=580px height=690px>
+  <img src="https://i.imgur.com/5W70PLb.png" width=580px height=650px>
 
  * Set up username&password and then login admin panel
 
@@ -199,8 +199,6 @@ In general settings, set "Query logs retention" to `24 hours`. (I read that for 
     - <i>IPv6 (needed for `DoH`/`DoT`/`oDoH` to detect if using it)</i>
 
      Go to "Internet Protocol Version 6(TCP/IPv6)" Enter `::1`
-
-`OPTIONAL:` <i>Add a backup DNS in the alternative fields</i>
 
 <p align="center">
  <img src="https://i.imgur.com/8gsDk3z.jpg">
@@ -252,7 +250,7 @@ sed -i 's/add_url/remove_url/g' bulkurls.py
 sed -i 's/remove_url/add_url/g' bulkurls.py
 ```
 
-## Uninstall Adguard
+## Uninstall AdGuard
 
 Run this <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/assets/scripts/remove_adguard.sh"><b>script</b></a> from repo through network using <a href="https://www.google.com/search?q=What+does+cURL+actually+do%3F&client=firefox-b-d&sxsrf=ALiCzsbIVTaRzlDt3jC6H5lirpsy2S0LoA%3A1654699803869&ei=G7egYprXNNbawbkP38uIqAE&ved=0ahUKEwja0JOQjZ74AhVWbTABHd8lAhUQ4dUDCA0&uact=5&oq=What+does+cURL+actually+do%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAeEBYQHTIICCEQHhAWEB0yCAghEB4QFhAdMggIIRAeEBYQHTIICCEQHhAWEB0yCAghEB4QFhAdOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUI8DWI8DYNgGaAFwAXgAgAGcAYgBnAGSAQMwLjGYAQCgAQKgAQHIAQnAAQE&sclient=gws-wiz"><b>curl</b></a> in terminal:
 ```
@@ -311,7 +309,7 @@ _If using **DietPi**, install resolvconf and restart unbound-resolvconf.service 
 <b>Option 2 (Advanced)</b><h4>DNScrypt proxy[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-DNScrypt-proxy-(DoH)(oDoH)(Anonymized-DNS)"><b>click here</b></a>]:</h4>- DNS over HTTPS <br>- Oblivious DNS Over HTTPS (experimental)<br>- Anonymized DNS
 
 _<a href="https://research.cloudflare.com/projects/odns/"><b>Oblivious DNS Over HTTPS </b></a></h4>(oDoH) is a newly proposed open-source DNS standard built by engineers from Cloudflare, Apple, and Fastly which is supposed to increase the privacy of already existing DNS Over HTTPS_.<br>
-_<a href="https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Anonymized-DNS"><b>Anonymized DNS</b></a> client encrypts the query for the final server instead of directly reaching a server that is one of the public resolvers, but sends it to a <a href="https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/relays.md"><b>relay</b></a>_.
+_<a href="https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Anonymized-DNS"><b>Anonymized DNS</b></a> is a lightweight alternative to Tor and SOCKS proxies, dedicated to DNS traffic. They hide the client IP address to DNS resolvers, providing anonymity in addition to confidentiality and integrity._.
 
 ## Configure DoT on Unbound
 
@@ -324,7 +322,7 @@ wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudfla
 
 ## Configure Stubby and Unbound
 
-Use Unbound for caching and Stubby as a <a href="https://www.google.com/search?q=How+does+TLS+proxy+work%3F&client=firefox-b-d&sxsrf=ALiCzsaNlPunZpYtzDVoVA6PVTkY6rOqyQ%3A1651275938995&ei=onhsYsqtPImRggez_K2oBA&ved=0ahUKEwjKhpSeurr3AhWJiOAKHTN-C0UQ4dUDCA4&uact=5&oq=How+does+TLS+proxy+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMUBWMUBYMkHaAFwAXgAgAGfAYgBnwGSAQMwLjGYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz"><b>TLS forwarder</b></a>(if NOT using with DNScrypt).
+Use Unbound for caching and Stubby as a <a href="https://www.google.com/search?q=How+does+TLS+proxy+work%3F&client=firefox-b-d&sxsrf=ALiCzsaNlPunZpYtzDVoVA6PVTkY6rOqyQ%3A1651275938995&ei=onhsYsqtPImRggez_K2oBA&ved=0ahUKEwjKhpSeurr3AhWJiOAKHTN-C0UQ4dUDCA4&uact=5&oq=How+does+TLS+proxy+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMUBWMUBYMkHaAFwAXgAgAGfAYgBnwGSAQMwLjGYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz"><b>TLS forwarder</b></a>(if **NOT** already using with DNScrypt).
 
 `OPTIONAL:` **Building and compiling** Stubby yourself ensures that you have the latest version[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Build-Stubby-from-source"><b>click here</b></a>].
 
@@ -344,7 +342,7 @@ awk '{sub(/[#]forward-addr: 127.0.0.1@8053/,"forward-addr: 127.0.0.1@8053") || s
  - Choose DNS provider[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/DNS-Providers#stubby"><b>click here</b></a>]
 
 > **Warning**
-Stubby and DNScrypt **cannot** be used together when both are set to run as a forwarder, else redundant caching will occur.
+Stubby and DNScrypt **should not** be used together when both are set to run as a forwarder, else redundant caching will occur.
 
 * Restart unbound & stubby and check status:
 ```
@@ -372,12 +370,12 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
 * `IMPORTANT:` Check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option for DNS resolvers to work simultaneously.
 
 <p align="center">
- <img src="https://i.imgur.com/iQRdMax.png" width=650px height=370px>
+ <img src="https://i.imgur.com/iQRdMax.png" width=650px height=320px>
 
  * Then in DNS setting look for DNS cache configuration section and set cache size to `0` (caching is already handled by Unbound) and click apply.
 
 <p align="center">
- <img src="https://i.imgur.com/TdzhNUo.png" width=650px height=370px>
+ <img src="https://i.imgur.com/TdzhNUo.png" width=650px height=320px>
  
 Click apply and test upstreams
 
@@ -414,7 +412,7 @@ Help resolve multiple DNS servers on Windows system and Android browsers. Linux 
  - [x] DNS over TLS(DoT)
  - [ ] DNS over WARP
  <p align="center">
-  <img src="https://i.imgur.com/ootfGYq.jpg" width=650px height=350px>
+  <img src="https://i.imgur.com/ootfGYq.jpg" width=650px height=300px>
 
 #### Other sites to check security
 https://browserleaks.com/dns - should show all connected to "Cloudflare"
@@ -552,7 +550,7 @@ You should see all connections `closed` and status showing all `DNS port 53` and
  <img src="https://i.imgur.com/Q07E7SW.gif" width=500px height=30px>
 
 <p align="center">
-<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/stargazers"><img src="https://reporoster.com/stars/dark/trinib/AdGuard-WireGuard-Unbound-Cloudflare"></a>
+<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/stargazers"><img src="https://reporoster.com/stars/dark/trinib/AdGuard-WireGuard-Unbound-DNScrypt"></a>
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"</p>
