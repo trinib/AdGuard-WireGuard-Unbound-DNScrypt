@@ -22,7 +22,7 @@
 
 <div align="center"> 
  
-_<a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard Home</b></a>_</br>Block banners, pop-ups and video advertisements network-wide
+_<a href="https://github.com/AdguardTeam/AdGuardHome"><b>AdGuard Home</b></a> or <a href="https://github.com/pi-hole/pi-hole"><b>Pi-hole</b></a>_</br>Block banners, pop-ups and video advertisements network-wide
 
  _<a href="https://www.wireguard.com/"><b>WireGuard</b></a> or <a href="https://openvpn.net/"><b>OpenVPN</b></a>_</br>A VPN server accessible from public networks (IPv4 & IPv6)
 
@@ -72,6 +72,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
    - [Setting up AdGuard blocklist](#setting-up-adguard-blocklist)
      - [Add/Remove multiple URLs](#addremove-multiple-urls)
    - [Uninstall AdGuard](#uninstall-adguard)
+   - [Install Pi-hole](#install-pi-hole-as-an-alternativeclick-here) <img src="https://upload.wikimedia.org/wikipedia/en/1/15/Pi-hole_vector_logo.svg" width=21px height=21px>
    - [Install SSL certificate](#install-ssl-certificate)
  - [Install Unbound](#install-unbound-) <img src="https://www.vectorlogo.zone/logos/nlnetlabsnl_unbound/nlnetlabsnl_unbound-icon.svg" width=20px height=20px>
  - [Install Knot](#install-knot-resolver-as-an-alternativeclick-here) <img src="https://www.vectorlogo.zone/logos/knot-resolvercz/knot-resolvercz-icon.svg" width=20px height=20px>
@@ -97,7 +98,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
 #
 # Requirements
  
-This tutorial is installed with Raspberry Pi(Debian). Other Linux <a href="https://github.com/thibmaek/awesome-raspberry-pi#os-images"><b>operating system</b></a><i>(𝟹𝟸/𝟼𝟺bit)</i>, hardware or <a href="https://www.google.com/search?q=What+is+cloud+hosting+and+how+does+it+work%3F&client=firefox-b-d&biw=1280&bih=582&sxsrf=APq-WBv6YzP1uwdIJUrzsZs92CVrLMle2A%3A1651061176738&ei=uDFpYsvQLImOwbkPs-qJ6AY&ved=0ahUKEwjLjMSXmrT3AhUJRzABHTN1Am0Q4dUDCA0&uact=5&oq=What+is+cloud+hosting+and+how+does+it+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUIA6WIA6YPc8aAJwAXgAgAF6iAF6kgEDMC4xmAEAoAECoAEByAEJwAEB&sclient=gws-wiz"><b>cloud service</b></a> can be used.</br>_(Raspberry Pi OS is most simple and recommended for Pi. For more experience users, <a href="https://dietpi.com/"><b>DietPi</b></a> OS is also recommended)_
+This tutorial is installed on a Raspberry Pi with Debian OS. Other Linux <a href="https://distrowatch.com/dwres.php?resource=popularity"><b>operating system</b></a><i>(𝟹𝟸/𝟼𝟺bit)</i>, <a href="https://en.wikipedia.org/wiki/Category:Single-board_computers"><b>hardware</b></a> or <a href="https://www.google.com/search?q=What+is+cloud+hosting+and+how+does+it+work%3F&client=firefox-b-d&biw=1280&bih=582&sxsrf=APq-WBv6YzP1uwdIJUrzsZs92CVrLMle2A%3A1651061176738&ei=uDFpYsvQLImOwbkPs-qJ6AY&ved=0ahUKEwjLjMSXmrT3AhUJRzABHTN1Am0Q4dUDCA0&uact=5&oq=What+is+cloud+hosting+and+how+does+it+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUIA6WIA6YPc8aAJwAXgAgAF6iAF6kgEDMC4xmAEAoAECoAEByAEJwAEB&sclient=gws-wiz"><b>cloud service</b></a> can be used.</br>_(Raspberry Pi OS is most simple and recommended for Pi. For more experience users, <a href="https://dietpi.com/"><b>DietPi</b></a> OS is also recommended)_
 
    - A Raspberry Pi 3 or 4 version
    - A router that supports port forwarding(most can)
@@ -260,6 +261,8 @@ curl -s -L https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cl
 ## Install SSL certificate
 
 If using AdGuard Home on a `VPS(Virtual private server)`, get a <a href="https://www.google.com/search?q=What+is+purpose+of+SSL+certificate%3F&client=firefox-b-d&sxsrf=APq-WBsi9wVR8QaPcOuMXEpKVMqtOxrI-A%3A1650799271342&ei=pzJlYvDEFJbUkPIP48mPkAY&ved=0ahUKEwiwtKfByqz3AhUWKkQIHePkA2IQ4dUDCA0&uact=5&oq=What+is+purpose+of+SSL+certificate%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeOgcIABBHELADOgcIABCwAxBDOgoIABDkAhCwAxgBOhUILhDHARCvARDUAhDIAxCwAxBDGAI6EgguEMcBENEDEMgDELADEEMYAkoECEEYAEoECEYYAVC7AVi7AWDnBGgBcAF4AIABbYgBbZIBAzAuMZgBAKABAqABAcgBE8ABAdoBBggBEAEYCdoBBggCEAEYCA&sclient=gws-wiz"><b>SSL certificate</b></a> to make connection secure and data safe[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-auto-renewal-SSL-certificate"><b>click here</b></a>]. In this case your DNS resolver(AdGuard Home) resides outside your network, and your DNS requests have better protection from the third parties.
+
+### _Install Pi-hole as an alternative[<a href="https://github.com/pi-hole/pi-hole/#one-step-automated-install"><b>click here</b></a>]_
 
 **[⬆ Return to contents ⬆](#table-of-contents)**
 
@@ -560,6 +563,8 @@ You should see all connections `closed` and status showing all `DNS port 53` and
 ## Repository Resources
 
 https://github.com/AdguardTeam/AdGuardHome/wiki
+
+https://docs.pi-hole.net/
 
 https://developers.cloudflare.com/
 
