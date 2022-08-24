@@ -40,7 +40,7 @@ _<a href="https://dnscrypt.info/"><b>DNScrypt</b></a>_</br>Modern encrypted DNS 
 <i>All software are free, open-source and&nbsp;self-hosted&nbsp;</i></br><a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/wiki/About"><b>ABOUT</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>FAQ</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki"><b>WIKI</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions"><b>DISCUSS</b></a>
 
 <h3 align="left">DNS query speed 🧪</h3>
-<a href="https://docs.oracle.com/en-us/iaas/Content/DNS/Tasks/testingdnsusingdig.htm"><b>BIND'S dig tool</b></a> results from google.com servers:
+<a href="https://docs.oracle.com/en-us/iaas/Content/DNS/Tasks/testingdnsusingdig.htm">BIND'S dig tool</a> results from google.com servers:
 
  - AdGuard default DNS resolvers - `60-70 msec`
  - Public Cloudflare/Quad9/Google DNS Resolvers - `50-70 msec`
@@ -72,8 +72,8 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
    - [Setting up AdGuard blocklist](#setting-up-adguard-blocklist)
      - [Add/Remove multiple URLs](#addremove-multiple-urls)
    - [Uninstall AdGuard](#uninstall-adguard)
-   - [Install Pi-hole](#install-pi-hole-as-an-alternativeclick-here) <img src="https://upload.wikimedia.org/wikipedia/en/1/15/Pi-hole_vector_logo.svg" width=21px height=21px>
    - [Install SSL certificate](#install-ssl-certificate)
+   - [Install Pi-hole](#install-pi-hole-as-an-alternativeclick-here) <img src="https://upload.wikimedia.org/wikipedia/en/1/15/Pi-hole_vector_logo.svg" width=21px height=21px>
  - [Install Unbound](#install-unbound-) <img src="https://www.vectorlogo.zone/logos/nlnetlabsnl_unbound/nlnetlabsnl_unbound-icon.svg" width=20px height=20px>
  - [Install Knot](#install-knot-resolver-as-an-alternativeclick-here) <img src="https://www.vectorlogo.zone/logos/knot-resolvercz/knot-resolvercz-icon.svg" width=20px height=20px>
  - [Setup DNS security](#setup-dns-security-)
@@ -98,7 +98,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
 #
 # Requirements
  
-This tutorial is installed on a Raspberry Pi with Debian OS. Other Linux <a href="https://distrowatch.com/dwres.php?resource=popularity"><b>operating system</b></a><i>(𝟹𝟸/𝟼𝟺bit)</i>, <a href="https://en.wikipedia.org/wiki/Category:Single-board_computers"><b>hardware</b></a> or <a href="https://www.google.com/search?q=What+is+cloud+hosting+and+how+does+it+work%3F&client=firefox-b-d&biw=1280&bih=582&sxsrf=APq-WBv6YzP1uwdIJUrzsZs92CVrLMle2A%3A1651061176738&ei=uDFpYsvQLImOwbkPs-qJ6AY&ved=0ahUKEwjLjMSXmrT3AhUJRzABHTN1Am0Q4dUDCA0&uact=5&oq=What+is+cloud+hosting+and+how+does+it+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUIA6WIA6YPc8aAJwAXgAgAF6iAF6kgEDMC4xmAEAoAECoAEByAEJwAEB&sclient=gws-wiz"><b>cloud service</b></a> can be used.</br>_(Raspberry Pi OS is most simple and recommended for Pi. For more experience users, <a href="https://dietpi.com/"><b>DietPi</b></a> OS is also recommended)_
+This tutorial is installed on a Raspberry Pi with Debian OS. Other Linux <a href="https://distrowatch.com/dwres.php?resource=popularity">operating system</a><i>(𝟹𝟸/𝟼𝟺bit)</i>, <a href="https://en.wikipedia.org/wiki/Category:Single-board_computers">hardware</a> or <a href="https://www.google.com/search?q=What+is+cloud+hosting+and+how+does+it+work%3F&client=firefox-b-d&biw=1280&bih=582&sxsrf=APq-WBv6YzP1uwdIJUrzsZs92CVrLMle2A%3A1651061176738&ei=uDFpYsvQLImOwbkPs-qJ6AY&ved=0ahUKEwjLjMSXmrT3AhUJRzABHTN1Am0Q4dUDCA0&uact=5&oq=What+is+cloud+hosting+and+how+does+it+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUIA6WIA6YPc8aAJwAXgAgAF6iAF6kgEDMC4xmAEAoAECoAEByAEJwAEB&sclient=gws-wiz">cloud service</a> can be used.</br>_(Raspberry Pi OS is most simple and recommended for Pi. For more experience users, <a href="https://dietpi.com/">DietPi</a> OS is also recommended)_
 
    - A Raspberry Pi 3 or 4 version
    - A router that supports port forwarding(most can)
@@ -110,7 +110,7 @@ This tutorial is installed on a Raspberry Pi with Debian OS. Other Linux <a href
 #
 <h1 align="center"><b><i>Install Raspberry Pi OS</b></i> </h1>
 
-Raspberry Pi OS comes in desktop and lite versions(use lite for <a href="https://www.google.com/search?q=What+is+a+headless+operating+system%3F&client=firefox-b-d&sxsrf=APq-WBvlqMZasn_klYxS5HZmhKQlduKYuQ%3A1650123816301&ei=KORaYtz7EYOdwbkP74G16AE&ved=0ahUKEwjcr5-f9pj3AhWDTjABHe9ADR0Q4dUDCA0&uact=5&oq=What+is+a+headless+operating+system%3F&gs_lcp=Cgdnd3Mtd2l6EAMyCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMEBWMEBYNAEaAFwAXgAgAFqiAFqkgEDMC4xmAEAoAECoAEByAEIwAEB&sclient=gws-wiz"><b>headless</b></a> mode). It can be accessed with a monitor/keyboard/mouse or connect via <a href="https://www.google.com/search?q=What+is+SSH+in+Linux%3F&client=firefox-b-d&sxsrf=APq-WBsiHvek7g0OrBHWDbEy-x7m-B6O3Q%3A1650481751310&ei=V1pgYoHNEs-uwbkPtI25mAI&ved=0ahUKEwjB1PrTq6P3AhVPVzABHbRGDiMQ4dUDCA0&uact=5&oq=What+is+SSH+in+Linux%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjoHCCMQsAMQJzoHCAAQRxCwAzoHCAAQsAMQQzoKCAAQ5AIQsAMYAToPCC4Q1AIQyAMQsAMQQxgCSgQIQRgASgQIRhgBUM8IWM8IYJAMaAFwAXgAgAFxiAFxkgEDMC4xmAEAoAECoAEByAERwAEB2gEGCAEQARgJ2gEGCAIQARgI&sclient=gws-wiz"><b>ssh</b></a> from a terminal.<br>Raspberry Pi OS <b>cannot</b> be setup through the <a href="https://www.raspberrypi.com/news/raspberry-pi-bullseye-update-april-2022/#Headless%20setup"><b>wizard</b></a> anymore, the <a href="https://www.raspberrypi.com/news/raspberry-pi-imager-imaging-utility/"><b>Imager</b></a> utility is needed to preconfigure an image user account.
+Raspberry Pi OS comes in desktop and lite versions(use lite for <a href="https://www.google.com/search?q=What+is+a+headless+operating+system%3F&client=firefox-b-d&sxsrf=APq-WBvlqMZasn_klYxS5HZmhKQlduKYuQ%3A1650123816301&ei=KORaYtz7EYOdwbkP74G16AE&ved=0ahUKEwjcr5-f9pj3AhWDTjABHe9ADR0Q4dUDCA0&uact=5&oq=What+is+a+headless+operating+system%3F&gs_lcp=Cgdnd3Mtd2l6EAMyCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMEBWMEBYNAEaAFwAXgAgAFqiAFqkgEDMC4xmAEAoAECoAEByAEIwAEB&sclient=gws-wiz">headless</a> mode). It can be accessed with a monitor/keyboard/mouse or connect via <a href="https://www.google.com/search?q=What+is+SSH+in+Linux%3F&client=firefox-b-d&sxsrf=APq-WBsiHvek7g0OrBHWDbEy-x7m-B6O3Q%3A1650481751310&ei=V1pgYoHNEs-uwbkPtI25mAI&ved=0ahUKEwjB1PrTq6P3AhVPVzABHbRGDiMQ4dUDCA0&uact=5&oq=What+is+SSH+in+Linux%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjoHCCMQsAMQJzoHCAAQRxCwAzoHCAAQsAMQQzoKCAAQ5AIQsAMYAToPCC4Q1AIQyAMQsAMQQxgCSgQIQRgASgQIRhgBUM8IWM8IYJAMaAFwAXgAgAFxiAFxkgEDMC4xmAEAoAECoAEByAERwAEB2gEGCAEQARgJ2gEGCAIQARgI&sclient=gws-wiz">ssh</a> from a terminal.<br>Raspberry Pi OS <b>cannot</b> be setup through the <a href="https://www.raspberrypi.com/news/raspberry-pi-bullseye-update-april-2022/#Headless%20setup">wizard</a> anymore, the <a href="https://www.raspberrypi.com/news/raspberry-pi-imager-imaging-utility/">Imager</a> utility is needed to preconfigure an image user account.
 
  * Install Raspberry Pi Imager: https://www.raspberrypi.com/software/
 
@@ -127,7 +127,7 @@ Raspberry Pi OS comes in desktop and lite versions(use lite for <a href="https:/
 
  * Wait for a minute for Pi's first boot up
 
- * Open browser and login router's admin panel(default <a href="https://www.google.com/search?client=firefox-b-d&q=find+default+gateway+address"><b>gateway</b></a> address)
+ * Open browser and login router's admin panel(default <a href="https://www.google.com/search?client=firefox-b-d&q=find+default+gateway+address">gateway</a> address)
  
  * Find list of all devices connected to network and copy the IP address of the Raspberry Pi. It will most likely have the hostname `raspberrypi`
 
@@ -157,7 +157,7 @@ sudo reboot
 #
 <h1 align="center"><b><i>Install AdGuard Home</b></i> </h1>
 
-Installation scripts are from <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md"><b>AdGuard Home</b></a> main project. Follow to keep updated.<br>
+Installation scripts are from <a href="https://github.com/AdguardTeam/AdGuardHome/blob/master/README.md">AdGuard Home</a> main project. Follow to keep updated.<br>
 Run one of the following command in terminal:
 
 Stable:
@@ -206,7 +206,7 @@ In general settings, set "Query logs retention" to `24 hours`. (I read that for 
 
 ## Updating AdGuard
  
-AdGuard Home can be updated from its user interface or <a href="https://github.com/AdguardTeam/AdGuardHome/wiki/FAQ#how-to-update-adguard-home-manually"><b>manually</b></a> from command line which I recommend for now. <br>
+AdGuard Home can be updated from its user interface or <a href="https://github.com/AdguardTeam/AdGuardHome/wiki/FAQ#how-to-update-adguard-home-manually">manually</a> from command line which I recommend for now. <br>
 _Use script constructed with update commands[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/AdGuard-Home-update-script"><b>click here</b></a>]_.
 
 ## Setting up AdGuard blocklist
@@ -219,7 +219,7 @@ In AdGuard homepage under filters, select DNS blocklist section for adding URLs.
 ***Ultimate blocklists sources*** :
 </br>
 <a href="https://github.com/T145/black-mirror"><img src="https://raw.githubusercontent.com/T145/black-mirror/master/.github/images/logo.png" width=220px height=60px></a>  
-<a href="https://github.com/T145/black-mirror#-sources"><b>black-mirror</b></a> - _Automatically maintained malicious host blacklists and false-positive whitelists_
+<a href="https://github.com/T145/black-mirror#-sources">black-mirror</a> - _Automatically maintained malicious host blacklists and false-positive whitelists_
 </br>
 👊BIG THANKS👊 to <a href="https://github.com/T145"><b>T145</b></a>
 
@@ -242,7 +242,7 @@ _If using **DietPi** install `sudo apt-get install python3-pip -y && pip install
 To run : `sudo python3 bulkurls.py`<br>
 _(Reboot when finished)_
 
-To **remove** change `add` in <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/62ba01ed8ed3a5bc5294b9fe7ee38c3e83ae1b86/bulkurls.py#L150"><b>second of last line</b></a> to `remove` in bulkurls.py file.<br>
+To **remove** change `add` in <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/62ba01ed8ed3a5bc5294b9fe7ee38c3e83ae1b86/bulkurls.py#L150">second of last line</a> to `remove` in bulkurls.py file.<br>
 Or just change it from command line in terminal:
 ```
 sed -i 's/add_url/remove_url/g' bulkurls.py
@@ -253,14 +253,14 @@ sed -i 's/remove_url/add_url/g' bulkurls.py
 
 ## Uninstall AdGuard
 
-Run this <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/assets/scripts/remove_adguard.sh"><b>script</b></a> from repo through network using <a href="https://www.google.com/search?q=What+does+cURL+actually+do%3F&client=firefox-b-d&sxsrf=ALiCzsbIVTaRzlDt3jC6H5lirpsy2S0LoA%3A1654699803869&ei=G7egYprXNNbawbkP38uIqAE&ved=0ahUKEwja0JOQjZ74AhVWbTABHd8lAhUQ4dUDCA0&uact=5&oq=What+does+cURL+actually+do%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAeEBYQHTIICCEQHhAWEB0yCAghEB4QFhAdMggIIRAeEBYQHTIICCEQHhAWEB0yCAghEB4QFhAdOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUI8DWI8DYNgGaAFwAXgAgAGcAYgBnAGSAQMwLjGYAQCgAQKgAQHIAQnAAQE&sclient=gws-wiz"><b>curl</b></a> in terminal:
+Run this <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/assets/scripts/remove_adguard.sh">script</a> from repo through network using <a href="https://www.google.com/search?q=What+does+cURL+actually+do%3F&client=firefox-b-d&sxsrf=ALiCzsbIVTaRzlDt3jC6H5lirpsy2S0LoA%3A1654699803869&ei=G7egYprXNNbawbkP38uIqAE&ved=0ahUKEwja0JOQjZ74AhVWbTABHd8lAhUQ4dUDCA0&uact=5&oq=What+does+cURL+actually+do%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAeEBYQHTIICCEQHhAWEB0yCAghEB4QFhAdMggIIRAeEBYQHTIICCEQHhAWEB0yCAghEB4QFhAdOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUI8DWI8DYNgGaAFwAXgAgAGcAYgBnAGSAQMwLjGYAQCgAQKgAQHIAQnAAQE&sclient=gws-wiz">curl</a> in terminal:
 ```
 curl -s -L https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/assets/scripts/remove_adguard.sh | sh
 ```
 
 ## Install SSL certificate
 
-If using AdGuard Home on a `VPS(Virtual private server)`, get a <a href="https://www.google.com/search?q=What+is+purpose+of+SSL+certificate%3F&client=firefox-b-d&sxsrf=APq-WBsi9wVR8QaPcOuMXEpKVMqtOxrI-A%3A1650799271342&ei=pzJlYvDEFJbUkPIP48mPkAY&ved=0ahUKEwiwtKfByqz3AhUWKkQIHePkA2IQ4dUDCA0&uact=5&oq=What+is+purpose+of+SSL+certificate%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeOgcIABBHELADOgcIABCwAxBDOgoIABDkAhCwAxgBOhUILhDHARCvARDUAhDIAxCwAxBDGAI6EgguEMcBENEDEMgDELADEEMYAkoECEEYAEoECEYYAVC7AVi7AWDnBGgBcAF4AIABbYgBbZIBAzAuMZgBAKABAqABAcgBE8ABAdoBBggBEAEYCdoBBggCEAEYCA&sclient=gws-wiz"><b>SSL certificate</b></a> to make connection secure and data safe[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-auto-renewal-SSL-certificate"><b>click here</b></a>]. In this case your DNS resolver(AdGuard Home) resides outside your network, and your DNS requests have better protection from the third parties.
+If using AdGuard Home on a `VPS(Virtual private server)`, get a <a href="https://www.google.com/search?q=What+is+purpose+of+SSL+certificate%3F&client=firefox-b-d&sxsrf=APq-WBsi9wVR8QaPcOuMXEpKVMqtOxrI-A%3A1650799271342&ei=pzJlYvDEFJbUkPIP48mPkAY&ved=0ahUKEwiwtKfByqz3AhUWKkQIHePkA2IQ4dUDCA0&uact=5&oq=What+is+purpose+of+SSL+certificate%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeOgcIABBHELADOgcIABCwAxBDOgoIABDkAhCwAxgBOhUILhDHARCvARDUAhDIAxCwAxBDGAI6EgguEMcBENEDEMgDELADEEMYAkoECEEYAEoECEYYAVC7AVi7AWDnBGgBcAF4AIABbYgBbZIBAzAuMZgBAKABAqABAcgBE8ABAdoBBggBEAEYCdoBBggCEAEYCA&sclient=gws-wiz">SSL certificate</a> to make connection secure and data safe[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-auto-renewal-SSL-certificate"><b>click here</b></a>]. In this case your DNS resolver(AdGuard Home) resides outside your network, and your DNS requests have better protection from the third parties.
 
 ### _Install Pi-hole as an alternative[<a href="https://github.com/pi-hole/pi-hole/#one-step-automated-install"><b>click here</b></a>]_
 
@@ -270,7 +270,7 @@ If using AdGuard Home on a `VPS(Virtual private server)`, get a <a href="https:/
 <h1 align="center"><b><i>Install Unbound</b></i> </h1>
 
 > **Note**
-Before installing other DNS resolvers, it is a good idea to turn off <a href="https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html"><b>systemd-resolved</b></a> - DNSStubListener(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/27"><b>issue#27</b></a>).
+Before installing other DNS resolvers, it is a good idea to turn off <a href="https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html">systemd-resolved</a> - DNSStubListener(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/27">issue#27</a>).
 
 `OPTIONAL:` Installing via the package manager is the easiest option with automatic updates and stable versions. The downside is that it can be outdated for some distributions or not have all the compile-time options included that you want.<br>**Building and compiling** Unbound yourself ensures that you have the latest version and all the compile-time options you desire[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Build-Unbound-from-source"><b>click here</b></a>].
 
@@ -283,7 +283,7 @@ For recursively querying a host that is not cached as an address, the resolver n
 wget -O root.hints https://www.internic.net/domain/named.root && sudo mv root.hints /var/lib/unbound/
 ```
 
-This needs to update every 6 months using <a href="https://www.google.com/search?q=How+does+cron+job+work%3F&client=firefox-b-d&sxsrf=ALiCzsbaAmCCZqLJt2cOtQ3UXn7wxrWD3Q%3A1651353477111&ei=hadtYt-vBoavqtsP_fGX4Ak&ved=0ahUKEwifhpuL27z3AhWGl2oFHf34BZwQ4dUDCA0&uact=5&oq=How+does+cron+job+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDTAVjTAWDRBmgBcAF4AIABfYgBfZIBAzAuMZgBAKABAqABAcgBCcABAQ&sclient=gws-wiz"><b>cron job</b></a>.
+This needs to update every 6 months using <a href="https://www.google.com/search?q=How+does+cron+job+work%3F&client=firefox-b-d&sxsrf=ALiCzsbaAmCCZqLJt2cOtQ3UXn7wxrWD3Q%3A1651353477111&ei=hadtYt-vBoavqtsP_fGX4Ak&ved=0ahUKEwifhpuL27z3AhWGl2oFHf34BZwQ4dUDCA0&uact=5&oq=How+does+cron+job+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDTAVjTAWDRBmgBcAF4AIABfYgBfZIBAzAuMZgBAKABAqABAcgBCcABAQ&sclient=gws-wiz">cron job</a>.
 
 Enter in command line `crontab -e`, it will ask select an editor(choose 1), paste these lines at the bottom of crontab and save (control+x then y then enter):
 ```
@@ -311,12 +311,12 @@ _If using **DietPi**, install resolvconf and restart unbound-resolvconf.service 
 
 <b>Option 2 (Advanced)</b><h4>DNScrypt proxy[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-DNScrypt-proxy-(DoH)(oDoH)(Anonymized-DNS)"><b>click here</b></a>]:</h4>- DNS over HTTPS <br>- Oblivious DNS Over HTTPS (experimental)<br>- Anonymized DNS
 
-_<a href="https://research.cloudflare.com/projects/odns/"><b>Oblivious DNS Over HTTPS </b></a></h4>(oDoH) is a newly proposed open-source DNS standard built by engineers from Cloudflare, Apple, and Fastly which is supposed to increase the privacy of already existing DNS Over HTTPS_.<br>
-_<a href="https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Anonymized-DNS"><b>Anonymized DNS</b></a> is a lightweight alternative to Tor and SOCKS proxies, dedicated to DNS traffic. They hide the client IP address to DNS resolvers, providing anonymity in addition to confidentiality and integrity._.
+_<a href="https://blog.cloudflare.com/oblivious-dns/">Oblivious DNS Over HTTPS</a></h4>(oDoH) is a newly proposed open-source DNS standard built by engineers from Cloudflare, Apple, and Fastly which is supposed to increase the privacy of already existing DNS Over HTTPS_.<br>
+_<a href="https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Anonymized-DNS">Anonymized DNS</a> is a lightweight alternative to Tor and SOCKS proxies, dedicated to DNS traffic. They hide the client IP address to DNS resolvers, providing anonymity in addition to confidentiality and integrity._.
 
 ## Configure DoT on Unbound
 
-Download unbound <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/unbound.conf"><b>configuration</b></a> file with DNS over TLS settings and move it to unbound folder.<br>
+Download unbound <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/unbound.conf">configuration</a> file with DNS over TLS settings and move it to unbound folder.<br>
 Enter in terminal:
 ```
 wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/unbound.conf && sudo mv unbound.conf /etc/unbound/unbound.conf.d/
@@ -325,7 +325,7 @@ wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudfla
 
 ## Configure Stubby and Unbound
 
-Use Unbound for caching and Stubby as a <a href="https://www.google.com/search?q=How+does+TLS+proxy+work%3F&client=firefox-b-d&sxsrf=ALiCzsaNlPunZpYtzDVoVA6PVTkY6rOqyQ%3A1651275938995&ei=onhsYsqtPImRggez_K2oBA&ved=0ahUKEwjKhpSeurr3AhWJiOAKHTN-C0UQ4dUDCA4&uact=5&oq=How+does+TLS+proxy+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMUBWMUBYMkHaAFwAXgAgAGfAYgBnwGSAQMwLjGYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz"><b>TLS forwarder</b></a>(if **NOT** already using with DNScrypt).
+Use Unbound for caching and Stubby as a <a href="https://www.google.com/search?q=How+does+TLS+proxy+work%3F&client=firefox-b-d&sxsrf=ALiCzsaNlPunZpYtzDVoVA6PVTkY6rOqyQ%3A1651275938995&ei=onhsYsqtPImRggez_K2oBA&ved=0ahUKEwjKhpSeurr3AhWJiOAKHTN-C0UQ4dUDCA4&uact=5&oq=How+does+TLS+proxy+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMUBWMUBYMkHaAFwAXgAgAGfAYgBnwGSAQMwLjGYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz">TLS forwarder</a>(if **NOT** already using with DNScrypt).
 
 `OPTIONAL:` **Building and compiling** Stubby yourself ensures that you have the latest version[<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Build-Stubby-from-source"><b>click here</b></a>].
 
@@ -333,12 +333,12 @@ Install the version from package manager:
 ```
 sudo apt install stubby -y
 ```
-Download stubby <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/stubby.yml"><b>configuration</b></a> file and replace with default one in stubby folder:
+Download stubby <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/stubby.yml">configuration</a> file and replace with default one in stubby folder:
 ```
 wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/stubby.yml && sudo mv stubby.yml /etc/stubby/
 ```
 
- - Forward Stubby address in Unbound upstreams. Open `sudo nano /etc/unbound/unbound.conf.d/`<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/unbound.conf"><b>`unbound.conf`</b></a> and uncomment Stubby addresses(remove # infront of lines [169](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/68726b2c1e24d1940ac82775be9aa76748f564d2/unbound.conf#L169)&[170](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/68726b2c1e24d1940ac82775be9aa76748f564d2/unbound.conf#L170))<br>Or do it from command line:
+ - Forward Stubby address in Unbound upstreams. Open `sudo nano /etc/unbound/unbound.conf.d/`<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/unbound.conf">`unbound.conf`</a> and uncomment Stubby addresses(remove # infront of lines [169](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/68726b2c1e24d1940ac82775be9aa76748f564d2/unbound.conf#L169)&[170](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/68726b2c1e24d1940ac82775be9aa76748f564d2/unbound.conf#L170))<br>Or do it from command line:
 ```
 awk '{sub(/[#]forward-addr: 127.0.0.1@8053/,"forward-addr: 127.0.0.1@8053") || sub(/[#]forward-addr: ::1@8053/,"forward-addr: ::1@8053")}1' /etc/unbound/unbound.conf.d/unbound.conf > unbound.conf && sudo mv unbound.conf /etc/unbound/unbound.conf.d/
 ```
@@ -370,7 +370,7 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
  
    - TLS forwarder(stubby) : `127.0.0.1:8053` 
 
-* `IMPORTANT:` Check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns"><b>Parallel Request</b></a>" option for DNS resolvers to work simultaneously.
+* `IMPORTANT:` Check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns">Parallel Request</a>" option for DNS resolvers to work simultaneously.
 
 <p align="center">
  <img src="https://i.imgur.com/iQRdMax.png" width=650px height=320px>
@@ -430,7 +430,7 @@ https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNS
 <h1 align="center"><b><i>Install WireGuard</b></i> </h1>
 
 > **Warning**
-**Before installing WireGuard**, if you do not have a <a href="https://www.google.com/search?client=firefox-b-d&q=static+IP"><b>static IP</b></a> it will change dynamically from your internet service provider or from a router reboot. You will need to setup a dynamic DNS service with a hostname to keep automatically up-to-date with a  dynamic IP[**<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-a-DNS-domain-hostname"><b>click here</b></a>**]. Or else skip.<br>You also need to set up <a href="https://www.google.com/search?q=What+is+port+forwarding+used+for%3F&client=firefox-b-d&sxsrf=APq-WBuwPqGlPJ6N9_l6qpQ3e5sYoUxZAQ%3A1650219365125&ei=ZVlcYo6sB6SGwbkP8tGOwA8&ved=0ahUKEwjO8ryY2pv3AhUkQzABHfKoA_gQ4dUDCA0&uact=5&oq=What+is+port+forwarding+used+for%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDMAVjMAWCBBWgBcAF4AIABbIgBbJIBAzAuMZgBAKABAqABAcgBCsABAQ&sclient=gws-wiz"><b>port forwarding</b></a> on your router so you can access WireGuard network anywhere like a coffee shop hotspot and even from mobile data tethering.
+**Before installing WireGuard**, if you do not have a <a href="https://www.google.com/search?client=firefox-b-d&q=static+IP">static IP</a> it will change dynamically from your internet service provider or from a router reboot. You will need to setup a dynamic DNS service with a hostname to keep automatically up-to-date with a  dynamic IP[**<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-a-DNS-domain-hostname"><b>click here</b></a>**]. Or else skip.<br>You also need to set up <a href="https://www.google.com/search?q=What+is+port+forwarding+used+for%3F&client=firefox-b-d&sxsrf=APq-WBuwPqGlPJ6N9_l6qpQ3e5sYoUxZAQ%3A1650219365125&ei=ZVlcYo6sB6SGwbkP8tGOwA8&ved=0ahUKEwjO8ryY2pv3AhUkQzABHfKoA_gQ4dUDCA0&uact=5&oq=What+is+port+forwarding+used+for%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDMAVjMAWCBBWgBcAF4AIABbIgBbJIBAzAuMZgBAKABAqABAcgBCsABAQ&sclient=gws-wiz">port forwarding</a> on your router so you can access WireGuard network anywhere like a coffee shop hotspot and even from mobile data tethering.
 
 TYPE | VALUE     
 ------------ | -------------
@@ -448,13 +448,13 @@ My router port setting:
 Other router brands will have a different interface look. Google search it for help. If you cannot connect from a outside network that means your ISP has blocked outcoming connections, call them and ask nicely to unblock.
 
 #
-👊BIG THANKS👊 for this installation script from <a href="https://github.com/Nyr/wireguard-install"><b>Nyr</b></a>. Follow to keep updated.<br>(<a href="https://www.pivpn.io/"><b>PiVPN</b></a> script can also be used)
+👊BIG THANKS👊 for this installation script from <a href="https://github.com/Nyr/wireguard-install"><b>Nyr</b></a>. Follow to keep updated.<br>(<a href="https://www.pivpn.io/">PiVPN</a> script can also be used)
 
 Run the following command in terminal:
 ```
 wget https://git.io/wireguard -O wireguard-install.sh && sudo bash wireguard-install.sh
 ```
- * The script is going to ask for a Public IPv4/hostname for the VPN. If you have static IP then continue or else type the dynamic DNS hostname that you created from the <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Dynamic-DNS-service"><b>instructions</b></a>. For example:`trinibvpn.freeddns.org`
+ * The script is going to ask for a Public IPv4/hostname for the VPN. If you have static IP then continue or else type the dynamic DNS hostname that you created from the <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Dynamic-DNS-service">instructions</a>. For example:`trinibvpn.freeddns.org`
 
  * For port option `press enter` for default 51820, set client name and for DNS use option 3 (`1.1.1.1`) for now.
 
