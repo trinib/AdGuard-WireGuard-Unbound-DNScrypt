@@ -16,7 +16,7 @@ userName = "Yours"
 # Your password
 password = "Yours"
 
-### Example urls (can remove and add your own from https://github.com/T145/black-mirror#-sources) 
+### Example urls (can remove/add your own from https://github.com/T145/black-mirror/blob/master/SOURCES.md) 
 urls = [
 "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt",
 "https://adaway.org/hosts.txt",
