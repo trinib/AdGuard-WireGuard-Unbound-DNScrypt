@@ -17,7 +17,11 @@
      <a href="https://img.shields.io/github/watchers/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=9700b2&style=for-the-badge" alt="GitHub watchers">
          <img src="https://img.shields.io/github/watchers/trinib/AdGuard-WireGuard-Unbound-Cloudflare?color=9700b2&style=for-the-badge"></a>
 </p>
- 
+
+<div align="center">
+Translate Site | Traducir sitio  | 翻译网站 | Traduire le site | Перевести сайт | अनुवाद साइट
+<br><a href="https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb?hl=en"><img src="https://www.vectorlogo.zone/logos/google_chrome/google_chrome-icon.svg" width=20px height=20px></a>&nbsp;<a href="https://addons.mozilla.org/en-US/firefox/addon/traduzir-paginas-web/"><img src="https://www.vectorlogo.zone/logos/firefox/firefox-icon.svg" width=20px height=20px></a> <a href="https://addons.opera.com/en/extensions/details/translator/"><img src="https://www.vectorlogo.zone/logos/opera/opera-icon.svg" width=20px height=20px></a></div> 
+
 <h1 align="center">Features</h1>
 
 <div align="center"> 
@@ -44,11 +48,12 @@ _<a href="https://dnscrypt.info/"><b>DNScrypt</b></a>_</br>Modern encrypted DNS 
 
  - AdGuard default DNS resolvers - `60-70 msec`
  - Public Cloudflare/Quad9/Google DNS Resolvers - `50-70 msec`
- - This setup/configuration -  `5-10 msec`
+ - Self-hosted setup - `5-10 msec`
+ > **Note** Orginally `0 msec` but multiple blocklist with _excessive_ urls slown down low end devices affecting DNS speed. This result was tested on a 1GB | 1.4GH ARM architecture. Blocklists used [<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/blob/beb05c3a4b74a675dc88c43bcea41b08d00a04f3/bulkurls.py#L20"><b>click here</b></a>].
 <details><summary>🎥 Preview</summary>
 <p>
 
-AdGuard default <b><i>vs</i></b> setup/configuration:
+AdGuard default <b><i>vs</i></b> Self-hosted:
 
 https://user-images.githubusercontent.com/18756975/150230438-b767e86f-4e18-4791-b5fe-0813615a37a3.mp4
 
@@ -98,7 +103,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
 #
 # Requirements
  
-This tutorial is installed on a Raspberry Pi with Debian OS. Other Linux <a href="https://distrowatch.com/dwres.php?resource=popularity">operating system</a><i>(𝟹𝟸/𝟼𝟺bit)</i>, <a href="https://en.wikipedia.org/wiki/Category:Single-board_computers">hardware</a> or <a href="https://www.google.com/search?q=What+is+cloud+hosting+and+how+does+it+work%3F&client=firefox-b-d&biw=1280&bih=582&sxsrf=APq-WBv6YzP1uwdIJUrzsZs92CVrLMle2A%3A1651061176738&ei=uDFpYsvQLImOwbkPs-qJ6AY&ved=0ahUKEwjLjMSXmrT3AhUJRzABHTN1Am0Q4dUDCA0&uact=5&oq=What+is+cloud+hosting+and+how+does+it+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUIA6WIA6YPc8aAJwAXgAgAF6iAF6kgEDMC4xmAEAoAECoAEByAEJwAEB&sclient=gws-wiz">cloud service</a> can be used.</br>_(Raspberry Pi OS is most simple and recommended for Pi. For more experience users, <a href="https://dietpi.com/">DietPi</a> OS is also recommended)_
+This tutorial is installed on a Raspberry Pi with Debian OS. Other Linux <a href="https://distrowatch.com/dwres.php?resource=popularity">operating system</a><i>(𝟹𝟸/𝟼𝟺bit)</i>, <a href="https://en.wikipedia.org/wiki/Category:Single-board_computers">hardware</a> or <a href="https://www.google.com/search?q=cheap+cloud+hosting&client=firefox-b-d&sxsrf=ALiCzsYoJfYnpJOA1nwDPd1eX9mA-z_ozg%3A1662213729520&ei=YV4TY_OzH8y_kvQPkb-_sAE&ved=0ahUKEwiz6I3X5Pj5AhXMn4QIHZHfDxYQ4dUDCA0&oq=cheap+cloud+hosting&gs_lcp=Cgdnd3Mtd2l6EAxKBAhBGABKBAhGGABQAFgAYABoAHABeACAAQCIAQCSAQCYAQA&sclient=gws-wiz">cloud service</a> can be used.</br>_(Raspberry Pi OS is most simple and recommended for Pi. For more experience users, <a href="https://dietpi.com/">DietPi</a> OS is also recommended)_
 
    - A Raspberry Pi 3 or 4 version
    - A router that supports port forwarding(most can)
@@ -216,15 +221,21 @@ In AdGuard homepage under filters, select DNS blocklist section for adding URLs.
 <p align="center">
  <img src="https://i.imgur.com/xAlbKPW.png">
 
-***Ultimate blocklists sources*** :
-</br>
-<a href="https://github.com/T145/black-mirror"><img src="https://raw.githubusercontent.com/T145/black-mirror/master/.github/images/logo.png" width=220px height=60px></a>  
-<a href="https://github.com/T145/black-mirror#-sources">black-mirror</a> - _Automatically maintained malicious host blacklists and false-positive whitelists_
-</br>
-👊BIG THANKS👊 to <a href="https://github.com/T145"><b>T145</b></a>
+<p align="center">
+<b>Ultimate blocklists</b>
+<br>
+<a href="https://github.com/T145/black-mirror"><img src="https://raw.githubusercontent.com/T145/black-mirror/master/.github/images/logo.png" width=220px height=60px></a>
+<br>
+Automatically maintained malicious host blacklists and false-positive whitelists</p>
+
+👊BIG THANKS👊 to <a href="https://github.com/T145"><b>T145</b></a><br>
+Sources[<a href="https://github.com/T145/black-mirror/blob/master/SOURCES.md"><b>click here</b></a>]
+<b>
+</b>
 
 > **Note**
 Some lists can block important web content. To unblock, go to "Query Log" section, hover cursor over that specific query<i>(look for client IP & time)</i> to show _unblock_ option. The links is automatically created in "Custom filtering rules" example: `@@||bitly.com^$important`(can add the websites manually as well).
+
 
 ## Add/Remove multiple URLs
 
