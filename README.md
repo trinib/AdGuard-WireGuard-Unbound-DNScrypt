@@ -49,7 +49,7 @@ _<a href="https://dnscrypt.info/"><b>DNScrypt</b></a>_</br>Modern encrypted DNS 
  - AdGuard default DNS resolvers - `60-70 msec`
  - Public Cloudflare/Quad9/Google DNS Resolvers - `50-70 msec`
  - Self-hosted setup - `5-10 msec`
- > **Note** Orginally `0 msec` but multiple blocklist with _excessive_ urls slow down lowend devices affecting DNS speed. This result was tested on a 1GB | 1.4GH ARM architecture. Blocklists used [<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/blob/beb05c3a4b74a675dc88c43bcea41b08d00a04f3/bulkurls.py#L20"><b>click here</b></a>].
+ > **Note** Orginally `0 msec` but multiple blocklist with _excessive_ URLs slow down low-end devices affecting DNS speed. This result was tested on a 1GB | 1.4GH ARM architecture. Blocklists used [<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/blob/beb05c3a4b74a675dc88c43bcea41b08d00a04f3/bulkurls.py#L20"><b>click here</b></a>].
 <details><summary>🎥 Preview</summary>
 <p>
 
