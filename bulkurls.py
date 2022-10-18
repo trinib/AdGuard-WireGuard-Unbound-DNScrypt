@@ -47,14 +47,9 @@ urls = [
 "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt",
 "https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt",
 "https://raw.githubusercontent.com/ftpmorph/ftprivacy/master/blocklists/smartphone-ads-tracking.txt",
-"https://raw.githubusercontent.com/CleanMachine1/AdlistTXTS/main/adservers.txt",
 "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt",
 "https://easylist-downloads.adblockplus.org/easylist.txt",
-"https://easylist.to/easylist/easyprivacy.txt",
-"https://easylist.to/easylist/fanboy-annoyance.txt",
-"https://easylist.to/easylist/fanboy-social.txt",
 "https://anti-ad.net/easylist.txt",
-"https://hosts.anudeep.me/mirror/adservers.txt",
 "https://raw.githubusercontent.com/ookangzheng/dbl-oisd-nl/master/abp_light.txt",
 "https://raw.githubusercontent.com/ookangzheng/dbl-oisd-nl/master/dbl_light.txt",
 "https://raw.githubusercontent.com/ookangzheng/dbl-oisd-nl/master/hosts_light.txt",
@@ -81,12 +76,9 @@ urls = [
 "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareAdGuardHome.txt",
 "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/resource-abuse.txt",
 "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
-"https://secure.fanboy.co.nz/fanboy-cookiemonster.txt",
 "https://easylist-downloads.adblockplus.org/easyprivacy+easylist.txt",
 "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances.txt",
 "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-2022.txt",
-"https://secure.fanboy.co.nz/fanboy-annoyance.txt",
-"https://easylist.to/easylist/easylist.txt",
 "https://raw.githubusercontent.com/easylist/easylist/master/easylist/easylist_adservers.txt",
 "https://raw.githubusercontent.com/easylist/easylist/master/easylist/easylist_general_block.txt",
 "https://raw.githubusercontent.com/easylist/easylist/master/easylist/easylist_adservers_popup.txt",
@@ -110,7 +102,7 @@ class MyAdapter(HTTPAdapter):
                                        block=block,
                                        ssl_version=ssl.PROTOCOL_TLSv1)
 
-headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0'}     
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0', 'Content-Type': 'application/json'}
 
 s = requests.Session()
 s.mount(host, MyAdapter())
