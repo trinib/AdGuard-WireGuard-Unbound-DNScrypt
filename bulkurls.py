@@ -17,6 +17,10 @@ userName = "Yours"
 password = "Yours"
 
 ### Example urls (can remove/add your own from https://github.com/T145/black-mirror/blob/master/SOURCES.md) 
+
+### CHECK MULTIPLE URLs AT ONCE TO KNOW IT'S WORKING(else script might hang from a bad url): 
+##  https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/blob/main/assets/scripts/urlstatus.py
+
 urls = [
 "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt",
 "https://adaway.org/hosts.txt",
