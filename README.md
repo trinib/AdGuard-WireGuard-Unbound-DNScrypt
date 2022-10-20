@@ -211,8 +211,8 @@ In general settings, set "Query logs retention" to `24 hours`. (I read that for 
 
 ## Updating AdGuard
  
-AdGuard Home can be updated from its user interface or <a href="https://github.com/AdguardTeam/AdGuardHome/wiki/FAQ#how-to-update-adguard-home-manually">manually</a> from command line which I recommend for now. <br>
-_Use script constructed with update commands<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/AdGuard-Home-update-script"><b>🔗click here🔗</b></a>_.
+AdGuard Home can be updated from its user interface or <a href="https://github.com/AdguardTeam/AdGuardHome/wiki/FAQ#how-to-update-adguard-home-manually">manually</a> from command line.<br>
+_Use script constructed with manual commands and can set it to autorun<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/AdGuard-Home-update-script"><b>🔗click here🔗</b></a>_.
 
 ## Setting up AdGuard blocklist
 
@@ -236,10 +236,9 @@ Sources<a href="https://github.com/T145/black-mirror/blob/master/SOURCES.md"><b>
 > **Note**
 Some lists can block important web content. To unblock, go to "Query Log" section, hover cursor over that specific query<i>(look for client IP & time)</i> to show _unblock_ option. The links is automatically created in "Custom filtering rules" example: `@@||bitly.com^$important`(can add the websites manually as well).
 
-
 ## Add/Remove multiple URLs
 
-Only one URL can be added at a time in DNS blocklist with AdGuard for now, but there is a python script to add multiple URLs at once.<br>
+Only one URL can be added at a time in DNS blocklist with AdGuard for now, but a python script can be used to add multiple URLs at once.<br>
 Create a new python file(bulkurls.py):
 ```
 nano bulkurls.py
@@ -248,7 +247,7 @@ nano bulkurls.py
 Then copy and paste script text<a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>🔗click here🔗</b></a>. Set `your AdGuard credentials` and save (control+x then y then enter).
  
 > **Note**
-_If using **DietPi** install `sudo apt-get install python3-pip -y && pip install requests` for it is not installed by default._
+_If using **DietPi** install `sudo apt-get install python3-pip -y && pip install requests` for it is not currently installed by default._
   
 To run : `sudo python3 bulkurls.py`<br>
 _(Reboot when finished)_
@@ -280,8 +279,8 @@ If using AdGuard Home on a `VPS(Virtual private server)`, get a <a href="https:/
 #
 <h1 align="center"><b><i>Install Unbound</b></i> </h1>
 
-> **Note**
-Before installing other DNS resolvers, it is a good idea to turn off <a href="https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html">systemd-resolved</a> - DNSStubListener(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/27">issue#27</a>).
+> **Warning**
+Before installing other DNS resolvers, it is a good idea to turn off <a href="https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html">systemd-resolved</a> DNSStubListener(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/27">issue#27</a>).
 
 `OPTIONAL:` Installing via the package manager is the easiest option with automatic updates and stable versions. The downside is that it can be outdated for some distributions or not have all the compile-time options included that you want.<br>**Building and compiling** Unbound yourself ensures that you have the latest version and all the compile-time options you desire<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Build-Unbound-from-source"><b>🔗click here🔗</b></a>.
 
@@ -289,23 +288,23 @@ For the version from package manager, run the following command in terminal:
 ```
 sudo apt install unbound -y
 ```
-For recursively querying a host that is not cached as an address, the resolver needs to start at the top of the server tree and query the root servers, to know where to go for the top level domain for the address being queried. Unbound comes with default built-in hints.<br>Download latest:
+> **Note**
+_If using **DietPi**, just install resolvconf and restart unbound-resolvconf.service to automatically set `nameserver 127.0.0.1`:_
+
+>     sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.service
+
+> **Note** > Run `ping google.com` to confirm localhost is reachable to internet, if not, set your default network's dns/gateway with resolv package<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Set-permanent-DNS-nameservers"><b>🔗click here🔗</b></a>
+
+* For recursively querying a host that is not cached as an address, the resolver needs to start at the top of the server tree and query the root servers, to know where to go for the top level domain for the address being queried. Unbound comes with default built-in hints.<br>Download latest:
 ```
 wget -O root.hints https://www.internic.net/domain/named.root && sudo mv root.hints /var/lib/unbound/
 ```
 
-This needs to update every 6 months using <a href="https://www.google.com/search?q=How+does+cron+job+work%3F&client=firefox-b-d&sxsrf=ALiCzsbaAmCCZqLJt2cOtQ3UXn7wxrWD3Q%3A1651353477111&ei=hadtYt-vBoavqtsP_fGX4Ak&ved=0ahUKEwifhpuL27z3AhWGl2oFHf34BZwQ4dUDCA0&uact=5&oq=How+does+cron+job+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDTAVjTAWDRBmgBcAF4AIABfYgBfZIBAzAuMZgBAKABAqABAcgBCcABAQ&sclient=gws-wiz">cron job</a>.
-
-Enter in command line `crontab -e`, it will ask select an editor(choose 1), paste these lines at the bottom of crontab and save (control+x then y then enter):
+* This needs to update every 6 months using <a href="https://www.google.com/search?q=How+does+cron+job+work%3F&client=firefox-b-d&sxsrf=ALiCzsbaAmCCZqLJt2cOtQ3UXn7wxrWD3Q%3A1651353477111&ei=hadtYt-vBoavqtsP_fGX4Ak&ved=0ahUKEwifhpuL27z3AhWGl2oFHf34BZwQ4dUDCA0&uact=5&oq=How+does+cron+job+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDTAVjTAWDRBmgBcAF4AIABfYgBfZIBAzAuMZgBAKABAqABAcgBCcABAQ&sclient=gws-wiz">cron job</a>. Enter in command line `crontab -e`, it will ask select an editor(choose 1), paste these lines at the bottom of crontab and save (control+x then y then enter):
 ```
 1 0 1 */6 * wget -O root.hints https://www.internic.net/domain/named.root
 2 0 1 */6 * sudo mv root.hints /var/lib/unbound/
 ```
-> **Note**
-_If using **DietPi**, install resolvconf and restart unbound-resolvconf.service to set default nameserver to 127.0.0.1:_
-
->     sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.service
- 
 
 <p align="center">
  <img src="https://i.imgur.com/26ro62t.jpg">
@@ -377,6 +376,8 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
 ```
 <p align="center">
  <img src="https://i.imgur.com/7zIpWP2.jpg" width=650px height=370px>
+ 
+
  
 
 ## Configure AdGuard with `(DoH/DoT/oDoH)`
