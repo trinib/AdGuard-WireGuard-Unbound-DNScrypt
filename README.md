@@ -93,8 +93,8 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
  - [Install WireGuard](#install-wireguard-) <img src="https://www.vectorlogo.zone/logos/wireguard/wireguard-icon.svg" width=20px height=20px>
    - [Connecting VPN to Android/IOS Phone](#connecting-vpn-to-androidios-phone)
    - [Connecting VPN to Windows](#connecting-vpn-to-windows)
-   - [Install OpenVPN](#install-openvpn-as-an-alternativeclick-here)</a> <img src="https://i.imgur.com/Agstbe5.png" width=20px height=20px>
    - [Configure WireGuard with adblocking & DNS security](#configure-wireguard-with-adblocking--dns-security)
+   - [Install OpenVPN](#install-openvpn-as-an-alternativeclick-here)</a> <img src="https://i.imgur.com/Agstbe5.png" width=20px height=20px>
      - [Limit traffic](#limit-traffic)
      - [Disable all IPv6](#disable-all-ipv6)
    - [Test Vpn](#test-vpn) <img src="https://i.imgur.com/6Yf8Zra.png" width=20px height=20px>
@@ -119,9 +119,7 @@ Raspberry Pi OS comes in desktop and lite versions(use lite for <a href="https:/
 
  * Install Raspberry Pi Imager: https://www.raspberrypi.com/software/
 
- * Download Raspberry Pi OS image: https://www.raspberrypi.org/software/operating-systems/
-
-- Open Pi Imager tool and configure settings in advanced options. Choose image, select microSD card and click `Write`.
+- Open Pi Imager tool and choose OS, go to advanced settings and configure user details. Then choose storage and write.
 
 <p align="center">
  <img src="https://i.imgur.com/S6pDPZv.png">
@@ -228,7 +226,7 @@ In AdGuard homepage under filters, select DNS blocklist section for adding URLs.
 <br>
 Automatically maintained malicious host blacklists and false-positive whitelists</p>
 
-👊BIG THANKS👊 to <a href="https://github.com/T145"><b>T145</b></a><br>
+👊BIG THANKS👊 to <a href="https://github.com/T145">T145</a><br>
 Sources<a href="https://github.com/T145/black-mirror/blob/master/SOURCES.md"><b>🔗click here🔗</b></a>
 <b>
 </b>
@@ -247,7 +245,7 @@ nano bulkurls.py
 Then copy and paste script text<a href="https://raw.githubusercontent.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/main/bulkurls.py"><b>🔗click here🔗</b></a>. Set `your AdGuard credentials` and save (control+x then y then enter).
  
 > **Note**
-_If using **DietPi** install `sudo apt-get install python3-pip -y && pip install requests` for it is not currently installed by default._
+If using **DietPi** install `sudo apt-get install python3-pip -y && pip install requests` for it is not currently installed by default.
   
 To run : `sudo python3 bulkurls.py`<br>
 _(Reboot when finished)_
@@ -289,11 +287,12 @@ For the version from package manager, run the following command in terminal:
 sudo apt install unbound -y
 ```
 > **Note**
-_If using **DietPi**, just install resolvconf and restart unbound-resolvconf.service to automatically set `nameserver 127.0.0.1`:_
+If using **DietPi** or other OS that do not auto add `nameserver 127.0.0.1` to resolv.conf (open `sudo nano /etc/resolv.conf` to check), just install resolvconf package and restart unbound-resolvconf.service it should automatically set:
 
 >     sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.service
 
-> **Note** > Run `ping google.com` to confirm localhost is reachable to internet, if not, set your default network's dns/gateway with resolv package<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Set-permanent-DNS-nameservers"><b>🔗click here🔗</b></a>
+> **Note**
+Run `ping -c 3 google.com` to confirm localhost is reachable to internet, if not, set your default network's dns/gateway with resolv package<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Set-permanent-DNS-nameservers"><b>🔗click here🔗</b></a>
 
 * For recursively querying a host that is not cached as an address, the resolver needs to start at the top of the server tree and query the root servers, to know where to go for the top level domain for the address being queried. Unbound comes with default built-in hints.<br>Download latest:
 ```
@@ -317,7 +316,7 @@ wget -O root.hints https://www.internic.net/domain/named.root && sudo mv root.hi
 <h1 align="center"><b><i>Setup DNS Security</b></i> </h1>
 
 ## Configure DoH/oDoH
-<b>Option 1 (Simple)</b><br><br>Cloudflare Tunnel<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Cloudflared-Tunnel-(DoH)"><b>🔗click here🔗</b></a>:<br>(DNS over HTTPS only)
+<b>Option 1 (Simple)</b><br><br>Cloudflare Tunnel<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Cloudflared-Tunnel-(DoH)"><b>🔗click here🔗</b></a>:<br>- DNS over HTTPS only
 
 <b>Option 2 (Advanced)</b><h4>DNScrypt proxy<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-DNScrypt-proxy-(DoH)(oDoH)(Anonymized-DNS)"><b>🔗click here🔗</b></a>:</h4>- DNS over HTTPS
 
@@ -378,8 +377,6 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
  <img src="https://i.imgur.com/7zIpWP2.jpg" width=650px height=370px>
  
 
- 
-
 ## Configure AdGuard with `(DoH/DoT/oDoH)`
 
  * In AdGuard homepage under settings, select **DNS settings**
@@ -395,7 +392,7 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
  
    - TLS forwarder(stubby) : `127.0.0.1:8053` 
 
-* <b>`IMPORTANT:`</b> Check "<a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns">Parallel Request</a>" option for DNS resolvers to work simultaneously.
+* <b>`IMPORTANT:`</b> Check <a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns">Parallel Request</a> option for DNS resolvers to work simultaneously.
 
 <p align="center">
  <img src="https://i.imgur.com/iQRdMax.png" width=650px height=320px>
@@ -404,7 +401,7 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
  
 Click apply and test upstreams
 
-#### Stable DNS resolving
+### Stable DNS resolving
  
 > **Note**
 Help resolve multiple DNS servers on Windows system and Android browsers. Linux works fine</b><i>(tested on ubuntu)</i>
@@ -427,7 +424,7 @@ Help resolve multiple DNS servers on Windows system and Android browsers. Linux 
 
  * In whatever browser is used, turn **off** `Use Secure DNS` option if available.
 
- *  Try adding Pi's IP address in 2nd DNS field.
+ *  `OPTIONAL:`Try adding Pi's IP address in 2nd DNS field or the public address of the DNS server you are currently using.
  
  * Be aware conflicts can occur with custom rooted roms&kernels with build.prop DNS tweaks or apps/magisk module.
 
@@ -452,7 +449,7 @@ https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNS
 <h1 align="center"><b><i>Install WireGuard</b></i> </h1>
 
 > **Warning**
-**Before installing WireGuard**, if you do not have a external/public <a href="https://www.google.com/search?client=firefox-b-d&q=static+IP">static IP</a> it will change dynamically from your internet service provider or from a router reboot. You will need to setup a dynamic DNS service with a hostname to keep automatically up-to-date with a dynamic IP<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-a-DNS-domain-hostname"><b>🔗click here🔗</b></a>. Or else skip this.<br><br>You also need to set up <a href="https://www.google.com/search?q=What+is+port+forwarding+used+for%3F&client=firefox-b-d&sxsrf=APq-WBuwPqGlPJ6N9_l6qpQ3e5sYoUxZAQ%3A1650219365125&ei=ZVlcYo6sB6SGwbkP8tGOwA8&ved=0ahUKEwjO8ryY2pv3AhUkQzABHfKoA_gQ4dUDCA0&uact=5&oq=What+is+port+forwarding+used+for%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDMAVjMAWCBBWgBcAF4AIABbIgBbJIBAzAuMZgBAKABAqABAcgBCsABAQ&sclient=gws-wiz">port forwarding</a> on your router so you can access WireGuard network anywhere like a coffee shop hotspot and even from mobile data tethering.
+**Before installing WireGuard**, if you do not have a external/public <a href="https://www.google.com/search?client=firefox-b-d&q=static+IP">static IP</a> it will change dynamically from your internet service provider or from a router reboot. You will need to setup a dynamic DNS service with a hostname to keep automatically up-to-date with a dynamic IP<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-a-DNS-domain-hostname"><b>🔗click here🔗</b></a>. Or else skip this.<br><br>You also need to set up <a href="https://www.google.com/search?q=What+is+port+forwarding+used+for%3F&client=firefox-b-d&sxsrf=APq-WBuwPqGlPJ6N9_l6qpQ3e5sYoUxZAQ%3A1650219365125&ei=ZVlcYo6sB6SGwbkP8tGOwA8&ved=0ahUKEwjO8ryY2pv3AhUkQzABHfKoA_gQ4dUDCA0&uact=5&oq=What+is+port+forwarding+used+for%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDMAVjMAWCBBWgBcAF4AIABbIgBbJIBAzAuMZgBAKABAqABAcgBCsABAQ&sclient=gws-wiz">port forwarding</a> on your router so you can access WireGuard network anywhere like open wifi/hotspots and even from mobile data tethering.
 
 TYPE | VALUE     
 ------------ | -------------
@@ -468,16 +465,16 @@ Example of my router port settings:
  <img src="https://i.imgur.com/9LBEk1i.jpg" width="640" height="420">
 
 > **Note**
-Other router brands will have a different interface look. Google search it for help. If you cannot connect from a outside network that means your ISP has blocked outcoming connections, call them and ask nicely to unblock.
+Other router brands will have a different interface look. Google search it for help. If you cannot connect from a outside network that means your ISP has blocked incoming connections and only allow outgoing, call them and ask nicely to unblock.
 
 #
-👊BIG THANKS👊 for this installation script from <a href="https://github.com/Nyr/wireguard-install"><b>Nyr</b></a>. Follow to keep updated.<br>(<a href="https://www.pivpn.io/">PiVPN</a> script can also be used)
+👊BIG THANKS👊 for this installation script from <a href="https://github.com/Nyr/wireguard-install">Nyr</a>. Follow to keep updated.<br>(<a href="https://www.pivpn.io/">PiVPN</a> script can also be used)
 
-Run the following command in terminal:
+Download and run script in terminal:
 ```
 wget https://git.io/wireguard -O wireguard-install.sh && sudo bash wireguard-install.sh
 ```
- * The script is going to ask for a Public IPv4/hostname for the VPN. If you have static IP then continue or else type the dynamic DNS hostname that you created from the <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Dynamic-DNS-service">instructions</a>. For example:`trinibvpn.freeddns.org`
+ * The script is going to ask for a Public IPv4/hostname for the VPN. If you have static IP then continue or else type the dynamic DNS hostname that was created from the <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-a-DNS-domain-hostname">instructions</a>. For example:`trinibvpn.freeddns.org`
 
  * For port option `press enter` for default 51820, set client name and for DNS use option 3 (`1.1.1.1`) for now.
 
@@ -491,8 +488,6 @@ sudo cp /root/yourclientname.conf /home/pi && sudo qrencode -t ansiutf8 < yourcl
                                                                                              
 > **Warning**
 You will need to add a new client/user for each device<i>(cannot use 1 client with multiple devices at the same time)</i>. To add, re-run the script and create another user with different client name.
-
-### _Install OpenVPN as an alternative<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-OpenVPN"><b>🔗click here🔗</b></a>_
 
 ### Connecting VPN To Android/IOS Phone
 
@@ -521,7 +516,7 @@ sudo cat /root/yourclientname.conf
 ```
  * Highlight all the text, copy and paste it in the txt file on PC and save. Then rename the extension from `txt` to `conf`. Now you have config file for that specific WireGuard client/user.
 
- * Import the config file to WireGuard (import from file option).
+ * Import the config file to WireGuard (import from file option), save and connect.
 
 ## Configure WireGuard with adblocking & DNS security
 
@@ -534,10 +529,13 @@ I think it might not make much of a difference to use DoT/DoH/oDoH with WireGuar
 
 <p align="center">
  <img src="https://i.imgur.com/UC0vWfE.jpg" width=450px height=500px>  
-
+ 
+### _Install OpenVPN as an alternative<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-OpenVPN"><b>🔗click here🔗</b></a>_
+ 
+#
 ### Limit traffic
 
-WireGuard will lose a fair percentage of internet speed from the process of tunneling through Linux system, to router, to devices. You need send traffic through your local network only for better speeds<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Limit-traffic-on-VPN"><b>🔗click here🔗</b></a>.
+Self-hosted VPNs will lose a fair percentage of internet speed from the process of tunneling through Linux system, to router, to devices. You need send traffic through your local network only for better speeds<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Limit-traffic-on-VPN"><b>🔗click here🔗</b></a>.
 
 #
 ### Disable all IPv6
