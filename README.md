@@ -44,7 +44,7 @@ _<a href="https://dnscrypt.info/"><b>DNScrypt</b></a>_</br>Modern encrypted DNS 
 <i>All software are free, open-source and&nbsp;self-hosted&nbsp;</i></br><a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/wiki/About"><b>ABOUT</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>FAQ</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki"><b>WIKI</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions"><b>DISCUSS</b></a>
 
 <h3 align="left">DNS query speed 🧪</h3>
-<a href="https://docs.oracle.com/en-us/iaas/Content/DNS/Tasks/testingdnsusingdig.htm">BIND'S dig tool</a> results from google.com servers(lan):
+<a href="https://docs.oracle.com/en-us/iaas/Content/DNS/Tasks/testingdnsusingdig.htm">BIND'S dig tool</a> results from google.com servers(Ethernet LAN):
 
  - AdGuard default DNS resolvers - `60-70 msec`
  - Public Cloudflare/Quad9/Google DNS Resolvers - `50-70 msec`
@@ -277,7 +277,7 @@ If using AdGuard Home on a `VPS(Virtual private server)`, get a <a href="https:/
 #
 <h1 align="center"><b><i>Install Unbound</b></i> </h1>
 
-> **Warning**
+> **Note**
 Before installing other DNS resolvers, it is a good idea to turn off <a href="https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html">systemd-resolved</a> DNSStubListener(<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/issues/27">issue#27</a>).
 
 `OPTIONAL:` Installing via the package manager is the easiest option with automatic updates and stable versions. The downside is that it can be outdated for some distributions or not have all the compile-time options included that you want.<br>**Building and compiling** Unbound yourself ensures that you have the latest version and all the compile-time options you desire<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Build-Unbound-from-source"><b>🔗click here🔗</b></a>.
@@ -286,13 +286,11 @@ For the version from package manager, run the following command in terminal:
 ```
 sudo apt install unbound -y
 ```
-> **Note**
-If using **DietPi** or other OS that do not auto add `nameserver 127.0.0.1` to resolv.conf (open `sudo nano /etc/resolv.conf` to check), just install resolvconf package and restart unbound-resolvconf.service it should automatically set:
+> **Warning**
+If using **DietPi** or other OS that do not auto insert `nameserver 127.0.0.1` to resolv.conf (to check open `sudo nano /etc/resolv.conf`), just install resolvconf package and restart unbound-resolvconf.service which should automatically set:
 
 >     sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.service
-
-> **Note**
-Run `ping -c 3 google.com` to confirm localhost is reachable to internet, if not, set your default network's dns/gateway with resolv package<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Set-permanent-DNS-nameservers"><b>🔗click here🔗</b></a>
+> Run `ping -c 3 google.com` to confirm localhost is reachable to internet. If not, set your default network's dns/gateway or whatever it had before using resolv package<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Set-permanent-DNS-nameservers"><b>🔗click here🔗</b></a>
 
 * For recursively querying a host that is not cached as an address, the resolver needs to start at the top of the server tree and query the root servers, to know where to go for the top level domain for the address being queried. Unbound comes with default built-in hints.<br>Download latest:
 ```
@@ -369,7 +367,7 @@ awk '{sub(/[#]forward-addr: 127.0.0.1@8053/,"forward-addr: 127.0.0.1@8053") || s
 ```
  - Choose DNS provider<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/DNS-Providers#stubby"><b>🔗click here🔗</b></a>
 
-* Restart unbound & stubby and check status:
+Restart unbound & stubby and check status:
 ```
 sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
 ```
