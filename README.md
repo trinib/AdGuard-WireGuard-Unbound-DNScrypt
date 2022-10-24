@@ -87,9 +87,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
    - [Configure DoT on Unbound](#configure-dot-on-unbound)
      - [Configure Stubby and Unbound](#configure-stubby-and-unbound)
    - [Configure AdGuard with (DoH/DoT/oDoH)](#configure-adguard-with-dohdotodoh)
-     - [Stable DNS resolving](#stable-dns-resolving)
-       - [Windows](#windows)
-       - [Android](#android)
+     - [Monitor query logs](#use-tail-command-to-monitor-logs-in-realtime)
  - [Install WireGuard](#install-wireguard-) <img src="https://www.vectorlogo.zone/logos/wireguard/wireguard-icon.svg" width=20px height=20px>
    - [Connecting VPN to Android/IOS Phone](#connecting-vpn-to-androidios-phone)
    - [Connecting VPN to Windows](#connecting-vpn-to-windows)
@@ -286,8 +284,8 @@ For the version from package manager, run the following command in terminal:
 ```
 sudo apt install unbound -y
 ```
-> **Warning**
-If using **DietPi** or other OS that do not auto insert `nameserver 127.0.0.1` to resolv.conf (to check open `sudo nano /etc/resolv.conf`), just install resolvconf package and restart unbound-resolvconf.service which should automatically set:
+> **Note**
+If using **DietPi** or other OS that do not auto insert `nameserver 127.0.0.1` to resolv.conf for local host(to check open `sudo nano /etc/resolv.conf`), just install resolvconf package and restart unbound-resolvconf.service which should automatically set:
 
 >     sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.service
 > Run `ping -c 3 google.com` to confirm localhost is reachable to internet. If not, set your default network's dns/gateway or whatever it had before using resolv package<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Set-permanent-DNS-nameservers"><b>🔗click here🔗</b></a>
@@ -399,33 +397,6 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
  
 Click apply and test upstreams
 
-### Stable DNS resolving
- 
-> **Note**
-Help resolve multiple DNS servers on Windows system and Android browsers. Linux works fine</b><i>(tested on ubuntu)</i>
-
-#### Windows 
-
- * Install Acrylic DNS Proxy: https://mayakron.altervista.org/support/acrylic/Home.htm
-
- * Go to `C:\Program Files (x86)\Acrylic DNS Proxy` and open `AcrylicConfiguration.ini` file. Delete everything and copy these settings<a href="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/AcrylicConfiguration.ini"><b>🔗click here🔗</b></a>, only change _**PrimaryServerAddres**_ to your Pi's address.
-
- * In same folder run `RestartAcrylicService.bat` & `PurgeAcrylicCacheData.bat`
-
- `TIP:` Troubleshoot IP/DNS Commands
-  ```
- ipconfig /release
- ipconfig /renew
- ipconfig /flushdns
-  ```
-#### Android
-
- * In whatever browser is used, turn **off** `Use Secure DNS` option if available.
-
- *  `OPTIONAL:`Try adding Pi's IP address in 2nd DNS field or the public address of the DNS server you are currently using.
- 
- * Be aware conflicts can occur with custom rooted roms&kernels with build.prop DNS tweaks or apps/magisk module.
-
 #### Now go to https://1.1.1.1/help in browser and these options should output 'Yes'. 
  - [x] Connected to 1.1.1.1
  - [x] DNS over HTTPS(DoH)
@@ -433,13 +404,38 @@ Help resolve multiple DNS servers on Windows system and Android browsers. Linux 
  - [ ] DNS over WARP
  <p align="center">
   <img src="https://i.imgur.com/ootfGYq.jpg" width=650px height=300px>
+ 
+### Sometimes DoH or DoT shows no?
+This could just be a fault on 1.1.1.1/help cause according to logs, for example DNScrypt with DNS over HTTPS shows it **does recieve a query response/PASS** although when showing "no" for DNS over HTTPS.
+
+https://user-images.githubusercontent.com/18756975/197397288-18c7f33b-abb3-4628-b8e3-1ad29623f693.mp4
+
+Same goes in Unbound logs when DNS over TLS shows "no"(still gets queried):</br>
+A records(IPv4)
+![image](https://user-images.githubusercontent.com/18756975/197407812-c125ae9e-f2aa-4365-92c6-6cd3f276ed0b.png)
+AAA records(IPv6)
+![image](https://user-images.githubusercontent.com/18756975/197410901-0e8ad2fa-74c5-4cb2-9108-4e2ecad85508.png)
+
+### Use <a href="https://www.google.com/search?q=tail+command+linux&client=firefox-b-d&sxsrf=ALiCzsaQct9z6HQfHBLwvEOCwmAX_0rI9g%3A1666552446396&ei=fpJVY4nuF5DCkwWYx5SIBw&oq=WHAT+IS+TAIL+COMMAND&gs_lcp=Cgdnd3Mtd2l6EAEYADIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwA0oECE0YAUoECEEYAEoECEYYAFAAWABgsA1oAXABeACAAQCIAQCSAQCYAQDIAQjAAQE&sclient=gws-wiz">tail</a> command to monitor logs in realtime:
+```
+## If using unbound from package manager, manually create log file - sudo touch /var/log/unbound.log
+## and permission set - sudo chown unbound:unbound /var/log/unbound.log
+## Choose verbosity level and set log path in unbound.conf - logfile: /var/log/unbound.log
+## Restart unbound - sudo systemctl restart unbound
+
+sudo tail -f /var/log/unbound.log
+
+sudo tail -f /var/log/dnscrypt-proxy/query.log
+```
+
+`Optional:` Stable DNS resolving<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Stable-DNS-resolving(optional)"><b>🔗click here🔗</b></a>
 
 #### Other sites to check security
 https://browserleaks.com/dns - should show all connected to "Cloudflare"
 
 https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNSSEC signatures"
  
- https://dnscheck.tools/ - inspect your dns resolvers (DNSSEC using ECDSA P-256,DNSSEC using ECDSA P-384,DNSSEC using Ed25519)
+https://dnscheck.tools/ - inspect your dns resolvers (DNSSEC using ECDSA P-256,DNSSEC using ECDSA P-384,DNSSEC using Ed25519)
 
 **[⬆ Return to contents ⬆](#table-of-contents)**
 
