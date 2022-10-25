@@ -96,7 +96,9 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
      - [Limit traffic](#limit-traffic)
      - [Disable all IPv6](#disable-all-ipv6)
    - [Test Vpn](#test-vpn) <img src="https://i.imgur.com/6Yf8Zra.png" width=20px height=20px>
+ - [Extras](#extras)
  - [Repository Resources](#repository-resources)
+
 
 #
 # Requirements
@@ -285,7 +287,7 @@ For the version from package manager, run the following command in terminal:
 sudo apt install unbound -y
 ```
 > **Note**
-If using **DietPi** or other OS that do not auto insert `nameserver 127.0.0.1` to resolv.conf for local host(to check open `sudo nano /etc/resolv.conf`), just install resolvconf package and restart unbound-resolvconf.service which should automatically set:
+If using **DietPi** or other OS that do not auto insert `nameserver 127.0.0.1` in resolv.conf(to check - `sudo nano /etc/resolv.conf`) and want to query cache on **local host** and not only server hosts, just install resolvconf package and restart unbound-resolvconf.service which should be automatically set:
 
 >     sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.service
 > Run `ping -c 3 google.com` to confirm localhost is reachable to internet. If not, set your default network's dns/gateway or whatever it had before using resolv package<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Set-permanent-DNS-nameservers"><b>🔗click here🔗</b></a>
@@ -412,9 +414,10 @@ https://user-images.githubusercontent.com/18756975/197397288-18c7f33b-abb3-4628-
 
 Same goes in Unbound logs when DNS over TLS shows "no"(still gets queried):</br>
 A records(IPv4)
-![image](https://user-images.githubusercontent.com/18756975/197407812-c125ae9e-f2aa-4365-92c6-6cd3f276ed0b.png)
+![1](https://user-images.githubusercontent.com/18756975/197861561-eba3ed9d-470e-4ee6-956a-4b734d6c7c1d.jpg)
+
 AAA records(IPv6)
-![image](https://user-images.githubusercontent.com/18756975/197410901-0e8ad2fa-74c5-4cb2-9108-4e2ecad85508.png)
+![2](https://user-images.githubusercontent.com/18756975/197861617-89136d97-2d0f-4702-968e-bd3023217be0.jpg)
 
 ### Use <a href="https://www.google.com/search?q=tail+command+linux&client=firefox-b-d&sxsrf=ALiCzsaQct9z6HQfHBLwvEOCwmAX_0rI9g%3A1666552446396&ei=fpJVY4nuF5DCkwWYx5SIBw&oq=WHAT+IS+TAIL+COMMAND&gs_lcp=Cgdnd3Mtd2l6EAEYADIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwA0oECE0YAUoECEEYAEoECEYYAFAAWABgsA1oAXABeACAAQCIAQCSAQCYAQDIAQjAAQE&sclient=gws-wiz">tail</a> command to monitor logs in realtime:
 ```
@@ -573,6 +576,20 @@ You should see all connections `closed` and status showing all `DNS port 53` and
 <p align="center">
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"</p>
 
+#
+ 
+## Extras
+ 
+<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/AdGuard-Home-Dark-Theme">AdGuard Home Dark Theme</a>
+ 
+<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Auto-Update-Raspberry-Pi">Auto Update Raspberry Pi</a>
+ 
+<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Secure-your-Raspberry-Pi">Secure your Raspberry Pi</a>
+ 
+<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Improve-SD-Card%E2%80%99s-lifespan">Improve SD Card’s lifespan</a>
+ 
+<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Install-NextDNS">NextDNS Client</a>
+ 
 #
 
 ## Repository Resources
