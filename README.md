@@ -421,13 +421,14 @@ AAA records(IPv6)
 
 ### Use <a href="https://www.google.com/search?q=tail+command+linux&client=firefox-b-d&sxsrf=ALiCzsaQct9z6HQfHBLwvEOCwmAX_0rI9g%3A1666552446396&ei=fpJVY4nuF5DCkwWYx5SIBw&oq=WHAT+IS+TAIL+COMMAND&gs_lcp=Cgdnd3Mtd2l6EAEYADIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwA0oECE0YAUoECEEYAEoECEYYAFAAWABgsA1oAXABeACAAQCIAQCSAQCYAQDIAQjAAQE&sclient=gws-wiz">tail</a> command to monitor logs in realtime:
 ```
+## Unbound
 ## If using unbound from package manager, manually create log file - sudo touch /var/log/unbound.log
-## and permission set - sudo chown unbound:unbound /var/log/unbound.log
+## and set permission - sudo chown unbound:unbound /var/log/unbound.log
 ## Choose verbosity level and set log path in unbound.conf - logfile: /var/log/unbound.log
 ## Restart unbound - sudo systemctl restart unbound
-
 sudo tail -f /var/log/unbound.log
 
+## DNSCrypt
 sudo tail -f /var/log/dnscrypt-proxy/query.log
 ```
 
@@ -589,6 +590,10 @@ You should see all connections `closed` and status showing all `DNS port 53` and
 <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Improve-SD-Card%E2%80%99s-lifespan">Improve SD Card’s lifespan</a>
  
 <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Install-NextDNS">NextDNS Client</a>
+
+<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Network-CLI-Tools">Network CLI Tools</a>
+
+<a href="https://github.com/RehanSaeed/Bash-Cheat-Sheet">Useful Linux Bash commands</a>
  
 #
 
