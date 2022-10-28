@@ -83,6 +83,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
  - [Install Knot](#install-knot-resolver-as-an-alternativeclick-here) <img src="https://www.vectorlogo.zone/logos/knot-resolvercz/knot-resolvercz-icon.svg" width=20px height=20px>
  - [Setup DNS security](#setup-dns-security-)
    - [Configure DoH/oDoH](#configure-dohodoh)
+     - [Cloudflared tunnel](#cloudflared-tunnelclick-here) <img src="https://www.vectorlogo.zone/logos/cloudflare/cloudflare-icon.svg" width=20px height=20px>
      - [DNScrypt proxy](#dnscrypt-proxyclick-here) <img src="https://i.imgur.com/lEHVsn3.png" width=20px height=20px>
    - [Configure DoT on Unbound](#configure-dot-on-unbound)
      - [Configure Stubby and Unbound](#configure-stubby-and-unbound)
@@ -98,7 +99,6 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
    - [Test Vpn](#test-vpn) <img src="https://i.imgur.com/6Yf8Zra.png" width=20px height=20px>
  - [Extras](#extras)
  - [Repository Resources](#repository-resources)
-
 
 #
 # Requirements
@@ -231,7 +231,7 @@ Sources<a href="https://github.com/T145/black-mirror/blob/master/SOURCES.md"><b>
 <b>
 </b>
 
-> **Note**
+> **Warning**
 Some lists can block important web content. To unblock, go to "Query Log" section, hover cursor over that specific query<i>(look for client IP & time)</i> to show _unblock_ option. The links is automatically created in "Custom filtering rules" example: `@@||bitly.com^$important`(can add the websites manually as well).
 
 ## Add/Remove multiple URLs
@@ -287,10 +287,17 @@ For the version from package manager, run the following command in terminal:
 sudo apt install unbound -y
 ```
 > **Note**
-If using **DietPi** or other OS that do not auto insert `nameserver 127.0.0.1` in resolv.conf(to check - `sudo nano /etc/resolv.conf`) and want to query cache on **local host** and not only server hosts, just install resolvconf package and restart unbound-resolvconf.service which should be automatically set:
+If using **DietPi** or other OS that do not auto insert `nameserver 127.0.0.1` in resolv.conf(to check - `sudo nano /etc/resolv.conf`) and want to query cache on <a href="https://www.google.com/search?q=localhost+linux+meaning&client=firefox-b-d&sxsrf=ALiCzsaCZleUpowBYQYRTZoZukMmjAUZIg%3A1666980708699&ei=ZBtcY7GtKovbsAex8La4Bw&ved=0ahUKEwix7_SHw4P7AhWLLewKHTG4DXcQ4dUDCA4&uact=5&oq=localhost+linux+meaning&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIGCAAQFhAeMgUIABCGAzIFCAAQhgMyBQgAEIYDOgoIABBHENYEELADOgQIIxAnOgoIABAWEB4QDxAKSgQITRgBSgQIQRgASgQIRhgAUIQBWPsYYI4aaAFwAXgAgAHDAogByg-SAQcwLjEuNy4xmAEAoAEByAEIwAEB&sclient=gws-wiz-serp"><b>**local**</b></a> hosts, just install resolvconf package and restart unbound-resolvconf.service which should be automatically set:
 
 >     sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.service
-> Run `ping -c 3 google.com` to confirm localhost is reachable to internet. If not, set your default network's dns/gateway or whatever it had before using resolv package<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Set-permanent-DNS-nameservers"><b>🔗click here🔗</b></a>
+> Run `ping -c 3 google.com` to confirm localhost is reachable to internet. If not, set/add your default network's dns/gateway or whatever was the default<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Set-permanent-DNS-nameservers"><b>🔗click here🔗</b></a>
+
+Confirm 127.0.0.1 address interface is up:
+```py
+### Run `sudo apt install dnsutils` for dig tool
+dig google.com 127.0.0.1
+```
+![image](https://user-images.githubusercontent.com/18756975/198690997-62cea763-f1c1-4b15-b68c-e7a05f483182.png)
 
 * For recursively querying a host that is not cached as an address, the resolver needs to start at the top of the server tree and query the root servers, to know where to go for the top level domain for the address being queried. Unbound comes with default built-in hints.<br>Download latest:
 ```
@@ -314,9 +321,9 @@ wget -O root.hints https://www.internic.net/domain/named.root && sudo mv root.hi
 <h1 align="center"><b><i>Setup DNS Security</b></i> </h1>
 
 ## Configure DoH/oDoH
-<b>Option 1 (Simple)</b><br><br>Cloudflare Tunnel<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Cloudflared-Tunnel-(DoH)"><b>🔗click here🔗</b></a>:<br>- DNS over HTTPS only
+<i>Option 1 (Simple)</i><h4>Cloudflared Tunnel<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Cloudflared-Tunnel-(DoH)"><b>🔗click here🔗</b></a>:<br></h4>- DNS over HTTPS only
 
-<b>Option 2 (Advanced)</b><h4>DNScrypt proxy<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-DNScrypt-proxy-(DoH)(oDoH)(Anonymized-DNS)"><b>🔗click here🔗</b></a>:</h4>- DNS over HTTPS
+<i>Option 2 (Advanced)</i><h4>DNScrypt proxy<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-DNScrypt-proxy-(DoH)(oDoH)(Anonymized-DNS)"><b>🔗click here🔗</b></a>:</h4>- DNS over HTTPS
 
 <details><summary><b>Oblivious DNS Over HTTPS</b></summary>
 <p>
@@ -333,8 +340,7 @@ _<a href="https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Anonymized-DNS">Anonym
  
  </p>
  </details>
-
-
+ 
 ## Configure DoT on Unbound
 
 Download unbound <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/unbound.conf">configuration</a> file with DNS over TLS settings and move it to unbound folder.<br>
@@ -343,6 +349,10 @@ Enter in terminal:
 wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/unbound.conf && sudo mv unbound.conf /etc/unbound/unbound.conf.d/
 ```
  - Choose DNS provider<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/DNS-Providers#unbound"><b>🔗click here🔗</b></a>
+ 
+Run `dig google.com @127.0.0.1` to check for `NOERROR` status to confirm its connected to DNS server.
+
+![image](https://user-images.githubusercontent.com/18756975/198691170-142c0f62-c5c2-4148-a7bf-f7833ca2ebc0.png)
 
 ## Configure Stubby and Unbound
 
@@ -356,7 +366,7 @@ Install the version from package manager:
 ```
 sudo apt install stubby -y
 ```
-Download stubby <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/stubby.yml">configuration</a> file and replace with default one in stubby folder:
+- Download stubby <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/stubby.yml">configuration</a> file and replace with default one in stubby folder:
 ```
 wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/stubby.yml && sudo mv stubby.yml /etc/stubby/
 ```
@@ -420,7 +430,7 @@ AAA records(IPv6)
 ![2](https://user-images.githubusercontent.com/18756975/197861617-89136d97-2d0f-4702-968e-bd3023217be0.jpg)
 
 ### Use <a href="https://www.google.com/search?q=tail+command+linux&client=firefox-b-d&sxsrf=ALiCzsaQct9z6HQfHBLwvEOCwmAX_0rI9g%3A1666552446396&ei=fpJVY4nuF5DCkwWYx5SIBw&oq=WHAT+IS+TAIL+COMMAND&gs_lcp=Cgdnd3Mtd2l6EAEYADIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwA0oECE0YAUoECEEYAEoECEYYAFAAWABgsA1oAXABeACAAQCIAQCSAQCYAQDIAQjAAQE&sclient=gws-wiz">tail</a> command to monitor logs in realtime:
-```
+```py
 ## Unbound
 ## If using unbound from package manager, manually create log file - sudo touch /var/log/unbound.log
 ## and set permission - sudo chown unbound:unbound /var/log/unbound.log
@@ -593,7 +603,7 @@ You should see all connections `closed` and status showing all `DNS port 53` and
 
 <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Network-CLI-Tools">Network CLI Tools</a>
 
-<a href="https://github.com/RehanSaeed/Bash-Cheat-Sheet">Useful Linux Bash commands</a>
+<a href="https://github.com/RehanSaeed/Bash-Cheat-Sheet#bash-cheat-sheet">Useful Linux Bash commands</a>
  
 #
 
