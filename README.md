@@ -5,7 +5,6 @@
  <img src="https://img.shields.io/badge/badges-awesome-green.svg">
  <img src="https://img.shields.io/badge/Stay-Safe-red?logo=data:image/svg%2bxml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTEwIDUxMCIgaGVpZ2h0PSI1MTIiIHZpZXdCb3g9IjAgMCA1MTAgNTEwIiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnPjxnPjxwYXRoIGQ9Im0xNzQuNjEgMzAwYy0yMC41OCAwLTQwLjU2IDYuOTUtNTYuNjkgMTkuNzJsLTExMC4wOSA4NS43OTd2MTA0LjQ4M2g1My41MjlsNzYuNDcxLTY1aDEyNi44MnYtMTQ1eiIgZmlsbD0iI2ZmZGRjZSIvPjwvZz48cGF0aCBkPSJtNTAyLjE3IDI4NC43MmMwIDguOTUtMy42IDE3Ljg5LTEwLjc4IDI0LjQ2bC0xNDguNTYgMTM1LjgyaC03OC4xOHYtODVoNjguMThsMTE0LjM0LTEwMC4yMWMxMi44Mi0xMS4yMyAzMi4wNi0xMC45MiA0NC41LjczIDcgNi41NSAxMC41IDE1LjM4IDEwLjUgMjQuMnoiIGZpbGw9IiNmZmNjYmQiLz48cGF0aCBkPSJtMzMyLjgzIDM0OS42M3YxMC4zN2gtNjguMTh2LTYwaDE4LjU1YzI3LjQxIDAgNDkuNjMgMjIuMjIgNDkuNjMgNDkuNjN6IiBmaWxsPSIjZmZjY2JkIi8+PHBhdGggZD0ibTM5OS44IDc3LjN2OC4wMWMwIDIwLjY1LTguMDQgNDAuMDctMjIuNjQgNTQuNjdsLTExMi41MSAxMTIuNTF2LTIyNi42NmwzLjE4LTMuMTljMTQuNi0xNC42IDM0LjAyLTIyLjY0IDU0LjY3LTIyLjY0IDQyLjYyIDAgNzcuMyAzNC42OCA3Ny4zIDc3LjN6IiBmaWxsPSIjZDAwMDUwIi8+PHBhdGggZD0ibTI2NC42NSAyNS44M3YyMjYuNjZsLTExMi41MS0xMTIuNTFjLTE0LjYtMTQuNi0yMi42NC0zNC4wMi0yMi42NC01NC42N3YtOC4wMWMwLTQyLjYyIDM0LjY4LTc3LjMgNzcuMy03Ny4zIDIwLjY1IDAgNDAuMDYgOC4wNCA1NC42NiAyMi42NHoiIGZpbGw9IiNmZjRhNGEiLz48cGF0aCBkPSJtMjEyLjgzIDM2MC4xMnYzMGg1MS44MnYtMzB6IiBmaWxsPSIjZmZjY2JkIi8+PHBhdGggZD0ibTI2NC42NSAzNjAuMTJ2MzBoMzYuMTRsMzIuMDQtMzB6IiBmaWxsPSIjZmZiZGE5Ii8+PC9nPjwvc3ZnPg==">
 
-
 <h2 align="center"><img src="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/assets/images/awcu.gif" width= "700"></h2>
 
 </p>
@@ -43,14 +42,14 @@ _<a href="https://dnscrypt.info/"><b>DNScrypt</b></a>_</br>Modern encrypted DNS 
 <p align="right">
 <i>All software are free, open-source and&nbsp;self-hosted&nbsp;</i></br><a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/wiki/About"><b>ABOUT</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>FAQ</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki"><b>WIKI</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions"><b>DISCUSS</b></a>
 
-<h3 align="left">DNS query speed 🧪</h3>
-<a href="https://docs.oracle.com/en-us/iaas/Content/DNS/Tasks/testingdnsusingdig.htm">BIND'S dig tool</a> results from google.com servers(Ethernet LAN):
+<h3 align="left">DNS query time 🚨</h3>
+Query speed results(Ethernet LAN) using <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Dig(domain-information-groper)">BIND9 dig tool</a>:
 
  - AdGuard default DNS resolvers - `60-70 msec`
  - Public Cloudflare/Quad9/Google DNS Resolvers - `50-70 msec`
  - Self-hosted setup - `5-10 msec`
  > **Note** Originally `0 msec` but multiple blocklist with _excessive_ URLs slow down low-end devices affecting DNS query. This result was tested on a 1GB | 1.4GH ARM architecture. Blocklists used <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/blob/beb05c3a4b74a675dc88c43bcea41b08d00a04f3/bulkurls.py#L20"><b>🔗click here🔗</b></a>.
-<details><summary>🎥 Preview</summary>
+<details><summary>📹 Preview</summary>
 <p>
 
 AdGuard default <b><i>vs</i></b> Self-hosted:
@@ -58,7 +57,7 @@ AdGuard default <b><i>vs</i></b> Self-hosted:
 https://user-images.githubusercontent.com/18756975/150230438-b767e86f-4e18-4791-b5fe-0813615a37a3.mp4
 
 Public Cloudflare/Quad9/Google:</br>
-<i>(same results if addresses are added manually in a system's network DNS fields)</i>
+<i>(same results if addresses are added manually in the system's network DNS option fields)</i>
 
 https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-8ee2-b80227522252.mp4
 
@@ -569,8 +568,8 @@ You should see all connections `closed` and status showing all `DNS port 53` and
 
 ***
 
-<b>ANY ISSUES, FIXES OR TIPS TO MAKE THESE PROJECTS BETTER PLEASE CONTRIBUTE🤖</b>
-
+<p align="center">
+<b><i>✨ 𝘈𝘕𝘠 𝘐𝘚𝘚𝘜𝘌𝘚, 𝘍𝘐𝘟𝘌𝘚 𝘖𝘙 𝘛𝘐𝘗𝘚 𝘛𝘖 𝘔𝘈𝘒𝘌 𝘛𝘏𝘌𝘚𝘌 𝘗𝘙𝘖𝘑𝘌𝘊𝘛𝘚 𝘉𝘌𝘛𝘛𝘌𝘙 𝘗𝘓𝘌𝘈𝘚𝘌 𝘊𝘖𝘕𝘛𝘙𝘐𝘉𝘜𝘛𝘌 ✨</i></b>
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"
