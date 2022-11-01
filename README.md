@@ -89,7 +89,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
    - [Configure AdGuard with (DoH/DoT/oDoH)](#configure-adguard-with-dohdotodoh)
      - [Monitor query logs](#use-tail-command-to-monitor-logs-in-realtime)
  - [Install WireGuard](#install-wireguard-) <img src="https://www.vectorlogo.zone/logos/wireguard/wireguard-icon.svg" width=20px height=20px>
-   - [Connecting VPN to Android/IOS Phone](#connecting-vpn-to-androidios-phone)
+   - [Connecting VPN to Android/iOS Phone](#connecting-vpn-to-androidios-phone)
    - [Connecting VPN to Windows](#connecting-vpn-to-windows)
    - [Configure WireGuard with adblocking & DNS security](#configure-wireguard-with-adblocking--dns-security)
    - [Install OpenVPN](#install-openvpn-as-an-alternativeclick-here)</a> <img src="https://i.imgur.com/Agstbe5.png" width=20px height=20px>
@@ -129,17 +129,17 @@ Raspberry Pi OS comes in desktop and lite versions(use lite for <a href="https:/
 
  * Wait for a minute for Pi's first boot up
 
- * Open browser and login router's admin panel(default <a href="https://www.google.com/search?client=firefox-b-d&q=find+default+gateway+address">gateway</a> address)
+ * Open browser and login router's admin panel(default <a href="https://www.google.com/search?q=what+is+gateway+ip+address&client=firefox-b-d&biw=1440&bih=660&sxsrf=ALiCzsaDFykPI5rNea5FvSd5YDwm5cJNUg%3A1667340103798&ei=R5dhY-quMJaGwbkPt5is6Ao&oq=what+is+my+gateway+address&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQARgAMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgcIABCwAxBDMgcIABCwAxBDSgQIQRgASgQIRhgAUABYAGCaFWgBcAF4AIABAIgBAJIBAJgBAMgBCsABAQ&sclient=gws-wiz-serp">IP gateway address</a>)
  
  * Find list of all devices connected to network and copy the IP address of the Raspberry Pi. It will most likely have the hostname `raspberrypi`
 
- * Open terminal on host machine <i>(Windows powershell or raspcontroller for Android can be used)</i>.
+ * Open terminal on host machine <i>(Windows PowerShell or RaspController for <a href="https://play.google.com/store/apps/details?id=it.Ettore.raspcontroller&hl=en&gl=US">Android</a>&<a href="https://apps.apple.com/us/app/raspcontroller/id1584315865">iOS</a>)</i>.
 
 Type the following command:
 ```
 ssh pi@pi's IP address
 ```
-<i>Use right mouse button to paste text in Windows powerShell</i>.
+<i>Use right mouse button to paste text in Windows PowerShell</i>.
 
 Type “yes” for fingerprint question, and enter password.
 
@@ -184,7 +184,7 @@ curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/s
  * Set up username&password and then login admin panel
 
 > **Note**
-In general settings, set "Query logs retention" to `24 hours`. (I read that for some people logs fill up which slows down Pi and needing a reboot)
+In general settings, can set "Query logs retention" to `24 hours`. (on forums some users state logs fill up which slows down Pi and needing a reboot)
 
 ## Setup devices to work with AdGuard
 
@@ -219,14 +219,13 @@ In AdGuard homepage under filters, select DNS blocklist section for adding URLs.
  <img src="https://i.imgur.com/xAlbKPW.png">
 
 <p align="center">
-<b>Ultimate blocklists</b>
 <br>
 <a href="https://github.com/T145/black-mirror"><img src="https://raw.githubusercontent.com/T145/black-mirror/master/.github/images/logo.png" width=220px height=60px></a>
 <br>
-Automatically maintained malicious host blacklists and false-positive whitelists</p>
+Blacklists and whitelists that aim to promote security, safety, and sanity across the internet! </p>
 
 👊BIG THANKS👊 to <a href="https://github.com/T145">T145</a><br>
-Sources<a href="https://github.com/T145/black-mirror/blob/master/SOURCES.md"><b>🔗click here🔗</b></a>
+Blacklists and Whitelists Sources<a href="https://github.com/T145/black-mirror/blob/master/SOURCES.md"><b>🔗click here🔗</b></a>
 <b>
 </b>
 
@@ -251,7 +250,7 @@ _(Reboot when finished)_
 
 To **remove** change `add` in <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/62ba01ed8ed3a5bc5294b9fe7ee38c3e83ae1b86/bulkurls.py#L150">second of last line</a> to `remove` in bulkurls.py file.<br>
 Or just change it from command line in terminal:
-```
+```bash
 sed -i 's/add_url/remove_url/g' bulkurls.py
 
 # Revert
@@ -292,8 +291,8 @@ If using **DietPi** or other OS that do not auto insert `nameserver 127.0.0.1` i
 > Run `ping -c 3 google.com` to confirm localhost is reachable to internet. If not, set/add your default network's dns/gateway or whatever was the default<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Set-permanent-DNS-nameservers"><b>🔗click here🔗</b></a>
 
 Confirm 127.0.0.1 address interface is up:
-```py
-### Run `sudo apt install dnsutils` for dig tool
+```bash
+## Install dig: sudo apt install dnsutils
 dig google.com 127.0.0.1
 ```
 ![image](https://user-images.githubusercontent.com/18756975/198690997-62cea763-f1c1-4b15-b68c-e7a05f483182.png)
@@ -304,10 +303,10 @@ wget -O root.hints https://www.internic.net/domain/named.root && sudo mv root.hi
 ```
 
 * This needs to update every 6 months using <a href="https://www.google.com/search?q=How+does+cron+job+work%3F&client=firefox-b-d&sxsrf=ALiCzsbaAmCCZqLJt2cOtQ3UXn7wxrWD3Q%3A1651353477111&ei=hadtYt-vBoavqtsP_fGX4Ak&ved=0ahUKEwifhpuL27z3AhWGl2oFHf34BZwQ4dUDCA0&uact=5&oq=How+does+cron+job+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQ0oECEEYAEoECEYYAFDTAVjTAWDRBmgBcAF4AIABfYgBfZIBAzAuMZgBAKABAqABAcgBCcABAQ&sclient=gws-wiz">cron job</a>. Enter in command line `crontab -e`, it will ask select an editor(choose 1), paste these lines at the bottom of crontab and save (control+x then y then enter):
-```
-1 0 1 */6 * wget -O root.hints https://www.internic.net/domain/named.root
-2 0 1 */6 * sudo mv root.hints /var/lib/unbound/
-```
+
+>   1 0 1 */6 * wget -O root.hints https://www.internic.net/domain/named.root<br>
+>   2 0 1 */6 * sudo mv root.hints /var/lib/unbound/
+
 
 <p align="center">
  <img src="https://i.imgur.com/26ro62t.jpg">
@@ -428,8 +427,8 @@ A records(IPv4)
 AAA records(IPv6)
 ![2](https://user-images.githubusercontent.com/18756975/197861617-89136d97-2d0f-4702-968e-bd3023217be0.jpg)
 
-### Use <a href="https://www.google.com/search?q=tail+command+linux&client=firefox-b-d&sxsrf=ALiCzsaQct9z6HQfHBLwvEOCwmAX_0rI9g%3A1666552446396&ei=fpJVY4nuF5DCkwWYx5SIBw&oq=WHAT+IS+TAIL+COMMAND&gs_lcp=Cgdnd3Mtd2l6EAEYADIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwA0oECE0YAUoECEEYAEoECEYYAFAAWABgsA1oAXABeACAAQCIAQCSAQCYAQDIAQjAAQE&sclient=gws-wiz">tail</a> command to monitor logs in realtime:
-```py
+### Use <a href="https://www.google.com/search?q=what+does+tail+command+do+linux&client=firefox-b-d&sxsrf=ALiCzsawidkeBiELxfyKyqucXz1ghKk8tQ%3A1667339937159&ei=oZZhY7GwCZ6WwbkP0vCowAg&ved=0ahUKEwjxhLKl_Y37AhUeSzABHVI4CogQ4dUDCA4&uact=5&oq=what+does+tail+command+do+linux&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIICAAQCBAHEB4yBQgAEIYDMgUIABCGAzIFCAAQhgM6BAgAEEc6BwgjELACECc6BwgAEIAEEA06CggAEAgQBxAeEA86CAgAEAUQBxAeOgYIABAIEB5KBAhBGABKBAhGGABQ5Q5YoDRg6TRoAHAEeACAAZ0BiAHWC5IBBDEuMTKYAQCgAQHIAQjAAQE&sclient=gws-wiz-serp">tail</a> command to monitor logs in realtime:
+```bash
 ## Unbound
 ## If using unbound from package manager, manually create log file - sudo touch /var/log/unbound.log
 ## and set permission - sudo chown unbound:unbound /var/log/unbound.log
@@ -496,7 +495,7 @@ sudo cp /root/yourclientname.conf /home/pi && sudo qrencode -t ansiutf8 < yourcl
 > **Warning**
 You will need to add a new client/user for each device<i>(cannot use 1 client with multiple devices at the same time)</i>. To add, re-run the script and create another user with different client name.
 
-### Connecting VPN To Android/IOS Phone
+### Connecting VPN To Android/iOS Phone
 
 Install the WireGuard app from Google Play or App Store:
 
