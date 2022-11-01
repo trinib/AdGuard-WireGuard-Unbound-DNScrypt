@@ -42,13 +42,13 @@ _<a href="https://dnscrypt.info/"><b>DNScrypt</b></a>_</br>Modern encrypted DNS 
 <p align="right">
 <i>All software are free, open-source and&nbsp;self-hosted&nbsp;</i></br><a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/wiki/About"><b>ABOUT</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>FAQ</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki"><b>WIKI</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions"><b>DISCUSS</b></a>
 
-<h3 align="left">DNS query time 🚨</h3>
-Query speed results(Ethernet LAN) using <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Dig(domain-information-groper)">BIND9 dig tool</a>:
+<h3 align="left">DNS query time ⏳</h3>
+Query speed results(Ethernet LAN) using <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Dig(domain-information-groper)">BIND9 dig</a> tool:
 
  - AdGuard default DNS resolvers - `60-70 msec`
  - Public Cloudflare/Quad9/Google DNS Resolvers - `50-70 msec`
  - Self-hosted setup - `5-10 msec`
- > **Note** Originally `0 msec` but multiple blocklist with _excessive_ URLs slow down low-end devices affecting DNS query. This result was tested on a 1GB | 1.4GH ARM architecture. Blocklists used <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/blob/beb05c3a4b74a675dc88c43bcea41b08d00a04f3/bulkurls.py#L20"><b>🔗click here🔗</b></a>.
+> **Note** Originally `0 msec` or same as ISP DNS speed but multiple blocklist with _excessive_ URLs slow down low-end devices affecting DNS query. This result was from a 1GB | 1.4GH ARM architecture. Blocklists used <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/blob/beb05c3a4b74a675dc88c43bcea41b08d00a04f3/bulkurls.py#L20"><b>🔗click here🔗</b></a>.
 <details><summary>📹 Preview</summary>
 <p>
 
@@ -201,7 +201,7 @@ In general settings, set "Query logs retention" to `24 hours`. (I read that for 
 
     - <i>IPv6 (needed for `DoH`/`DoT`/`oDoH` to detect if using it)</i>
 
-     Go to "Internet Protocol Version 6(TCP/IPv6)" Enter `::1`
+     Go to "Internet Protocol Version 6(TCP/IPv6)" Enter <a href="https://www.google.com/search?q=what+is+%3A%3A1&client=firefox-b-d&sxsrf=ALiCzsYu-GId0NA6gwu0SgOIpe6KTsOmAw%3A1667330913170&ei=YXNhY-yLCtWdwbkP-4u4iAY&ved=0ahUKEwiswLXW2437AhXVTjABHfsFDmEQ4dUDCA4&uact=5&oq=what+is+%3A%3A1&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIECCMQJzIECCMQJzIECCMQJzIFCAAQkQIyBQgAEJECMgUIABCRAjIFCAAQkQIyCAgAELEDEIMBMggIABCxAxCDATIFCAAQgARKBAhBGABKBAhGGABQsgJY2BpgnhtoAXAAeACAAfACiAGTBZIBBTItMS4xmAEAoAEBwAEB&sclient=gws-wiz-serp">`::1`</a>
 
 <p align="center">
  <img src="https://i.imgur.com/8gsDk3z.jpg">
@@ -209,7 +209,7 @@ In general settings, set "Query logs retention" to `24 hours`. (I read that for 
 ## Updating AdGuard
  
 AdGuard Home can be updated from its user interface or <a href="https://github.com/AdguardTeam/AdGuardHome/wiki/FAQ#how-to-update-adguard-home-manually">manually</a> from command line.<br>
-_Use script constructed with manual commands and can set it to autorun<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/AdGuard-Home-update-script"><b>🔗click here🔗</b></a>_.
+_Use script constructed with manual commands and can be set to autorun<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/AdGuard-Home-update-script"><b>🔗click here🔗</b></a>_.
 
 ## Setting up AdGuard blocklist
 
@@ -286,7 +286,7 @@ For the version from package manager, run the following command in terminal:
 sudo apt install unbound -y
 ```
 > **Note**
-If using **DietPi** or other OS that do not auto insert `nameserver 127.0.0.1` in resolv.conf(to check - `sudo nano /etc/resolv.conf`) and want to query cache on <a href="https://www.google.com/search?q=localhost+linux+meaning&client=firefox-b-d&sxsrf=ALiCzsaCZleUpowBYQYRTZoZukMmjAUZIg%3A1666980708699&ei=ZBtcY7GtKovbsAex8La4Bw&ved=0ahUKEwix7_SHw4P7AhWLLewKHTG4DXcQ4dUDCA4&uact=5&oq=localhost+linux+meaning&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIGCAAQFhAeMgUIABCGAzIFCAAQhgMyBQgAEIYDOgoIABBHENYEELADOgQIIxAnOgoIABAWEB4QDxAKSgQITRgBSgQIQRgASgQIRhgAUIQBWPsYYI4aaAFwAXgAgAHDAogByg-SAQcwLjEuNy4xmAEAoAEByAEIwAEB&sclient=gws-wiz-serp"><b>**local**</b></a> hosts, just install resolvconf package and restart unbound-resolvconf.service which should be automatically set:
+If using **DietPi** or other OS that do not auto insert `nameserver 127.0.0.1` in resolv.conf(to check - `sudo nano /etc/resolv.conf`) and want to query cache on <a href="https://www.google.com/search?q=localhost+in+linux+meaning&client=firefox-b-d&biw=1440&bih=660&sxsrf=ALiCzsZQjrruvwGr5xLnu1DMlt8k1FU1jQ%3A1667331220024&ei=lHRhY_iPAZydwbkP6sWwwAw&oq=localhost+in+linux+mea&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQARgAMgYIABAWEB4yBQgAEIYDMgUIABCGAzIFCAAQhgM6CggAEEcQ1gQQsAM6BQgAEIAEOgUIIRCgAToICCEQFhAeEB1KBAhBGABKBAhGGABQjThY_D9g7UhoAnABeACAAdoBiAHyBJIBBTAuMy4xmAEAoAEByAEIwAEB&sclient=gws-wiz-serp">local</a> hosts, just install resolvconf package and restart unbound-resolvconf.service which should be automatically set:
 
 >     sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.service
 > Run `ping -c 3 google.com` to confirm localhost is reachable to internet. If not, set/add your default network's dns/gateway or whatever was the default<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Set-permanent-DNS-nameservers"><b>🔗click here🔗</b></a>
@@ -349,7 +349,7 @@ wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudfla
 ```
  - Choose DNS provider<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/DNS-Providers#unbound"><b>🔗click here🔗</b></a>
  
-Run `dig google.com @127.0.0.1` to check for `NOERROR` status to confirm its connected to DNS server.
+Run `dig google.com @127.0.0.1` and check for `NOERROR` status to confirm its connected to DNS server.
 
 ![image](https://user-images.githubusercontent.com/18756975/198691170-142c0f62-c5c2-4148-a7bf-f7833ca2ebc0.png)
 
@@ -602,7 +602,7 @@ You should see all connections `closed` and status showing all `DNS port 53` and
 
 <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Network-CLI-Tools">Network CLI Tools</a>
 
-<a href="https://github.com/RehanSaeed/Bash-Cheat-Sheet#bash-cheat-sheet">Useful Linux Bash commands</a>
+<a href="https://github.com/trinib/Bash-Cheat-Sheet">Useful Linux Bash commands</a>
  
 #
 
