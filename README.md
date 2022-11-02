@@ -293,7 +293,7 @@ If using **DietPi** or other OS that do not auto insert `nameserver 127.0.0.1` i
 Confirm 127.0.0.1 address interface is up:
 ```bash
 ## Install dig: sudo apt install dnsutils
-dig google.com 127.0.0.1
+dig google.com @127.0.0.1
 ```
 ![image](https://user-images.githubusercontent.com/18756975/198690997-62cea763-f1c1-4b15-b68c-e7a05f483182.png)
 
