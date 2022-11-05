@@ -403,11 +403,17 @@ sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
 <p align="center">
  <img src="https://i.imgur.com/iQRdMax.png" width=650px height=320px>
  
-* ~~Then in DNS setting look for DNS cache configuration section and set cache size to 0 (caching is already handled by Unbound) and click apply.~~ From <a href="https://github.com/AdguardTeam/AdGuardHome/releases/tag/v0.107.0">v0.107.0</a> cache was set to default 0.
- 
-Click apply and test upstreams
+- In DNS setting look for DNS cache configuration section and set cache size to `0` (caching is already handled by Unbound) and save.
 
-#### Now go to https://1.1.1.1/help in browser and these options should output 'Yes'. 
+<p align="center">
+ <img src="https://i.imgur.com/TdzhNUo.png" width=650px height=320px>
+ 
+<p align="center">
+Click apply and test upstreams</p>
+
+#### Now go to https://1.1.1.1/help in browser and these options should output 'Yes'.
+>**Note**
+only detects for cloudflare servers
  - [x] Connected to 1.1.1.1
  - [x] DNS over HTTPS(DoH)
  - [x] DNS over TLS(DoT)
@@ -416,7 +422,10 @@ Click apply and test upstreams
   <img src="https://i.imgur.com/ootfGYq.jpg" width=650px height=300px>
  
 ### Sometimes DoH or DoT shows no?
-This could just be a fault on 1.1.1.1/help cause according to logs, for example DNScrypt with DNS over HTTPS shows it **does recieve a query response/PASS** although when showing "no" for DNS over HTTPS.
+This could just be a fault on 1.1.1.1/help and host cause according to logs, for example DNScrypt with DNS over HTTPS shows it **does recieve a query response/PASS** although when showing "no" for DNS over HTTPS.
+
+<details><summary>Query logs 👀</summary>
+<p>
 
 https://user-images.githubusercontent.com/18756975/197397288-18c7f33b-abb3-4628-b8e3-1ad29623f693.mp4
 
@@ -426,6 +435,9 @@ A records(IPv4)
 
 AAA records(IPv6)
 ![2](https://user-images.githubusercontent.com/18756975/197861617-89136d97-2d0f-4702-968e-bd3023217be0.jpg)
+
+</p>
+ </details>
 
 ### Use <a href="https://www.google.com/search?q=what+does+tail+command+do+linux&client=firefox-b-d&sxsrf=ALiCzsawidkeBiELxfyKyqucXz1ghKk8tQ%3A1667339937159&ei=oZZhY7GwCZ6WwbkP0vCowAg&ved=0ahUKEwjxhLKl_Y37AhUeSzABHVI4CogQ4dUDCA4&uact=5&oq=what+does+tail+command+do+linux&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIICAAQCBAHEB4yBQgAEIYDMgUIABCGAzIFCAAQhgM6BAgAEEc6BwgjELACECc6BwgAEIAEEA06CggAEAgQBxAeEA86CAgAEAUQBxAeOgYIABAIEB5KBAhBGABKBAhGGABQ5Q5YoDRg6TRoAHAEeACAAZ0BiAHWC5IBBDEuMTKYAQCgAQHIAQjAAQE&sclient=gws-wiz-serp">tail</a> command to monitor logs in realtime:
 ```bash
@@ -443,11 +455,11 @@ sudo tail -f /var/log/dnscrypt-proxy/query.log
 `Optional:` Stable DNS resolving<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Stable-DNS-resolving(optional)"><b>🔗click here🔗</b></a>
 
 #### Other sites to check security
-https://browserleaks.com/dns - should show all connected to "Cloudflare"
+[browserleaks](https://browserleaks.com/dns) - should show all connected to "Cloudflare"
 
-https://dnssec.vs.uni-due.de/ - should say "Yes, your DNS resolver validates DNSSEC signatures"
+[dnssec](https://dnssec.vs.uni-due.de/) - should say "Yes, your DNS resolver validates DNSSEC signatures"
  
-https://dnscheck.tools/ - inspect your dns resolvers (DNSSEC using ECDSA P-256,DNSSEC using ECDSA P-384,DNSSEC using Ed25519)
+[dnscheck tools](https://dnscheck.tools/) - inspect your dns resolvers (DNSSEC using ECDSA P-256,DNSSEC using ECDSA P-384,DNSSEC using Ed25519)
 
 **[⬆ Return to contents ⬆](#table-of-contents)**
 
@@ -589,19 +601,20 @@ You should see all connections `closed` and status showing all `DNS port 53` and
  
 ## Extras
  
-<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/AdGuard-Home-Dark-Theme">AdGuard Home Dark Theme</a>
- 
-<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Auto-Update-Raspberry-Pi">Auto Update Raspberry Pi</a>
- 
-<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Secure-your-Raspberry-Pi">Secure your Raspberry Pi</a>
- 
-<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Improve-SD-Card%E2%80%99s-lifespan">Improve SD Card’s lifespan</a>
- 
+
 <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Install-NextDNS">NextDNS Client</a>
 
 <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Network-CLI-Tools">Network CLI Tools</a>
 
-<a href="https://github.com/trinib/Bash-Cheat-Sheet">Useful Linux Bash commands</a>
+<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Secure-Raspberry-Pi(Linux)">Secure Raspberry Pi</a>
+ 
+<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Auto-Update-Raspberry-Pi">Auto Update Raspberry Pi</a>
+
+<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/AdGuard-Home-Dark-Theme">AdGuard Home Dark Theme</a>
+ 
+<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Improve-SD-Card%E2%80%99s-lifespan">Improve SD Card’s lifespan</a>
+ 
+<a href="https://github.com/trinib/Linux-Bash-Commands">Linux Bash commands</a>
  
 #
 
