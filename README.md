@@ -311,6 +311,8 @@ wget -O root.hints https://www.internic.net/domain/named.root && sudo mv root.hi
 <p align="center">
  <img src="https://i.imgur.com/26ro62t.jpg">
  
+Skip straight ahead to configuring DoT in this <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/edit/main/README.md#configure-dot-on-unbound"><b>section</b></a>, and setup with AdGuard in this <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/edit/main/README.md#configure-adguard-with-dohdotodoh"><b>section</b></a> if not interested in Stubby or Cloudflared or DNScrypt proxy below.
+ 
 ### _Install Knot Resolver as an alternative<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Knot-Resolver"><b>🔗click here🔗</b></a>_
 
 **[⬆ Return to contents ⬆](#table-of-contents)**
@@ -347,6 +349,11 @@ Enter in terminal:
 wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/unbound.conf && sudo mv unbound.conf /etc/unbound/unbound.conf.d/
 ```
  - Choose DNS provider<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/DNS-Providers#unbound"><b>🔗click here🔗</b></a>
+
+Restart unbound service and check status:
+
+<p align="center">
+ <img src="https://i.imgur.com/Ul32WLD.png" width=700 height=250>
  
 Run `dig google.com @127.0.0.1` and check for `NOERROR` status to confirm its connected to DNS server.
 
@@ -375,12 +382,12 @@ awk '{sub(/[#]forward-addr: 127.0.0.1@8053/,"forward-addr: 127.0.0.1@8053") || s
 ```
  - Choose DNS provider<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/DNS-Providers#stubby"><b>🔗click here🔗</b></a>
 
-Restart unbound & stubby and check status:
+Restart stubby service and check status:
 ```
-sudo systemctl restart unbound stubby ; systemctl status unbound stubby -l
+sudo systemctl status stubby 
 ```
 <p align="center">
- <img src="https://i.imgur.com/7zIpWP2.jpg" width=650px height=370px>
+ <img src="https://i.imgur.com/PCxwdDC.png" width=700 height=290>
  
 
 ## Configure AdGuard with `(DoH/DoT/oDoH)`
@@ -413,7 +420,7 @@ Click apply and test upstreams</p>
 
 #### Now go to https://1.1.1.1/help in browser and these options should output 'Yes'.
 >**Note**
-only detects for cloudflare servers
+only detects for cloudflare servers in the first 3 info lines
  - [x] Connected to 1.1.1.1
  - [x] DNS over HTTPS(DoH)
  - [x] DNS over TLS(DoT)
