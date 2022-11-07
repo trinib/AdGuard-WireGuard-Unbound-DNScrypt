@@ -4,6 +4,7 @@
  <img src="http://ForTheBadge.com/images/badges/built-with-love.svg">
  <img src="https://img.shields.io/badge/badges-awesome-green.svg">
  <img src="https://img.shields.io/badge/Stay-Safe-red?logo=data:image/svg%2bxml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTEwIDUxMCIgaGVpZ2h0PSI1MTIiIHZpZXdCb3g9IjAgMCA1MTAgNTEwIiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnPjxnPjxwYXRoIGQ9Im0xNzQuNjEgMzAwYy0yMC41OCAwLTQwLjU2IDYuOTUtNTYuNjkgMTkuNzJsLTExMC4wOSA4NS43OTd2MTA0LjQ4M2g1My41MjlsNzYuNDcxLTY1aDEyNi44MnYtMTQ1eiIgZmlsbD0iI2ZmZGRjZSIvPjwvZz48cGF0aCBkPSJtNTAyLjE3IDI4NC43MmMwIDguOTUtMy42IDE3Ljg5LTEwLjc4IDI0LjQ2bC0xNDguNTYgMTM1LjgyaC03OC4xOHYtODVoNjguMThsMTE0LjM0LTEwMC4yMWMxMi44Mi0xMS4yMyAzMi4wNi0xMC45MiA0NC41LjczIDcgNi41NSAxMC41IDE1LjM4IDEwLjUgMjQuMnoiIGZpbGw9IiNmZmNjYmQiLz48cGF0aCBkPSJtMzMyLjgzIDM0OS42M3YxMC4zN2gtNjguMTh2LTYwaDE4LjU1YzI3LjQxIDAgNDkuNjMgMjIuMjIgNDkuNjMgNDkuNjN6IiBmaWxsPSIjZmZjY2JkIi8+PHBhdGggZD0ibTM5OS44IDc3LjN2OC4wMWMwIDIwLjY1LTguMDQgNDAuMDctMjIuNjQgNTQuNjdsLTExMi41MSAxMTIuNTF2LTIyNi42NmwzLjE4LTMuMTljMTQuNi0xNC42IDM0LjAyLTIyLjY0IDU0LjY3LTIyLjY0IDQyLjYyIDAgNzcuMyAzNC42OCA3Ny4zIDc3LjN6IiBmaWxsPSIjZDAwMDUwIi8+PHBhdGggZD0ibTI2NC42NSAyNS44M3YyMjYuNjZsLTExMi41MS0xMTIuNTFjLTE0LjYtMTQuNi0yMi42NC0zNC4wMi0yMi42NC01NC42N3YtOC4wMWMwLTQyLjYyIDM0LjY4LTc3LjMgNzcuMy03Ny4zIDIwLjY1IDAgNDAuMDYgOC4wNCA1NC42NiAyMi42NHoiIGZpbGw9IiNmZjRhNGEiLz48cGF0aCBkPSJtMjEyLjgzIDM2MC4xMnYzMGg1MS44MnYtMzB6IiBmaWxsPSIjZmZjY2JkIi8+PHBhdGggZD0ibTI2NC42NSAzNjAuMTJ2MzBoMzYuMTRsMzIuMDQtMzB6IiBmaWxsPSIjZmZiZGE5Ii8+PC9nPjwvc3ZnPg==">
+</p>
 
 <h2 align="center"><img src="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/assets/images/awcu.gif" width= "700"></h2>
 
@@ -121,7 +122,7 @@ Raspberry Pi OS comes in desktop and lite versions(use lite for <a href="https:/
 - Open Pi Imager tool and choose OS, go to advanced settings and configure user details. Then choose storage and write.
 
 <p align="center">
- <img src="https://i.imgur.com/S6pDPZv.png">
+ <img src="https://i.imgur.com/S6pDPZv.png"></p>
  
 <i>Place SD card into the Raspberry Pi, plug in Ethernet cable and boot up</i>
 
@@ -144,14 +145,14 @@ ssh pi@pi's IP address
 Type “yes” for fingerprint question, and enter password.
 
 <p align="center">
- <img src="https://i.imgur.com/Wf30jxG.jpg">
+ <img src="https://i.imgur.com/Wf30jxG.jpg"></p>
 
 Run in terminal:
-```
+```bash
 sudo apt update -y && sudo apt upgrade -y
 ```
 *_Reboot when finished_*
-```
+```bash
 sudo reboot
 ```
 **[⬆ Return to contents ⬆](#table-of-contents)**
@@ -163,15 +164,15 @@ Installation scripts are from <a href="https://github.com/AdguardTeam/AdGuardHom
 Run one of the following command in terminal:
 
 Stable:
-```
+```bash
 curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -v
 ```
 Beta - testing version of AdGuard Home. More or less stable versions:
-```
+```bash
 curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -c beta
 ```
 Edge - newest version of AdGuard Home. New updates are pushed to this channel daily and might not be stable:
-```
+```bash
 curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -c edge
 ```
  * When installation is finished, it will show the `links` to your AdGuard home page(Get Started) in terminal
@@ -179,7 +180,7 @@ curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/s
  * Choose `Eth0` in **Listen Interfaces** option
  
  <p align="center">
-  <img src="https://i.imgur.com/5W70PLb.png" width=580px height=650px>
+  <img src="https://i.imgur.com/5W70PLb.png" width=580px height=650px></p>
 
  * Set up username&password and then login admin panel
 
@@ -191,7 +192,7 @@ In general settings, can set "Query logs retention" to `24 hours`. (on forums so
  - For Android/Apple, go to WiFi advanced settings and select static option. In `DNS 1` field enter "Pi's IP" address
 
  <p align="center">
-  <img src="https://i.imgur.com/nxpiqDw.jpg" width=450px height=580px>
+  <img src="https://i.imgur.com/nxpiqDw.jpg" width=450px height=580px></p>
 
  - For PC/Windows
 
@@ -204,7 +205,7 @@ In general settings, can set "Query logs retention" to `24 hours`. (on forums so
      Go to "Internet Protocol Version 6(TCP/IPv6)" Enter <a href="https://www.google.com/search?q=what+is+%3A%3A1&client=firefox-b-d&sxsrf=ALiCzsYu-GId0NA6gwu0SgOIpe6KTsOmAw%3A1667330913170&ei=YXNhY-yLCtWdwbkP-4u4iAY&ved=0ahUKEwiswLXW2437AhXVTjABHfsFDmEQ4dUDCA4&uact=5&oq=what+is+%3A%3A1&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIECCMQJzIECCMQJzIECCMQJzIFCAAQkQIyBQgAEJECMgUIABCRAjIFCAAQkQIyCAgAELEDEIMBMggIABCxAxCDATIFCAAQgARKBAhBGABKBAhGGABQsgJY2BpgnhtoAXAAeACAAfACiAGTBZIBBTItMS4xmAEAoAEBwAEB&sclient=gws-wiz-serp">`::1`</a>
 
 <p align="center">
- <img src="https://i.imgur.com/8gsDk3z.jpg">
+ <img src="https://i.imgur.com/8gsDk3z.jpg"></p>
 
 ## Updating AdGuard
  
@@ -216,7 +217,7 @@ _Use script constructed with manual commands and can be set to autorun<a href="h
 In AdGuard homepage under filters, select DNS blocklist section for adding URLs.
 
 <p align="center">
- <img src="https://i.imgur.com/xAlbKPW.png">
+ <img src="https://i.imgur.com/xAlbKPW.png"></p>
 
 <p align="center">
 <br>
@@ -236,7 +237,7 @@ Some lists can block important web content. To unblock, go to "Query Log" sectio
 
 Only one URL can be added at a time in DNS blocklist with AdGuard for now, but a python script can be used to add multiple URLs at once.<br>
 Create a new python file(bulkurls.py):
-```
+```bash
 nano bulkurls.py
 ```  
 
@@ -260,7 +261,7 @@ sed -i 's/remove_url/add_url/g' bulkurls.py
 ## Uninstall AdGuard
 
 Run this <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/assets/scripts/remove_adguard.sh">script</a> from repo through network using <a href="https://www.google.com/search?q=What+does+cURL+actually+do%3F&client=firefox-b-d&sxsrf=ALiCzsbIVTaRzlDt3jC6H5lirpsy2S0LoA%3A1654699803869&ei=G7egYprXNNbawbkP38uIqAE&ved=0ahUKEwja0JOQjZ74AhVWbTABHd8lAhUQ4dUDCA0&uact=5&oq=What+does+cURL+actually+do%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAeEBYQHTIICCEQHhAWEB0yCAghEB4QFhAdMggIIRAeEBYQHTIICCEQHhAWEB0yCAghEB4QFhAdOgcIIxCwAxAnOgcIABBHELADSgQIQRgASgQIRhgAUI8DWI8DYNgGaAFwAXgAgAGcAYgBnAGSAQMwLjGYAQCgAQKgAQHIAQnAAQE&sclient=gws-wiz">curl</a> in terminal:
-```
+```bash
 curl -s -L https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/assets/scripts/remove_adguard.sh | sh
 ```
 
@@ -281,7 +282,7 @@ Before installing other DNS resolvers, it is a good idea to turn off <a href="ht
 `OPTIONAL:` Installing via the package manager is the easiest option with automatic updates and stable versions. The downside is that it can be outdated for some distributions or not have all the compile-time options included that you want.<br>**Building and compiling** Unbound yourself ensures that you have the latest version and all the compile-time options you desire<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Build-Unbound-from-source"><b>🔗click here🔗</b></a>.
 
 For the version from package manager, run the following command in terminal:
-```
+```bash
 sudo apt install unbound -y
 ```
 > **Note**
@@ -298,7 +299,7 @@ dig google.com @127.0.0.1
 ![image](https://user-images.githubusercontent.com/18756975/198690997-62cea763-f1c1-4b15-b68c-e7a05f483182.png)
 
 * For recursively querying a host that is not cached as an address, the resolver needs to start at the top of the server tree and query the root servers, to know where to go for the top level domain for the address being queried. Unbound comes with default built-in hints.<br>Download latest:
-```
+```bash
 wget -O root.hints https://www.internic.net/domain/named.root && sudo mv root.hints /var/lib/unbound/
 ```
 
@@ -309,9 +310,9 @@ wget -O root.hints https://www.internic.net/domain/named.root && sudo mv root.hi
 
 
 <p align="center">
- <img src="https://i.imgur.com/26ro62t.jpg">
+ <img src="https://i.imgur.com/26ro62t.jpg"></p>
  
-Skip straight ahead to configuring DoT in this <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt#configure-dot-on-unbound"><b>section</b></a>, and setup with AdGuard in this <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt#configure-adguard-with-dohdotodoh"><b>section</b></a> if not interested in Stubby or Cloudflared or DNScrypt proxy below.
+Skip straight ahead to configuring DoT in this [**section**](#configure-dot-on-unbound), and setup with AdGuard in this [**section**](#configure-adguard-with-dohdotodoh) if not interested in Stubby or Cloudflared or DNScrypt proxy below.
  
 ### _Install Knot Resolver as an alternative<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Knot-Resolver"><b>🔗click here🔗</b></a>_
 
@@ -345,15 +346,17 @@ _<a href="https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Anonymized-DNS">Anonym
 
 Download unbound <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/unbound.conf">configuration</a> file with DNS over TLS settings and move it to unbound folder.<br>
 Enter in terminal:
-```
+```bash
 wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/unbound.conf && sudo mv unbound.conf /etc/unbound/unbound.conf.d/
 ```
  - Choose DNS provider<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/DNS-Providers#unbound"><b>🔗click here🔗</b></a>
 
 Restart unbound service and check status:
-
+```bash
+sudo systemctl status unbound && sudo systemctl status unbound 
+```
 <p align="center">
- <img src="https://i.imgur.com/Ul32WLD.png" width=80%>
+ <img src="https://i.imgur.com/Ul32WLD.png" width=700 height=220></p>
  
 Run `dig google.com @127.0.0.1` and check for `NOERROR` status to confirm its connected to DNS server.
 
@@ -366,30 +369,29 @@ Use Unbound for caching and Stubby as a <a href="https://www.google.com/search?q
 Stubby and DNScrypt **should not** be used together when both are set to run as a forwarder, else redundant caching will occur.
 
 `OPTIONAL:` **Building and compiling** Stubby yourself ensures that you have the latest version<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Build-Stubby-from-source"><b>🔗click here🔗</b></a>.
-
+ 
 Install the version from package manager:
-```
+```bash
 sudo apt install stubby -y
 ```
 - Download stubby <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/stubby.yml">configuration</a> file and replace with default one in stubby folder:
-```
+```bash
 wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/stubby.yml && sudo mv stubby.yml /etc/stubby/
 ```
 
  - Forward Stubby address in Unbound upstreams. Open `sudo nano /etc/unbound/unbound.conf.d/`<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/main/unbound.conf">`unbound.conf`</a> and uncomment Stubby addresses(remove # infront of lines [169](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/68726b2c1e24d1940ac82775be9aa76748f564d2/unbound.conf#L169)&[170](https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/blob/68726b2c1e24d1940ac82775be9aa76748f564d2/unbound.conf#L170))<br>Or do it from command line:
-```
+```bash
 awk '{sub(/[#]forward-addr: 127.0.0.1@8053/,"forward-addr: 127.0.0.1@8053") || sub(/[#]forward-addr: ::1@8053/,"forward-addr: ::1@8053")}1' /etc/unbound/unbound.conf.d/unbound.conf > unbound.conf && sudo mv unbound.conf /etc/unbound/unbound.conf.d/
 ```
  - Choose DNS provider<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/DNS-Providers#stubby"><b>🔗click here🔗</b></a>
 
 Restart stubby service and check status:
-```
-sudo systemctl status stubby 
+```bash
+sudo systemctl status stubby && sudo systemctl status stubby 
 ```
 <p align="center">
- <img src="https://i.imgur.com/PCxwdDC.png" width=80%>
+ <img src="https://i.imgur.com/PCxwdDC.png" width=700 height=240></p>
  
-
 ## Configure AdGuard with `(DoH/DoT/oDoH)`
 
  * In AdGuard homepage under settings, select **DNS settings**
@@ -408,12 +410,12 @@ sudo systemctl status stubby
 * <b>`IMPORTANT:`</b> Check <a href="https://adguard.com/en/blog/in-depth-review-adguard-home.html#dns">Parallel Request</a> option for DNS resolvers to work simultaneously.
 
 <p align="center">
- <img src="https://i.imgur.com/iQRdMax.png" width=650px height=320px>
+ <img src="https://i.imgur.com/iQRdMax.png" width=650px height=320px></p>
  
 - In DNS setting look for DNS cache configuration section and set cache size to `0` (caching is already handled by Unbound) and save.
 
 <p align="center">
- <img src="https://i.imgur.com/TdzhNUo.png" width=650px height=320px>
+ <img src="https://i.imgur.com/TdzhNUo.png" width=650px height=350px></p>
  
 <p align="center">
 Click apply and test upstreams</p>
@@ -426,7 +428,7 @@ only detects for cloudflare servers in the first 3 info lines
  - [x] DNS over TLS(DoT)
  - [ ] DNS over WARP
  <p align="center">
-  <img src="https://i.imgur.com/ootfGYq.jpg" width=650px height=300px>
+  <img src="https://i.imgur.com/ootfGYq.jpg" width=650px height=300px></p>
  
 ### Sometimes DoH or DoT shows no?
 This could just be a fault on 1.1.1.1/help and host cause according to logs, for example DNScrypt with DNS over HTTPS shows it **does recieve a query response/PASS** although when showing "no" for DNS over HTTPS.
@@ -487,7 +489,7 @@ Permit Internet access(if have) | yes
 Example of my router port settings:
 
 <p align="center">
- <img src="https://i.imgur.com/9LBEk1i.jpg" width="640" height="420">
+ <img src="https://i.imgur.com/9LBEk1i.jpg" width="640" height="420"></p>
 
 > **Note**
 Other router brands will have a different interface look. Google search it for help. If you cannot connect from a outside network that means your ISP has blocked incoming connections and only allow outgoing, call them and ask nicely to unblock.
@@ -496,7 +498,7 @@ Other router brands will have a different interface look. Google search it for h
 👊BIG THANKS👊 for this installation script from <a href="https://github.com/Nyr/wireguard-install">Nyr</a>. Follow to keep updated.<br>(<a href="https://www.pivpn.io/">PiVPN</a> script can also be used)
 
 Download and run script in terminal:
-```
+```bash
 wget https://git.io/wireguard -O wireguard-install.sh && sudo bash wireguard-install.sh
 ```
  * The script is going to ask for a Public IPv4/hostname for the VPN. If you have static IP then continue or else type the dynamic DNS hostname that was created from the <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Create-a-DNS-domain-hostname">instructions</a>. For example:`trinibvpn.freeddns.org`
@@ -504,10 +506,10 @@ wget https://git.io/wireguard -O wireguard-install.sh && sudo bash wireguard-ins
  * For port option `press enter` for default 51820, set client name and for DNS use option 3 (`1.1.1.1`) for now.
 
 <p align="center">
- <img src="https://i.imgur.com/WUNZIK4.jpg">
+ <img src="https://i.imgur.com/WUNZIK4.jpg"></p>
 
  * Wait until the installation is finished and QR code to show, <b>don't close</b>. But if do, to `regenerate qrcode`, enter in terminal but replacing just the name `yourclientname.conf` file to yours: 
-```
+```bash
 sudo cp /root/yourclientname.conf /home/pi && sudo qrencode -t ansiutf8 < yourclientname.conf
 ```
                                                                                              
@@ -527,7 +529,7 @@ Scan the QR code shown in the terminal with WireGuard app, select the `+ button`
 - Enable **kernel module backend** in settings
 
 <p align="left">
- <img src="https://i.imgur.com/R4qbiOQ.jpg" width=250px height=350px>
+ <img src="https://i.imgur.com/R4qbiOQ.jpg" width=250px height=350px></p>
 
 ### Connecting VPN to Windows
 
@@ -536,7 +538,7 @@ WireGuard for windows: https://download.wireguard.com/windows-client/wireguard-i
  * Create a `new text document` with any name on PC to copy over the text from WireGuard client configuration file.
 
  * To see text in client config file, type in terminal:
-```
+```bash
 sudo cat /root/yourclientname.conf
 ```
  * Highlight all the text, copy and paste it in the txt file on PC and save. Then rename the extension from `txt` to `conf`. Now you have config file for that specific WireGuard client/user.
@@ -553,7 +555,7 @@ I think it might not make much of a difference to use DoT/DoH/oDoH with WireGuar
  * Under DNS servers enter `Pi's IP`(IPv4 & IPv6) and save
 
 <p align="center">
- <img src="https://i.imgur.com/UC0vWfE.jpg" width=450px height=500px>  
+ <img src="https://i.imgur.com/UC0vWfE.jpg" width=450px height=500px></p>
  
 ### _Install OpenVPN as an alternative<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-OpenVPN"><b>🔗click here🔗</b></a>_
  
@@ -576,7 +578,7 @@ For **windows** download Wireshark: https://www.wireshark.org/#download
 
 Once downloaded, use the application to inspect data packets where the protocol is set to the one used by WireGuard VPN. When a packet traffic is `encrypted`, it can be read  like this for example:
 <p align="center">
- <img src="https://i.imgur.com/Tn4M47R.jpg">
+ <img src="https://i.imgur.com/Tn4M47R.jpg"></p>
 
 For **android** use PCAPdroid: https://play.google.com/store/apps/details?id=com.emanuelef.remote_capture&hl=en&gl=US
                                                                                                                                 
@@ -602,12 +604,10 @@ You should see all connections `closed` and status showing all `DNS port 53` and
 <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/stargazers"><img src="https://reporoster.com/stars/dark/trinib/AdGuard-WireGuard-Unbound-DNScrypt"></a>
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"</p>
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"></p>
 
 #
- 
 ## Extras
- 
 
 <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Install-NextDNS">NextDNS Client</a>
 
