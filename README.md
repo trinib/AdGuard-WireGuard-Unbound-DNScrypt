@@ -353,7 +353,7 @@ wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudfla
 
 Restart unbound service and check status:
 ```bash
-sudo systemctl status unbound && sudo systemctl status unbound 
+sudo systemctl restart unbound && sudo systemctl status unbound 
 ```
 <p align="center">
  <img src="https://i.imgur.com/Ul32WLD.png" width=700 height=220></p>
@@ -366,7 +366,7 @@ Run `dig google.com @127.0.0.1` and check for `NOERROR` status to confirm its co
 
 Use Unbound for caching and Stubby as a <a href="https://www.google.com/search?q=How+does+TLS+proxy+work%3F&client=firefox-b-d&sxsrf=ALiCzsaNlPunZpYtzDVoVA6PVTkY6rOqyQ%3A1651275938995&ei=onhsYsqtPImRggez_K2oBA&ved=0ahUKEwjKhpSeurr3AhWJiOAKHTN-C0UQ4dUDCA4&uact=5&oq=How+does+TLS+proxy+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMUBWMUBYMkHaAFwAXgAgAGfAYgBnwGSAQMwLjGYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz">TLS forwarder</a>
 > **Warning**
-Stubby and DNScrypt **should not** be used together when both are set to run as a forwarder, else redundant caching will occur.
+Stubby and DNScrypt **should not** be used together when both are set to run as a forwarder in Unbound, else redundant caching will occur.
 
 `OPTIONAL:` **Building and compiling** Stubby yourself ensures that you have the latest version<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Build-Stubby-from-source"><b>🔗click here🔗</b></a>.
  
@@ -387,7 +387,7 @@ awk '{sub(/[#]forward-addr: 127.0.0.1@8053/,"forward-addr: 127.0.0.1@8053") || s
 
 Restart stubby service and check status:
 ```bash
-sudo systemctl status stubby && sudo systemctl status stubby 
+sudo systemctl restart stubby && sudo systemctl status stubby 
 ```
 <p align="center">
  <img src="https://i.imgur.com/PCxwdDC.png" width=700 height=240></p>
