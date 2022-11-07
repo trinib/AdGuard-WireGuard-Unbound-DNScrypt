@@ -311,7 +311,7 @@ wget -O root.hints https://www.internic.net/domain/named.root && sudo mv root.hi
 <p align="center">
  <img src="https://i.imgur.com/26ro62t.jpg">
  
-Skip straight ahead to configuring DoT in this <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/edit/main/README.md#configure-dot-on-unbound"><b>section</b></a>, and setup with AdGuard in this <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/edit/main/README.md#configure-adguard-with-dohdotodoh"><b>section</b></a> if not interested in Stubby or Cloudflared or DNScrypt proxy below.
+Skip straight ahead to configuring DoT in this <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt#configure-dot-on-unbound"><b>section</b></a>, and setup with AdGuard in this <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt#configure-adguard-with-dohdotodoh"><b>section</b></a> if not interested in Stubby or Cloudflared or DNScrypt proxy below.
  
 ### _Install Knot Resolver as an alternative<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Knot-Resolver"><b>🔗click here🔗</b></a>_
 
@@ -353,7 +353,7 @@ wget https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudfla
 Restart unbound service and check status:
 
 <p align="center">
- <img src="https://i.imgur.com/Ul32WLD.png" width=700 height=250>
+ <img src="https://i.imgur.com/Ul32WLD.png" width=80%>
  
 Run `dig google.com @127.0.0.1` and check for `NOERROR` status to confirm its connected to DNS server.
 
@@ -387,7 +387,7 @@ Restart stubby service and check status:
 sudo systemctl status stubby 
 ```
 <p align="center">
- <img src="https://i.imgur.com/PCxwdDC.png" width=700 height=290>
+ <img src="https://i.imgur.com/PCxwdDC.png" width=80%>
  
 
 ## Configure AdGuard with `(DoH/DoT/oDoH)`
