@@ -489,7 +489,7 @@ Permit Internet access(if have) | yes
 Example of my router port settings:
 
  <p align="center">
-  <img src="https://i.imgur.com/ootfGYq.jpg" width=650px height=300px></p>
+  <img src="https://i.imgur.com/TNK2QMt.jpg" width=650px height=450px></p>
 
 > **Note**
 Other router brands will have a different interface look. Google search it for help. If you cannot connect from a outside network that means your ISP has blocked incoming connections and only allow outgoing, call them and ask nicely to unblock.
