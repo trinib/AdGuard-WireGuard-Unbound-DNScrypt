@@ -1,12 +1,12 @@
 <p align="center">
  <img src="https://img.shields.io/badge/License-MIT-blue.svg">
  <img src="https://badges.frapsoft.com/os/v3/open-source.svg?v=103">
- <img src="http://ForTheBadge.com/images/badges/built-with-love.svg">
  <img src="https://img.shields.io/badge/badges-awesome-green.svg">
  <img src="https://img.shields.io/badge/Stay-Safe-red?logo=data:image/svg%2bxml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTEwIDUxMCIgaGVpZ2h0PSI1MTIiIHZpZXdCb3g9IjAgMCA1MTAgNTEwIiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnPjxnPjxwYXRoIGQ9Im0xNzQuNjEgMzAwYy0yMC41OCAwLTQwLjU2IDYuOTUtNTYuNjkgMTkuNzJsLTExMC4wOSA4NS43OTd2MTA0LjQ4M2g1My41MjlsNzYuNDcxLTY1aDEyNi44MnYtMTQ1eiIgZmlsbD0iI2ZmZGRjZSIvPjwvZz48cGF0aCBkPSJtNTAyLjE3IDI4NC43MmMwIDguOTUtMy42IDE3Ljg5LTEwLjc4IDI0LjQ2bC0xNDguNTYgMTM1LjgyaC03OC4xOHYtODVoNjguMThsMTE0LjM0LTEwMC4yMWMxMi44Mi0xMS4yMyAzMi4wNi0xMC45MiA0NC41LjczIDcgNi41NSAxMC41IDE1LjM4IDEwLjUgMjQuMnoiIGZpbGw9IiNmZmNjYmQiLz48cGF0aCBkPSJtMzMyLjgzIDM0OS42M3YxMC4zN2gtNjguMTh2LTYwaDE4LjU1YzI3LjQxIDAgNDkuNjMgMjIuMjIgNDkuNjMgNDkuNjN6IiBmaWxsPSIjZmZjY2JkIi8+PHBhdGggZD0ibTM5OS44IDc3LjN2OC4wMWMwIDIwLjY1LTguMDQgNDAuMDctMjIuNjQgNTQuNjdsLTExMi41MSAxMTIuNTF2LTIyNi42NmwzLjE4LTMuMTljMTQuNi0xNC42IDM0LjAyLTIyLjY0IDU0LjY3LTIyLjY0IDQyLjYyIDAgNzcuMyAzNC42OCA3Ny4zIDc3LjN6IiBmaWxsPSIjZDAwMDUwIi8+PHBhdGggZD0ibTI2NC42NSAyNS44M3YyMjYuNjZsLTExMi41MS0xMTIuNTFjLTE0LjYtMTQuNi0yMi42NC0zNC4wMi0yMi42NC01NC42N3YtOC4wMWMwLTQyLjYyIDM0LjY4LTc3LjMgNzcuMy03Ny4zIDIwLjY1IDAgNDAuMDYgOC4wNCA1NC42NiAyMi42NHoiIGZpbGw9IiNmZjRhNGEiLz48cGF0aCBkPSJtMjEyLjgzIDM2MC4xMnYzMGg1MS44MnYtMzB6IiBmaWxsPSIjZmZjY2JkIi8+PHBhdGggZD0ibTI2NC42NSAzNjAuMTJ2MzBoMzYuMTRsMzIuMDQtMzB6IiBmaWxsPSIjZmZiZGE5Ii8+PC9nPjwvc3ZnPg==">
 </p>
 
-<h2 align="center"><img src="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/assets/images/awcu.gif" width= "700"></h2>
+<p align="center">
+<img src="https://raw.githubusercontent.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/main/assets/images/awcu.gif" width= "700">
 
 </p>
  <p align="center">
@@ -322,9 +322,9 @@ Skip straight ahead to configuring DoT in this [**section**](#configure-dot-on-u
 <h1 align="center"><b><i>Setup DNS Security</b></i> </h1>
 
 ## Configure DoH/oDoH
-<i>Option 1 (Simple)</i><h4>Cloudflared Tunnel<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Cloudflared-Tunnel-(DoH)"><b>🔗click here🔗</b></a>:<br></h4>- DNS over HTTPS only
+<i>Option 1 (Simple)</i><h4>Cloudflared Tunnel<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Cloudflared-Tunnel-(DoH)"><b>🔗click here🔗</b></a>:</h4>- DNS over HTTPS only<br><br>
 
-<i>Option 2 (Advanced)</i><h4>DNScrypt proxy<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-DNScrypt-proxy-(DoH)(oDoH)(Anonymized-DNS)"><b>🔗click here🔗</b></a>:</h4>- DNS over HTTPS
+<i>Option 2 (Advanced) - no need for cloudflare tunnel or stubby methods</i><h4>DNScrypt proxy<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-DNScrypt-proxy-(DoH)(oDoH)(Anonymized-DNS)"><b>🔗click here🔗</b></a>:</h4>- DNS over HTTPS
 
 <details><summary><b>Oblivious DNS Over HTTPS</b></summary>
 <p>
@@ -366,7 +366,7 @@ Run `dig google.com @127.0.0.1` and check for `NOERROR` status to confirm its co
 
 Use Unbound for caching and Stubby as a <a href="https://www.google.com/search?q=How+does+TLS+proxy+work%3F&client=firefox-b-d&sxsrf=ALiCzsaNlPunZpYtzDVoVA6PVTkY6rOqyQ%3A1651275938995&ei=onhsYsqtPImRggez_K2oBA&ved=0ahUKEwjKhpSeurr3AhWJiOAKHTN-C0UQ4dUDCA4&uact=5&oq=How+does+TLS+proxy+work%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgcIABBHELADSgQIQRgASgQIRhgAUMUBWMUBYMkHaAFwAXgAgAGfAYgBnwGSAQMwLjGYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz">TLS forwarder</a>
 > **Warning**
-Stubby and DNScrypt **should not** be used together when both are set to run as a forwarder in Unbound, else redundant caching will occur.
+Stubby and DNScrypt **should not** be used together when both are set to run as a forwarder in Unbound, else redundant caching will occur. Use with Cloudflare tunnel only.
 
 `OPTIONAL:` **Building and compiling** Stubby yourself ensures that you have the latest version<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Build-Stubby-from-source"><b>🔗click here🔗</b></a>.
  
@@ -466,7 +466,7 @@ sudo tail -f /var/log/dnscrypt-proxy/query.log
 #### Other sites to check security
 [browserleaks](https://browserleaks.com/dns) - should show all connected to "Cloudflare"
 
-[dnssec](https://dnssec.vs.uni-due.de/) - should say "Yes, your DNS resolver validates DNSSEC signatures"
+[dnssec](http://dnssectest.sidn.nl/) - should say "Yes, your DNS resolver validates DNSSEC signatures"
  
 [dnscheck tools](https://dnscheck.tools/) - inspect your dns resolvers (DNSSEC using ECDSA P-256,DNSSEC using ECDSA P-384,DNSSEC using Ed25519)
 
