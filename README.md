@@ -601,7 +601,7 @@ You should see all connections `closed` and status showing all `DNS port 53` and
  <img src="https://i.imgur.com/Q07E7SW.gif" width=500px height=30px>
 
 <p align="center">
-<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/stargazers"><img src="https://reporoster.com/stars/dark/trinib/AdGuard-WireGuard-Unbound-DNScrypt"></a>
+<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/stargazers"><img src="http://reporoster.com/stars/dark/trinib/AdGuard-WireGuard-Unbound-DNScrypt"></a>
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"></p>
