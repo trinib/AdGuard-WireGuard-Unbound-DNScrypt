@@ -104,7 +104,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
 #
 # Requirements
  
-This tutorial is installed on a Raspberry Pi with Debian OS. Other Linux <a href="https://distrowatch.com/dwres.php?resource=popularity">operating system</a><i>(𝟹𝟸/𝟼𝟺bit)</i>, <a href="https://en.wikipedia.org/wiki/Category:Single-board_computers">hardware</a> or <a href="https://www.google.com/search?q=cheap+cloud+hosting&client=firefox-b-d&sxsrf=ALiCzsYoJfYnpJOA1nwDPd1eX9mA-z_ozg%3A1662213729520&ei=YV4TY_OzH8y_kvQPkb-_sAE&ved=0ahUKEwiz6I3X5Pj5AhXMn4QIHZHfDxYQ4dUDCA0&oq=cheap+cloud+hosting&gs_lcp=Cgdnd3Mtd2l6EAxKBAhBGABKBAhGGABQAFgAYABoAHABeACAAQCIAQCSAQCYAQA&sclient=gws-wiz">cloud service</a> can be used.</br>_(Raspberry Pi OS is most simple and recommended for Pi. For more experience users, <a href="https://dietpi.com/">DietPi</a> OS is also recommended)_
+This tutorial is installed on a Raspberry Pi with Debian OS. Other Linux <a href="https://distrowatch.com/dwres.php?resource=popularity">operating system</a><i>(𝟹𝟸/𝟼𝟺bit)</i>, <a href="https://en.wikipedia.org/wiki/Category:Single-board_computers">hardware</a> or <a href="https://github.com/dalisoft/awesome-hosting#vps">VPS service</a> can be used.</br>_(Raspberry Pi OS is most simple and recommended for Pi. For more experience users, <a href="https://dietpi.com/">DietPi</a> OS is also recommended)_
 
    - A Raspberry Pi 3 or 4 version
    - A router that supports port forwarding(most can)
