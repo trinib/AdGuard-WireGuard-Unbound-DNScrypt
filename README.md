@@ -44,7 +44,7 @@ _<a href="https://dnscrypt.info/"><b>DNScrypt</b></a>_</br>Modern encrypted DNS 
 <i>All software are free, open-source and&nbsp;self-hosted&nbsp;</i></br><a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/wiki/About"><b>ABOUT</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>FAQ</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki"><b>WIKI</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions"><b>DISCUSS</b></a>
 
 <h3 align="left">DNS query time ⏳</h3>
-Query speed results(Ethernet LAN) using <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Dig(domain-information-groper)">BIND9 dig</a> tool:
+Query speed results(Ethernet LAN) using <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Install-Dig-&-WSL">BIND9 dig</a> tool:
 
  - AdGuard default DNS resolvers - `60-70 msec`
  - Public Cloudflare/Quad9/Google DNS Resolvers - `50-70 msec`
