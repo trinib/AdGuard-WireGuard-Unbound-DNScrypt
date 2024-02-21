@@ -22,7 +22,7 @@
 Translate Site | Traducir sitio  | 翻译网站 | Traduire le site | Перевести сайт | अनुवाद साइट
 <br><a href="https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb?hl=en"><img src="https://www.vectorlogo.zone/logos/google_chrome/google_chrome-icon.svg" width=20px height=20px></a>&nbsp;<a href="https://addons.mozilla.org/en-US/firefox/addon/traduzir-paginas-web/"><img src="https://www.vectorlogo.zone/logos/firefox/firefox-icon.svg" width=20px height=20px></a> <a href="https://addons.opera.com/en/extensions/details/translator/"><img src="https://www.vectorlogo.zone/logos/opera/opera-icon.svg" width=20px height=20px></a></div> 
 
-<h1 align="center">Features</h1>
+<h1 align="center">Softwares</h1>
 
 <div align="center"> 
  
@@ -41,7 +41,7 @@ _<a href="https://dnscrypt.info/"><b>DNScrypt</b></a>_</br>Modern encrypted DNS 
 #
 </div> 
 <p align="right">
-<i>All software are free, open-source and&nbsp;self-hosted&nbsp;</i></br><a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/wiki/About"><b>ABOUT</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>FAQ</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki"><b>WIKI</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions"><b>DISCUSS</b></a>
+<i>All softwares are free, open-source and&nbsp;self-hosted&nbsp;</i></br><a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/wiki/About"><b>ABOUT</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>FAQ</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki"><b>WIKI</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions"><b>DISCUSS</b></a>
 
 <h3 align="left">DNS query time ⏳</h3>
 Query speed results(Ethernet LAN) using <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Install-Dig-&-WSL">BIND9 dig</a> tool:
@@ -78,7 +78,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
    - [Setting up AdGuard blocklist](#setting-up-adguard-blocklist)
      - [Add/Remove multiple URLs](#addremove-multiple-urls)
    - [Uninstall AdGuard](#uninstall-adguard)
-   - [Install SSL certificate](#install-ssl-certificate)
+   - [Install SSL certificate](#install-ssl-certificate)<img src="https://www.vectorlogo.zone/logos/letsencrypt/letsencrypt-icon.svg" width=20px height=20px><img src="https://avatars.githubusercontent.com/u/27781978?s=280&v=4" width=20px height=20px>
    - [Install Pi-hole](#install-pi-hole-as-an-alternativeclick-here) <img src="https://upload.wikimedia.org/wikipedia/en/1/15/Pi-hole_vector_logo.svg" width=21px height=21px>
  - [Install Unbound](#install-unbound-) <img src="https://www.vectorlogo.zone/logos/nlnetlabsnl_unbound/nlnetlabsnl_unbound-icon.svg" width=20px height=20px>
  - [Install Knot](#install-knot-resolver-as-an-alternativeclick-here) <img src="https://www.vectorlogo.zone/logos/knot-resolvercz/knot-resolvercz-icon.svg" width=20px height=20px>
@@ -87,7 +87,7 @@ https://user-images.githubusercontent.com/18756975/150319049-3d8acdc9-624f-4b60-
      - [Cloudflared tunnel](#cloudflared-tunnelclick-here) <img src="https://www.vectorlogo.zone/logos/cloudflare/cloudflare-icon.svg" width=20px height=20px>
      - [DNScrypt proxy](#dnscrypt-proxyclick-here) <img src="https://i.imgur.com/lEHVsn3.png" width=20px height=20px>
    - [Configure DoT on Unbound](#configure-dot-on-unbound)
-     - [Configure Stubby and Unbound](#configure-stubby-and-unbound)
+     - [Configure Stubby and Unbound](#configure-stubby-and-unbound) <img src="https://getdnsapi.net/static/logo.svg" width=50px height=20px>
    - [Configure AdGuard with (DoH/DoT/oDoH)](#configure-adguard-with-dohdotodoh)
      - [Monitor query logs](#use-tail-command-to-monitor-logs-in-realtime)
  - [Install WireGuard](#install-wireguard-) <img src="https://www.vectorlogo.zone/logos/wireguard/wireguard-icon.svg" width=20px height=20px>
