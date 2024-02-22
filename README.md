@@ -41,9 +41,9 @@ _<a href="https://dnscrypt.info/"><b>DNScrypt</b></a>_</br>Modern encrypted DNS 
 #
 </div> 
 <p align="right">
-<i>All softwares are free, open-source and&nbsp;self-hosted&nbsp;</i></br><a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/wiki/About"><b>ABOUT</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>FAQ</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki"><b>WIKI</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions"><b>DISCUSS</b></a>
+<i>All software are free, open-source and&nbsp;self-hosted&nbsp;</i></br><a href="https://github.com/trinib/Adguard-Wireguard-Unbound-Cloudflare/wiki/About"><b>ABOUT</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions/17"><b>FAQ</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki"><b>WIKI</b></a> | <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/discussions"><b>DISCUSS</b></a>
 
-<h3 align="left">DNS query time ⏳</h3>
+<h3 align="left">DNS query time<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Hourglass%20Done.webp" alt="Hourglass Done" width="25" height="25" /></h3>
 Query speed results(Ethernet LAN) using <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/wiki/Install-Dig-&-WSL">BIND9 dig</a> tool:
 
  - AdGuard default DNS resolvers - `60-70 msec`
@@ -51,7 +51,7 @@ Query speed results(Ethernet LAN) using <a href="https://github.com/trinib/AdGua
  - Self-hosted setup - `5-10 msec`
 > [!NOTE]
 >  Originally `0 msec` or same as ISP DNS speed but multiple blocklist with _excessive_ URLs slow down low-end devices affecting DNS query. This result was from a 1GB | 1.4GH ARM architecture. Blocklists used <a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-DNScrypt/blob/beb05c3a4b74a675dc88c43bcea41b08d00a04f3/bulkurls.py#L20"><b>🔗click here🔗</b></a>.
-<details><summary>📹 Preview</summary>
+<details><summary>Preview<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Clapper%20Board.webp" alt="Clapper Board" width="25" height="25" /></summary>
 <p>
 
 AdGuard default <b><i>vs</i></b> Self-hosted:
@@ -156,7 +156,7 @@ sudo apt update -y && sudo apt upgrade -y
 ```bash
 sudo reboot
 ```
-**[⬆ Return to contents ⬆](#table-of-contents)**
+**[<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Up%20Button.webp" alt="Up Button" width="25" height="25" /> Return to contents <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Up%20Button.webp" alt="Up Button" width="25" height="25" />](#table-of-contents)**
 
 #
 <h1 align="center"><b><i>Install AdGuard Home</b></i> </h1>
@@ -224,15 +224,15 @@ In AdGuard homepage under filters, select DNS blocklist section for adding URLs.
 <br>
 <a href="https://github.com/T145/black-mirror"><img src="https://raw.githubusercontent.com/T145/black-mirror/master/.github/images/logo.png" width=220px height=60px></a>
 <br>
-Blacklists and whitelists that aim to promote security, safety, and sanity across the internet! </p>
+Aiming to promote security, safety, and sanity across the internet! </p>
 
-👊BIG THANKS👊 to <a href="https://github.com/T145">T145</a><br>
-Blacklists and Whitelists Sources<a href="https://github.com/T145/black-mirror/blob/master/SOURCES.md"><b>🔗click here🔗</b></a>
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Oncoming%20Fist.png" alt="Oncoming Fist" width="25" height="25" />BIG THANKS<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Oncoming%20Fist.png" alt="Oncoming Fist" width="25" height="25" /> to <a href="https://github.com/T145">T145</a><br>
+Large list of Blocklists and Allowlists Sources<a href="https://github.com/T145/black-mirror/blob/master/dist/SOURCES.md"><b>🔗click here🔗</b></a>
 <b>
 </b>
 
 > [!CAUTION]
-> Some lists can block important web content. To unblock, go to "Query Log" section, hover cursor over that specific query<i>(look for client IP & time)</i> to show _unblock_ option. The links is automatically created in "Custom filtering rules" example: `@@||bitly.com^$important`(can add the websites manually as well).
+> Some Blocklists can block important web content. To unblock, go to "Query Log" section, hover cursor over that specific query<i>(look for client IP & time)</i> to show _unblock_ option. The links is automatically created in "Custom filtering rules" example: `@@||bitly.com^$important`(can add the websites manually as well).
 
 ## Add/Remove multiple URLs
 
@@ -272,7 +272,7 @@ If using AdGuard Home on a `VPS(Virtual private server)`, get a <a href="https:/
 
 ### _Install Pi-hole as an alternative<a href="https://github.com/pi-hole/pi-hole/#one-step-automated-install"><b>🔗click here🔗</b></a>_
 
-**[⬆ Return to contents ⬆](#table-of-contents)**
+**[<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Up%20Button.webp" alt="Up Button" width="25" height="25" /> Return to contents <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Up%20Button.webp" alt="Up Button" width="25" height="25" />](#table-of-contents)**
 
 #
 <h1 align="center"><b><i>Install Unbound</b></i> </h1>
@@ -317,7 +317,7 @@ Skip straight ahead to configuring DoT in this [**section**](#configure-dot-on-u
  
 ### _Install Knot Resolver as an alternative<a href="https://github.com/trinib/AdGuard-WireGuard-Unbound-Cloudflare/wiki/Install-Knot-Resolver"><b>🔗click here🔗</b></a>_
 
-**[⬆ Return to contents ⬆](#table-of-contents)**
+**[<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Up%20Button.webp" alt="Up Button" width="25" height="25" /> Return to contents <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Up%20Button.webp" alt="Up Button" width="25" height="25" />](#table-of-contents)**
 
 #    
 <h1 align="center"><b><i>Setup DNS Security</b></i> </h1>
@@ -435,7 +435,7 @@ Click apply and test upstreams</p>
 ### Sometimes DoH or DoT shows no?
 This could just be a fault on 1.1.1.1/help and host cause according to logs, for example DNScrypt with DNS over HTTPS shows it **does recieve a query response/PASS** although when showing "no" for DNS over HTTPS.
 
-<details><summary>Query logs 👀</summary>
+<details><summary>Query logs<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Eyes.png" alt="Eyes" width="25" height="25" /></summary>
 <p>
 
 https://user-images.githubusercontent.com/18756975/197397288-18c7f33b-abb3-4628-b8e3-1ad29623f693.mp4
@@ -473,7 +473,7 @@ sudo tail -f /var/log/dnscrypt-proxy/query.log
  
 [dnscheck tools](https://dnscheck.tools/) - inspect your dns resolvers (DNSSEC using ECDSA P-256,DNSSEC using ECDSA P-384,DNSSEC using Ed25519)
 
-**[⬆ Return to contents ⬆](#table-of-contents)**
+**[<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Up%20Button.webp" alt="Up Button" width="25" height="25" /> Return to contents <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Up%20Button.webp" alt="Up Button" width="25" height="25" />](#table-of-contents)**
 
 #
 <h1 align="center"><b><i>Install WireGuard</b></i> </h1>
@@ -501,7 +501,7 @@ Example of my router port settings:
 > Other router brands will have a different interface look. Google search it for help. If you cannot connect from a outside network that means your ISP has blocked incoming connections and only allow outgoing, call them and ask nicely to unblock.
 
 #
-👊BIG THANKS👊 for this installation script from <a href="https://github.com/Nyr/wireguard-install">Nyr</a>. Follow to keep updated.<br>(<a href="https://www.pivpn.io/">PiVPN</a> script can also be used)
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Oncoming%20Fist.png" alt="Oncoming Fist" width="25" height="25" />BIG THANKS<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Oncoming%20Fist.png" alt="Oncoming Fist" width="25" height="25" /> for this installation script from <a href="https://github.com/Nyr/wireguard-install">Nyr</a>. Follow to keep updated.<br>(<a href="https://www.pivpn.io/">PiVPN</a> script can also be used)
 
 Download and run script in terminal:
 ```bash
@@ -590,7 +590,7 @@ For **android** use PCAPdroid: https://play.google.com/store/apps/details?id=com
                                                                                                                                 
 You should see all connections `closed` and status showing all `DNS port 53` and not any TLS port 443 connections from all apps. (open and use apps for PCAPdroid to scan)
 
-**[⬆ Return to contents ⬆](#table-of-contents)**
+**[<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Up%20Button.webp" alt="Up Button" width="25" height="25" /> Return to contents <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Up%20Button.webp" alt="Up Button" width="25" height="25" />](#table-of-contents)**
 
 ***
 
