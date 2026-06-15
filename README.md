@@ -435,7 +435,7 @@ Click apply and test upstreams</p>
   <img src="https://i.imgur.com/ootfGYq.jpg" width=650px height=300px></p>
  
 ### Sometimes DoH or DoT shows no?
-This could just be a fault on 1.1.1.1/help and host cause according to logs, for example DNScrypt with DNS over HTTPS shows it **does recieve a query response/PASS** although when showing "no" for DNS over HTTPS.
+This could just be a fault on 1.1.1.1/help and host cause according to logs, for example DNScrypt with DNS over HTTPS shows it **does receive a query response/PASS** although when showing "no" for DNS over HTTPS.
 
 <details><summary>Query logs<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Eyes.png" alt="Eyes" width="25" height="25" /></summary>
 <p>
